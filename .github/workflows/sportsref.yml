@@ -1,0 +1,8 @@
+# This is a basic workflow to run SportsReference script data scraping for Polls and Standings
+
+name: SportsRef_PollsStandings
+
+# To run every Tuesday and Saturday at 9AM PST, set cron to 0 17 * * 2,6 (PST = UTC-8):
+on:
+  schedule:
+    - cron: '0 17 * * 2,6'  # 9:00 AM PST every Tuesday and Saturday
