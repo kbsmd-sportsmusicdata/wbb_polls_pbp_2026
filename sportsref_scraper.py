@@ -1,11 +1,11 @@
 import io
 import os
-from datetime import datetime
+from datetime import datetime, date
+from pathlib import Path
 
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup, Comment  # <- make sure this is here
-from pathlib import Path
 
 DATA_DIR = Path("data")
 STANDINGS_SPLIT_DIR = DATA_DIR / "standings_by_conf"
@@ -19,6 +19,15 @@ URL_POLLS = "https://www.sports-reference.com/cbb/seasons/women/2026-polls.html"
 URL_STANDINGS = "https://www.sports-reference.com/cbb/seasons/women/2026-standings.html"
 OUTPUT_DIR = "data"
 
+def clean_tables(tables):
+    cleaned = []
+    for df in tables:
+        # strip strings, drop all-null rows
+        df = strip_strings(df)(lambda x: x.strip() if isinstance(x, str) else x)
+        df.dropna(how="all", inplace=True)
+        cleaned.append(df)
+    return cleaned
+    
 def fetch_tables(url):
     """Generic fetch: read all <table> elements from a URL."""
     headers = {"User-Agent": "Mozilla/5.0"}
@@ -72,14 +81,10 @@ def fetch_standings_tables(url):
     print(f"Found {len(comment_tables)} standings tables in HTML comments.")
     return clean_tables(comment_tables)
 
-def clean_tables(tables):
-    cleaned = []
-    for df in tables:
-        # strip strings, drop all-null rows
-        df = df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
-        df.dropna(how="all", inplace=True)
-        cleaned.append(df)
-    return cleaned
+def strip_strings(df: pd.DataFrame) -> pd.DataFrame:
+    return df.apply(
+        lambda col: col.map(lambda x: x.strip() if isinstance(x, str) else x)
+    )
 
 def save_tables(tables, prefix):
     os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -88,56 +93,36 @@ def save_tables(tables, prefix):
         path = os.path.join(OUTPUT_DIR, f"{prefix}_{i}_{ts}.csv")
         df.to_csv(path, index=False)
         print(f"Saved: {path}")
-        
+
 def save_standings_tables(tables, date_str: str) -> None:
-    """
-    Save each conference standings table to its own CSV and also
-    write one combined CSV containing all conferences.
-    """
+    """Save each conference standings table and one combined CSV."""
     cleaned_tables = []
-
     for i, df in enumerate(tables, start=1):
-        # whatever cleaning you already do for standings goes here
-        # this matches your applymap strip logic
-        df = df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
-
         cleaned_tables.append(df)
-
         out_path = STANDINGS_SPLIT_DIR / f"standings_{i}_{date_str}.csv"
         df.to_csv(out_path, index=False)
         print(f"Saved conference {i} standings: {out_path}")
 
-    # Combine all conferences into one DataFrame
     combined = pd.concat(cleaned_tables, ignore_index=True)
-
     combined_path = STANDINGS_COMBINED_DIR / f"standings_all_{date_str}.csv"
     combined.to_csv(combined_path, index=False)
     print(f"Saved combined standings: {combined_path}")
-
-
-def main():
-    print("Fetching polls data...")
-    polls = fetch_tables(URL_POLLS)
-    save_tables(polls, "polls")
-
-from datetime import date
 
 def main():
     today_str = date.today().strftime("%Y%m%d")
 
     print("Fetching polls data...")
     polls = fetch_tables(URL_POLLS)
-    # keep whatever you already do for polls saving
+    save_tables(polls, "polls")
 
     print("Fetching standings data...")
     try:
-        standings = fetch_tables(URL_STANDINGS)
+        standings = fetch_standings_tables(URL_STANDINGS)
         if not standings:
             print("WARNING: no standings tables returned")
-        else:
-            save_standings_tables(standings, today_str)
-    except ValueError as e:
-        # e.g. "No tables found" case you just hit
+    else:
+        save_standings_tables(standings, today_str)
+   except ValueError as e:
         print(f"WARNING: could not parse standings tables: {e}")
 
 
