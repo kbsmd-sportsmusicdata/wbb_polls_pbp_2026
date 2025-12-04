@@ -1,38 +1,40 @@
+import io
 import pandas as pd
 import requests
-from bs4 import BeautifulSoup
 from datetime import datetime
 import os
 
-# URLs to scrape
 URL_POLLS = "https://www.sports-reference.com/cbb/seasons/women/2026-polls.html"
 URL_STANDINGS = "https://www.sports-reference.com/cbb/seasons/women/2026-standings.html"
 OUTPUT_DIR = "data"
 
 def fetch_tables(url):
-    """Fetches all HTML tables from a URL and returns list of cleaned DataFrames."""
+    """Fetch all HTML tables from a URL and return list of cleaned DataFrames."""
     headers = {"User-Agent": "Mozilla/5.0"}
-    response = requests.get(url, headers=headers)
-    response.raise_for_status()
-    soup = BeautifulSoup(response.text, 'html.parser')
-    tables = pd.read_html(str(soup))
+    resp = requests.get(url, headers=headers)
+    resp.raise_for_status()
 
-    cleaned_tables = []
-    for table in tables:
-        table = table.applymap(lambda x: x.strip() if isinstance(x, str) else x)
-        table.dropna(how='all', inplace=True)
-        cleaned_tables.append(table)
-    return cleaned_tables
+    # read_html will now use lxml as the parser
+    # Wrap in StringIO to be future-proof
+    html_buf = io.StringIO(resp.text)
+    tables = pd.read_html(html_buf)
+
+    cleaned = []
+    for df in tables:
+        # strip whitespace
+        df = df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
+        # drop fully empty rows
+        df.dropna(how="all", inplace=True)
+        cleaned.append(df)
+    return cleaned
 
 def save_tables(tables, prefix):
-    """Saves each DataFrame to CSV with timestamped filename."""
     os.makedirs(OUTPUT_DIR, exist_ok=True)
-    timestamp = datetime.now().strftime("%Y%m%d")
-    for i, df in enumerate(tables):
-        filename = f"{prefix}_{i+1}_{timestamp}.csv"
-        filepath = os.path.join(OUTPUT_DIR, filename)
-        df.to_csv(filepath, index=False)
-        print(f"Saved: {filepath}")
+    ts = datetime.now().strftime("%Y%m%d")
+    for i, df in enumerate(tables, start=1):
+        path = os.path.join(OUTPUT_DIR, f"{prefix}_{i}_{ts}.csv")
+        df.to_csv(path, index=False)
+        print(f"Saved: {path}")
 
 def main():
     print("Fetching polls data...")
@@ -45,3 +47,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
