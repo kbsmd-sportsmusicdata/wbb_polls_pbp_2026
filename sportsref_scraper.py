@@ -108,7 +108,9 @@ def save_standings_tables(tables, date_str: str) -> None:
     combined.to_csv(combined_path, index=False)
     print(f"Saved combined standings: {combined_path}")
 
-def main():
+from datetime import date
+
+def main() -> None:
     today_str = date.today().strftime("%Y%m%d")
 
     print("Fetching polls data...")
@@ -117,13 +119,18 @@ def main():
 
     print("Fetching standings data...")
     try:
+        # use the special standings fetcher that looks in HTML comments
         standings = fetch_standings_tables(URL_STANDINGS)
+
+    except ValueError as e:
+        # e.g., "No standings tables found in page or HTML comments"
+        print(f"WARNING: could not parse standings tables: {e}")
+
+    else:
         if not standings:
             print("WARNING: no standings tables returned")
-    else:
-        save_standings_tables(standings, today_str)
-   except ValueError as e:
-        print(f"WARNING: could not parse standings tables: {e}")
+        else:
+            save_standings_tables(standings, today_str)
 
 
 if __name__ == "__main__":
