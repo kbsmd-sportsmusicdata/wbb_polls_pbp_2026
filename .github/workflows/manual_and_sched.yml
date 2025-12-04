@@ -24,7 +24,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run scraping script
-        run: python sportsrefscraper.py
+        run: python sportsref_scraper.py
 
       - name: Commit updated data
         run: |
