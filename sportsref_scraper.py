@@ -5,6 +5,15 @@ from datetime import datetime
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup, Comment  # <- make sure this is here
+from pathlib import Path
+
+DATA_DIR = Path("data")
+STANDINGS_SPLIT_DIR = DATA_DIR / "standings_by_conf"
+STANDINGS_COMBINED_DIR = DATA_DIR / "standings_full"
+
+# Make sure directories exist
+for p in (STANDINGS_SPLIT_DIR, STANDINGS_COMBINED_DIR):
+    p.mkdir(parents=True, exist_ok=True)
 
 URL_POLLS = "https://www.sports-reference.com/cbb/seasons/women/2026-polls.html"
 URL_STANDINGS = "https://www.sports-reference.com/cbb/seasons/women/2026-standings.html"
@@ -79,19 +88,58 @@ def save_tables(tables, prefix):
         path = os.path.join(OUTPUT_DIR, f"{prefix}_{i}_{ts}.csv")
         df.to_csv(path, index=False)
         print(f"Saved: {path}")
+        
+def save_standings_tables(tables, date_str: str) -> None:
+    """
+    Save each conference standings table to its own CSV and also
+    write one combined CSV containing all conferences.
+    """
+    cleaned_tables = []
+
+    for i, df in enumerate(tables, start=1):
+        # whatever cleaning you already do for standings goes here
+        # this matches your applymap strip logic
+        df = df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
+
+        cleaned_tables.append(df)
+
+        out_path = STANDINGS_SPLIT_DIR / f"standings_{i}_{date_str}.csv"
+        df.to_csv(out_path, index=False)
+        print(f"Saved conference {i} standings: {out_path}")
+
+    # Combine all conferences into one DataFrame
+    combined = pd.concat(cleaned_tables, ignore_index=True)
+
+    combined_path = STANDINGS_COMBINED_DIR / f"standings_all_{date_str}.csv"
+    combined.to_csv(combined_path, index=False)
+    print(f"Saved combined standings: {combined_path}")
+
 
 def main():
     print("Fetching polls data...")
     polls = fetch_tables(URL_POLLS)
     save_tables(polls, "polls")
 
+from datetime import date
+
+def main():
+    today_str = date.today().strftime("%Y%m%d")
+
+    print("Fetching polls data...")
+    polls = fetch_tables(URL_POLLS)
+    # keep whatever you already do for polls saving
+
     print("Fetching standings data...")
     try:
-        standings = fetch_standings_tables(URL_STANDINGS)
-        save_tables(standings, "standings")
+        standings = fetch_tables(URL_STANDINGS)
+        if not standings:
+            print("WARNING: no standings tables returned")
+        else:
+            save_standings_tables(standings, today_str)
     except ValueError as e:
+        # e.g. "No tables found" case you just hit
         print(f"WARNING: could not parse standings tables: {e}")
-        # Script still exits successfully so your workflow stays green
+
 
 if __name__ == "__main__":
     main()
