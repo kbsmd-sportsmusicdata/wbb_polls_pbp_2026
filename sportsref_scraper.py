@@ -23,11 +23,15 @@ def clean_tables(tables):
     cleaned = []
     for df in tables:
         # strip strings, drop all-null rows
-        df = strip_strings(df)(lambda x: x.strip() if isinstance(x, str) else x)
+        df = strip_strings(df)
         df.dropna(how="all", inplace=True)
         cleaned.append(df)
     return cleaned
-    
+
+def strip_strings(df: pd.DataFrame) -> pd.DataFrame:
+    return df.apply(
+        lambda col: col.map(lambda x: x.strip() if isinstance(x, str) else x)
+    )
 def fetch_tables(url):
     """Generic fetch: read all <table> elements from a URL."""
     headers = {"User-Agent": "Mozilla/5.0"}
@@ -80,11 +84,6 @@ def fetch_standings_tables(url):
 
     print(f"Found {len(comment_tables)} standings tables in HTML comments.")
     return clean_tables(comment_tables)
-
-def strip_strings(df: pd.DataFrame) -> pd.DataFrame:
-    return df.apply(
-        lambda col: col.map(lambda x: x.strip() if isinstance(x, str) else x)
-    )
 
 def save_tables(tables, prefix):
     os.makedirs(OUTPUT_DIR, exist_ok=True)
