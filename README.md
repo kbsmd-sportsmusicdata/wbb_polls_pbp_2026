@@ -14,7 +14,8 @@ Fetching NCAA D1 WBB polls &amp; standings (SportsReference) + schedule, box sco
 📈 **WBB D1 Rankings: A Four Factors Analysis of the Top 25**
 - Phase 1: 2025-2026 current season analysis
 - Phase 2: historical analysis, approx seasons 2000-2021 through 2025-2026 season
-  - analysis plus predictive modeling
+  - exploratory data analysis
+  - predictive modeling
 
 📊 **WBB D1 Team Styles Dashboard**
 
