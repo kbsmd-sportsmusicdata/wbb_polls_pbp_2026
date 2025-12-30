@@ -1,0 +1,18 @@
+Unnamed: 0_level_0,Unnamed: 1_level_0,Unnamed: 2_level_0,Overall,Overall,Overall,Unnamed: 6_level_0,Conference,Conference,Conference,Unnamed: 10_level_0,PTS/G,PTS/G,Unnamed: 13_level_0,SRS,SRS,Unnamed: 16_level_0,Polls,Polls,Polls,Unnamed: 20_level_0,Unnamed: 21_level_0
+Rk,School,Conf,W,L,W-L%,Unnamed: 6_level_1,W,L,W-L%,Unnamed: 10_level_1,Own,Opp,Unnamed: 13_level_1,SRS,SOS,Unnamed: 16_level_1,AP Pre,AP High,AP Final,Unnamed: 20_level_1,Notes
+1,Alabama,SEC,14,0,1.0,,,,,,75.0,50.8,,25.01,0.79,,,,,,
+2,Georgia,SEC,14,0,1.0,,,,,,81.3,51.6,,19.93,-9.71,,,,,,
+3,Louisiana State,SEC,14,0,1.0,,,,,,108.0,52.6,,48.19,-7.17,,5.0,5.0,,,
+4,Texas,SEC,15,0,1.0,,,,,,93.5,51.3,,48.16,6.03,,4.0,2.0,,,
+5,Vanderbilt,SEC,13,0,1.0,,,,,,87.1,54.0,,30.47,-2.61,,19.0,12.0,,,
+6,Kentucky,SEC,13,1,0.929,,,,,,81.4,50.2,,32.42,1.21,,24.0,11.0,,,
+7,Mississippi State,SEC,13,1,0.929,,,,,,83.0,53.8,,23.32,-5.9,,,,,,
+8,South Carolina,SEC,13,1,0.929,,,,,,92.9,53.1,,48.77,8.99,,2.0,2.0,,,
+9,Oklahoma,SEC,12,1,0.923,,,,,,96.2,61.3,,36.13,1.2,,6.0,6.0,,,
+10,Mississippi,SEC,13,2,0.867,,,,,,79.5,52.0,,26.17,-1.36,,12.0,12.0,,,
+11,Florida,SEC,12,3,0.8,,,,,,77.8,58.2,,13.46,-6.14,,,,,,
+12,Missouri,SEC,12,3,0.8,,,,,,76.9,68.0,,9.84,0.98,,,,,,
+13,Auburn,SEC,11,3,0.786,,,,,,66.7,53.7,,11.51,-1.49,,,,,,
+14,Texas A&M,SEC,7,2,0.778,,,,,,71.6,59.8,,11.64,-0.13,,,,,,
+15,Arkansas,SEC,11,4,0.733,,,,,,78.5,68.1,,7.05,-3.35,,,,,,
+16,Tennessee,SEC,8,3,0.727,,,,,,81.4,59.6,,29.99,8.27,,8.0,8.0,,,
