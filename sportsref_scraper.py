@@ -47,13 +47,34 @@ def build_polls_long(polls_tables: list[pd.DataFrame], run_date: date) -> pd.Dat
 
         if school_col is None:
             continue  # not a team table
+        # Only process tables that actually contain poll-week columns
+        has_week_cols = any(
+            (str(c).strip() == "Pre") or ("/" in str(c))
+            for c in cols
+        )
+
+        if not has_week_cols:
+            continue
 
         id_vars = [school_col]
         if conf_col:
             id_vars.append(conf_col)
 
         # Everything else is a "poll week" column (often 'Pre', '11/10', etc.)
-        value_vars = [c for c in cols if c not in id_vars]
+        # Keep only true poll-week columns (e.g., Pre, 11/10, 1/5), drop metadata columns
+        drop_cols = {"rk", "rank", "prev", "previous", "chng", "change", "conference", "conf"}
+        value_vars = []
+        for c in cols:
+            if c in id_vars:
+                continue
+            c_str = str(c).strip()
+            c_low = c_str.lower()
+            if c_low in drop_cols:
+                continue
+            # accept poll-week labels: Pre, or dates like 11/10, 1/5, etc.
+            if c_str == "Pre" or "/" in c_str:
+                value_vars.append(c)
+
 
         melted = df.melt(
             id_vars=id_vars,
