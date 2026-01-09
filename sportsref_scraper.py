@@ -19,6 +19,70 @@ URL_POLLS = "https://www.sports-reference.com/cbb/seasons/women/2026-polls.html"
 URL_STANDINGS = "https://www.sports-reference.com/cbb/seasons/women/2026-standings.html"
 OUTPUT_DIR = "data"
 
+MASTER_POLLS_LONG = DATA_DIR / "polls_long.csv"
+MASTER_STANDINGS_LONG = DATA_DIR / "standings_long.csv"
+
+def append_csv(df: pd.DataFrame, path: Path) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    if path.exists():
+        df.to_csv(path, mode="a", header=False, index=False)
+    else:
+        df.to_csv(path, mode="w", header=True, index=False)
+
+def build_polls_long(polls_tables: list[pd.DataFrame], run_date: date) -> pd.DataFrame:
+    """
+    Your polls page returns multiple tables (you've been saving as polls_1, polls_2, ...).
+    We'll melt any AP-style wide table into long rows: one row per team per poll_date.
+    """
+    long_parts = []
+    run_date_str = run_date.strftime("%Y-%m-%d")
+
+    for t_idx, df in enumerate(polls_tables, start=1):
+        df = df.copy()
+
+        # Find likely ID columns
+        cols = [c for c in df.columns]
+        school_col = next((c for c in cols if str(c).lower() in ("school", "team")), None)
+        conf_col   = next((c for c in cols if str(c).lower() in ("conf", "conference")), None)
+
+        if school_col is None:
+            continue  # not a team table
+
+        id_vars = [school_col]
+        if conf_col:
+            id_vars.append(conf_col)
+
+        # Everything else is a "poll week" column (often 'Pre', '11/10', etc.)
+        value_vars = [c for c in cols if c not in id_vars]
+
+        melted = df.melt(
+            id_vars=id_vars,
+            value_vars=value_vars,
+            var_name="poll_week",
+            value_name="rank"
+        )
+
+        melted.rename(columns={school_col: "team", conf_col or "conf": "conference"}, inplace=True)
+
+        # Clean ranks: blanks -> NaN; keep numeric
+        melted["rank"] = pd.to_numeric(melted["rank"], errors="coerce")
+
+        melted["run_date"] = run_date_str
+        melted["table_id"] = t_idx  # keeps traceability (polls_1 vs polls_2)
+
+        long_parts.append(melted)
+
+    if not long_parts:
+        return pd.DataFrame(columns=["team","conference","poll_week","rank","run_date","table_id"])
+
+    out = pd.concat(long_parts, ignore_index=True)
+
+    # Add rank_numeric for Tableau convenience: unranked -> 26
+    out["rank_numeric"] = out["rank"].fillna(26).astype(int)
+
+    return out
+
+
 def clean_tables(tables):
     cleaned = []
     for df in tables:
@@ -110,27 +174,19 @@ def save_standings_tables(tables, date_str: str) -> None:
 from datetime import date
 
 def main() -> None:
-    today_str = date.today().strftime("%Y%m%d")
+    today = date.today()
+    today_str = today.strftime("%Y%m%d")
 
     print("Fetching polls data...")
     polls = fetch_tables(URL_POLLS)
+
+    # keep your current per-run snapshots (nice for debugging / audit trail)
     save_tables(polls, "polls")
 
-    print("Fetching standings data...")
-    try:
-        # use the special standings fetcher that looks in HTML comments
-        standings = fetch_standings_tables(URL_STANDINGS)
-
-    except ValueError as e:
-        # e.g., "No standings tables found in page or HTML comments"
-        print(f"WARNING: could not parse standings tables: {e}")
-
-    else:
-        if not standings:
-            print("WARNING: no standings tables returned")
-        else:
-            save_standings_tables(standings, today_str)
-
+    # NEW: build + append to master LONG table
+    polls_long = build_polls_long(polls, run_date=today)
+    append_csv(polls_long, MASTER_POLLS_LONG)
+    print(f"Appended polls_long rows: {len(polls_long)} -> {MASTER_POLLS_LONG}")
 
 if __name__ == "__main__":
     main()
