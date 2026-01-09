@@ -41,20 +41,28 @@ def build_polls_long(polls_tables: list[pd.DataFrame], run_date: date) -> pd.Dat
         df = df.copy()
 
         # Find likely ID columns
-        cols = [c for c in df.columns]
+        cols = [c for c in df.columns] 
+        print(f"[polls table {t_idx}] columns: {list(cols)}")
+
         school_col = next((c for c in cols if str(c).lower() in ("school", "team")), None)
         conf_col   = next((c for c in cols if str(c).lower() in ("conf", "conference")), None)
 
         if school_col is None:
             continue  # not a team table
         # Only process tables that actually contain poll-week columns
-        has_week_cols = any(
-            (str(c).strip() == "Pre") or ("/" in str(c))
-            for c in cols
-        )
+        def is_week_col(x) -> bool:
+            s = str(x).strip()
+            if s.lower() in {"rk", "rank", "prev", "previous", "chng", "change", "conf", "conference", "school", "team"}:
+                return False
+            if s.lower() in {"pre", "preseason"}:
+                return True
+            # accept common date-like formats: 11/10, 11-10, 11.10, Nov 10, etc.
+            return any(ch.isdigit() for ch in s) and len(s) <= 10
 
-        if not has_week_cols:
-            continue
+    has_week_cols = any(is_week_col(c) for c in cols)
+    if not has_week_cols:
+        continue
+
 
         id_vars = [school_col]
         if conf_col:
@@ -63,14 +71,18 @@ def build_polls_long(polls_tables: list[pd.DataFrame], run_date: date) -> pd.Dat
         # Everything else is a "poll week" column (often 'Pre', '11/10', etc.)
         # Keep only true poll-week columns (e.g., Pre, 11/10, 1/5), drop metadata columns
         drop_cols = {"rk", "rank", "prev", "previous", "chng", "change", "conference", "conf"}
-        value_vars = []
-        for c in cols:
-            if c in id_vars:
-                continue
-            c_str = str(c).strip()
-            c_low = c_str.lower()
-            if c_low in drop_cols:
-                continue
+
+        def is_week_col(x) -> bool:
+            s = str(x).strip()
+            if s.lower() in drop_cols or s.lower() in {"school", "team"}:
+                return False
+            if s.lower() in {"pre", "preseason"}:
+                return True
+            return any(ch.isdigit() for ch in s) and len(s) <= 10
+
+        value_vars = [c for c in cols if (c not in id_vars and is_week_col(c))]
+        print(f"[polls table {t_idx}] week cols used for melt: {list(value_vars)}")
+
             # accept poll-week labels: Pre, or dates like 11/10, 1/5, etc.
             if c_str == "Pre" or "/" in c_str:
                 value_vars.append(c)
