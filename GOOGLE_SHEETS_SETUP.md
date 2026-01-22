@@ -32,7 +32,7 @@ The `update_sheets.py` script uses a Google Cloud Service Account to authenticat
 1. Go to **"APIs & Services"** → **"Credentials"**
 2. Click **"Create Credentials"** → **"Service Account"**
 3. Fill in the service account details:
-   - **Service account name**: `sheets-updater` (or any name you prefer)
+   - **Service account name**: `your-service-account-name` (or any name you prefer)
    - **Service account ID**: This will auto-generate (e.g., `sheets-updater@wbb-data-automation.iam.gserviceaccount.com`)
    - **Description**: "Service account for updating Google Sheets with scraped data"
 4. Click **"Create and Continue"**
