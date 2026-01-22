@@ -103,7 +103,7 @@ sheets-updater@wbb-data-automation.iam.gserviceaccount.com
 
 ### Step 2: Add to GitHub Secrets
 
-1. Go to your GitHub repository: `https://github.com/kbsmd-sportsmusicdata/wbb_polls_pbp_2026`
+1. Go to your GitHub repository: `https://github.com/YOUR_ORG/YOUR_REPO`
 2. Click **"Settings"** (in the repository menu)
 3. In the left sidebar, click **"Secrets and variables"** → **"Actions"**
 4. Click **"New repository secret"**
