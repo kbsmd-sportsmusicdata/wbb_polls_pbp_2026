@@ -3,3 +3,5 @@ requests
 beautifulsoup4
 lxml
 html5lib
+gspread
+google-auth
