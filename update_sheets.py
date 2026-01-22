@@ -129,11 +129,29 @@ def find_new_rows(csv_df: pd.DataFrame, sheet_df: pd.DataFrame) -> pd.DataFrame:
         return csv_df
 
     # Ensure both DataFrames have the same columns
-    if not set(csv_df.columns).issubset(set(sheet_df.columns)):
-        # CSV has columns that don't exist in Sheet
-        # This might happen on first upload with new schema
-        print("   Schema mismatch - CSV has new columns. Treating all rows as new.")
-        return csv_df
+   def sync_csv_to_sheet(csv_path, sheet_id, tab_name, client):
+    # ... (existing loading logic) ...
+    
+    # Check for new columns in the CSV that aren't in the Sheet
+    new_cols = [col for col in csv_df.columns if col not in sheet_df.columns]
+    
+    if new_cols:
+        print(f"   Detected {len(new_cols)} new columns. Updating Sheet header...")
+        # Get all current headers and append the new ones
+        combined_headers = list(sheet_df.columns) + new_cols
+        worksheet.update('A1', [combined_headers])
+        
+        # Refresh the sheet_df to include the new (empty) columns for comparison
+        sheet_df = pd.DataFrame(columns=combined_headers)
+        # We don't return here anymore; we proceed to deduplication logic
+    
+    # Granular row-level comparison (using a unique ID or hash)
+    # This prevents re-uploading data even if a new column was added
+    new_rows = find_new_rows(csv_df, sheet_df) # Implement based on your unique ID
+    
+    if not new_rows.empty:
+        worksheet.append_rows(new_rows.values.tolist())
+        print(f"   ✓ Successfully synced {len(new_rows)} new rows.")
 
     # Convert all columns to strings for comparison
     csv_str = csv_df.astype(str)
