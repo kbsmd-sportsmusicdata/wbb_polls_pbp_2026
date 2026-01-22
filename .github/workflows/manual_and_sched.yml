@@ -32,7 +32,7 @@ jobs:
         run: python scrape_ratings.py
 
       - name: Run Team Box Score scraper
-        run: python schedule_scraper.py
+        run: python scrape_schedule.py
 
       - name: Update Google Sheets
         env:
