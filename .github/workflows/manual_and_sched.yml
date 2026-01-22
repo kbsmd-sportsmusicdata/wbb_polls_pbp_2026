@@ -28,6 +28,17 @@ jobs:
           python sportsref_scraper.py
           python scrape_ratings.py
 
+      - name: Run SportsRef ratings scraper
+        run: python scrape_ratings.py
+
+      - name: Run Team Box Score scraper
+        run: python scrape_teambox.py
+
+      - name: Update Google Sheets
+        env:
+          GCP_SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+        run: python update_sheets.py
+
       - name: Commit updated data
         run: |
           git config --global user.name "GitHub Action"
