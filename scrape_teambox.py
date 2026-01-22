@@ -277,12 +277,26 @@ def main():
 
     try:
         # Step 1: Download parquet data
-        print("Step 1: Downloading data...")
-        df = download_parquet_data(PARQUET_URL)
+        def main():
+    # 1. Download the data
+    df = download_parquet_data(PARQUET_URL)
+    
+    if df.empty:
+        return
 
-        # Determine the ID column
-        id_col = 'game_id' if 'game_id' in df.columns else 'id'
-        print(f"  Using '{id_col}' as the unique identifier\n")
+    # 2. Determine the ID column ONCE here
+    # This addresses the duplication mentioned in the review
+    id_col = 'game_id' if 'game_id' in df.columns else 'id'
+    print(f"  → Detected unique identifier: {id_col}")
+
+    # ... [Perform your filtering/processing] ...
+
+    # 3. Pass the 'id_col' variable as an argument to the append function
+    # This uses the refactored version of append_new_rows you just committed
+    append_new_rows(RAW_CSV_PATH, df, id_column=id_col)
+    
+    # Do the same for your filtered dataset
+    append_new_rows(FILTERED_CSV_PATH, filtered_df, id_column=id_col)
 
         # Step 2: Save raw data with idempotency
         print("Step 2: Updating raw CSV...")
