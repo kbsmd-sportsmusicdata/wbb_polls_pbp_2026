@@ -17,14 +17,14 @@ from pathlib import Path
 
 # Configuration
 DATA_DIR = Path("data")
-WBB_TEAM_BOX_CSV = DATA_DIR / "wbb_team_box" / "wbb_teambox_filtered.csv"
+# Updated path to match the new schedule output
+WBB_SCHEDULE_CSV = DATA_DIR / "wbb_schedule.csv"
 SOS_RATINGS_CSV = DATA_DIR / "sos_data_weekly_run.csv"
 
 # Google Sheets Configuration
-# Ensure these match the Tab names in your Google Sheet
-SHEET_ID = "1DAafyFpNlFRheOABdR4960L1VqP1gH-_0bMOG9BGD6Q" 
+SHEET_ID = "YOUR_GOOGLE_SHEET_ID_HERE" 
 TABS = {
-    "wbb_teambox": "wbb_teambox_filtered",
+    "wbb_schedule": "wbb_schedule_2026", # Updated tab name for the schedule
     "sos_ratings": "sos_data_weekly_run"
 }
 
@@ -126,8 +126,8 @@ def main():
     try:
         client = get_gspread_client()
         
-        # Sync Team Box Data
-        sync_csv_to_sheet(WBB_TEAM_BOX_CSV, SHEET_ID, TABS["wbb_teambox"], client)
+        # Sync the WBB Schedule Data instead of Team Box
+        sync_csv_to_sheet(WBB_SCHEDULE_CSV, SHEET_ID, TABS["wbb_schedule"], client)
         
         # Sync Ratings Data
         sync_csv_to_sheet(SOS_RATINGS_CSV, SHEET_ID, TABS["sos_ratings"], client)
