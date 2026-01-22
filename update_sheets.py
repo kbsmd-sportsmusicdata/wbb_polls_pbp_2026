@@ -122,214 +122,44 @@ def find_new_rows(csv_df: pd.DataFrame, sheet_df: pd.DataFrame) -> pd.DataFrame:
         sheet_df: DataFrame from Google Sheet
 
     Returns:
-        pd.DataFrame: Only the new rows that should be appended
-    """
-    if sheet_df.empty:
-        print("   Sheet is empty - all CSV rows are new")
-        return csv_df
+# ... (Keep your find_new_rows function above here) ...
 
-    # Ensure both DataFrames have the same columns
-   def sync_csv_to_sheet(csv_path, sheet_id, tab_name, client):
-    # ... (existing loading logic) ...
+def sync_csv_to_sheet(csv_path, sheet_id, tab_name, client):
+    """
+    Main logic to sync a CSV file to a Google Sheet tab.
+    """
+    print(f"Syncing {csv_path} to tab: {tab_name}")
     
-    # Check for new columns in the CSV that aren't in the Sheet
+    # 1. Load Local CSV
+    csv_df = pd.read_csv(csv_path)
+    
+    # 2. Open Google Sheet
+    sh = client.open_by_key(sheet_id)
+    worksheet = sh.worksheet(tab_name)
+    
+    # 3. Load Existing Data from Sheet
+    existing_data = worksheet.get_all_records()
+    sheet_df = pd.DataFrame(existing_data)
+
+    # 4. Check for new columns (Schema Mismatch logic)
     new_cols = [col for col in csv_df.columns if col not in sheet_df.columns]
     
     if new_cols:
         print(f"   Detected {len(new_cols)} new columns. Updating Sheet header...")
-        # Get all current headers and append the new ones
         combined_headers = list(sheet_df.columns) + new_cols
         worksheet.update('A1', [combined_headers])
-        
-        # Refresh the sheet_df to include the new (empty) columns for comparison
-        sheet_df = pd.DataFrame(columns=combined_headers)
-        # We don't return here anymore; we proceed to deduplication logic
-    
-    # Granular row-level comparison (using a unique ID or hash)
-    # This prevents re-uploading data even if a new column was added
-    new_rows = find_new_rows(csv_df, sheet_df) # Implement based on your unique ID
+        # Refresh sheet_df structure to include new columns
+        for col in new_cols:
+            sheet_df[col] = None
+
+    # 5. Identify only the new rows to append
+    # Note: Ensure find_new_rows is defined earlier in your script
+    new_rows = find_new_rows(csv_df, sheet_df)
     
     if not new_rows.empty:
-        worksheet.append_rows(new_rows.values.tolist())
+        # Convert NaN to empty strings for Google Sheets compatibility
+        rows_to_upload = new_rows.fillna('').values.tolist()
+        worksheet.append_rows(rows_to_upload)
         print(f"   ✓ Successfully synced {len(new_rows)} new rows.")
-
-    # Convert all columns to strings for comparison
-    csv_str = csv_df.astype(str)
-    sheet_str = sheet_df.astype(str)
-
-    # Create a composite key from all columns for comparison
-    # Create a composite key from all columns for comparison
-    # Using a less common separator to avoid conflicts with cell content
-    separator = "<|>"
-    csv_keys = csv_str.apply(lambda row: separator.join(row.values), axis=1)
-    sheet_keys = sheet_str.apply(lambda row: separator.join(row.values), axis=1)
-    sheet_keys = sheet_str.apply(lambda row: '|||'.join(row.values), axis=1)
-
-    # Find rows in CSV that are not in Sheet
-    new_mask = ~csv_keys.isin(sheet_keys)
-    new_rows = csv_df[new_mask]
-
-    print(f"   Found {len(new_rows)} new rows to append (out of {len(csv_df)} total CSV rows)")
-    return new_rows
-
-
-def sync_csv_to_sheet(
-    csv_path: Path,
-    sheet_id: str,
-    tab_name: str,
-    client: Optional[gspread.Client] = None
-) -> bool:
-    """
-    Sync a local CSV file to a Google Sheet with idempotency.
-
-    This function:
-    1. Reads the CSV file
-    2. Reads existing data from the Google Sheet
-    3. Identifies new rows not already in the Sheet
-    4. Appends only the new rows to the Sheet
-
-    Args:
-        csv_path: Path to the local CSV file
-        sheet_id: Google Sheets ID (from the URL)
-        tab_name: Name of the worksheet/tab within the spreadsheet
-        client: Optional gspread client (will create one if not provided)
-
-    Returns:
-        bool: True if sync was successful, False otherwise
-    """
-    try:
-        print(f"\n{'='*60}")
-        print(f"Syncing: {csv_path.name} → Sheet '{tab_name}'")
-        print(f"{'='*60}")
-
-        # Check if CSV exists
-        if not csv_path.exists():
-            print(f"✗ CSV file not found: {csv_path}")
-            return False
-
-        # Read CSV data
-        print("1. Reading local CSV file...")
-        csv_df = pd.read_csv(csv_path)
-        print(f"   ✓ Loaded {len(csv_df)} rows from CSV")
-
-        if csv_df.empty:
-            print("   ⚠ CSV is empty - nothing to sync")
-            return True
-
-        # Get gspread client
-        if client is None:
-            print("2. Authenticating with Google Sheets...")
-            client = get_gspread_client()
-            print("   ✓ Authentication successful")
-
-        # Open spreadsheet and worksheet
-        print("3. Opening Google Sheet...")
-        spreadsheet = client.open_by_key(sheet_id)
-
-        # Try to get existing worksheet, or create it
-        try:
-            worksheet = spreadsheet.worksheet(tab_name)
-            print(f"   ✓ Found existing tab '{tab_name}'")
-        except gspread.exceptions.WorksheetNotFound:
-            print(f"   ⚠ Tab '{tab_name}' not found - creating new tab")
-            worksheet = spreadsheet.add_worksheet(
-                title=tab_name,
-                           worksheet = spreadsheet.add_worksheet(
-                title=tab_name,
-                rows=len(csv_df) + 100, # Initial rows based on CSV size + buffer
-                cols=len(csv_df.columns)
-            )
-            print(f"   ✓ Created new tab '{tab_name}'")
-
-        # Read existing sheet data
-        print("4. Reading existing data from sheet...")
-        sheet_df = read_sheet_data(worksheet)
-
-        # Find new rows
-        print("5. Identifying new rows...")
-        new_rows = find_new_rows(csv_df, sheet_df)
-
-        if new_rows.empty:
-            print("   ✓ No new rows to append - sheet is up to date")
-            print(f"\n{'='*60}")
-            return True
-
-        # Append new rows to sheet
-        print(f"6. Appending {len(new_rows)} new rows to sheet...")
-
-        if sheet_df.empty:
-            # Sheet is empty - write header and all data
-            data_to_append = [new_rows.columns.tolist()] + new_rows.values.tolist()
-            worksheet.update('A1', data_to_append)
-            print(f"   ✓ Wrote header and {len(new_rows)} rows to empty sheet")
-        else:
-            # Sheet has data - append only new rows (no header)
-            data_to_append = new_rows.values.tolist()
-            worksheet.append_rows(data_to_append)
-            print(f"   ✓ Appended {len(new_rows)} new rows")
-
-        print(f"   ✓ Sync completed successfully")
-        print(f"\n{'='*60}")
-        return True
-
-    except Exception as e:
-        print(f"\n✗ Error syncing {csv_path.name}: {e}")
-        import traceback
-        traceback.print_exc()
-        print(f"\n{'='*60}")
-        return False
-
-
-def main():
-    """Main function to sync all data to Google Sheets."""
-    print("\n" + "="*60)
-    print("Google Sheets Update Script")
-    print("="*60)
-
-    success = True
-
-    # Get a single client to reuse for all syncs
-    try:
-        print("\nAuthenticating with Google Sheets API...")
-        client = get_gspread_client()
-        print("✓ Authentication successful")
-    except Exception as e:
-        print(f"✗ Authentication failed: {e}")
-        return
-
-    # Sync SOS (ratings) data
-    if SOS_MASTER_CSV.exists():
-        result = sync_csv_to_sheet(
-            csv_path=SOS_MASTER_CSV,
-            sheet_id=SHEET_ID,
-            tab_name=SOS_TAB_NAME,
-            client=client
-        )
-        success = success and result
     else:
-        print(f"\n⚠ Skipping SOS data - file not found: {SOS_MASTER_CSV}")
-
-    # Future: Sync Polls data
-    # Uncomment when ready to sync polls data
-    # if POLLS_MASTER_CSV.exists():
-    #     result = sync_csv_to_sheet(
-    #         csv_path=POLLS_MASTER_CSV,
-    #         sheet_id=SHEET_ID,
-    #         tab_name=POLLS_TAB_NAME,
-    #         client=client
-    #     )
-    #     success = success and result
-    # else:
-    #     print(f"\n⚠ Skipping Polls data - file not found: {POLLS_MASTER_CSV}")
-
-    # Summary
-    print("\n" + "="*60)
-    if success:
-        print("✅ All syncs completed successfully")
-    else:
-        print("❌ Some syncs failed - check logs above")
-    print("="*60 + "\n")
-
-
-if __name__ == "__main__":
-    main()
+        print("   → No new data to sync.")      
