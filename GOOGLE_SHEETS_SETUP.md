@@ -82,7 +82,7 @@ sheets-updater@wbb-data-automation.iam.gserviceaccount.com
 
 ### Step 2: Share the Google Sheet
 
-1. Open your Google Sheet: https://docs.google.com/spreadsheets/d/1DAafyFpNlFRheOABdR4960L1VqP1gH-_0bMOG9BGD6Q/edit
+1. Open your Google Sheet: `https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/edit`
 2. Click the **"Share"** button in the top-right corner
 3. In the "Add people and groups" field, paste the service account email
    - Example: `sheets-updater@wbb-data-automation.iam.gserviceaccount.com`
