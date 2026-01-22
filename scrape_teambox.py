@@ -221,19 +221,31 @@ def append_new_rows(new_df: pd.DataFrame, csv_path: Path, id_column: str = 'game
         return
 
     # Ensure the ID column exists
+   def append_new_rows(csv_path, new_df, id_column='game_id'):
+    """Appends only new rows to a CSV based on a unique ID column."""
+    if new_df.empty:
+        return
+
+    # Ensure the ID column exists
     if id_column not in new_df.columns:
-        # Try alternate column name
-        if 'id' in new_df.columns:
-            id_column = 'id'
+        raise ValueError(f"Critical Error: Unique ID column '{id_column}' not found in data. "
+                         "Cannot guarantee idempotency. Please check the data source schema.")
+
+    if csv_path.exists():
+        existing_df = pd.read_csv(csv_path)
+        # Filter for rows not already in the CSV
+        existing_ids = set(existing_df[id_column].astype(str))
+        new_df = new_df[~new_df[id_column].astype(str).isin(existing_ids)]
+        
+        if not new_df.empty:
+            new_df.to_csv(csv_path, mode='a', header=False, index=False)
+            print(f"  ✓ Appended {len(new_df)} new rows to {csv_path.name}")
         else:
-            print(f"  ⚠ Warning: {id_column} column not found. Appending all rows.")
-            # Just append everything
-            if csv_path.exists():
-                new_df.to_csv(csv_path, mode='a', header=False, index=False)
-            else:
-                new_df.to_csv(csv_path, mode='w', header=True, index=False)
-            print(f"  ✓ Appended {len(new_df)} rows to {csv_path.name}")
-            return
+            print(f"  → No new rows to add to {csv_path.name}")
+    else:
+        csv_path.parent.mkdir(parents=True, exist_ok=True)
+        new_df.to_csv(csv_path, mode='w', header=True, index=False)
+        print(f"  ✓ Created {csv_path.name} with {len(new_df)} rows")
 
     # Get existing IDs
     existing_ids = get_existing_game_ids(csv_path)
