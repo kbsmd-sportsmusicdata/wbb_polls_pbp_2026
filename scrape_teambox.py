@@ -177,9 +177,10 @@ def filter_ranked_games(df: pd.DataFrame, once_ranked_teams: Set[str]) -> pd.Dat
     # Make a copy to avoid modifying the original
     df = df.copy()
 
-    # Convert rank columns to numeric (handle NaN and '99' for unranked)
-    home_rank = pd.to_numeric(df.get('home_current_rank', pd.Series([99] * len(df))), errors='coerce')
-    away_rank = pd.to_numeric(df.get('away_current_rank', pd.Series([99] * len(df))), errors='coerce')
+    # Convert rank columns to numeric (handle NaN and 'UNRANKED_VALUE' for unranked)
+    UNRANKED_VALUE = 99
+    home_rank = pd.to_numeric(df.get('home_current_rank', pd.Series([UNRANKED_VALUE] * len(df))), errors='coerce')
+    away_rank = pd.to_numeric(df.get('away_current_rank', pd.Series([UNRANKED_VALUE] * len(df))), errors='coerce')
 
     # Condition 1: Currently ranked (1-25)
     currently_ranked = (
