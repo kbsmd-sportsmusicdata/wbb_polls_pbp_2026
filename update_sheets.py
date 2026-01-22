@@ -22,7 +22,7 @@ SOS_RATINGS_CSV = DATA_DIR / "sos_data_weekly_run.csv"
 
 # Google Sheets Configuration
 # Ensure these match the Tab names in your Google Sheet
-SHEET_ID = "YOUR_GOOGLE_SHEET_ID_HERE" 
+SHEET_ID = "1DAafyFpNlFRheOABdR4960L1VqP1gH-_0bMOG9BGD6Q" 
 TABS = {
     "wbb_teambox": "wbb_teambox_filtered",
     "sos_ratings": "sos_data_weekly_run"
@@ -110,7 +110,19 @@ def sync_csv_to_sheet(csv_path, sheet_id, tab_name, client):
         print("   → No new data to sync.")
 
 def main():
-    print("Starting Google Sheets Sync...")
+    print("Starting Google Sheets Sync Process...")
+    
+    # Check if credentials exist before attempting to authenticate
+    creds_json = os.environ.get("GCP_SERVICE_ACCOUNT")
+    
+    if not creds_json:
+        print("\n" + "!" * 60)
+        print("NOTICE: GCP_SERVICE_ACCOUNT environment variable not set.")
+        print("The script will complete the data processing steps but skip the Google Sheets sync.")
+        print("!" * 60 + "\n")
+        # Return gracefully instead of raising an error
+        return
+
     try:
         client = get_gspread_client()
         
