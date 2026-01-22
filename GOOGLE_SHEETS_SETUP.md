@@ -16,7 +16,7 @@ The `update_sheets.py` script uses a Google Cloud Service Account to authenticat
 2. Sign in with your Google account
 3. Click on the project dropdown at the top (or "Select a project")
 4. Click **"New Project"**
-5. Enter a project name (e.g., `wbb-data-automation`)
+5. Enter a project name (e.g., `your-project-name`)
 6. Click **"Create"**
 7. Wait for the project to be created, then select it
 
