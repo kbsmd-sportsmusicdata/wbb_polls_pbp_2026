@@ -51,11 +51,11 @@ def download_parquet_data(url: str) -> pd.DataFrame:
     response = requests.get(url, headers=headers, timeout=60)
     response.raise_for_status()
 
+    import tempfile
     # Save to temporary file and read
-    temp_path = Path("temp_teambox.parquet")
-    try:
-        with open(temp_path, "wb") as f:
-            f.write(response.content)
+    with tempfile.NamedTemporaryFile(suffix=".parquet", delete=False) as temp_file:
+        temp_path = Path(temp_file.name)
+        temp_file.write(response.content)
 
         # Read parquet file
         df = pd.read_parquet(temp_path)
