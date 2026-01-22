@@ -140,7 +140,11 @@ def find_new_rows(csv_df: pd.DataFrame, sheet_df: pd.DataFrame) -> pd.DataFrame:
     sheet_str = sheet_df.astype(str)
 
     # Create a composite key from all columns for comparison
-    csv_keys = csv_str.apply(lambda row: '|||'.join(row.values), axis=1)
+    # Create a composite key from all columns for comparison
+    # Using a less common separator to avoid conflicts with cell content
+    separator = "<|>"
+    csv_keys = csv_str.apply(lambda row: separator.join(row.values), axis=1)
+    sheet_keys = sheet_str.apply(lambda row: separator.join(row.values), axis=1)
     sheet_keys = sheet_str.apply(lambda row: '|||'.join(row.values), axis=1)
 
     # Find rows in CSV that are not in Sheet
