@@ -234,7 +234,9 @@ def sync_csv_to_sheet(
             print(f"   ⚠ Tab '{tab_name}' not found - creating new tab")
             worksheet = spreadsheet.add_worksheet(
                 title=tab_name,
-                rows=1000,
+                           worksheet = spreadsheet.add_worksheet(
+                title=tab_name,
+                rows=len(csv_df) + 100, # Initial rows based on CSV size + buffer
                 cols=len(csv_df.columns)
             )
             print(f"   ✓ Created new tab '{tab_name}'")
