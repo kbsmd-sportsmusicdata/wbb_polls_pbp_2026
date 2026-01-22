@@ -24,7 +24,6 @@ from pathlib import Path
 # Configuration
 DATA_DIR = Path("data")
 RAW_DIR = DATA_DIR / "raw"
-# Simplified paths to ensure they appear in your folders
 RAW_CSV = RAW_DIR / "wbb_schedule_raw.csv"
 FILTERED_CSV = DATA_DIR / "wbb_schedule.csv"
 SOS_RATINGS_CSV = DATA_DIR / "sos_data_weekly_run.csv"
@@ -42,14 +41,15 @@ TEAM_NAME_MAP = {
 RAW_DIR.mkdir(parents=True, exist_ok=True)
 
 def clean_and_rename_teams(df, team_cols):
-    """Clean SOS data and apply team name mapping."""
-    # 1. Remove entirely empty columns and rows
+    """Clean data by removing blank rows/cols and applying team name mapping."""
+    # Remove entirely empty columns and rows
     df = df.dropna(axis=1, how='all').dropna(axis=0, how='all')
     
-    # 2. Apply name mapping to specified columns
+    # Apply name mapping to specified columns
     for col in team_cols:
         if col in df.columns:
-            df[col] = df[col].replace(TEAM_NAME_MAP)
+            # First strip whitespace to avoid mapping misses
+            df[col] = df[col].astype(str).str.strip().replace(TEAM_NAME_MAP)
     return df
 
 def download_parquet_data():
@@ -70,29 +70,46 @@ def download_parquet_data():
 
 def main():
     # 1. Handle Schedule Data
-    df = download_parquet_data()
-    
-    # Apply name cleaning to schedule data too
-    df = clean_and_rename_teams(df, ['home_name', 'away_name'])
-    
-    # Save Raw
-    df.to_csv(RAW_CSV, index=False)
-    print(f"✓ Saved raw schedule to {RAW_CSV}")
+    try:
+        df = download_parquet_data()
+        
+        # Apply name cleaning to schedule data
+        df = clean_and_rename_teams(df, ['home_name', 'away_name'])
+        
+        # Save Raw Schedule
+        df.to_csv(RAW_CSV, index=False)
+        print(f"✓ Saved raw schedule to {RAW_CSV}")
 
-    # Save Filtered (Logic: Only games with at least one ranked team)
-    filtered = df[(df['home_rank'] <= 25) | (df['away_rank'] <= 25)].copy()
-    filtered.to_csv(FILTERED_CSV, index=False)
-    print(f"✓ Saved filtered schedule to {FILTERED_CSV}")
+        # FIXED FILTER: Use correct rank column names
+        # We also convert to numeric to ensure comparison works
+        home_rank = pd.to_numeric(df['home_current_rank'], errors='coerce').fillna(99)
+        away_rank = pd.to_numeric(df['away_current_rank'], errors='coerce').fillna(99)
+        
+        filtered = df[(home_rank <= 25) | (away_rank <= 25)].copy()
+        
+        filtered.to_csv(FILTERED_CSV, index=False)
+        print(f"✓ Saved filtered schedule ({len(filtered)} games) to {FILTERED_CSV}")
+
+    except Exception as e:
+        print(f"Error processing schedule: {e}")
 
     # 2. Handle SOS Ratings Data Cleaning
     if SOS_RATINGS_CSV.exists():
         print("Cleaning SOS Ratings data...")
-        sos_df = pd.read_csv(SOS_RATINGS_CSV)
-        # Assuming the team name column in SOS is 'Team' or 'School'
-        team_col = 'team' if 'team' in sos_df.columns else sos_df.columns[0]
-        sos_df = clean_and_rename_teams(sos_df, [team_col])
-        sos_df.to_csv(SOS_RATINGS_CSV, index=False)
-        print(f"✓ Cleaned SOS ratings saved to {SOS_RATINGS_CSV}")
+        try:
+            sos_df = pd.read_csv(SOS_RATINGS_CSV)
+            # Targeting the team name column automatically
+            team_col = 'team' if 'team' in sos_df.columns else sos_df.columns[0]
+            
+            # Perform cleaning and mapping
+            sos_df = clean_and_rename_teams(sos_df, [team_col])
+            
+            sos_df.to_csv(SOS_RATINGS_CSV, index=False)
+            print(f"✓ Cleaned SOS ratings saved to {SOS_RATINGS_CSV}")
+        except Exception as e:
+            print(f"Error cleaning SOS data: {e}")
+    else:
+        print(f"Notice: SOS file not found at {SOS_RATINGS_CSV}")
 
 if __name__ == "__main__":
     main()
