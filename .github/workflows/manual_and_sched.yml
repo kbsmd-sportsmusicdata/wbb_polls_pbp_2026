@@ -1,5 +1,6 @@
 
-name: Scrape Women's Basketball Data (All Sources)
+name: Scrape Women's Basketball Data (SportsRef)
+
 on:
   schedule:
     - cron: '0 17 * * 2,6'  # 9:00 AM PST every Tuesday and Saturday
@@ -8,7 +9,6 @@ on:
 jobs:
   scrape-and-commit:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -23,8 +23,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run SportsRef polls/standings scraper
-        run: python sportsref_scraper.py
+      - name: Run scraping scripts
+        run: |
+          python sportsref_scraper.py
+          python scrape_ratings.py
 
       - name: Run SportsRef ratings scraper
         run: python scrape_ratings.py
@@ -41,6 +43,14 @@ jobs:
         run: |
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
+          
+          # Add the entire data directory to catch new subfolders like 'sos'
           git add data
-          git commit -m "Auto-update scraped WBB data [CI]" || echo "No changes to commit"
-          git push
+          
+          # Check if there are actual changes to commit
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m "Auto-update scraped WBB and SOS ratings data [CI]"
+            git push
+          else
+            echo "No changes to commit"
+          fi
