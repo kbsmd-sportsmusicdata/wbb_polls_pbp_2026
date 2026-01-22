@@ -30,7 +30,7 @@ SOS_MASTER_CSV = DATA_DIR / "sos" / "ratings_master.csv"
 POLLS_MASTER_CSV = DATA_DIR / "polls_long.csv"
 
 # Google Sheet configuration
-SHEET_ID = "1DAafyFpNlFRheOABdR4960L1VqP1gH-_0bMOG9BGD6Q"
+SHEET_ID = os.environ.get("GOOGLE_SHEET_ID", "1DAafyFpNlFRheOABdR4960L1VqP1gH-_0bMOG9BGD6Q") # Replace with your sheet ID or load from env
 SOS_TAB_NAME = "sos_data_weekly_run"
 POLLS_TAB_NAME = "polls_data_weekly_run"  # Future use
 
