@@ -68,7 +68,7 @@ urls = [
 ]
 
 # Create assets directory if it doesn't exist
-assets_dir = Path('/home/user/wbb_polls_pbp_2026/data/assets')
+assets_dir = Path('data/assets')
 assets_dir.mkdir(parents=True, exist_ok=True)
 
 downloaded_schools = []
