@@ -37,6 +37,26 @@ def clean_tables(tables: list[pd.DataFrame]) -> list[pd.DataFrame]:
         cleaned.append(df)
     return cleaned
 
+def standardize_team_names(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Standardize team names to match polls dataset conventions.
+
+    Maps full official names to common abbreviations used in polls data.
+    This ensures consistency across all datasets for analysis and visualization.
+    """
+    TEAM_NAME_MAPPINGS = {
+        'Connecticut': 'UConn',
+        'Louisiana State': 'LSU',
+        'Southern California': 'USC',
+        'Mississippi': 'Ole Miss',
+        'North Carolina': 'UNC',
+    }
+
+    if 'School' in df.columns:
+        df['School'] = df['School'].replace(TEAM_NAME_MAPPINGS)
+
+    return df
+
 def fetch_ratings_table(url: str) -> pd.DataFrame:
     """
     Fetch the ratings table from the specified URL.
@@ -128,6 +148,9 @@ def main() -> None:
 
     try:
         ratings_df = fetch_ratings_table(URL_RATINGS)
+
+        # Standardize team names for consistency with polls data
+        ratings_df = standardize_team_names(ratings_df)
 
         # Add run_date column for tracking
         ratings_df["run_date"] = today_iso
