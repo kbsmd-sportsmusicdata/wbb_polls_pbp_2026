@@ -32,8 +32,14 @@ jobs:
       - name: Run Team Box Score scraper
         run: python scrape_teambox.py
 
+      - name: Run NET rankings scraper
+        run: python scrape_net_rankings.py
+
       - name: Generate analytics table
         run: python generate_analytics_table.py
+
+      - name: Filter schedule to Top 50 teams
+        run: python filter_schedule.py
 
       - name: Update Google Sheets
         env:
