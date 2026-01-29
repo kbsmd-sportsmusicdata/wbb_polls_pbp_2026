@@ -36,6 +36,7 @@ WEEK_ORDER = {
     '1/5': 8,
     '1/12': 9,
     '1/19': 10,
+    '1/26': 11,
     # Add more weeks as season progresses
 }
 
