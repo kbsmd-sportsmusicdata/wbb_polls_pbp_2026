@@ -32,6 +32,9 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 
+# Import centralized team name standardization
+from team_name_utils import TEAM_NAME_MAPPINGS
+
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
@@ -60,14 +63,7 @@ HEADERS = {
     'Referer': 'https://www.ncaa.org/',
 }
 
-# Team name standardization mappings
-TEAM_NAME_MAPPINGS = {
-    'Connecticut': 'UConn',
-    'Louisiana State': 'LSU',
-    'Southern California': 'USC',
-    'Mississippi': 'Ole Miss',
-    'North Carolina': 'UNC',
-}
+# Note: TEAM_NAME_MAPPINGS imported from team_name_utils module at top of file
 
 
 def scrape_net_rankings(retry_count: int = 3) -> Optional[pd.DataFrame]:

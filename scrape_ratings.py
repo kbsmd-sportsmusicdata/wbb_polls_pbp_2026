@@ -7,6 +7,9 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 
+# Import centralized team name standardization
+from team_name_utils import standardize_team_names as apply_team_name_standardization
+
 # Paths / constants
 DATA_DIR = Path("data")
 SOS_DIR = DATA_DIR / "sos"
@@ -41,21 +44,11 @@ def standardize_team_names(df: pd.DataFrame) -> pd.DataFrame:
     """
     Standardize team names to match polls dataset conventions.
 
-    Maps full official names to common abbreviations used in polls data.
+    Uses centralized team name mappings from team_name_utils module.
     This ensures consistency across all datasets for analysis and visualization.
     """
-    TEAM_NAME_MAPPINGS = {
-        'Connecticut': 'UConn',
-        'Louisiana State': 'LSU',
-        'Southern California': 'USC',
-        'Mississippi': 'Ole Miss',
-        'North Carolina': 'UNC',
-    }
-
-    if 'School' in df.columns:
-        df['School'] = df['School'].replace(TEAM_NAME_MAPPINGS)
-
-    return df
+    # Use centralized standardization for School column
+    return apply_team_name_standardization(df, ['School'])
 
 def fetch_ratings_table(url: str) -> pd.DataFrame:
     """

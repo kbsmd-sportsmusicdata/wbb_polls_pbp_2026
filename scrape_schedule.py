@@ -13,43 +13,39 @@ Output files:
 """
 
 import os
-from datetime import date
+from datetime import datetime
 from pathlib import Path
 from typing import Set
 import pandas as pd
 import requests
 import tempfile
-from pathlib import Path
+
+# Import centralized team name standardization
+from team_name_utils import standardize_team_names
 
 # Configuration
 DATA_DIR = Path("data")
 RAW_DIR = DATA_DIR / "raw"
+SOS_DIR = DATA_DIR / "sos"
 RAW_CSV = RAW_DIR / "wbb_schedule_raw.csv"
 FILTERED_CSV = DATA_DIR / "wbb_schedule.csv"
-SOS_RATINGS_CSV = DATA_DIR / "sos_data_weekly_run.csv"
-
-# Updated Name Mapping Dictionary
-TEAM_NAME_MAP = {
-    "Connecticut": "UConn",
-    "Louisiana State": "LSU",
-    "USC": "Southern California",
-    "UNC": "North Carolina",
-    "Brigham Young": "BYU"
-}
 
 # Ensure directories exist
 RAW_DIR.mkdir(parents=True, exist_ok=True)
 
 def clean_and_rename_teams(df, team_cols):
-    """Clean data by removing blank rows/cols and applying team name mapping."""
+    """Clean data by removing blank rows/cols and applying team name standardization."""
     # Remove entirely empty columns and rows
     df = df.dropna(axis=1, how='all').dropna(axis=0, how='all')
-    
-    # Apply name mapping to specified columns
+
+    # Strip whitespace from team columns
     for col in team_cols:
         if col in df.columns:
-            # First strip whitespace to avoid mapping misses
-            df[col] = df[col].astype(str).str.strip().replace(TEAM_NAME_MAP)
+            df[col] = df[col].astype(str).str.strip()
+
+    # Apply centralized team name standardization
+    df = standardize_team_names(df, team_cols)
+
     return df
 
 def download_parquet_data():
@@ -72,9 +68,9 @@ def main():
     # 1. Handle Schedule Data
     try:
         df = download_parquet_data()
-        
-        # Apply name cleaning to schedule data
-        df = clean_and_rename_teams(df, ['home_name', 'away_name'])
+
+        # Apply name standardization to schedule data (location columns contain school names)
+        df = clean_and_rename_teams(df, ['home_location', 'away_location'])
         
         # Save Raw Schedule
         df.to_csv(RAW_CSV, index=False)
@@ -94,22 +90,31 @@ def main():
         print(f"Error processing schedule: {e}")
 
     # 2. Handle SOS Ratings Data Cleaning
-    if SOS_RATINGS_CSV.exists():
-        print("Cleaning SOS Ratings data...")
+    # Look for the most recent ratings file
+    sos_master_csv = SOS_DIR / "ratings_master.csv"
+
+    if sos_master_csv.exists():
+        print("Cleaning SOS Ratings master data...")
         try:
-            sos_df = pd.read_csv(SOS_RATINGS_CSV)
-            # Targeting the team name column automatically
-            team_col = 'team' if 'team' in sos_df.columns else sos_df.columns[0]
-            
-            # Perform cleaning and mapping
-            sos_df = clean_and_rename_teams(sos_df, [team_col])
-            
-            sos_df.to_csv(SOS_RATINGS_CSV, index=False)
-            print(f"✓ Cleaned SOS ratings saved to {SOS_RATINGS_CSV}")
+            sos_df = pd.read_csv(sos_master_csv)
+            # Target the School/team column
+            team_col = None
+            for possible_col in ['School', 'team', 'Team']:
+                if possible_col in sos_df.columns:
+                    team_col = possible_col
+                    break
+
+            if team_col:
+                # Perform cleaning and mapping
+                sos_df = clean_and_rename_teams(sos_df, [team_col])
+                sos_df.to_csv(sos_master_csv, index=False)
+                print(f"✓ Cleaned SOS ratings saved to {sos_master_csv}")
+            else:
+                print(f"Warning: Could not identify team column in SOS data")
         except Exception as e:
             print(f"Error cleaning SOS data: {e}")
     else:
-        print(f"Notice: SOS file not found at {SOS_RATINGS_CSV}")
+        print(f"Notice: SOS file not found at {sos_master_csv}")
 
 if __name__ == "__main__":
     main()
