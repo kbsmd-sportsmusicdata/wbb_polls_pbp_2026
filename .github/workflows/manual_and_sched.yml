@@ -1,5 +1,5 @@
 
-name: Scrape Women's Basketball Data (SportsRef)
+name: Scrape Women's Basketball Data (All Sources)
 
 on:
   schedule:
@@ -23,16 +23,17 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run scraping scripts
-        run: |
-          python sportsref_scraper.py
-          python scrape_ratings.py
+      - name: Run SportsRef polls/standings scraper
+        run: python sportsref_scraper.py
 
       - name: Run SportsRef ratings scraper
         run: python scrape_ratings.py
 
       - name: Run Team Box Score scraper
         run: python scrape_schedule.py
+
+      - name: Generate analytics table
+        run: python generate_analytics_table.py
 
       - name: Update Google Sheets
         env:
@@ -43,13 +44,13 @@ jobs:
         run: |
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
-          
-          # Add the entire data directory to catch new subfolders like 'sos'
+
+          # Add the entire data directory (includes all scraped data and analytics)
           git add data
-          
+
           # Check if there are actual changes to commit
           if [ -n "$(git status --porcelain)" ]; then
-            git commit -m "Auto-update scraped WBB and SOS ratings data [CI]"
+            git commit -m "Auto-update WBB data and analytics [CI]"
             git push
           else
             echo "No changes to commit"
