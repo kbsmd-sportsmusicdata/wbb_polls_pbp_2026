@@ -26,6 +26,7 @@ This makes it trivial to build dashboards showing rank volatility, team trajecto
 | `team` | str | Team name (standardized) | UConn |
 | `conference` | str | Conference abbreviation | Big East |
 | `poll_week` | str | Poll release week | Pre, 11/10, 1/19 |
+| `week_number` | int | Chronological week order (0=Pre, 1+) | 0, 1, 11 |
 | `rank` | float | Actual AP Poll rank (1-25) | 1.0 |
 | `rank_numeric` | int | Rank with 26 for unranked | 1 |
 | `prev_rank_numeric` | int | Previous week's rank_numeric | 3 |
@@ -126,19 +127,19 @@ Seven categories capture all possible week-to-week transitions:
 
 ## Movement Category Distribution
 
-Based on current season data (2,553 rows, 33 teams, 11 weeks):
+Based on current season data (408 rows, 34 teams, 12 weeks):
 
 | Category | Count | Percentage | Meaning |
 |----------|-------|------------|---------|
-| **Stable** | 1,767 | 69.2% | Most teams maintain their rank |
-| **Unranked** | 550 | 21.5% | Teams outside Top 25 |
-| **Rising** | 82 | 3.2% | Upward movements |
-| **Falling** | 81 | 3.2% | Downward movements |
-| **Unknown** | 33 | 1.3% | First poll (no previous data) |
-| **Dropped** | 20 | 0.8% | Fell out of Top 25 |
-| **New** | 20 | 0.8% | Entered Top 25 |
+| **Rising** | 97 | 23.8% | Upward movements |
+| **Stable** | 95 | 23.3% | Teams maintaining their rank |
+| **Unranked** | 85 | 20.8% | Teams outside Top 25 |
+| **Falling** | 69 | 16.9% | Downward movements |
+| **Unknown** | 34 | 8.3% | First poll (no previous data) |
+| **New** | 14 | 3.4% | Entered Top 25 |
+| **Dropped** | 14 | 3.4% | Fell out of Top 25 |
 
-**Key Insight:** ~70% of teams maintain their rank week-to-week, showing relative stability in college basketball rankings.
+**Key Insight:** Rankings show substantial week-to-week movement, with ~24% of teams rising and ~17% falling each week, while ~23% maintain their rank. This reflects the competitive nature of college basketball rankings.
 
 ---
 

@@ -50,37 +50,21 @@ def assign_week_number(poll_week: str) -> int:
 
     Returns:
         int: Week number (0 for Pre, 1-N for subsequent weeks)
+
+    Raises:
+        ValueError: If poll_week is not found in WEEK_ORDER dictionary
     """
     if poll_week in WEEK_ORDER:
         return WEEK_ORDER[poll_week]
 
-    # If week not in dictionary, try to infer position
-    # This handles new weeks added during the season
-    try:
-        # Parse as date (M/D format)
-        month, day = poll_week.split('/')
-        month_num = int(month)
-        day_num = int(day)
-
-        # Weeks in November
-        if month_num == 11:
-            return max([v for k, v in WEEK_ORDER.items() if k.startswith('11/')], default=0) + 1
-        # Weeks in December
-        elif month_num == 12:
-            return max([v for k, v in WEEK_ORDER.items() if k.startswith('12/')], default=0) + 1
-        # Weeks in January
-        elif month_num == 1:
-            return max([v for k, v in WEEK_ORDER.items() if k.startswith('1/')], default=0) + 1
-        # Weeks in February
-        elif month_num == 2:
-            return max([v for k, v in WEEK_ORDER.items() if k.startswith('2/')], default=0) + 1
-        # Weeks in March
-        elif month_num == 3:
-            return max([v for k, v in WEEK_ORDER.items() if k.startswith('3/')], default=0) + 1
-        else:
-            return 99  # Unknown
-    except:
-        return 99  # Couldn't parse
+    # Poll week not found - this is an error that needs to be fixed
+    # The fallback logic was buggy and could assign incorrect week numbers.
+    # It's safer to require all poll weeks to be explicitly defined.
+    raise ValueError(
+        f"Poll week '{poll_week}' not found in WEEK_ORDER. "
+        f"Please update the WEEK_ORDER dictionary in {__file__} to ensure correct chronological sorting. "
+        f"Current defined weeks: {list(WEEK_ORDER.keys())}"
+    )
 
 
 def calculate_movement_category(current_rank: float, prev_rank: float, rank_change: float) -> str:
