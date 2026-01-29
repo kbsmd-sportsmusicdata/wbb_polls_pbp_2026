@@ -30,7 +30,7 @@ jobs:
         run: python scrape_ratings.py
 
       - name: Run Team Box Score scraper
-        run: python scrape_teambox.py
+        run: python scrape_schedule.py
 
       - name: Generate analytics table
         run: python generate_analytics_table.py
