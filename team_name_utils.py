@@ -76,7 +76,7 @@ def load_team_name_mappings() -> Dict[str, str]:
                 standardized = str(row['standardized_team_name']).strip()
                 possible = str(row['possible_team_name']).strip()
                 # Map possible name (variant) -> standardized name (canonical)
-                if possible and standardized and possible != '':
+                if possible and standardized
                     # Don't create reverse mappings (standardized -> something else)
                     if standardized not in mappings:  # Don't overwrite if standardized name is already a source
                         canonical_names.add(standardized)
