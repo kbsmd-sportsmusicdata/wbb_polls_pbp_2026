@@ -5,15 +5,25 @@ Scrapes NCAA NET Rankings for Women's Basketball.
 This script scrapes the NCAA's NET rankings page to get Top 50 team rankings,
 which are used for filtering schedule data to relevant matchups.
 
+MANUAL WORKAROUND:
+    If scraping fails due to bot protection (403 errors), you can manually export:
+    1. Visit: https://stats.ncaa.org/selection_rankings/nitty_gritties/48409
+    2. Click the "Excel" button to download CSV
+    3. Save as: data/net_rankings/net_rankings_manual_YYYYMMDD.csv
+    4. Run: python scrape_net_rankings.py --manual data/net_rankings/net_rankings_manual_YYYYMMDD.csv
+
 Output:
     - data/net_rankings/net_rankings_YYYYMMDD.csv (daily snapshot)
     - data/net_rankings/net_rankings_master.csv (cumulative history)
 
 Usage:
-    python scrape_net_rankings.py
+    python scrape_net_rankings.py                  # Auto-scrape
+    python scrape_net_rankings.py --manual FILE    # Process manual export
 """
 
 import logging
+import sys
+import time
 from datetime import datetime
 from pathlib import Path
 from typing import Optional
@@ -32,82 +42,147 @@ logger = logging.getLogger(__name__)
 # Constants
 BASE_URL = "https://stats.ncaa.org/selection_rankings/nitty_gritties/48409"
 DATA_DIR = Path("data/net_rankings")
+TABLE_ID = "selection_rankings_nitty_gritty_data_table"  # From browser inspection
+
+# Enhanced headers to avoid bot detection
 HEADERS = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-    'Accept-Language': 'en-US,en;q=0.5',
-    'Accept-Encoding': 'gzip, deflate',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+    'Accept-Language': 'en-US,en;q=0.9',
+    'Accept-Encoding': 'gzip, deflate, br',
+    'DNT': '1',
     'Connection': 'keep-alive',
+    'Upgrade-Insecure-Requests': '1',
+    'Sec-Fetch-Dest': 'document',
+    'Sec-Fetch-Mode': 'navigate',
+    'Sec-Fetch-Site': 'none',
+    'Cache-Control': 'max-age=0',
+    'Referer': 'https://www.ncaa.org/',
 }
 
 
-def scrape_net_rankings() -> Optional[pd.DataFrame]:
+def scrape_net_rankings(retry_count: int = 3) -> Optional[pd.DataFrame]:
     """
-    Scrapes NET rankings from NCAA stats page.
+    Scrapes NET rankings from NCAA stats page with retry logic.
+
+    Args:
+        retry_count: Number of retries on failure
 
     Returns:
-        DataFrame with columns: net_rank, team, conference, record, or None if scraping fails
+        DataFrame with columns: net_rank, team, conference, or None if scraping fails
     """
-    try:
-        logger.info(f"Fetching NET rankings from {BASE_URL}")
+    for attempt in range(retry_count):
+        try:
+            if attempt > 0:
+                delay = 2 ** attempt  # Exponential backoff: 2s, 4s, 8s
+                logger.info(f"Retry attempt {attempt + 1}/{retry_count} after {delay}s delay...")
+                time.sleep(delay)
 
-        # Create session for better handling of cookies/redirects
-        session = requests.Session()
-        response = session.get(BASE_URL, headers=HEADERS, timeout=30)
-        response.raise_for_status()
+            logger.info(f"Fetching NET rankings from {BASE_URL}")
 
-        logger.info(f"Successfully fetched page (status code: {response.status_code})")
+            # Create session with cookies
+            session = requests.Session()
 
-        # Parse HTML
-        soup = BeautifulSoup(response.content, 'html.parser')
+            # Make request
+            response = session.get(BASE_URL, headers=HEADERS, timeout=30, allow_redirects=True)
 
-        # Find the rankings table
-        # NCAA typically uses tables with specific classes or IDs
-        # Common patterns: class="mytable", id="rankings_table", or just the first large table
-        table = soup.find('table')
+            # Check for bot protection
+            if response.status_code == 403:
+                logger.warning(f"Received 403 Forbidden (bot protection detected)")
+                if attempt < retry_count - 1:
+                    continue
+                else:
+                    logger.error("All retry attempts exhausted. See manual workaround in script header.")
+                    return None
 
-        if not table:
-            logger.error("Could not find rankings table on page")
-            logger.debug(f"Page content preview: {soup.get_text()[:500]}")
+            response.raise_for_status()
+            logger.info(f"Successfully fetched page (status code: {response.status_code})")
+
+            # Parse HTML
+            soup = BeautifulSoup(response.content, 'html.parser')
+
+            # Find the specific rankings table by ID (from browser inspection)
+            table = soup.find('table', {'id': TABLE_ID})
+
+            if not table:
+                # Fallback: find any table with "dataTable" class
+                table = soup.find('table', class_='dataTable')
+
+            if not table:
+                # Last resort: find first table
+                table = soup.find('table')
+
+            if not table:
+                logger.error("Could not find rankings table on page")
+                logger.debug(f"Page content preview: {soup.get_text()[:500]}")
+                if attempt < retry_count - 1:
+                    continue
+                return None
+
+            # Try to extract table data using pandas (most robust)
+            try:
+                tables = pd.read_html(str(table))
+                if not tables:
+                    logger.error("pandas.read_html found no tables")
+                    if attempt < retry_count - 1:
+                        continue
+                    return None
+
+                df = tables[0]
+                logger.info(f"Successfully parsed table with shape: {df.shape}")
+                logger.debug(f"Columns: {df.columns.tolist()}")
+
+            except Exception as e:
+                logger.error(f"Failed to parse table with pandas: {e}")
+                if attempt < retry_count - 1:
+                    continue
+                return None
+
+            # Standardize column names
+            df = standardize_columns(df)
+
+            # Add metadata
+            df['run_date'] = datetime.now().strftime('%Y-%m-%d')
+
+            return df
+
+        except requests.RequestException as e:
+            logger.error(f"Network error fetching NET rankings: {e}")
+            if attempt < retry_count - 1:
+                continue
+            return None
+        except Exception as e:
+            logger.error(f"Unexpected error scraping NET rankings: {e}", exc_info=True)
+            if attempt < retry_count - 1:
+                continue
             return None
 
-        # Try to extract table data
-        # Method 1: Use pandas read_html (most robust)
-        try:
-            tables = pd.read_html(str(table))
-            if not tables:
-                logger.error("pandas.read_html found no tables")
-                return None
+    logger.error("Failed to scrape NET rankings after all retries")
+    return None
 
-            df = tables[0]
-            logger.info(f"Successfully parsed table with shape: {df.shape}")
-            logger.debug(f"Columns: {df.columns.tolist()}")
 
-        except Exception as e:
-            logger.error(f"Failed to parse table with pandas: {e}")
-            logger.info("Attempting manual parsing...")
+def load_manual_export(csv_path: Path) -> Optional[pd.DataFrame]:
+    """
+    Loads NET rankings from a manually exported CSV file.
 
-            # Method 2: Manual parsing as fallback
-            rows = []
-            for tr in table.find_all('tr')[1:]:  # Skip header
-                cells = tr.find_all(['td', 'th'])
-                if cells:
-                    row_data = [cell.get_text(strip=True) for cell in cells]
-                    rows.append(row_data)
+    Args:
+        csv_path: Path to manually exported CSV from NCAA site
 
-            if not rows:
-                logger.error("Manual parsing found no data rows")
-                return None
+    Returns:
+        DataFrame with standardized columns
+    """
+    try:
+        logger.info(f"Loading manual export from {csv_path}")
 
-            # Get headers
-            header_row = table.find('tr')
-            headers = [th.get_text(strip=True) for th in header_row.find_all(['th', 'td'])]
+        if not csv_path.exists():
+            logger.error(f"File not found: {csv_path}")
+            return None
 
-            df = pd.DataFrame(rows, columns=headers if headers else None)
-            logger.info(f"Manual parsing successful, shape: {df.shape}")
+        # Read CSV
+        df = pd.read_csv(csv_path)
+        logger.info(f"Loaded {len(df)} rows from manual export")
 
         # Standardize column names
-        # Common NCAA column names: "Rank", "Team", "Conference", "Record", "W-L"
         df = standardize_columns(df)
 
         # Add metadata
@@ -115,11 +190,8 @@ def scrape_net_rankings() -> Optional[pd.DataFrame]:
 
         return df
 
-    except requests.RequestException as e:
-        logger.error(f"Network error fetching NET rankings: {e}")
-        return None
     except Exception as e:
-        logger.error(f"Unexpected error scraping NET rankings: {e}", exc_info=True)
+        logger.error(f"Error loading manual export: {e}")
         return None
 
 
@@ -238,18 +310,35 @@ def save_data(df: pd.DataFrame) -> bool:
         return False
 
 
-def main():
-    """Main execution function."""
+def main(manual_file: Optional[str] = None):
+    """
+    Main execution function.
+
+    Args:
+        manual_file: Optional path to manually exported CSV file
+    """
     logger.info("Starting NET rankings scraper")
 
-    # Scrape data
-    df = scrape_net_rankings()
+    # Load data (either scrape or from manual file)
+    if manual_file:
+        logger.info(f"Using manual export mode with file: {manual_file}")
+        df = load_manual_export(Path(manual_file))
+    else:
+        logger.info("Using auto-scrape mode")
+        df = scrape_net_rankings()
 
     if df is None or df.empty:
-        logger.error("Failed to scrape NET rankings data")
+        logger.error("Failed to obtain NET rankings data")
+        logger.info("\n" + "="*60)
+        logger.info("MANUAL WORKAROUND:")
+        logger.info("1. Visit: https://stats.ncaa.org/selection_rankings/nitty_gritties/48409")
+        logger.info("2. Click the 'Excel' button to download CSV")
+        logger.info("3. Save as: data/net_rankings/net_rankings_manual_YYYYMMDD.csv")
+        logger.info("4. Run: python scrape_net_rankings.py --manual <path-to-csv>")
+        logger.info("="*60 + "\n")
         return False
 
-    logger.info(f"Successfully scraped {len(df)} teams")
+    logger.info(f"Successfully obtained {len(df)} teams")
 
     # Standardize team names
     df = standardize_team_names(df)
@@ -261,7 +350,9 @@ def main():
         # Display top 10 for verification
         if 'net_rank' in df.columns and 'team' in df.columns:
             logger.info("\nTop 10 NET Rankings:")
-            top10 = df.nsmallest(10, 'net_rank')[['net_rank', 'team']]
+            # Convert to numeric for sorting
+            df['net_rank_numeric'] = pd.to_numeric(df['net_rank'], errors='coerce')
+            top10 = df.nsmallest(10, 'net_rank_numeric')[['net_rank', 'team']]
             for _, row in top10.iterrows():
                 logger.info(f"  {row['net_rank']}. {row['team']}")
 
@@ -272,6 +363,12 @@ def main():
 
 
 if __name__ == "__main__":
-    import sys
-    success = main()
+    import argparse
+
+    parser = argparse.ArgumentParser(description='Scrape NCAA NET Rankings')
+    parser.add_argument('--manual', type=str, help='Path to manually exported CSV file')
+
+    args = parser.parse_args()
+
+    success = main(manual_file=args.manual)
     sys.exit(0 if success else 1)

@@ -33,7 +33,8 @@ jobs:
         run: python scrape_schedule.py
 
       - name: Run NET rankings scraper
-        run: python scrape_net_rankings.py
+        run: python scrape_net_rankings.py || echo "NET rankings scraper failed (may require manual export)"
+        continue-on-error: true
 
       - name: Generate analytics table
         run: python generate_analytics_table.py
