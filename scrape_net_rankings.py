@@ -33,7 +33,7 @@ import requests
 from bs4 import BeautifulSoup
 
 # Import centralized team name standardization
-from team_name_utils import TEAM_NAME_MAPPINGS
+from team_name_utils import standardize_team_names as apply_team_name_standardization
 
 # Configure logging
 logging.basicConfig(
@@ -62,8 +62,6 @@ HEADERS = {
     'Cache-Control': 'max-age=0',
     'Referer': 'https://www.ncaa.org/',
 }
-
-# Note: TEAM_NAME_MAPPINGS imported from team_name_utils module at top of file
 
 
 def scrape_net_rankings(retry_count: int = 3) -> Optional[pd.DataFrame]:
@@ -239,22 +237,6 @@ def standardize_columns(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-def standardize_team_names(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Standardize team names to match polls dataset conventions.
-
-    Args:
-        df: DataFrame with 'team' column
-
-    Returns:
-        DataFrame with standardized team names
-    """
-    if 'team' in df.columns:
-        df['team'] = df['team'].replace(TEAM_NAME_MAPPINGS)
-
-    return df
-
-
 def save_data(df: pd.DataFrame) -> bool:
     """
     Saves NET rankings data to both snapshot and master files.
@@ -337,8 +319,8 @@ def main(manual_file: Optional[str] = None):
 
     logger.info(f"Successfully obtained {len(df)} teams")
 
-    # Standardize team names
-    df = standardize_team_names(df)
+    # Standardize team names using centralized function
+    df = apply_team_name_standardization(df, ['team'])
 
     # Save data
     if save_data(df):
