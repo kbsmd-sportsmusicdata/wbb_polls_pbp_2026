@@ -30,7 +30,7 @@ jobs:
         run: python scrape_ratings.py
 
       - name: Run Team Box Score scraper
-        run: python scrape_teambox.py
+        run: python scrape_schedule.py
 
       - name: Run NET rankings scraper
         run: python scrape_net_rankings.py
