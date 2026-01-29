@@ -2,6 +2,8 @@
 Generate enhanced analytics table for AP Poll data with rank changes and movement.
 
 This script transforms the polls_long.csv data into a Tableau-ready analytics table with:
+- Deduplication (keeps latest run_date per team/week)
+- Proper chronological sorting via week_number field
 - Current rank
 - Previous week rank
 - Rank change (week-over-week)
@@ -13,12 +15,71 @@ Output: data/polls_analytics.csv
 """
 import pandas as pd
 from pathlib import Path
-from datetime import date
+from datetime import date, datetime
 
 # Paths
 DATA_DIR = Path("data")
 POLLS_LONG = DATA_DIR / "polls_long.csv"
 POLLS_ANALYTICS = DATA_DIR / "polls_analytics.csv"
+
+# Define chronological order of poll weeks for 2025-26 season
+# This is crucial for proper rank_change calculations
+WEEK_ORDER = {
+    'Pre': 0,      # Preseason
+    '11/10': 1,
+    '11/17': 2,
+    '11/24': 3,
+    '12/1': 4,
+    '12/8': 5,
+    '12/15': 6,
+    '12/22': 7,
+    '1/5': 8,
+    '1/12': 9,
+    '1/19': 10,
+    # Add more weeks as season progresses
+}
+
+
+def assign_week_number(poll_week: str) -> int:
+    """
+    Assign a numeric week number for chronological sorting.
+
+    Args:
+        poll_week: Poll week string (e.g., 'Pre', '11/10', '1/19')
+
+    Returns:
+        int: Week number (0 for Pre, 1-N for subsequent weeks)
+    """
+    if poll_week in WEEK_ORDER:
+        return WEEK_ORDER[poll_week]
+
+    # If week not in dictionary, try to infer position
+    # This handles new weeks added during the season
+    try:
+        # Parse as date (M/D format)
+        month, day = poll_week.split('/')
+        month_num = int(month)
+        day_num = int(day)
+
+        # Weeks in November
+        if month_num == 11:
+            return max([v for k, v in WEEK_ORDER.items() if k.startswith('11/')], default=0) + 1
+        # Weeks in December
+        elif month_num == 12:
+            return max([v for k, v in WEEK_ORDER.items() if k.startswith('12/')], default=0) + 1
+        # Weeks in January
+        elif month_num == 1:
+            return max([v for k, v in WEEK_ORDER.items() if k.startswith('1/')], default=0) + 1
+        # Weeks in February
+        elif month_num == 2:
+            return max([v for k, v in WEEK_ORDER.items() if k.startswith('2/')], default=0) + 1
+        # Weeks in March
+        elif month_num == 3:
+            return max([v for k, v in WEEK_ORDER.items() if k.startswith('3/')], default=0) + 1
+        else:
+            return 99  # Unknown
+    except:
+        return 99  # Couldn't parse
 
 
 def calculate_movement_category(current_rank: float, prev_rank: float, rank_change: float) -> str:
@@ -86,23 +147,48 @@ def generate_analytics_table(polls_long_path: Path) -> pd.DataFrame:
 
     # Read data
     df = pd.read_csv(polls_long_path)
-    print(f"  ✓ Loaded {len(df)} rows")
+    print(f"  ✓ Loaded {len(df)} rows (may contain duplicates)")
 
-    # Sort by team and poll_week for proper sequencing
-    df = df.sort_values(['team', 'poll_week']).reset_index(drop=True)
+    # Step 1: Deduplicate - keep only latest run_date per team/poll_week
+    print("\nStep 1: Deduplicating data...")
+    print(f"  Original rows: {len(df)}")
 
-    print("\nCalculating analytics metrics...")
+    # Sort by run_date to ensure we keep the latest
+    df = df.sort_values('run_date')
+
+    # Keep only the last occurrence of each team/poll_week combination
+    df_dedup = df.groupby(['team', 'poll_week'], as_index=False).last()
+
+    print(f"  After deduplication: {len(df_dedup)} rows")
+    print(f"  Removed {len(df) - len(df_dedup)} duplicate rows")
+
+    # Step 2: Add week_number for proper chronological sorting
+    print("\nStep 2: Creating week_number field for chronological sorting...")
+    df_dedup['week_number'] = df_dedup['poll_week'].apply(assign_week_number)
+
+    # Verify week numbers assigned
+    week_mapping = df_dedup[['poll_week', 'week_number']].drop_duplicates().sort_values('week_number')
+    print("  Week number mapping:")
+    for _, row in week_mapping.iterrows():
+        print(f"    {row['poll_week']:10} → Week {row['week_number']}")
+
+    # Step 3: Sort by team and week_number (CRITICAL for correct calculations)
+    print("\nStep 3: Sorting by team and week_number (chronological order)...")
+    df_sorted = df_dedup.sort_values(['team', 'week_number']).reset_index(drop=True)
+    print(f"  ✓ Sorted {len(df_sorted)} rows")
+
+    print("\nStep 4: Calculating analytics metrics...")
 
     # Calculate previous week's rank using shift within each team
-    df['prev_rank_numeric'] = df.groupby('team')['rank_numeric'].shift(1)
+    df_sorted['prev_rank_numeric'] = df_sorted.groupby('team')['rank_numeric'].shift(1)
 
     # Calculate rank change (positive = improvement, so prev - current)
     # Example: Rank 10 -> 5 = change of +5 (improved)
     # Example: Rank 5 -> 10 = change of -5 (worsened)
-    df['rank_change'] = df['prev_rank_numeric'] - df['rank_numeric']
+    df_sorted['rank_change'] = df_sorted['prev_rank_numeric'] - df_sorted['rank_numeric']
 
     # Calculate movement category
-    df['movement_category'] = df.apply(
+    df_sorted['movement_category'] = df_sorted.apply(
         lambda row: calculate_movement_category(
             row['rank_numeric'],
             row['prev_rank_numeric'],
@@ -112,19 +198,19 @@ def generate_analytics_table(polls_long_path: Path) -> pd.DataFrame:
     )
 
     # Calculate cumulative weeks in Top 25 for each team
-    df['is_ranked'] = (df['rank_numeric'] <= 25).astype(int)
-    df['weeks_in_top25'] = df.groupby('team')['is_ranked'].cumsum()
+    df_sorted['is_ranked'] = (df_sorted['rank_numeric'] <= 25).astype(int)
+    df_sorted['weeks_in_top25'] = df_sorted.groupby('team')['is_ranked'].cumsum()
 
     # Calculate consecutive weeks ranked (resets when unranked)
-    df['ranked_streak'] = df.groupby('team')['is_ranked'].apply(
+    df_sorted['ranked_streak'] = df_sorted.groupby('team')['is_ranked'].apply(
         lambda x: x.groupby((x != x.shift()).cumsum()).cumsum()
     ).reset_index(level=0, drop=True)
 
     # For unranked teams, set streak to 0
-    df.loc[df['rank_numeric'] == 26, 'ranked_streak'] = 0
+    df_sorted.loc[df_sorted['rank_numeric'] == 26, 'ranked_streak'] = 0
 
-    # Add season field (could be extracted from run_date or set manually)
-    df['season'] = 2026  # Current season
+    # Add season field
+    df_sorted['season'] = 2026
 
     # Reorder columns for clarity
     columns_order = [
@@ -132,6 +218,7 @@ def generate_analytics_table(polls_long_path: Path) -> pd.DataFrame:
         'team',
         'conference',
         'poll_week',
+        'week_number',
         'rank',
         'rank_numeric',
         'prev_rank_numeric',
@@ -144,21 +231,21 @@ def generate_analytics_table(polls_long_path: Path) -> pd.DataFrame:
     ]
 
     # Only include columns that exist
-    columns_order = [col for col in columns_order if col in df.columns]
-    df = df[columns_order]
+    columns_order = [col for col in columns_order if col in df_sorted.columns]
+    df_final = df_sorted[columns_order]
 
-    print(f"  ✓ Calculated rank changes for {df['team'].nunique()} teams")
-    print(f"  ✓ Identified {len(df[df['movement_category'] == 'New'])} 'New' entries")
-    print(f"  ✓ Identified {len(df[df['movement_category'] == 'Rising'])} 'Rising' movements")
-    print(f"  ✓ Identified {len(df[df['movement_category'] == 'Falling'])} 'Falling' movements")
+    print(f"  ✓ Calculated metrics for {df_final['team'].nunique()} teams")
+    print(f"  ✓ Identified {len(df_final[df_final['movement_category'] == 'New'])} 'New' entries")
+    print(f"  ✓ Identified {len(df_final[df_final['movement_category'] == 'Rising'])} 'Rising' movements")
+    print(f"  ✓ Identified {len(df_final[df_final['movement_category'] == 'Falling'])} 'Falling' movements")
 
-    return df
+    return df_final
 
 
 def main():
     """Main function to generate analytics table."""
     print("=" * 70)
-    print("AP Poll Analytics Table Generator")
+    print("AP Poll Analytics Table Generator (v2.0 - Deduplicated)")
     print("=" * 70)
     print(f"Process Date: {date.today().strftime('%Y-%m-%d')}")
     print("=" * 70)
@@ -194,23 +281,29 @@ def main():
             print(f"  {team:20} {weeks} weeks")
 
         print("\nLongest Current Ranked Streaks:")
-        latest_week = analytics_df['poll_week'].max()
+        latest_week_num = analytics_df['week_number'].max()
         current_streaks = analytics_df[
-            analytics_df['poll_week'] == latest_week
+            analytics_df['week_number'] == latest_week_num
         ].nlargest(5, 'ranked_streak')[['team', 'ranked_streak']]
         for _, row in current_streaks.iterrows():
             print(f"  {row['team']:20} {row['ranked_streak']} consecutive weeks")
 
-        # Display sample data
+        # Display sample data - show chronological progression for one team
         print("\n" + "=" * 70)
-        print("Sample Data (First 20 rows)")
+        print("Sample Data: UConn's Season Progression (Chronological)")
         print("=" * 70)
-        print(analytics_df.head(20).to_string(index=False))
+        uconn_data = analytics_df[analytics_df['team'] == 'UConn'].sort_values('week_number')
+        print(uconn_data[['poll_week', 'week_number', 'rank', 'prev_rank_numeric', 'rank_change', 'movement_category', 'weeks_in_top25']].to_string(index=False))
 
         print("\n" + "=" * 70)
         print("✅ Analytics Table Generation Complete!")
         print("=" * 70)
         print(f"Output: {POLLS_ANALYTICS}")
+        print("\nKey Improvements in v2.0:")
+        print("  ✓ Deduplicated data (removed duplicate run_dates)")
+        print("  ✓ Proper chronological sorting via week_number")
+        print("  ✓ Accurate rank_change calculations")
+        print("  ✓ Correct cumulative metrics")
         print("\nThis table is ready for:")
         print("  • Tableau Public dashboards")
         print("  • Excel pivot tables")
