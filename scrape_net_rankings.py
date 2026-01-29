@@ -60,6 +60,15 @@ HEADERS = {
     'Referer': 'https://www.ncaa.org/',
 }
 
+# Team name standardization mappings
+TEAM_NAME_MAPPINGS = {
+    'Connecticut': 'UConn',
+    'Louisiana State': 'LSU',
+    'Southern California': 'USC',
+    'Mississippi': 'Ole Miss',
+    'North Carolina': 'UNC',
+}
+
 
 def scrape_net_rankings(retry_count: int = 3) -> Optional[pd.DataFrame]:
     """
@@ -244,14 +253,6 @@ def standardize_team_names(df: pd.DataFrame) -> pd.DataFrame:
     Returns:
         DataFrame with standardized team names
     """
-    TEAM_NAME_MAPPINGS = {
-        'Connecticut': 'UConn',
-        'Louisiana State': 'LSU',
-        'Southern California': 'USC',
-        'Mississippi': 'Ole Miss',
-        'North Carolina': 'UNC',
-    }
-
     if 'team' in df.columns:
         df['team'] = df['team'].replace(TEAM_NAME_MAPPINGS)
 

@@ -104,19 +104,21 @@ def get_top_50_teams() -> Set[str]:
 
 def parse_records(records_str: str) -> tuple[str, str]:
     """
-    Parses the records JSON string to extract overall and conference records.
+    Parses the records string to extract overall and conference records.
 
     Args:
-        records_str: JSON string like "[{'name': 'overall', 'summary': '15-3'}, ...]"
+        records_str: String representation like "[{'name': 'overall', 'summary': '15-3'}, ...]"
 
     Returns:
         Tuple of (overall_record, conf_record)
     """
+    import ast
+
     try:
-        if pd.isna(records_str) or records_str == '':
+        if pd.isna(records_str) or not records_str:
             return '', ''
 
-        records = json.loads(records_str.replace("'", '"'))
+        records = ast.literal_eval(records_str)
 
         overall = ''
         conf = ''
@@ -129,7 +131,7 @@ def parse_records(records_str: str) -> tuple[str, str]:
 
         return overall, conf
 
-    except Exception as e:
+    except (ValueError, SyntaxError) as e:
         logger.debug(f"Could not parse records: {records_str[:100]} - {e}")
         return '', ''
 
@@ -217,28 +219,27 @@ def filter_schedule(top_teams: Set[str]) -> pd.DataFrame:
     # Combine both perspectives
     combined_df = pd.concat([home_df, away_df], ignore_index=True)
 
-    # Select and order columns as requested by user
-    selected_columns = [
+    # Rename conference_competition to is_conf_game for clarity
+    combined_df = combined_df.rename(columns={'conference_competition': 'is_conf_game'})
+
+    # Define the final columns for the output
+    final_columns = [
         'id', 'date', 'Team', 'Opponent', 'Location', 'Game Result',
         'Team Score', 'Opponent Score', 'Team Logo', 'Opponent Logo',
         'Team Rank', 'Opponent Rank', 'Team Conf ID', 'Opponent Conf ID',
-        'Overall Record', 'Conf Record', 'conference_competition',
+        'Overall Record', 'Conf Record', 'is_conf_game',
         'type_id', 'notes_headline', 'status_type_name',
         'home_conference_id', 'home_winner', 'home_current_rank', 'home_records',
         'away_conference_id', 'away_winner', 'away_current_rank', 'away_records',
         'groups_id', 'groups_short_name'
     ]
 
-    # Rename conference_competition to is_conf_game for clarity
-    combined_df = combined_df.rename(columns={'conference_competition': 'is_conf_game'})
-
-    # Ensure all requested columns exist (fill missing with NaN)
-    for col in selected_columns:
-        if col not in combined_df.columns and col != 'conference_competition':
+    # Ensure all requested columns exist (fill missing with None)
+    for col in final_columns:
+        if col not in combined_df.columns:
             combined_df[col] = None
 
-    # Select final columns
-    final_columns = [col if col != 'conference_competition' else 'is_conf_game' for col in selected_columns]
+    # Select final columns in the specified order
     result_df = combined_df[final_columns].copy()
 
     # Filter to only rows where Team is in Top 50 (we want their perspective)
