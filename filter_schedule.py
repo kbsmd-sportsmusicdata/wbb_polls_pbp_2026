@@ -20,6 +20,7 @@ import logging
 from pathlib import Path
 from typing import Set
 
+import ast
 import pandas as pd
 
 # Configure logging
@@ -112,7 +113,6 @@ def parse_records(records_str: str) -> tuple[str, str]:
     Returns:
         Tuple of (overall_record, conf_record)
     """
-    import ast
 
     try:
         if pd.isna(records_str) or not records_str:
