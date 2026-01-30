@@ -50,7 +50,7 @@ def clean_and_rename_teams(df, team_cols):
 
 def download_parquet_data():
     """Download the 2026 WBB Schedule Parquet file."""
-    url = "https://github.com/sportsdataverse/wehoop-wbb-data/raw/b40b39b7477f0d66b458e38fa409d135e58c8354/wbb/schedules/parquet/wbb_schedule_2026.parquet"
+    url = "https://github.com/sportsdataverse/wehoop-wbb-raw/blob/60b2c470a3a612bc7a7cf8b189fec05a66f60e11/wbb/schedules/parquet/wbb_schedule_2026.parquet"
     print(f"Downloading data from: {url}")
     
     response = requests.get(url, timeout=60)
