@@ -44,57 +44,52 @@ def load_team_name_mappings() -> Dict[str, str]:
     try:
         df = pd.read_csv(STANDARDIZATION_FILE)
         mappings = {}
-        canonical_names = set()  # Track standardized names to avoid reverse mappings
+        used_names = set()  # Track all names we've used (as source OR target)
 
         # Process rows with source_name -> canonical_name format
         if 'source_name' in df.columns and 'canonical_name' in df.columns:
-            # Filter out rows where source_name looks like a header
+            # Filter out rows where source_name looks like a header or is the embedded header row
             valid_rows = df[
                 (df['source_name'].notna()) &
                 (df['canonical_name'].notna()) &
-                (df['source_name'] != 'standardized_team_name')  # Skip header rows
+                (df['source_name'] != 'standardized_team_name') &  # Skip embedded header row
+                (df['canonical_name'] != 'possible_team_name')     # Skip embedded header row
             ]
 
             for _, row in valid_rows.iterrows():
                 source = str(row['source_name']).strip()
                 canonical = str(row['canonical_name']).strip()
-                if source and canonical:
-                    mappings[source] = canonical
-                    canonical_names.add(canonical)  # Track canonical names
 
-        # Process rows with standardized_team_name,possible_team_name format
-        if 'standardized_team_name' in df.columns and 'possible_team_name' in df.columns:
-            # Column order: standardized_team_name, possible_team_name
-            # Mapping direction: possible_team_name -> standardized_team_name
-            valid_rows = df[
-                (df['standardized_team_name'].notna()) &
-                (df['possible_team_name'].notna()) &
-                (df['standardized_team_name'] != 'source_name')  # Skip header rows
-            ]
+                if source and canonical and source != canonical:
+                    # Skip if either name has already been used (prevents duplicate/reverse mappings)
+                    if source in used_names or canonical in used_names:
+                        logger.debug(f"Skipping duplicate mapping: '{source}' → '{canonical}'")
+                        continue
 
-            for _, row in valid_rows.iterrows():
-                standardized = str(row['standardized_team_name']).strip()
-                possible = str(row['possible_team_name']).strip()
-                # Map possible name (variant) -> standardized name (canonical)
-                if possible and standardized
-                    # Don't create reverse mappings (standardized -> something else)
-                    if standardized not in mappings:  # Don't overwrite if standardized name is already a source
-                        canonical_names.add(standardized)
-                    mappings[possible] = standardized
+                    # Determine if we need to swap the direction
+                    # Swap if: source has keywords AND target has abbreviated form (e.g., "St." instead of "State")
+                    source_has_keywords = ('State' in source or 'University' in source or 'College' in source)
+                    target_is_abbreviated = ('St.' in canonical or 'Univ' in canonical)
 
-        # Remove any reverse mappings where a canonical name maps to something else
-        # This handles cases where CSV has both "UConn -> Connecticut" and "Connecticut -> UConn"
-        cleaned_mappings = {
-            source: target for source, target in mappings.items()
-            if source not in canonical_names or source == target  # Keep identity mappings
-        }
+                    if (len(source) > len(canonical) and source_has_keywords and target_is_abbreviated):
+                        # Swap: abbreviated form -> full form (e.g., "Michigan St." -> "Michigan State")
+                        mappings[canonical] = source
+                        used_names.add(canonical)
+                        used_names.add(source)
+                    else:
+                        # Normal direction: variant -> canonical (e.g., "Louisiana State" -> "LSU")
+                        mappings[source] = canonical
+                        used_names.add(source)
+                        used_names.add(canonical)
 
-        if not cleaned_mappings:
+        # No need for additional cleaning - we already filtered duplicates and identity mappings
+
+        if not mappings:
             logger.warning(f"No valid mappings found in {STANDARDIZATION_FILE}. Using fallback mappings.")
             return FALLBACK_MAPPINGS.copy()
 
-        logger.debug(f"Loaded {len(cleaned_mappings)} team name mappings from {STANDARDIZATION_FILE}")
-        return cleaned_mappings
+        logger.debug(f"Loaded {len(mappings)} team name mappings from {STANDARDIZATION_FILE}")
+        return mappings
 
     except Exception as e:
         logger.error(f"Error parsing {STANDARDIZATION_FILE}: {e}. Using fallback mappings.")
