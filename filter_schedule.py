@@ -15,13 +15,15 @@ Usage:
     python filter_schedule.py
 """
 
-import json
 import logging
 from pathlib import Path
 from typing import Set
 
 import ast
 import pandas as pd
+
+# Import centralized team name standardization
+from team_name_utils import standardize_team_names
 
 # Configure logging
 logging.basicConfig(
@@ -59,6 +61,9 @@ def get_top_50_teams() -> Set[str]:
 
             # Get Top 50 from NET rankings
             if 'net_rank' in net_df.columns and 'team' in net_df.columns:
+                # Apply team name standardization to NET rankings
+                net_df = standardize_team_names(net_df, ['team'])
+
                 # Convert rank to numeric (handle any strings)
                 net_df['net_rank'] = pd.to_numeric(net_df['net_rank'], errors='coerce')
                 top_50_net = net_df.nsmallest(TOP_N_TEAMS, 'net_rank')['team'].tolist()
@@ -218,6 +223,9 @@ def filter_schedule(top_teams: Set[str]) -> pd.DataFrame:
 
     # Combine both perspectives
     combined_df = pd.concat([home_df, away_df], ignore_index=True)
+
+    # Apply team name standardization to Team and Opponent columns
+    combined_df = standardize_team_names(combined_df, ['Team', 'Opponent'])
 
     # Rename conference_competition to is_conf_game for clarity
     combined_df = combined_df.rename(columns={'conference_competition': 'is_conf_game'})
