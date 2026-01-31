@@ -354,9 +354,8 @@ def generate_analytics_table(polls_long_path: Path) -> pd.DataFrame:
     df_sorted = df_sorted.merge(top25_metrics, on='team', how='left')
 
     # Fill NaN values with 0 for teams without Top 25 games
-    for col in ['games_vs_top25', 'wins_vs_top25', 'losses_vs_top25', 'win_pct_vs_top25']:
-        if col in df_sorted.columns:
-            df_sorted[col] = df_sorted[col].fillna(0)
+    fill_values = {col: 0 for col in top25_metrics.columns if col != 'team'}
+    df_sorted.fillna(value=fill_values, inplace=True)
 
     # Reorder columns for clarity
     columns_order = [
