@@ -331,12 +331,11 @@ def generate_analytics_table(polls_long_path: Path) -> pd.DataFrame:
     print("\nStep 5: Calculating Team Identity (Recent Momentum)...")
     latest_week = df_sorted['week_number'].max()
 
-    # Calculate team identity for each team
-    team_identities = []
-    for team in df_sorted['team'].unique():
-        team_data = df_sorted[df_sorted['team'] == team].sort_values('week_number')
-        identity = calculate_team_identity(team_data, latest_week)
-        team_identities.append({'team': team, 'team_identity': identity})
+    # Calculate team identity for each team using groupby().apply()
+    # The initial sort of df_sorted ensures that each group is already in chronological order.
+    identities = df_sorted.groupby('team', sort=False).apply(calculate_team_identity, latest_week=latest_week)
+    identities.name = 'team_identity'
+    df_sorted = df_sorted.merge(identities, on='team', how='left')
 
     identity_df = pd.DataFrame(team_identities)
     df_sorted = df_sorted.merge(identity_df, on='team', how='left')
