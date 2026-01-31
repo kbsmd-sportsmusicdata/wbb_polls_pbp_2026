@@ -21,6 +21,7 @@ from datetime import date, datetime
 DATA_DIR = Path("data")
 POLLS_LONG = DATA_DIR / "polls_long.csv"
 POLLS_ANALYTICS = DATA_DIR / "polls_analytics.csv"
+SCHEDULE_FILTERED = DATA_DIR / "wbb_schedule" / "schedule_filtered.csv"
 
 # Define chronological order of poll weeks for 2025-26 season
 # This is crucial for proper rank_change calculations
@@ -115,6 +116,135 @@ def calculate_movement_category(current_rank: float, prev_rank: float, rank_chan
         return 'Falling'
 
 
+def calculate_team_identity(group_df: pd.DataFrame, latest_week: int) -> str:
+    """
+    Calculate Team Identity based on recent 5-week momentum and performance.
+
+    Categories:
+    - Newcomer: Appeared in fewer than 3 of last 5 weeks
+    - Elite Lock: Low volatility (stdev < 1.5) + Top 5 average rank in last 5 weeks
+    - Surging: Avg rank improved by 3+ spots (last 5 vs previous 5 weeks)
+    - Falling: Avg rank dropped by 3+ spots (last 5 vs previous 5 weeks)
+    - Volatile: High volatility (stdev > 4.5) in last 5 weeks
+    - Steady: Stable, consistent performers
+
+    Args:
+        group_df: DataFrame for a single team (sorted by week_number)
+        latest_week: Latest week number in the dataset
+
+    Returns:
+        Team identity category string
+    """
+    # Get last 5 weeks of data
+    recent_5 = group_df[group_df['week_number'] >= latest_week - 4]
+
+    # Newcomer: Appeared in fewer than 3 of last 5 weeks
+    if len(recent_5) < 3:
+        return "Newcomer"
+
+    # Get only ranked weeks for calculations
+    recent_5_ranked = recent_5[recent_5['rank_numeric'] <= 25]
+
+    # If not ranked in recent weeks, return Unranked
+    if len(recent_5_ranked) == 0:
+        return "Unranked"
+
+    recent_ranks = recent_5_ranked['rank_numeric'].values
+    recent_avg = recent_ranks.mean()
+    recent_stdev = recent_ranks.std()
+
+    # Elite Lock: Low volatility + Top 5 average rank
+    if recent_stdev < 1.5 and recent_avg <= 5:
+        return "Elite Lock"
+
+    # Calculate trend (compare last 5 weeks vs previous 5 weeks)
+    previous_5 = group_df[
+        (group_df['week_number'] >= latest_week - 9) &
+        (group_df['week_number'] < latest_week - 4)
+    ]
+    previous_5_ranked = previous_5[previous_5['rank_numeric'] <= 25]
+
+    if len(previous_5_ranked) >= 2:  # Need at least 2 weeks for comparison
+        previous_avg = previous_5_ranked['rank_numeric'].mean()
+        # Lower rank number = better, so negative change = improvement
+        trend = recent_avg - previous_avg
+
+        # Surging: Improved by 3+ spots (trend is negative)
+        if trend <= -3:
+            return "Surging"
+
+        # Falling: Dropped by 3+ spots (trend is positive)
+        if trend >= 3:
+            return "Falling"
+
+    # Volatile: High standard deviation in recent weeks
+    if recent_stdev > 4.5:
+        return "Volatile"
+
+    # Default: Steady
+    return "Steady"
+
+
+def load_top25_opponent_metrics(schedule_path: Path) -> pd.DataFrame:
+    """
+    Calculate Top 25 opponent metrics from schedule data.
+
+    Metrics calculated per team:
+    - games_vs_top25: Total games played against Top 25 opponents
+    - wins_vs_top25: Wins against Top 25 opponents
+    - losses_vs_top25: Losses against Top 25 opponents
+    - win_pct_vs_top25: Win percentage vs Top 25 (wins/games)
+
+    Args:
+        schedule_path: Path to schedule_filtered.csv
+
+    Returns:
+        DataFrame with team-level Top 25 opponent metrics
+    """
+    if not schedule_path.exists():
+        print(f"  ⚠ Schedule file not found: {schedule_path}")
+        print(f"    Skipping Top 25 opponent metrics")
+        return pd.DataFrame(columns=['team', 'games_vs_top25', 'wins_vs_top25',
+                                     'losses_vs_top25', 'win_pct_vs_top25'])
+
+    try:
+        schedule_df = pd.read_csv(schedule_path)
+
+        # Filter to games vs Top 25 opponents (Opponent Rank <= 25)
+        # Note: rank of 99 typically means unranked
+        schedule_df['Opponent Rank'] = pd.to_numeric(schedule_df['Opponent Rank'], errors='coerce')
+        top25_games = schedule_df[schedule_df['Opponent Rank'] <= 25].copy()
+
+        if len(top25_games) == 0:
+            print(f"  ⚠ No Top 25 opponent games found in schedule")
+            return pd.DataFrame(columns=['team', 'games_vs_top25', 'wins_vs_top25',
+                                         'losses_vs_top25', 'win_pct_vs_top25'])
+
+        # Calculate metrics per team
+        top25_games['is_win'] = top25_games['Game Result'] == 'W'
+
+        metrics = top25_games.groupby('Team').agg(
+            games_vs_top25=('Opponent', 'count'),
+            wins_vs_top25=('is_win', 'sum')
+        ).reset_index()
+
+        metrics.rename(columns={'Team': 'team'}, inplace=True)
+        metrics['losses_vs_top25'] = metrics['games_vs_top25'] - metrics['wins_vs_top25']
+        metrics['win_pct_vs_top25'] = (
+            metrics['wins_vs_top25'] / metrics['games_vs_top25']
+        ).round(3)
+
+        print(f"  ✓ Calculated Top 25 metrics for {len(metrics)} teams")
+        print(f"    Total games vs Top 25: {metrics['games_vs_top25'].sum()}")
+
+        return metrics
+
+    except Exception as e:
+        print(f"  ⚠ Error loading Top 25 metrics: {e}")
+        return pd.DataFrame(columns=['team', 'games_vs_top25', 'wins_vs_top25',
+                                     'losses_vs_top25', 'win_pct_vs_top25'])
+
+
 def generate_analytics_table(polls_long_path: Path) -> pd.DataFrame:
     """
     Generate enhanced analytics table from polls_long data.
@@ -197,6 +327,38 @@ def generate_analytics_table(polls_long_path: Path) -> pd.DataFrame:
     # Add season field
     df_sorted['season'] = 2026
 
+    # Step 5: Calculate Team Identity (Recent Momentum)
+    print("\nStep 5: Calculating Team Identity (Recent Momentum)...")
+    latest_week = df_sorted['week_number'].max()
+
+    # Calculate team identity for each team
+    team_identities = []
+    for team in df_sorted['team'].unique():
+        team_data = df_sorted[df_sorted['team'] == team].sort_values('week_number')
+        identity = calculate_team_identity(team_data, latest_week)
+        team_identities.append({'team': team, 'team_identity': identity})
+
+    identity_df = pd.DataFrame(team_identities)
+    df_sorted = df_sorted.merge(identity_df, on='team', how='left')
+
+    # Show identity distribution
+    identity_counts = df_sorted[df_sorted['week_number'] == latest_week]['team_identity'].value_counts()
+    print(f"  ✓ Team Identity Distribution (Latest Week):")
+    for identity, count in identity_counts.items():
+        print(f"    {identity:15} {count:3} teams")
+
+    # Step 6: Load Top 25 Opponent Metrics
+    print("\nStep 6: Loading Top 25 Opponent Metrics...")
+    top25_metrics = load_top25_opponent_metrics(SCHEDULE_FILTERED)
+
+    # Merge with analytics table (left join - not all teams may have Top 25 games)
+    df_sorted = df_sorted.merge(top25_metrics, on='team', how='left')
+
+    # Fill NaN values with 0 for teams without Top 25 games
+    for col in ['games_vs_top25', 'wins_vs_top25', 'losses_vs_top25', 'win_pct_vs_top25']:
+        if col in df_sorted.columns:
+            df_sorted[col] = df_sorted[col].fillna(0)
+
     # Reorder columns for clarity
     columns_order = [
         'season',
@@ -211,6 +373,11 @@ def generate_analytics_table(polls_long_path: Path) -> pd.DataFrame:
         'movement_category',
         'weeks_in_top25',
         'ranked_streak',
+        'team_identity',
+        'games_vs_top25',
+        'wins_vs_top25',
+        'losses_vs_top25',
+        'win_pct_vs_top25',
         'run_date',
         'table_id'
     ]
@@ -273,6 +440,25 @@ def main():
         for _, row in current_streaks.iterrows():
             print(f"  {row['team']:20} {row['ranked_streak']} consecutive weeks")
 
+        print("\nTeam Identity Distribution (Latest Week):")
+        if 'team_identity' in analytics_df.columns:
+            latest_identities = analytics_df[
+                analytics_df['week_number'] == latest_week_num
+            ]['team_identity'].value_counts()
+            for identity, count in latest_identities.items():
+                print(f"  {identity:15} {count:3} teams")
+
+        print("\nTop 5 Teams vs Top 25 Opponents:")
+        if 'games_vs_top25' in analytics_df.columns:
+            top_vs_t25 = analytics_df[
+                analytics_df['week_number'] == latest_week_num
+            ].nlargest(5, 'games_vs_top25')[['team', 'games_vs_top25', 'wins_vs_top25', 'win_pct_vs_top25']]
+            for _, row in top_vs_t25.iterrows():
+                games = int(row['games_vs_top25'])
+                wins = int(row['wins_vs_top25'])
+                pct = row['win_pct_vs_top25']
+                print(f"  {row['team']:20} {games} games ({wins}-{games-wins}, {pct:.1%})")
+
         # Display sample data - show chronological progression for one team
         print("\n" + "=" * 70)
         print("Sample Data: UConn's Season Progression (Chronological)")
@@ -289,6 +475,8 @@ def main():
         print("  ✓ Proper chronological sorting via week_number")
         print("  ✓ Accurate rank_change calculations")
         print("  ✓ Correct cumulative metrics")
+        print("  ✓ Team Identity (Recent Momentum) - 6 categories based on last 5-10 weeks")
+        print("  ✓ Top 25 Opponent Metrics - games, wins, losses, win % vs Top 25")
         print("\nThis table is ready for:")
         print("  • Tableau Public dashboards")
         print("  • Excel pivot tables")
