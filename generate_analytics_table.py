@@ -239,11 +239,10 @@ def load_top25_opponent_metrics(schedule_path: Path) -> pd.DataFrame:
 
         return metrics
 
-    except Exception as e:
+    except (pd.errors.ParserError, KeyError, ValueError) as e
         print(f"  ⚠ Error loading Top 25 metrics: {e}")
         return pd.DataFrame(columns=['team', 'games_vs_top25', 'wins_vs_top25',
                                      'losses_vs_top25', 'win_pct_vs_top25'])
-
 
 def generate_analytics_table(polls_long_path: Path) -> pd.DataFrame:
     """
@@ -331,12 +330,11 @@ def generate_analytics_table(polls_long_path: Path) -> pd.DataFrame:
     print("\nStep 5: Calculating Team Identity (Recent Momentum)...")
     latest_week = df_sorted['week_number'].max()
 
-    # Calculate team identity for each team
-    team_identities = []
-    for team in df_sorted['team'].unique():
-        team_data = df_sorted[df_sorted['team'] == team].sort_values('week_number')
-        identity = calculate_team_identity(team_data, latest_week)
-        team_identities.append({'team': team, 'team_identity': identity})
+    # Calculate team identity for each team using groupby().apply()
+    # The initial sort of df_sorted ensures that each group is already in chronological order.
+    identities = df_sorted.groupby('team', sort=False).apply(calculate_team_identity, latest_week=latest_week)
+    identities.name = 'team_identity'
+    df_sorted = df_sorted.merge(identities, on='team', how='left')
 
     identity_df = pd.DataFrame(team_identities)
     df_sorted = df_sorted.merge(identity_df, on='team', how='left')
@@ -354,10 +352,8 @@ def generate_analytics_table(polls_long_path: Path) -> pd.DataFrame:
     # Merge with analytics table (left join - not all teams may have Top 25 games)
     df_sorted = df_sorted.merge(top25_metrics, on='team', how='left')
 
-    # Fill NaN values with 0 for teams without Top 25 games
-    for col in ['games_vs_top25', 'wins_vs_top25', 'losses_vs_top25', 'win_pct_vs_top25']:
-        if col in df_sorted.columns:
-            df_sorted[col] = df_sorted[col].fillna(0)
+    fill_values = {col: 0 for col in top25_metrics.columns if col != 'team'}
+    df_sorted.fillna(value=fill_values, inplace=True)
 
     # Reorder columns for clarity
     columns_order = [
