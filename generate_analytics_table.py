@@ -336,9 +336,6 @@ def generate_analytics_table(polls_long_path: Path) -> pd.DataFrame:
     identities.name = 'team_identity'
     df_sorted = df_sorted.merge(identities, on='team', how='left')
 
-    identity_df = pd.DataFrame(team_identities)
-    df_sorted = df_sorted.merge(identity_df, on='team', how='left')
-
     # Show identity distribution
     identity_counts = df_sorted[df_sorted['week_number'] == latest_week]['team_identity'].value_counts()
     print(f"  ✓ Team Identity Distribution (Latest Week):")
