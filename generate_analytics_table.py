@@ -353,7 +353,6 @@ def generate_analytics_table(polls_long_path: Path) -> pd.DataFrame:
     # Merge with analytics table (left join - not all teams may have Top 25 games)
     df_sorted = df_sorted.merge(top25_metrics, on='team', how='left')
 
-    # Fill NaN values with 0 for teams without Top 25 games
     fill_values = {col: 0 for col in top25_metrics.columns if col != 'team'}
     df_sorted.fillna(value=fill_values, inplace=True)
 
