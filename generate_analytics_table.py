@@ -244,7 +244,6 @@ def load_top25_opponent_metrics(schedule_path: Path) -> pd.DataFrame:
         return pd.DataFrame(columns=['team', 'games_vs_top25', 'wins_vs_top25',
                                      'losses_vs_top25', 'win_pct_vs_top25'])
 
-
 def generate_analytics_table(polls_long_path: Path) -> pd.DataFrame:
     """
     Generate enhanced analytics table from polls_long data.
