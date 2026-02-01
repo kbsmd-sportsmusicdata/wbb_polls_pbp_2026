@@ -1,3 +1,4 @@
+import logging
 import io
 import os
 from datetime import datetime, date
@@ -118,15 +119,14 @@ def append_csv_with_dedup(df: pd.DataFrame, path: Path, date_col: str = "run_dat
         # Use on_bad_lines='skip' to handle any malformed rows from previous scrapes
         try:
             existing = pd.read_csv(path, on_bad_lines='skip')
-            print(f"[append_csv_with_dedup] Loaded existing file: {path} ({len(existing)} rows)")
+            logging.info(f"[append_csv_with_dedup] Loaded existing file: {path} ({len(existing)} rows)")
         except TypeError:
             # Fallback for older pandas versions (< 1.3)
             existing = pd.read_csv(path, error_bad_lines=False, warn_bad_lines=True)
-            print(f"[append_csv_with_dedup] Loaded existing file: {path} ({len(existing)} rows, some malformed rows skipped)")
+            logging.warning(f"[append_csv_with_dedup] Loaded existing file: {path} ({len(existing)} rows, some malformed rows skipped)")
         except pd.errors.EmptyDataError:
-            print(f"[append_csv_with_dedup] Existing file {path} is empty. Starting fresh.")
+            logging.warning(f"[append_csv_with_dedup] Existing file {path} is empty. Starting fresh.")
             existing = pd.DataFrame()
-
         if date_col in df.columns and date_col in existing.columns:
             current_dates = df[date_col].unique()
             existing_dates = existing[date_col].unique()
