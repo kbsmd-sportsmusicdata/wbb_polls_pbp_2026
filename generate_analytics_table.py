@@ -239,7 +239,7 @@ def load_top25_opponent_metrics(schedule_path: Path) -> pd.DataFrame:
 
         return metrics
 
-    except (pd.errors.ParserError, KeyError, ValueError) as e:
+    except (pd.errors.ParserError, KeyError, ValueError) as e
         print(f"  ⚠ Error loading Top 25 metrics: {e}")
         return pd.DataFrame(columns=['team', 'games_vs_top25', 'wins_vs_top25',
                                      'losses_vs_top25', 'win_pct_vs_top25'])
