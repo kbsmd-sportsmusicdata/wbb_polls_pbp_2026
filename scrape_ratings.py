@@ -115,7 +115,14 @@ def append_csv_with_dedup(df: pd.DataFrame, path: Path, date_col: str = "run_dat
         print(f"Created new master file: {path} ({len(df)} rows)")
     else:
         # Check if data for this run_date already exists
-        existing = pd.read_csv(path)
+        # Use on_bad_lines='skip' to handle any malformed rows from previous scrapes
+        try:
+            existing = pd.read_csv(path, on_bad_lines='skip')
+            print(f"[append_csv_with_dedup] Loaded existing file: {path} ({len(existing)} rows)")
+        except TypeError:
+            # Fallback for older pandas versions (< 1.3)
+            existing = pd.read_csv(path, error_bad_lines=False, warn_bad_lines=True)
+            print(f"[append_csv_with_dedup] Loaded existing file: {path} ({len(existing)} rows, some malformed rows skipped)")
 
         if date_col in df.columns and date_col in existing.columns:
             current_dates = df[date_col].unique()
