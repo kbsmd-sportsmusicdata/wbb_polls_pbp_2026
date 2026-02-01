@@ -117,7 +117,6 @@ def append_csv_with_dedup(df: pd.DataFrame, path: Path, date_col: str = "run_dat
     else:
         # Check if data for this run_date already exists
         # Use on_bad_lines='skip' to handle any malformed rows from previous scrapes
-        try:
             existing = pd.read_csv(path, on_bad_lines='skip')
             logging.info(f"[append_csv_with_dedup] Loaded existing file: {path} ({len(existing)} rows)")
         except TypeError:
