@@ -33,7 +33,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Constants
-SCHEDULE_PATH = Path("data/raw/schedule_2026.csv")
+SCHEDULE_PATH = Path("data/wbb_schedule_master.parquet")
 POLLS_PATH = Path("data/polls_analytics.csv")
 NET_RANKINGS_PATH = Path("data/net_rankings/net_rankings_master.csv")
 OUTPUT_PATH = Path("data/wbb_schedule/schedule_filtered.csv")
@@ -152,7 +152,7 @@ def filter_schedule(top_teams: Set[str]) -> pd.DataFrame:
         Filtered DataFrame with selected columns
     """
     logger.info(f"Loading schedule from {SCHEDULE_PATH}")
-    df = pd.read_csv(SCHEDULE_PATH)
+    df = pd.read_parquet(SCHEDULE_PATH)
     logger.info(f"Loaded {len(df)} total games")
 
     # Filter 1: Only completed games
@@ -203,6 +203,12 @@ def filter_schedule(top_teams: Set[str]) -> pd.DataFrame:
     home_df['Opponent Conf ID'] = home_df['away_conference_id']
     home_df['Overall Record'] = home_df['home_overall_record']
     home_df['Conf Record'] = home_df['home_conf_record']
+    home_df['Team Abbreviation'] = home_df['home_abbreviation']
+    home_df['Opponent Abbreviation'] = home_df['away_abbreviation']
+    home_df['Team Color'] = home_df['home_color']
+    home_df['Opponent Color'] = home_df['away_color']
+    home_df['Team Alt Color'] = home_df['home_alternate_color']
+    home_df['Opponent Alt Color'] = home_df['away_alternate_color']
 
     # Away team perspective
     away_df = df.copy()
@@ -220,12 +226,30 @@ def filter_schedule(top_teams: Set[str]) -> pd.DataFrame:
     away_df['Opponent Conf ID'] = away_df['home_conference_id']
     away_df['Overall Record'] = away_df['away_overall_record']
     away_df['Conf Record'] = away_df['away_conf_record']
+    away_df['Team Abbreviation'] = away_df['away_abbreviation']
+    away_df['Opponent Abbreviation'] = away_df['home_abbreviation']
+    away_df['Team Color'] = away_df['away_color']
+    away_df['Opponent Color'] = away_df['home_color']
+    away_df['Team Alt Color'] = away_df['away_alternate_color']
+    away_df['Opponent Alt Color'] = away_df['home_alternate_color']
 
     # Combine both perspectives
     combined_df = pd.concat([home_df, away_df], ignore_index=True)
 
     # Apply team name standardization to Team and Opponent columns
     combined_df = standardize_team_names(combined_df, ['Team', 'Opponent'])
+
+    # Add/rename additional fields
+    if 'play_by_play_available' in combined_df.columns:
+        combined_df['PBP'] = combined_df['play_by_play_available']
+
+    # game_date is an alias for date if it exists, otherwise use date
+    if 'game_date' not in combined_df.columns:
+        combined_df['game_date'] = combined_df['date']
+
+    # Add placeholder columns for team_box and player_box (these may be populated later)
+    combined_df['team_box'] = None
+    combined_df['player_box'] = None
 
     # Rename conference_competition to is_conf_game for clarity
     combined_df = combined_df.rename(columns={'conference_competition': 'is_conf_game'})
@@ -239,7 +263,14 @@ def filter_schedule(top_teams: Set[str]) -> pd.DataFrame:
         'type_id', 'notes_headline', 'status_type_name',
         'home_conference_id', 'home_winner', 'home_current_rank', 'home_records',
         'away_conference_id', 'away_winner', 'away_current_rank', 'away_records',
-        'groups_id', 'groups_short_name'
+        'groups_id', 'groups_short_name',
+        # Additional fields for analysis
+        'Team Abbreviation', 'Opponent Abbreviation',
+        'Team Color', 'Opponent Color',
+        'Team Alt Color', 'Opponent Alt Color',
+        'home_abbreviation', 'home_color', 'home_alternate_color',
+        'away_abbreviation', 'away_color', 'away_alternate_color',
+        'game_json_url', 'game_date', 'PBP', 'team_box', 'player_box'
     ]
 
     # Ensure all requested columns exist (fill missing with None)

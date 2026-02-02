@@ -27,11 +27,13 @@ from team_name_utils import standardize_team_names
 DATA_DIR = Path("data")
 RAW_DIR = DATA_DIR / "raw"
 SOS_DIR = DATA_DIR / "sos"
+SCHEDULE_DIR = DATA_DIR / "wbb_schedule"
 RAW_CSV = RAW_DIR / "wbb_schedule_raw.csv"
 FILTERED_CSV = DATA_DIR / "wbb_schedule.csv"
 
 # Ensure directories exist
 RAW_DIR.mkdir(parents=True, exist_ok=True)
+SCHEDULE_DIR.mkdir(parents=True, exist_ok=True)
 
 def clean_and_rename_teams(df, team_cols):
     """Clean data by removing blank rows/cols and applying team name standardization."""
@@ -50,7 +52,7 @@ def clean_and_rename_teams(df, team_cols):
 
 def download_parquet_data():
     """Download the 2026 WBB Schedule Parquet file."""
-    url = "https://github.com/sportsdataverse/wehoop-wbb-raw/blob/60b2c470a3a612bc7a7cf8b189fec05a66f60e11/wbb/schedules/parquet/wbb_schedule_2026.parquet"
+    url = "https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/schedules/parquet/wbb_schedule_2026.parquet"
     print(f"Downloading data from: {url}")
     
     response = requests.get(url, timeout=60)
@@ -72,9 +74,19 @@ def main():
         # Apply name standardization to schedule data (location columns contain school names)
         df = clean_and_rename_teams(df, ['home_location', 'away_location'])
         
-        # Save Raw Schedule
+        # Save Raw Schedule (CSV and Parquet)
         df.to_csv(RAW_CSV, index=False)
         print(f"✓ Saved raw schedule to {RAW_CSV}")
+
+        # Save master parquet file for PBP scraping and filtering
+        master_parquet = DATA_DIR / "wbb_schedule_master.parquet"
+        df.to_parquet(master_parquet, index=False)
+        print(f"✓ Saved master parquet to {master_parquet}")
+
+        # Also save to data/wbb_schedule directory for backup
+        schedule_parquet = SCHEDULE_DIR / "wbb_schedule_2026.parquet"
+        df.to_parquet(schedule_parquet, index=False)
+        print(f"✓ Saved schedule parquet to {schedule_parquet}")
 
         # FIXED FILTER: Use correct rank column names
         # We also convert to numeric to ensure comparison works
