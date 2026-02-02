@@ -79,7 +79,7 @@ def main():
         print(f"✓ Saved raw schedule to {RAW_CSV}")
 
         # Save master parquet file for PBP scraping and filtering
-        master_parquet = Path("wbb_schedule_master.parquet")
+        master_parquet = DATA_DIR / "wbb_schedule_master.parquet"
         df.to_parquet(master_parquet, index=False)
         print(f"✓ Saved master parquet to {master_parquet}")
 
