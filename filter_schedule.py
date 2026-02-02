@@ -33,7 +33,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Constants
-SCHEDULE_PATH = Path("wbb_schedule_master.parquet")
+SCHEDULE_PATH = Path("data/wbb_schedule_master.parquet")
 POLLS_PATH = Path("data/polls_analytics.csv")
 NET_RANKINGS_PATH = Path("data/net_rankings/net_rankings_master.csv")
 OUTPUT_PATH = Path("data/wbb_schedule/schedule_filtered.csv")
