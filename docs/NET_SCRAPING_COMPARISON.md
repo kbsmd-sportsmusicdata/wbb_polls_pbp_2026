@@ -14,7 +14,7 @@
 
 **Source:** `https://www.ncaa.com/rankings/basketball-women/d1/ncaa-womens-basketball-net-rankings`
 
-**Columns Available (8):**
+**Columns Available (9):**
 - rank
 - previous
 - school
