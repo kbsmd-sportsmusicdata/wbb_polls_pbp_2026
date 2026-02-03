@@ -38,7 +38,16 @@ WEEK_ORDER = {
     '1/12': 9,
     '1/19': 10,
     '1/26': 11,
-    # Add more weeks as season progresses
+    '2/2': 12,
+    '2/9': 13,
+    '2/16': 14,
+    '2/23': 15,
+    '3/2': 16,
+    '3/9': 17,     # Conference tournaments begin
+    '3/16': 18,    # NCAA Tournament Round 1/2
+    '3/23': 19,    # Sweet 16 / Elite 8
+    '3/30': 20,    # Final Four
+    '4/6': 21,     # Championship
 }
 
 
