@@ -376,8 +376,7 @@ def main(manual_file: Optional[str] = None):
     df = apply_team_name_standardization(df, ['team'])
 
     # Pre-process W-L string fields into numeric columns for Tableau
-    df = preprocess_wl_fields(df, PHASE_1_WL_FIELDS)
-    df = preprocess_wl_fields(df, PHASE_2_WL_FIELDS)
+    df = preprocess_wl_fields(df, {**PHASE_1_WL_FIELDS, **PHASE_2_WL_FIELDS})
 
     # Save data
     if save_data(df):
