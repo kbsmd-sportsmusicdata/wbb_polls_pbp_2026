@@ -237,6 +237,59 @@ def standardize_columns(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
+# W-L string fields to parse into numeric wins/losses/winpct columns.
+# Phase 1: fields needed now for Tableau visuals (Quadrant Heatmap, SOS scatter)
+PHASE_1_WL_FIELDS = {
+    'DivIWL':  'DivI',
+    'Q1':      'Q1',
+    'Q2':      'Q2',
+    'Q3':      'Q3',
+    'Q4':      'Q4',
+}
+
+# Phase 2: additional fields — added after Phase 1 is validated
+PHASE_2_WL_FIELDS = {
+    'ConfRecord':  'Conf',
+    'RoadWL':      'Road',
+    'Last10Games': 'Last10',
+}
+
+
+def preprocess_wl_fields(df: pd.DataFrame, wl_fields: dict) -> pd.DataFrame:
+    """
+    Parses W-L string columns (e.g. '21-0') into numeric wins, losses, and win_pct columns.
+
+    For each entry in wl_fields (source_column -> prefix), adds:
+        {prefix}_wins      int
+        {prefix}_losses    int
+        {prefix}_winpct    float, rounded to 3 decimals
+
+    Columns that don't exist in df are silently skipped.
+
+    Args:
+        df: DataFrame containing W-L string columns
+        wl_fields: Dict mapping source column name -> output prefix
+
+    Returns:
+        DataFrame with new numeric columns appended
+    """
+    for col, prefix in wl_fields.items():
+        if col not in df.columns:
+            logger.warning(f"preprocess_wl_fields: column '{col}' not found, skipping")
+            continue
+
+        split = df[col].astype(str).str.split('-', expand=True, n=1)
+        wins   = pd.to_numeric(split[0], errors='coerce').astype('Int64')
+        losses = pd.to_numeric(split[1], errors='coerce').astype('Int64')
+        total  = wins + losses
+
+        df[f'{prefix}_wins']   = wins
+        df[f'{prefix}_losses'] = losses
+        df[f'{prefix}_winpct'] = (wins / total).round(3)
+
+    return df
+
+
 def save_data(df: pd.DataFrame) -> bool:
     """
     Saves NET rankings data to both snapshot and master files.
@@ -321,6 +374,10 @@ def main(manual_file: Optional[str] = None):
 
     # Standardize team names using centralized function
     df = apply_team_name_standardization(df, ['team'])
+
+    # Pre-process W-L string fields into numeric columns for Tableau
+    df = preprocess_wl_fields(df, PHASE_1_WL_FIELDS)
+    df = preprocess_wl_fields(df, PHASE_2_WL_FIELDS)
 
     # Save data
     if save_data(df):
