@@ -1,8 +1,6 @@
 """
 Process historical polls data into analysis-ready long format.
 
-FIXED VERSION - Properly handles multi-year data with different week columns per year.
-
 This script transforms the raw historical polls tables into a clean,
 normalized long format suitable for data analysis and visualization.
 
@@ -21,7 +19,6 @@ from pathlib import Path
 from typing import Set
 
 import pandas as pd
-import numpy as np
 
 # Paths
 DATA_DIR = Path("data")
@@ -59,9 +56,9 @@ def is_week_col(col_label) -> bool:
     Week columns include:
     - 'Pre' or 'Preseason'
     - Dates like '11/13', '12/1'
-    - 'Post' or 'Final'
+    - Numeric week indicators
 
-    Non-week columns: Rk, Rank, School, Team, Conf, Conference, year, table_number, etc.
+    Non-week columns: Rk, Rank, School, Team, Conf, Conference, etc.
     """
     s = normalize_col(col_label)
     s_low = s.lower()
@@ -71,46 +68,25 @@ def is_week_col(col_label) -> bool:
                  "conf", "conference", "school", "team", "year", "table_number"}:
         return False
 
-    # Include preseason and postseason
-    if s_low in {"pre", "preseason", "post", "postseason", "final"}:
+    # Include preseason
+    if s_low in {"pre", "preseason"}:
         return True
 
-    # Include date patterns (11/13, 12/1, 1/6, etc.)
+    # Include date patterns (11/13, 12/1, etc.)
     if re.match(r"^\d{1,2}[\/\-.]\d{1,2}$", s):
         return True
 
+    # Include numeric week indicators
+    if any(ch.isdigit() for ch in s) and len(s) <= 10:
+        if len(re.findall(r"\d", s)) >= 2:
+            return True
+
     return False
-
-
-def identify_valid_weeks_for_year(df_year: pd.DataFrame, week_cols: list) -> list:
-    """
-    Identify which week columns actually have data for a given year.
-
-    A week column is valid if it has at least one non-null rank value.
-
-    Args:
-        df_year: DataFrame for a single year
-        week_cols: List of potential week column names
-
-    Returns:
-        List of week column names that have data
-    """
-    valid_weeks = []
-    for col in week_cols:
-        # Check if column has any non-null values
-        if df_year[col].notna().any():
-            valid_weeks.append(col)
-    return valid_weeks
 
 
 def process_historical_to_long(master_csv_path: Path) -> pd.DataFrame:
     """
     Convert wide-format historical polls data to long format.
-
-    FIXED: Properly handles years with different week columns by:
-    1. Identifying valid weeks per year (weeks with actual data)
-    2. Only melting those valid weeks
-    3. Filtering out rows where rank is genuinely null (week doesn't apply)
 
     Args:
         master_csv_path: Path to the master CSV file
@@ -126,7 +102,7 @@ def process_historical_to_long(master_csv_path: Path) -> pd.DataFrame:
 
     # Read the master file
     df = pd.read_csv(master_csv_path)
-    print(f"  ✓ Loaded {len(df)} rows, {len(df.columns)} columns")
+    print(f"  ✓ Loaded {len(df)} rows")
 
     if df.empty:
         print("  ✗ Master file is empty")
@@ -141,30 +117,17 @@ def process_historical_to_long(master_csv_path: Path) -> pd.DataFrame:
     years = sorted(df['year'].unique())
     print(f"  ✓ Found {len(years)} years: {min(years)} to {max(years)}")
 
-    # Identify all potential week columns (before we know which are valid per year)
-    all_cols = list(df.columns)
-    school_col = find_col(all_cols, {"school", "team"})
-    conf_col = find_col(all_cols, {"conf", "conference"})
-
-    if school_col is None:
-        print(f"  ✗ No School/Team column found")
-        return pd.DataFrame()
-
-    # Find all potential week columns
-    potential_week_cols = [c for c in all_cols if is_week_col(c)]
-    print(f"  ✓ Found {len(potential_week_cols)} potential week columns across all years")
-
-    # Process each year separately
+    # Process each year/table combination separately
     long_parts = []
 
     for year in years:
-        year_data = df[df['year'] == year].copy()
+        year_data = df[df['year'] == year]
 
         # Get unique table numbers for this year
         if 'table_number' in year_data.columns:
             tables = year_data['table_number'].unique()
         else:
-            tables = [1]
+            tables = [1]  # Assume single table if no table_number column
 
         for table_num in tables:
             if 'table_number' in year_data.columns:
@@ -172,38 +135,51 @@ def process_historical_to_long(master_csv_path: Path) -> pd.DataFrame:
             else:
                 table_data = year_data.copy()
 
-            print(f"  Processing {year} - Table {table_num} ({len(table_data)} teams)")
+            print(f"  Processing {year} - Table {table_num} ({len(table_data)} rows)")
 
-            # Remove rows with no school name or header rows
+            # Handle multi-level columns
+            if isinstance(table_data.columns, pd.MultiIndex):
+                table_data.columns = table_data.columns.get_level_values(-1)
+
+            table_data.columns = [str(c).strip() for c in table_data.columns]
+
+            # Find key columns
+            cols = list(table_data.columns)
+            school_col = find_col(cols, {"school", "team"})
+            conf_col = find_col(cols, {"conf", "conference"})
+
+            if school_col is None:
+                print(f"    ⚠ No School/Team column found for {year} table {table_num}, skipping")
+                continue
+
+            # Remove rows with no school name
             table_data = table_data[table_data[school_col].notna()]
             table_data = table_data[table_data[school_col].str.lower() != 'school']
 
-            if len(table_data) == 0:
-                print(f"    ⚠ No valid teams found for {year} table {table_num}, skipping")
+            # Find week columns
+            week_cols = [c for c in cols if is_week_col(c)]
+
+            if not week_cols:
+                print(f"    ⚠ No week columns found for {year} table {table_num}, skipping")
                 continue
 
-            # CRITICAL FIX: Identify which weeks actually have data for THIS year
-            valid_week_cols = identify_valid_weeks_for_year(table_data, potential_week_cols)
-
-            if not valid_week_cols:
-                print(f"    ⚠ No valid week columns found for {year} table {table_num}, skipping")
-                continue
-
-            print(f"    Found {len(valid_week_cols)} valid weeks: {', '.join(valid_week_cols[:5])}{'...' if len(valid_week_cols) > 5 else ''}")
+            print(f"    Found {len(week_cols)} week columns")
 
             # Prepare data for melting
             id_vars = [school_col]
-            if conf_col is not None and conf_col in table_data.columns:
+            if conf_col is not None:
                 id_vars.append(conf_col)
+
+            # Add year and table_number to id_vars if they exist
             if 'year' in table_data.columns:
                 id_vars.append('year')
             if 'table_number' in table_data.columns:
                 id_vars.append('table_number')
 
-            # Melt ONLY the valid week columns for this year
+            # Melt to long format
             melted = table_data.melt(
                 id_vars=id_vars,
-                value_vars=valid_week_cols,
+                value_vars=week_cols,
                 var_name='poll_week',
                 value_name='rank'
             )
@@ -222,29 +198,14 @@ def process_historical_to_long(master_csv_path: Path) -> pd.DataFrame:
             if 'conference' not in melted.columns:
                 melted['conference'] = None
 
-            # CRITICAL FIX: Filter out rows where rank is null
-            # These are weeks that don't apply to this team/year combination
-            # (e.g., team didn't exist yet, or week column was from a different year)
-            initial_rows = len(melted)
-            melted = melted[melted['rank'].notna()].copy()
-            filtered_rows = initial_rows - len(melted)
-            if filtered_rows > 0:
-                print(f"    Filtered {filtered_rows} rows with null ranks (non-applicable weeks)")
-
-            # Convert rank to float
+            # Convert rank to numeric
             melted['rank'] = pd.to_numeric(melted['rank'], errors='coerce')
 
-            # Create rank_numeric
-            # - For ranked teams (1-25): use their rank
-            # - For unranked teams with empty rank: use 26
-            # Note: After filtering nulls above, remaining empty ranks are teams that
-            #       appeared in the dataset that week but weren't ranked
+            # Add rank_numeric (26 for unranked)
             melted['rank_numeric'] = melted['rank'].fillna(26).astype(int)
 
             # Add table_id for consistency with current polls
             melted['table_id'] = table_num
-
-            print(f"    Result: {len(melted)} rows")
 
             long_parts.append(melted)
 
@@ -276,7 +237,7 @@ def process_historical_to_long(master_csv_path: Path) -> pd.DataFrame:
 def main():
     """Main function to process historical polls data."""
     print("=" * 70)
-    print("Historical Polls Data Processor (FIXED VERSION)")
+    print("Historical Polls Data Processor")
     print("=" * 70)
     print(f"Process Date: {date.today().strftime('%Y-%m-%d')}")
     print("=" * 70)
@@ -329,14 +290,8 @@ def main():
     print(f"  {weeks} unique poll weeks across all years")
 
     print(f"\nRanking distribution:")
-    print(f"  Ranked (1-25): {(long_df['rank_numeric'] <= 25).sum():,} rows ({(long_df['rank_numeric'] <= 25).sum() / len(long_df) * 100:.1f}%)")
-    print(f"  Unranked (26): {(long_df['rank_numeric'] == 26).sum():,} rows ({(long_df['rank_numeric'] == 26).sum() / len(long_df) * 100:.1f}%)")
-
-    # Show sample data for one year
-    sample_year = long_df['year'].max()
-    sample_data = long_df[long_df['year'] == sample_year].head(10)
-    print(f"\nSample data for year {sample_year}:")
-    print(sample_data.to_string(index=False))
+    print(f"  Ranked (1-25): {(long_df['rank_numeric'] <= 25).sum():,} rows")
+    print(f"  Unranked (26): {(long_df['rank_numeric'] == 26).sum():,} rows")
 
     print("\n" + "=" * 70)
     print("✅ Processing Complete!")
