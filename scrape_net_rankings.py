@@ -181,8 +181,8 @@ def load_manual_export(csv_path: Path) -> Optional[pd.DataFrame]:
             logger.error(f"File not found: {csv_path}")
             return None
 
-        # Read CSV
-        df = pd.read_csv(csv_path)
+        # Read CSV/TSV with auto-detected separator
+        df = pd.read_csv(csv_path, sep=None, engine='python')
         logger.info(f"Loaded {len(df)} rows from manual export")
 
         # Standardize column names
