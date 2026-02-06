@@ -95,12 +95,7 @@ def identify_valid_weeks_for_year(df_year: pd.DataFrame, week_cols: list) -> lis
     Returns:
         List of week column names that have data
     """
-    valid_weeks = []
-    for col in week_cols:
-        # Check if column has any non-null values
-        if df_year[col].notna().any():
-            valid_weeks.append(col)
-    return valid_weeks
+    return [col for col in week_cols if df_year[col].notna().any()]
 
 
 def process_historical_to_long(master_csv_path: Path) -> pd.DataFrame:
