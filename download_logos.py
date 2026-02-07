@@ -31,7 +31,9 @@ TEAM_ID_MAP = {
     '87': 'Kentucky',
     '96': 'Tennessee',
     '97': 'Texas A&M',
-    '99': 'Virginia'
+    '99': 'Virginia',
+    '2483': 'Oregon',
+    '135': 'Minnesota'
 }
 
 # List of URLs
@@ -64,7 +66,9 @@ urls = [
     "https://a.espncdn.com/i/teamlogos/ncaa/500/96.png",
     "https://a.espncdn.com/i/teamlogos/ncaa/500/96.png",  # Duplicate
     "https://a.espncdn.com/i/teamlogos/ncaa/500/97.png",
-    "https://a.espncdn.com/i/teamlogos/ncaa/500/99.png"
+    "https://a.espncdn.com/i/teamlogos/ncaa/500/99.png",
+    "https://a.espncdn.com/i/teamlogos/ncaa/500/2483.png",
+    "https://a.espncdn.com/i/teamlogos/ncaa/500/135.png"
 ]
 
 # Create assets directory if it doesn't exist
