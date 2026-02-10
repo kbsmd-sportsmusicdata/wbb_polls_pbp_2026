@@ -1,0 +1,23 @@
+{
+  "_comment": "AP Poll Week Windows Configuration for WBB 2025-2026 Season",
+  "_description": "Games played within these date windows are attributed to the corresponding poll week. Update these dates annually to match the AP Poll release schedule.",
+  "_format": "Each entry: 'poll_week_label': ['start_date', 'end_date'] in YYYY-MM-DD format",
+
+  "windows": {
+    "Pre": ["2025-11-03", "2025-11-09"],
+    "11/10": ["2025-11-03", "2025-11-16"],
+    "11/17": ["2025-11-17", "2025-11-23"],
+    "11/24": ["2025-11-24", "2025-11-30"],
+    "12/1": ["2025-12-01", "2025-12-07"],
+    "12/8": ["2025-12-08", "2025-12-14"],
+    "12/15": ["2025-12-15", "2025-12-21"],
+    "12/22": ["2025-12-22", "2026-01-04"],
+    "1/5": ["2026-01-05", "2026-01-11"],
+    "1/12": ["2026-01-12", "2026-01-18"],
+    "1/19": ["2026-01-19", "2026-01-25"],
+    "1/26": ["2026-01-26", "2026-02-01"],
+    "2/2": ["2026-02-02", "2026-02-08"]
+  },
+
+  "_instructions": "To add new poll weeks as the season progresses, add entries below following the same format. Example: '2/9': ['2026-02-09', '2026-02-15']"
+}
