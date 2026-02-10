@@ -42,6 +42,13 @@ jobs:
       - name: Filter schedule to Top 50 teams
         run: python filter_schedule.py
 
+      - name: Build polls + games joined dataset
+        run: |
+          python scripts/process/build_polls_games_joined.py \
+            --polls data/polls_analytics.csv \
+            --games data/wbb_schedule/schedule_filtered.csv \
+            --output data/polls_games_joined.csv
+
       - name: Update Google Sheets
         env:
           GCP_SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT }}
