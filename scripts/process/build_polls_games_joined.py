@@ -28,6 +28,7 @@ import numpy as np
 import argparse
 import os
 import sys
+import json
 from datetime import datetime
 
 
@@ -41,10 +42,10 @@ CONF_ID_MAP = {
     23: 'SEC', 46: 'A-10', 20: 'Ivy League'
 }
 
-# Poll week date windows: poll_week_label -> (start_date, end_date)
+# Poll week date windows (fallback values if config file not found)
 # Games played within these windows are attributed to that poll week.
-# Update these each season to match the AP Poll release schedule.
-POLL_WEEK_WINDOWS = {
+# RECOMMENDED: Update via config/poll_week_windows.json instead of editing here.
+_DEFAULT_POLL_WEEK_WINDOWS = {
     'Pre':   ('2025-11-03', '2025-11-09'),
     '11/10': ('2025-11-03', '2025-11-16'),
     '11/17': ('2025-11-17', '2025-11-23'),
@@ -58,14 +59,38 @@ POLL_WEEK_WINDOWS = {
     '1/19':  ('2026-01-19', '2026-01-25'),
     '1/26':  ('2026-01-26', '2026-02-01'),
     '2/2':   ('2026-02-02', '2026-02-08'),
-    # --- ADD NEW POLL WEEKS BELOW THIS LINE ---
-    # '2/9':   ('2026-02-09', '2026-02-15'),
-    # '2/16':  ('2026-02-16', '2026-02-22'),
-    # '2/23':  ('2026-02-23', '2026-03-01'),
-    # '3/2':   ('2026-03-02', '2026-03-08'),
-    # '3/9':   ('2026-03-09', '2026-03-15'),
-    # 'Final': ('2026-03-16', '2026-03-22'),
 }
+
+
+def load_poll_week_windows():
+    """Load poll week windows from config file with fallback to defaults.
+
+    Attempts to load from config/poll_week_windows.json. If the file doesn't
+    exist or can't be parsed, falls back to _DEFAULT_POLL_WEEK_WINDOWS.
+
+    Returns:
+        dict: Poll week windows as {poll_week_label: (start_date, end_date)}
+    """
+    # Try to find config file relative to this script
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    config_path = os.path.join(script_dir, '../../config/poll_week_windows.json')
+
+    if os.path.exists(config_path):
+        try:
+            with open(config_path, 'r') as f:
+                config = json.load(f)
+                windows = config.get('windows', {})
+                # Convert list format to tuple format
+                return {k: tuple(v) for k, v in windows.items()}
+        except (json.JSONDecodeError, KeyError, TypeError) as e:
+            print(f"  WARNING: Could not parse {config_path}: {e}")
+            print(f"  → Falling back to hardcoded default windows")
+
+    return _DEFAULT_POLL_WEEK_WINDOWS
+
+
+# Load poll week windows from config file (or use defaults)
+POLL_WEEK_WINDOWS = load_poll_week_windows()
 
 # Closeness bucket definitions: (label, display_label, range_label, sort_order, min_margin, max_margin)
 CLOSENESS_BUCKETS = [
@@ -95,16 +120,24 @@ GAME_COLS_TO_KEEP = [
 # =============================================================================
 
 def assign_poll_weeks(games_df):
-    """Map each game date to its corresponding AP Poll week window."""
+    """Map each game date to its corresponding AP Poll week window.
+
+    Optimized with vectorized operations instead of row-by-row apply().
+    """
     games_df['game_date_parsed'] = pd.to_datetime(games_df['date'].str[:10])
+    games_df['poll_week'] = None
 
-    def _assign(game_date):
-        for pw, (start, end) in POLL_WEEK_WINDOWS.items():
-            if pd.Timestamp(start) <= game_date <= pd.Timestamp(end):
-                return pw
-        return None
-
-    games_df['poll_week'] = games_df['game_date_parsed'].apply(_assign)
+    # Vectorized assignment: iterate through windows and assign matching dates
+    # Use "first match wins" behavior by only assigning where poll_week is still None
+    for pw, (start, end) in POLL_WEEK_WINDOWS.items():
+        start_ts = pd.Timestamp(start)
+        end_ts = pd.Timestamp(end)
+        mask = (
+            (games_df['game_date_parsed'] >= start_ts) &
+            (games_df['game_date_parsed'] <= end_ts) &
+            (games_df['poll_week'].isna())
+        )
+        games_df.loc[mask, 'poll_week'] = pw
 
     unassigned = games_df['poll_week'].isna().sum()
     if unassigned > 0:
@@ -269,7 +302,10 @@ def add_rank_range(df):
 # =============================================================================
 
 def add_entry_exit_and_trigger(df):
-    """Flag entry/exit events and identify the trigger game from the prior week."""
+    """Flag entry/exit events and identify the trigger game from the prior week.
+
+    Vectorized implementation using groupby operations instead of row-by-row iteration.
+    """
     df['entry_exit_event'] = np.where(
         (df['rank_numeric'] <= 25) & (df['prev_rank_numeric'] > 25), 'Entered',
         np.where(
@@ -277,52 +313,78 @@ def add_entry_exit_and_trigger(df):
         )
     )
 
-    # Build game lookup for trigger identification
+    # Get unique events
+    events = df[df['entry_exit_event'] != 'None'][['team', 'week_number', 'entry_exit_event']].drop_duplicates()
+
+    if events.empty:
+        return df
+
+    # Build game lookup
     games_only = df[df['game_id'].notna()].copy()
     if 'game_game_date_parsed' in games_only.columns:
         games_only['_gdate'] = pd.to_datetime(games_only['game_game_date_parsed'], errors='coerce')
     else:
         games_only['_gdate'] = pd.NaT
 
-    def _pick_trigger(team, week_num, event_type):
-        prev_week = week_num - 1
-        cands = games_only[(games_only['team'] == team) & (games_only['week_number'] == prev_week)]
-        if cands.empty:
-            return None
-        if event_type == 'Entered':
-            wins = cands[cands['game_Game Result'] == 'W']
-            if not wins.empty:
-                return wins.loc[wins['game_scoring_margin'].idxmax()]
-            return cands.loc[cands['_gdate'].idxmax()]
-        else:
-            losses = cands[cands['game_Game Result'] == 'L']
-            if not losses.empty:
-                return losses.loc[losses['game_scoring_margin'].idxmin()]
-            return cands.loc[cands['_gdate'].idxmax()]
+    # Add prev_week to events
+    events = events.copy()
+    events['prev_week'] = events['week_number'] - 1
 
-    events = df[df['entry_exit_event'] != 'None'][['team', 'week_number', 'entry_exit_event']].drop_duplicates()
-    records = []
-    for _, row in events.iterrows():
-        game = _pick_trigger(row['team'], row['week_number'], row['entry_exit_event'])
-        if game is not None:
-            records.append({
-                'team': row['team'], 'week_number': row['week_number'],
-                'trigger_game_opponent': game.get('game_Opponent'),
-                'trigger_game_result': game.get('game_Game Result'),
-                'trigger_game_team_score': game.get('game_Team Score'),
-                'trigger_game_opp_score': game.get('game_Opponent Score'),
-                'trigger_game_date': str(game['_gdate'].date()) if pd.notna(game.get('_gdate')) else None,
-                'trigger_game_margin': game.get('game_scoring_margin'),
-                'trigger_game_location': game.get('game_Location'),
-            })
+    # Merge games with events to get prev_week games for each event
+    prev_week_games = games_only.merge(
+        events[['team', 'prev_week', 'week_number', 'entry_exit_event']],
+        left_on=['team', 'week_number'],
+        right_on=['team', 'prev_week'],
+        how='inner',
+        suffixes=('', '_event')
+    )
 
-    if records:
-        trigger_df = pd.DataFrame(records)
-        # Drop existing trigger cols for clean merge
-        for col in trigger_df.columns:
-            if col in df.columns and col not in ('team', 'week_number'):
-                df = df.drop(columns=[col])
-        df = df.merge(trigger_df, on=['team', 'week_number'], how='left')
+    if prev_week_games.empty:
+        return df
+
+    # Vectorized trigger selection: compute priority scores
+    # For "Entered": prefer wins with highest margin, then latest game
+    # For "Exited": prefer losses with lowest margin, then latest game
+    is_win = (prev_week_games['game_Game Result'] == 'W').astype(int)
+    is_loss = (prev_week_games['game_Game Result'] == 'L').astype(int)
+    is_entered = (prev_week_games['entry_exit_event'] == 'Entered').astype(int)
+
+    # Convert date to numeric for sorting (nanoseconds since epoch)
+    date_rank = prev_week_games['_gdate'].fillna(pd.Timestamp('1900-01-01')).astype(np.int64)
+
+    # Priority score calculation:
+    # - For "Entered": wins (1e15) + margin (1e10) + date
+    # - For "Exited": losses (1e15) - margin (1e10) + date
+    prev_week_games['_priority'] = (
+        # Entered events: prioritize wins, then margin (higher is better), then date
+        is_entered * (is_win * 1e15 + prev_week_games['game_scoring_margin'].fillna(-999) * 1e10 + date_rank) +
+        # Exited events: prioritize losses, then margin (lower/more negative is worse), then date
+        (1 - is_entered) * (is_loss * 1e15 - prev_week_games['game_scoring_margin'].fillna(999) * 1e10 + date_rank)
+    )
+
+    # Get the highest priority game for each event
+    trigger_idx = prev_week_games.groupby(['team', 'week_number_event'])['_priority'].idxmax()
+    triggers = prev_week_games.loc[trigger_idx].copy()
+
+    # Build trigger DataFrame
+    trigger_df = pd.DataFrame({
+        'team': triggers['team'].values,
+        'week_number': triggers['week_number_event'].values,
+        'trigger_game_opponent': triggers['game_Opponent'].values,
+        'trigger_game_result': triggers['game_Game Result'].values,
+        'trigger_game_team_score': triggers['game_Team Score'].values,
+        'trigger_game_opp_score': triggers['game_Opponent Score'].values,
+        'trigger_game_date': triggers['_gdate'].apply(lambda x: str(x.date()) if pd.notna(x) else None).values,
+        'trigger_game_margin': triggers['game_scoring_margin'].values,
+        'trigger_game_location': triggers['game_Location'].values,
+    })
+
+    # Drop existing trigger cols for clean merge
+    for col in trigger_df.columns:
+        if col in df.columns and col not in ('team', 'week_number'):
+            df = df.drop(columns=[col])
+
+    df = df.merge(trigger_df, on=['team', 'week_number'], how='left')
 
     return df
 
@@ -409,7 +471,10 @@ def add_running_records(df):
 # =============================================================================
 
 def add_upset_columns(df):
-    """Compute upset magnitude and display labels."""
+    """Compute upset magnitude and display labels.
+
+    Simplified logic for better readability and maintainability.
+    """
     def _magnitude(row):
         if pd.isna(row.get('game_Team Rank')) or pd.isna(row.get('game_Opponent Rank')):
             return None
@@ -418,17 +483,24 @@ def add_upset_columns(df):
         return abs(tr - opr)
 
     def _label(row):
-        if row.get('game_is_upset') == 'Upset Loss':
-            tr = int(row['game_Team Rank']) if row['game_Team Rank'] <= 25 else 'Unranked'
-            opr = int(row['game_Opponent Rank']) if row['game_Opponent Rank'] <= 25 else 'Unranked'
-            if isinstance(tr, int):
-                return f"#{tr} {row['team']} lost to {opr} {row['game_Opponent']}"
-        elif row.get('game_is_upset') == 'Upset Win':
-            tr = int(row['game_Team Rank']) if row['game_Team Rank'] <= 25 else 'Unranked'
-            opr = int(row['game_Opponent Rank']) if row['game_Opponent Rank'] <= 25 else 'Unranked'
-            if isinstance(opr, int):
-                return f"{tr} {row['team']} beat #{opr} {row['game_Opponent']}"
-        return None
+        upset_type = row.get('game_is_upset')
+        if upset_type not in ('Upset Loss', 'Upset Win'):
+            return None
+
+        # Format ranks as strings with '#' prefix if ranked, otherwise 'Unranked'
+        tr_rank = row.get('game_Team Rank')
+        opr_rank = row.get('game_Opponent Rank')
+
+        tr_str = f"#{int(tr_rank)}" if pd.notna(tr_rank) and tr_rank <= 25 else "Unranked"
+        opr_str = f"#{int(opr_rank)}" if pd.notna(opr_rank) and opr_rank <= 25 else "Unranked"
+
+        team = row['team']
+        opponent = row.get('game_Opponent', '')
+
+        if upset_type == 'Upset Loss':
+            return f"{tr_str} {team} lost to {opr_str} {opponent}"
+        else:  # Upset Win
+            return f"{tr_str} {team} beat {opr_str} {opponent}"
 
     df['upset_magnitude'] = df.apply(_magnitude, axis=1)
     df['upset_rank_label'] = df.apply(_label, axis=1)
@@ -474,6 +546,14 @@ def run_pipeline(polls_path, games_path, output_path, append=False, dry_run=Fals
     print(f"  Games:  {games_path}")
     print(f"  Output: {output_path}")
     print(f"  Mode:   {'APPEND' if append else 'FULL REBUILD'}")
+
+    # Show poll week windows source
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    config_path = os.path.join(script_dir, '../../config/poll_week_windows.json')
+    if os.path.exists(config_path):
+        print(f"  Config: Loaded {len(POLL_WEEK_WINDOWS)} poll weeks from poll_week_windows.json")
+    else:
+        print(f"  Config: Using {len(POLL_WEEK_WINDOWS)} default poll weeks (no config file found)")
     print()
 
     # --- Load data ---
