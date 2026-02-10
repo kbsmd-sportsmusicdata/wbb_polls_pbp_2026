@@ -641,6 +641,43 @@ def run_pipeline(polls_path, games_path, output_path, append=False, dry_run=Fals
     # --- Sort and save ---
     joined = joined.sort_values(['team', 'week_number', 'game_game_date_parsed']).reset_index(drop=True)
 
+    # Reorder columns to match Tableau dataset field order
+    tableau_column_order = [
+        'season', 'team', 'conference', 'poll_week', 'week_number', 'rank', 'rank_numeric',
+        'prev_rank_numeric', 'rank_change', 'movement_category', 'weeks_in_top25', 'ranked_streak',
+        'team_identity', 'games_vs_top25', 'wins_vs_top25', 'losses_vs_top25', 'win_pct_vs_top25',
+        'run_date', 'table_id', 'state', 'game_id', 'game_date', 'game_Opponent', 'game_Location',
+        'game_Game Result', 'game_Team Score', 'game_Opponent Score', 'game_Team Rank',
+        'game_Opponent Rank', 'game_Team Conf ID', 'game_Opponent Conf ID', 'game_Overall Record',
+        'game_Conf Record', 'game_notes_headline', 'game_is_conf_game', 'game_game_date_parsed',
+        'game_scoring_margin', 'game_is_win', 'game_is_upset', 'game_quality_tier', 'game_closeness',
+        'game_closeness_label', 'game_closeness_range', 'closeness_sort_order', 'game_opponent_quality',
+        'game_opponent_conference', 'gw_games_played', 'gw_wins', 'gw_losses', 'gw_avg_scoring_margin',
+        'gw_total_scoring_margin', 'gw_best_win_margin', 'gw_worst_loss_margin', 'gw_upsets_suffered',
+        'gw_upsets_pulled', 'gw_top25_games', 'gw_nail_biters', 'gw_blowouts', 'gw_conf_games',
+        'best_rank', 'worst_rank', 'rank_range', 'rank_range_label', 'entry_exit_event',
+        'trigger_game_opponent', 'trigger_game_result', 'trigger_game_team_score', 'trigger_game_opp_score',
+        'trigger_game_date', 'trigger_game_margin', 'trigger_game_location', 'season_game_number',
+        'running_avg_margin', 'running_wins', 'running_losses', 'running_record', 'running_win_pct',
+        'running_conf_wins', 'running_conf_losses', 'running_conf_record', 'running_conf_win_pct',
+        'running_road_wins', 'running_road_losses', 'running_road_record', 'running_road_win_pct',
+        'running_home_wins', 'running_home_losses', 'running_home_record', 'running_home_win_pct',
+        'running_vs_top25_wins', 'running_vs_top25_losses', 'running_vs_top25_record',
+        'running_vs_top25_win_pct', 'upset_magnitude', 'upset_rank_label', 'matchup_key',
+        'rank_differential', 'game_Team Logo', 'game_Opponent Logo', 'game_groups_short_name',
+        'game_Team Abbreviation', 'game_Opponent Abbreviation', 'game_Team Color', 'game_Opponent Color'
+    ]
+
+    # Only reorder columns that exist in the dataframe
+    available_cols = [col for col in tableau_column_order if col in joined.columns]
+    missing_cols = [col for col in joined.columns if col not in tableau_column_order]
+
+    if missing_cols:
+        print(f"  NOTE: New columns not in Tableau order will be appended: {missing_cols}")
+
+    # Reorder: specified columns first, then any extras
+    joined = joined[available_cols + missing_cols]
+
     joined.to_csv(output_path, index=False)
     file_size = os.path.getsize(output_path) / 1024
 
