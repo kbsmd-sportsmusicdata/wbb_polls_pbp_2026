@@ -27,6 +27,7 @@ RAW_DIR = DATA_DIR / "raw"
 RAW_CSV = RAW_DIR / "wbb_schedule_raw.csv"
 FILTERED_CSV = DATA_DIR / "wbb_schedule.csv"
 SOS_RATINGS_CSV = DATA_DIR / "sos_data_weekly_run.csv"
+PARQUET_FILE = DATA_DIR / "wbb_schedule_2026.parquet"
 
 # Updated Name Mapping Dictionary
 TEAM_NAME_MAP = {
@@ -75,7 +76,11 @@ def main():
         
         # Apply name cleaning to schedule data
         df = clean_and_rename_teams(df, ['home_name', 'away_name'])
-        
+
+        # Save as Parquet for Tableau processing
+        df.to_parquet(PARQUET_FILE, index=False)
+        print(f"✓ Saved parquet schedule to {PARQUET_FILE}")
+
         # Save Raw Schedule
         df.to_csv(RAW_CSV, index=False)
         print(f"✓ Saved raw schedule to {RAW_CSV}")

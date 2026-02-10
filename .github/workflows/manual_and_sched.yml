@@ -34,6 +34,9 @@ jobs:
       - name: Run Team Box Score scraper
         run: python scrape_schedule.py
 
+      - name: Generate Tableau-ready dataset
+        run: python wbb_schedules_parquet_tableau.py
+
       - name: Update Google Sheets
         env:
           GCP_SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT }}
@@ -49,7 +52,7 @@ jobs:
           
           # Check if there are actual changes to commit
           if [ -n "$(git status --porcelain)" ]; then
-            git commit -m "Auto-update scraped WBB and SOS ratings data [CI]"
+            git commit -m "Auto-update scraped WBB data, SOS ratings, and Tableau dataset [CI]"
             git push
           else
             echo "No changes to commit"

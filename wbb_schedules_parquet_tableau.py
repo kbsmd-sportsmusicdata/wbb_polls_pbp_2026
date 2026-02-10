@@ -6,8 +6,8 @@ from datetime import datetime
 # CONFIGURATION & COLUMN MAPPING
 # ==========================================
 # Update these values if your column names differ
-INPUT_FILE = 'wbb_schedule_2026.parquet'
-OUTPUT_FILE = 'wbb_tableau_data.csv'
+INPUT_FILE = 'data/wbb_schedule_2026.parquet'
+OUTPUT_FILE = 'data/wbb_tableau_data.csv'
 
 # Dictionary mapping logical names to your actual file columns.
 COLS = {
