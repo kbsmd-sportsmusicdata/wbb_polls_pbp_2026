@@ -565,6 +565,16 @@ def run_pipeline(polls_path, games_path, output_path, append=False, dry_run=Fals
     if 'Team' in games.columns and 'team' not in games.columns:
         games = games.rename(columns={'Team': 'team'})
 
+    # Load team-to-state mapping
+    state_mapping_path = os.path.join(os.path.dirname(polls_path), 'team_state_mapping.csv')
+    if os.path.exists(state_mapping_path):
+        state_mapping = pd.read_csv(state_mapping_path)
+        polls = polls.merge(state_mapping, on='team', how='left')
+        print(f"  Loaded state mapping for {state_mapping.shape[0]} teams")
+    else:
+        print(f"  WARNING: State mapping not found at {state_mapping_path}")
+        polls['state'] = None
+
     print(f"  Polls: {polls.shape[0]} rows, {polls['team'].nunique()} teams, "
           f"{polls['poll_week'].nunique()} poll weeks")
     print(f"  Games: {games.shape[0]} rows, {games['team'].nunique()} teams")
