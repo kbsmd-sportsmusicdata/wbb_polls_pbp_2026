@@ -560,6 +560,11 @@ def run_pipeline(polls_path, games_path, output_path, append=False, dry_run=Fals
     print("[1/9] Loading source data...")
     polls = pd.read_csv(polls_path)
     games = pd.read_csv(games_path)
+
+    # Normalize column name: "Team" -> "team" to match expected schema
+    if 'Team' in games.columns and 'team' not in games.columns:
+        games = games.rename(columns={'Team': 'team'})
+
     print(f"  Polls: {polls.shape[0]} rows, {polls['team'].nunique()} teams, "
           f"{polls['poll_week'].nunique()} poll weeks")
     print(f"  Games: {games.shape[0]} rows, {games['team'].nunique()} teams")
