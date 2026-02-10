@@ -567,12 +567,15 @@ def run_pipeline(polls_path, games_path, output_path, append=False, dry_run=Fals
 
     # Load team-to-state mapping
     state_mapping_path = os.path.join(os.path.dirname(polls_path), 'team_state_mapping.csv')
-    if os.path.exists(state_mapping_path):
+    try:
         state_mapping = pd.read_csv(state_mapping_path)
         polls = polls.merge(state_mapping, on='team', how='left')
         print(f"  Loaded state mapping for {state_mapping.shape[0]} teams")
-    else:
+    except FileNotFoundError:
         print(f"  WARNING: State mapping not found at {state_mapping_path}")
+        polls['state'] = None
+    except Exception as e:
+        print(f"  WARNING: Failed to process state mapping file {state_mapping_path}: {e}")
         polls['state'] = None
 
     print(f"  Polls: {polls.shape[0]} rows, {polls['team'].nunique()} teams, "
