@@ -16,8 +16,10 @@
     "1/12": ["2026-01-12", "2026-01-18"],
     "1/19": ["2026-01-19", "2026-01-25"],
     "1/26": ["2026-01-26", "2026-02-01"],
-    "2/2": ["2026-02-02", "2026-02-08"]
+    "2/2": ["2026-02-02", "2026-02-08"],
+    "2/9": ["2026-02-09", "2026-02-15"],
+    "2/16": ["2026-02-16", "2026-02-22"]
   },
 
-  "_instructions": "To add new poll weeks as the season progresses, add entries below following the same format. Example: '2/9': ['2026-02-09', '2026-02-15']"
+  "_instructions": "To add new poll weeks as the season progresses, add entries below following the same format. Example: '2/23': ['2026-02-23', '2026-03-01']"
 }
