@@ -176,19 +176,44 @@ def prepare_game_columns(games_df):
     gdf['game_scoring_margin'] = gdf['game_Team Score'] - gdf['game_Opponent Score']
     gdf['game_is_win'] = (gdf['game_Game Result'] == 'W').astype(int)
 
-    # --- Upset classification ---
-    gdf['game_is_upset'] = np.where(
-        (gdf['game_Team Rank'].notna()) & (gdf['game_Team Rank'] <= 25) &
-        ((gdf['game_Opponent Rank'].isna()) | (gdf['game_Opponent Rank'] > 25)) &
-        (gdf['game_Game Result'] == 'L'),
-        'Upset Loss',
-        np.where(
-            ((gdf['game_Team Rank'].isna()) | (gdf['game_Team Rank'] > 25)) &
-            (gdf['game_Opponent Rank'].notna()) & (gdf['game_Opponent Rank'] <= 25) &
-            (gdf['game_Game Result'] == 'W'),
-            'Upset Win', 'No Upset'
-        )
+    # --- Upset classification (multi-tier) ---
+    # An upset occurs when the worse-ranked (or unranked) team wins.
+    # Categories: "Major Upset" (rank diff >= 10 or ranked vs unranked),
+    #             "Upset" (rank diff 1-9), "No Upset" (expected outcome).
+    team_ranked = gdf['game_Team Rank'].notna() & (gdf['game_Team Rank'] <= 25)
+    opp_ranked = gdf['game_Opponent Rank'].notna() & (gdf['game_Opponent Rank'] <= 25)
+    is_loss = gdf['game_Game Result'] == 'L'
+    is_win = gdf['game_Game Result'] == 'W'
+
+    # Both ranked: who is better ranked (lower rank number = better)
+    both_ranked = team_ranked & opp_ranked
+    team_better = both_ranked & (gdf['game_Team Rank'] < gdf['game_Opponent Rank'])
+    opp_better = both_ranked & (gdf['game_Opponent Rank'] < gdf['game_Team Rank'])
+    rank_diff = (gdf['game_Opponent Rank'] - gdf['game_Team Rank']).abs()
+
+    # Major Upset: ranked loses to unranked, unranked beats ranked,
+    #              OR both ranked with diff >= 10 and better-ranked team lost
+    major_upset = (
+        (team_ranked & ~opp_ranked & is_loss) |
+        (~team_ranked & opp_ranked & is_win) |
+        (team_better & is_loss & (rank_diff >= 10)) |
+        (opp_better & is_win & (rank_diff >= 10))
     )
+
+    # Upset: both ranked, better-ranked team lost (or worse-ranked won), diff 1-9
+    upset = (
+        (team_better & is_loss & (rank_diff >= 1) & (rank_diff <= 9)) |
+        (opp_better & is_win & (rank_diff >= 1) & (rank_diff <= 9))
+    )
+
+    gdf['game_is_upset'] = np.where(
+        major_upset, 'Major Upset',
+        np.where(upset, 'Upset', 'No Upset')
+    )
+
+    # Helper columns for weekly aggregate upset counts
+    gdf['game_upset_loss'] = ((gdf['game_is_upset'] != 'No Upset') & is_loss).astype(int)
+    gdf['game_upset_win'] = ((gdf['game_is_upset'] != 'No Upset') & is_win).astype(int)
 
     # --- Game quality tier ---
     def _quality(row):
@@ -243,8 +268,8 @@ def compute_weekly_aggregates(games_slim):
         total_scoring_margin=('game_scoring_margin', 'sum'),
         best_win_margin=('game_scoring_margin', 'max'),
         worst_loss_margin=('game_scoring_margin', 'min'),
-        upsets_suffered=('game_is_upset', lambda x: (x == 'Upset Loss').sum()),
-        upsets_pulled=('game_is_upset', lambda x: (x == 'Upset Win').sum()),
+        upsets_suffered=('game_upset_loss', 'sum'),
+        upsets_pulled=('game_upset_win', 'sum'),
         top25_games=('game_quality_tier', lambda x: (x == 'Top 25 Matchup').sum()),
         nail_biters=('game_closeness', lambda x: (x == 'Nail-Biter (≤5)').sum()),
         blowouts=('game_closeness', lambda x: (x == 'Blowout (20+)').sum()),
@@ -486,7 +511,7 @@ def add_upset_columns(df):
 
     def _label(row):
         upset_type = row.get('game_is_upset')
-        if upset_type not in ('Upset Loss', 'Upset Win'):
+        if upset_type == 'No Upset':
             return None
 
         # Format ranks as strings with '#' prefix if ranked, otherwise 'Unranked'
@@ -498,10 +523,11 @@ def add_upset_columns(df):
 
         team = row['team']
         opponent = row.get('game_Opponent', '')
+        result = row.get('game_Game Result')
 
-        if upset_type == 'Upset Loss':
+        if result == 'L':
             return f"{tr_str} {team} lost to {opr_str} {opponent}"
-        else:  # Upset Win
+        else:  # W
             return f"{tr_str} {team} beat {opr_str} {opponent}"
 
     df['upset_magnitude'] = df.apply(_magnitude, axis=1)
