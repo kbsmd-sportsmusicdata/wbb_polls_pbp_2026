@@ -20,7 +20,7 @@ Files:
     --output : Output joined CSV path
 
 Author: Krystal Beasley / WBB AP Poll Weekly Landscape Project
-Last updated: 2026-02-18
+Last updated: 2026-03-04
 """
 
 import pandas as pd
@@ -61,6 +61,10 @@ _DEFAULT_POLL_WEEK_WINDOWS = {
     '2/2':   ('2026-02-02', '2026-02-08'),
     '2/9':   ('2026-02-09', '2026-02-15'),
     '2/16':  ('2026-02-16', '2026-02-22'),
+    '2/23':  ('2026-02-23', '2026-03-01'),
+    '3/2':   ('2026-03-02', '2026-03-08'),
+    '3/9':   ('2026-03-09', '2026-03-15'),
+    '3/16':  ('2026-03-16', '2026-03-22'),
 }
 
 
