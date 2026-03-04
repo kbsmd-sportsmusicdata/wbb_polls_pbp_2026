@@ -37,9 +37,32 @@ from datetime import datetime
 # =============================================================================
 
 # Conference ID to name mapping (ESPN IDs)
+# Complete mapping based on 2025-26 season conference structure
 CONF_ID_MAP = {
-    2: 'ACC', 4: 'Big 12', 7: 'Big Ten', 8: 'Big East',
-    23: 'SEC', 46: 'A-10', 20: 'Ivy League'
+    1: 'Am. East',
+    2: 'ACC',
+    4: 'Big East',
+    5: 'Big Sky',
+    7: 'Big Ten',
+    8: 'Big 12',
+    9: 'Big West',
+    10: 'CAA',
+    11: 'CUSA',
+    12: 'Ivy',
+    13: 'MAAC',
+    14: 'MAC',
+    16: 'MEAC',
+    18: 'MVC',
+    19: 'NEC',
+    23: 'SEC',
+    25: 'Southland',
+    26: 'SWAC',
+    29: 'WCC',
+    30: 'WAC',
+    44: 'Mountain West',
+    45: 'Horizon',
+    47: 'Summit',
+    62: 'American'
 }
 
 # Poll week date windows (fallback values if config file not found)
