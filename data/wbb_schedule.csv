@@ -8643,7 +8643,7 @@ id,uid,date,attendance,time_valid,neutral_site,conference_competition,play_by_pl
  {'abbreviation': 'null', 'name': 'Home', 'summary': '0-0', 'type': 'home'}
  {'abbreviation': 'null', 'name': 'Road', 'summary': '0-0', 'type': 'road'}
  {'abbreviation': 'null', 'name': 'vs. Conf.', 'summary': '0-0', 'type': 'vsconf'}]",401851298,2026,2,,5.0,,,,,False,
-401851321,s:40~l:54~e:401851321~c:401851321,2026-03-07T17:00Z,0,True,True,False,False,False,2026-03-07T17:00Z,Peacock,[],event,Big East Tournament - Quarterfinal,national,Peacock,6,TRNMNT,2160,Mohegan Sun Arena,Uncasville,CT,True,0.0,0:00,0,1,STATUS_SCHEDULED,pre,False,Scheduled,"Sat, March 7th at 12:00 PM EST",3/7 - 12:00 PM EST,4,41,s:40~l:54~t:41,UConn,Huskies,CONN,UConn Huskies,UConn,0c2340,a2aaad,True,1956,https://a.espncdn.com/i/teamlogos/ncaa/500/41.png,4,0,,1,"[{'displayValue': None, 'period': None, 'value': 0.0}
+401851321,s:40~l:54~e:401851321~c:401851321,2026-03-07T17:00Z,0,True,True,False,False,False,2026-03-07T17:00Z,Peacock/NBCSN,[],event,Big East Tournament - Quarterfinal,national,Peacock,6,TRNMNT,2160,Mohegan Sun Arena,Uncasville,CT,True,0.0,0:00,0,1,STATUS_SCHEDULED,pre,False,Scheduled,"Sat, March 7th at 12:00 PM EST",3/7 - 12:00 PM EST,4,41,s:40~l:54~t:41,UConn,Huskies,CONN,UConn Huskies,UConn,0c2340,a2aaad,True,1956,https://a.espncdn.com/i/teamlogos/ncaa/500/41.png,4,0,,1,"[{'displayValue': None, 'period': None, 'value': 0.0}
  {'displayValue': None, 'period': None, 'value': 0.0}
  {'displayValue': None, 'period': None, 'value': 0.0}
  {'displayValue': None, 'period': None, 'value': 0.0}]","[{'abbreviation': 'Season', 'name': 'overall', 'summary': '31-0', 'type': 'total'}
