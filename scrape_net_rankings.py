@@ -11,6 +11,7 @@ MANUAL WORKAROUND:
     2. Click the "Excel" button to download CSV
     3. Save as: data/net_rankings/net_rankings_manual_YYYYMMDD.csv
     4. Run: python scrape_net_rankings.py --manual data/net_rankings/net_rankings_manual_YYYYMMDD.csv
+       Or: python scrape_net_rankings.py --latest-manual (auto-detects most recent)
 
 Output:
     - data/net_rankings/net_rankings_YYYYMMDD.csv (daily snapshot)
@@ -18,7 +19,8 @@ Output:
 
 Usage:
     python scrape_net_rankings.py                  # Auto-scrape
-    python scrape_net_rankings.py --manual FILE    # Process manual export
+    python scrape_net_rankings.py --manual FILE    # Process specific manual export
+    python scrape_net_rankings.py --latest-manual  # Auto-detect latest manual export
 """
 
 import logging
@@ -162,6 +164,35 @@ def scrape_net_rankings(retry_count: int = 3) -> Optional[pd.DataFrame]:
 
     logger.error("Failed to scrape NET rankings after all retries")
     return None
+
+
+def find_latest_manual_export() -> Optional[Path]:
+    """
+    Finds the most recent manual export file in the data directory.
+
+    Returns:
+        Path to the most recent manual export file, or None if not found
+    """
+    try:
+        # Find all manual export files
+        manual_files = list(DATA_DIR.glob("net_rankings_manual_*.csv"))
+
+        if not manual_files:
+            logger.warning("No manual export files found in data directory")
+            return None
+
+        # Sort by filename (which contains date in YYYYMMDD format) to get most recent
+        manual_files.sort(reverse=True)
+        latest_file = manual_files[0]
+
+        logger.info(f"Found {len(manual_files)} manual export file(s)")
+        logger.info(f"Most recent: {latest_file.name}")
+
+        return latest_file
+
+    except Exception as e:
+        logger.error(f"Error finding latest manual export: {e}")
+        return None
 
 
 def load_manual_export(csv_path: Path) -> Optional[pd.DataFrame]:
@@ -342,17 +373,26 @@ def save_data(df: pd.DataFrame) -> bool:
         return False
 
 
-def main(manual_file: Optional[str] = None):
+def main(manual_file: Optional[str] = None, use_latest_manual: bool = False):
     """
     Main execution function.
 
     Args:
         manual_file: Optional path to manually exported CSV file
+        use_latest_manual: If True, automatically use the most recent manual export
     """
     logger.info("Starting NET rankings scraper")
 
     # Load data (either scrape or from manual file)
-    if manual_file:
+    if use_latest_manual:
+        logger.info("Using auto-detect mode for latest manual export")
+        latest_file = find_latest_manual_export()
+        if latest_file:
+            df = load_manual_export(latest_file)
+        else:
+            logger.error("No manual export files found")
+            df = None
+    elif manual_file:
         logger.info(f"Using manual export mode with file: {manual_file}")
         df = load_manual_export(Path(manual_file))
     else:
@@ -402,8 +442,10 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description='Scrape NCAA NET Rankings')
     parser.add_argument('--manual', type=str, help='Path to manually exported CSV file')
+    parser.add_argument('--latest-manual', action='store_true',
+                       help='Automatically use the most recent manual export file')
 
     args = parser.parse_args()
 
-    success = main(manual_file=args.manual)
+    success = main(manual_file=args.manual, use_latest_manual=args.latest_manual)
     sys.exit(0 if success else 1)
