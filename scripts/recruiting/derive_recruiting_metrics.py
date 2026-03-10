@@ -163,19 +163,31 @@ def aggregate_class_metrics(df: pd.DataFrame) -> pd.DataFrame:
     return agg.sort_values(["season", "Recruiting_Rank", "team_canonical"]).reset_index(drop=True)
 
 
+RECRUITING_DIR = Path(__file__).resolve().parent.parent.parent / "data" / "recruiting"
+
+
+def _resolve(path_str: str) -> Path:
+    """Resolve a bare filename to RECRUITING_DIR; leave explicit paths as-is."""
+    p = Path(path_str)
+    return RECRUITING_DIR / p if p.parent == Path(".") else p
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", required=True, help="Path to cleaned recruiting CSV")
     parser.add_argument("--output", required=True, help="Path to output class metrics CSV")
     args = parser.parse_args()
 
-    df = pd.read_csv(args.input)
+    input_path  = _resolve(args.input)
+    output_path = _resolve(args.output)
+
+    df = pd.read_csv(input_path)
     commit_level = add_commit_level_metrics(df)
     class_metrics = aggregate_class_metrics(commit_level)
 
-    Path(args.output).parent.mkdir(parents=True, exist_ok=True)
-    class_metrics.to_csv(args.output, index=False)
-    print(f"Saved recruiting class metrics to {args.output} ({len(class_metrics):,} rows)")
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    class_metrics.to_csv(output_path, index=False)
+    print(f"Saved recruiting class metrics to {output_path} ({len(class_metrics):,} rows)")
 
 
 if __name__ == "__main__":
