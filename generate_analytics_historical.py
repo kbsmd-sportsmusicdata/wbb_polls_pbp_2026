@@ -5,6 +5,8 @@ This script:
 - Uses polls_historical_long.csv (2021-2025) as the primary input
 - Merges 2026 current-season data from polls_long.csv for cross-year comparison
 - Dynamically orders poll weeks chronologically for each season (no hardcoded week map)
+- Downloads and caches per-season schedule parquets from the sportsdataverse
+  wehoop-wbb-raw GitHub repository to compute Top 25 opponent metrics
 - Produces two primary outputs:
     1. polls_historical_analytics.csv  — row-level analytics (one row per team/week/season)
     2. polls_historical_season_summary.csv — season-level summary per team
@@ -14,17 +16,18 @@ This script:
 
 Seasons analyzed: 2021-2026 (configurable via SEASONS_TO_ANALYZE)
 
-NOTE on schedule data:
-    Top 25 opponent metrics require per-season schedule files. Only the 2026 schedule is
-    currently available at data/wbb_schedule/schedule_filtered.csv. To add historical
-    schedules (2021-2025), download from sportsdataverse GitHub releases or wehoop data
-    releases and place them at:
-        data/wbb_schedule/schedule_filtered_{season}.csv
-    e.g. data/wbb_schedule/schedule_filtered_2025.csv
-    If files are missing, Top 25 metrics are skipped gracefully for those seasons.
+Schedule parquet source:
+    https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/
+        wbb/schedules/parquet/wbb_schedule_{season}.parquet
+    Files are cached at data/wbb_schedule/wbb_schedule_{season}.parquet after first download.
+    Raw parquet columns used: home_location, away_location, home_current_rank,
+        away_current_rank, home_winner, away_winner, status_type_name
 """
+import os
+import tempfile
 import pandas as pd
 import numpy as np
+import requests
 from pathlib import Path
 from datetime import date, datetime
 
@@ -43,8 +46,11 @@ OUT_RECRUITING_CORR   = DATA_DIR / "polls_recruiting_correlation.csv"
 # Seasons to include in historical analysis (season = ending calendar year of season)
 SEASONS_TO_ANALYZE = [2021, 2022, 2023, 2024, 2025, 2026]
 
-# Name used for 2026 season's schedule file (current season)
-SCHEDULE_2026_FILE = SCHEDULE_DIR / "schedule_filtered.csv"
+# Schedule parquet base URL — {season} is replaced at runtime
+SCHEDULE_PARQUET_URL = (
+    "https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main"
+    "/wbb/schedules/parquet/wbb_schedule_{season}.parquet"
+)
 
 # ── Week Ordering ──────────────────────────────────────────────────────────────
 
@@ -89,6 +95,65 @@ def build_week_order(poll_weeks: list[str], season_year: int) -> dict[str, int]:
 
     sorted_weeks = sorted(week_dates.items(), key=lambda x: x[1])
     return {pw: i for i, (pw, _) in enumerate(sorted_weeks)}
+
+
+def _poll_week_to_date(poll_week: str, season_year: int) -> date:
+    """
+    Convert a poll week label to its actual calendar date.
+
+    Mirrors the logic inside build_week_order so other functions can reuse it.
+    """
+    if poll_week == 'Pre':
+        return date(season_year - 1, 9, 1)
+    if poll_week in ('Final', 'Post'):
+        return date(season_year, 6, 1)
+    parts = poll_week.split('/')
+    month, day = int(parts[0]), int(parts[1])
+    cal_year = (season_year - 1) if month >= 8 else season_year
+    return date(cal_year, month, day)
+
+
+def _build_rank_calendar(polls_df: pd.DataFrame, season: int) -> dict[str, list[tuple]]:
+    """
+    Build a per-team sorted timeline of (poll_date, rank_numeric) for a season.
+
+    Used to derive opponent ranks for schedule parquets that lack rank columns.
+
+    Returns dict: team → sorted list of (date, rank_numeric) ascending by date.
+    """
+    s = polls_df[polls_df['season'] == season].copy()
+    timelines: dict[str, list] = {}
+    for _, row in s.iterrows():
+        try:
+            d = _poll_week_to_date(str(row['poll_week']), int(season))
+        except (ValueError, IndexError):
+            continue
+        team = row['team']
+        if team not in timelines:
+            timelines[team] = []
+        timelines[team].append((d, int(row['rank_numeric'])))
+    for team in timelines:
+        timelines[team].sort(key=lambda x: x[0])
+    return timelines
+
+
+def _rank_at_date(
+    timelines: dict[str, list[tuple]], team: str, game_date: date
+) -> int:
+    """
+    Return a team's AP poll rank as of a game date using the nearest prior poll.
+
+    Walks backward through the team's sorted timeline to find the latest poll
+    released on or before the game date. Returns 99 (unranked) if no prior poll exists.
+    """
+    entries = timelines.get(team, [])
+    rank = 99
+    for poll_date, poll_rank in entries:
+        if poll_date <= game_date:
+            rank = poll_rank
+        else:
+            break
+    return rank
 
 
 # ── Movement / Identity Helpers ────────────────────────────────────────────────
@@ -179,36 +244,140 @@ def calculate_team_identity(group_df: pd.DataFrame, latest_week: int) -> str:
 
 # ── Schedule Metrics ───────────────────────────────────────────────────────────
 
-def load_schedule_metrics(schedule_path: Path) -> pd.DataFrame:
-    """
-    Compute per-team Top-25 opponent metrics from a schedule file.
+_SCHEDULE_METRICS_EMPTY = pd.DataFrame(columns=[
+    'team', 'games_vs_top25', 'wins_vs_top25', 'losses_vs_top25', 'win_pct_vs_top25'
+])
 
-    Returns DataFrame with columns:
-        team, games_vs_top25, wins_vs_top25, losses_vs_top25, win_pct_vs_top25
-    Returns empty DataFrame (with those columns) if file is missing or invalid.
-    """
-    empty = pd.DataFrame(columns=[
-        'team', 'games_vs_top25', 'wins_vs_top25', 'losses_vs_top25', 'win_pct_vs_top25'
-    ])
 
-    if not schedule_path.exists():
-        print(f"    ⚠ Schedule file not found: {schedule_path} — skipping Top 25 metrics")
-        return empty
+def _load_or_download_parquet(season: int) -> pd.DataFrame | None:
+    """
+    Return the raw schedule parquet for a season, loading from local cache or downloading.
+
+    Cache path: data/wbb_schedule/wbb_schedule_{season}.parquet
+    Download URL: SCHEDULE_PARQUET_URL (from sportsdataverse wehoop-wbb-raw)
+
+    Returns None on any failure so callers can skip gracefully.
+    """
+    SCHEDULE_DIR.mkdir(parents=True, exist_ok=True)
+    cache_path = SCHEDULE_DIR / f"wbb_schedule_{season}.parquet"
+
+    if cache_path.exists():
+        print(f"    ✓ Loaded cached parquet: {cache_path.name}")
+        return pd.read_parquet(cache_path)
+
+    url = SCHEDULE_PARQUET_URL.format(season=season)
+    print(f"    Downloading: {url}")
+    try:
+        response = requests.get(url, timeout=60)
+        response.raise_for_status()
+        with tempfile.NamedTemporaryFile(suffix=".parquet", delete=False) as tmp:
+            tmp.write(response.content)
+            tmp_path = tmp.name
+        df = pd.read_parquet(tmp_path)
+        os.unlink(tmp_path)
+        df.to_parquet(cache_path, index=False)
+        print(f"    ✓ Cached to {cache_path.name}  ({len(df):,} games)")
+        return df
+    except requests.HTTPError as e:
+        print(f"    ⚠ HTTP error downloading season {season}: {e}")
+    except requests.RequestException as e:
+        print(f"    ⚠ Network error downloading season {season}: {e}")
+    except Exception as e:
+        print(f"    ⚠ Unexpected error for season {season}: {e}")
+    return None
+
+
+def compute_schedule_metrics(
+    season: int, polls_df: pd.DataFrame | None = None
+) -> pd.DataFrame:
+    """
+    Compute per-team Top-25 opponent metrics for a season from the raw parquet.
+
+    Two rank-resolution strategies (auto-detected by schema):
+
+    Schema A — rank columns present (2024+):
+        Uses home_current_rank / away_current_rank embedded in the parquet.
+
+    Schema B — no rank columns (2021-2023):
+        Derives opponent ranks from the AP poll data via date-based lookup.
+        Requires polls_df (combined historical + 2026 DataFrame) to be passed.
+        For each game, finds the most recent poll released on or before game date
+        and uses that poll's rank for the opponent.
+
+    Process:
+    1. Load (or download) wbb_schedule_{season}.parquet
+    2. Filter to STATUS_FINAL games
+    3. Resolve home/away ranks (schema A or B)
+    4. Expand to team-centric rows and filter to games vs Top 25 opponents
+    5. Aggregate wins/losses/games per team
+
+    Returns DataFrame: team, games_vs_top25, wins_vs_top25, losses_vs_top25, win_pct_vs_top25
+    Returns empty DataFrame if parquet unavailable or no qualifying games found.
+    """
+    raw = _load_or_download_parquet(season)
+    if raw is None:
+        return _SCHEDULE_METRICS_EMPTY.copy()
 
     try:
-        sched = pd.read_csv(schedule_path)
-        sched['Opponent Rank'] = pd.to_numeric(sched['Opponent Rank'], errors='coerce')
-        top25_games = sched[sched['Opponent Rank'] <= 25].copy()
+        completed = raw[raw['status_type_name'] == 'STATUS_FINAL'].copy()
+
+        # ── Schema A: rank columns available ──────────────────────────────────
+        if 'home_current_rank' in completed.columns:
+            completed['home_rank'] = pd.to_numeric(
+                completed['home_current_rank'], errors='coerce'
+            ).fillna(99).astype(int)
+            completed['away_rank'] = pd.to_numeric(
+                completed['away_current_rank'], errors='coerce'
+            ).fillna(99).astype(int)
+            print(f"    Using embedded rank columns (Schema A)")
+
+        # ── Schema B: derive ranks from poll data by game date ─────────────────
+        else:
+            if polls_df is None:
+                print(f"    ⚠ No rank columns and no polls_df provided — skipping season {season}")
+                return _SCHEDULE_METRICS_EMPTY.copy()
+
+            print(f"    No rank columns — deriving from poll data by game date (Schema B)")
+            rank_calendar = _build_rank_calendar(polls_df, season)
+
+            # Parse game dates (ISO format: '2020-11-25T17:00Z')
+            game_dates = pd.to_datetime(
+                completed['start_date'], utc=True, errors='coerce'
+            ).dt.date
+
+            completed['home_rank'] = [
+                _rank_at_date(rank_calendar, str(home), gd)
+                for home, gd in zip(completed['home_location'], game_dates)
+            ]
+            completed['away_rank'] = [
+                _rank_at_date(rank_calendar, str(away), gd)
+                for away, gd in zip(completed['away_location'], game_dates)
+            ]
+
+        # ── Expand to team-centric rows ────────────────────────────────────────
+        home_view = completed[
+            ['home_location', 'away_location', 'home_winner', 'away_rank']
+        ].copy()
+        home_view.columns = ['team', 'opponent', 'won', 'opp_rank']
+
+        away_view = completed[
+            ['away_location', 'home_location', 'away_winner', 'home_rank']
+        ].copy()
+        away_view.columns = ['team', 'opponent', 'won', 'opp_rank']
+
+        all_games = pd.concat([home_view, away_view], ignore_index=True)
+        top25_games = all_games[all_games['opp_rank'] <= 25].copy()
 
         if top25_games.empty:
-            print(f"    ⚠ No Top 25 opponent games found in {schedule_path.name}")
-            return empty
+            print(f"    ⚠ No completed games vs Top 25 found for season {season}")
+            return _SCHEDULE_METRICS_EMPTY.copy()
 
-        top25_games['is_win'] = top25_games['Game Result'] == 'W'
-        metrics = top25_games.groupby('Team').agg(
-            games_vs_top25 =('Opponent', 'count'),
-            wins_vs_top25  =('is_win', 'sum')
-        ).reset_index().rename(columns={'Team': 'team'})
+        top25_games['won'] = top25_games['won'].astype(bool)
+
+        metrics = top25_games.groupby('team').agg(
+            games_vs_top25=('opponent', 'count'),
+            wins_vs_top25 =('won',      'sum')
+        ).reset_index()
 
         metrics['losses_vs_top25']  = metrics['games_vs_top25'] - metrics['wins_vs_top25']
         metrics['win_pct_vs_top25'] = (
@@ -216,12 +385,12 @@ def load_schedule_metrics(schedule_path: Path) -> pd.DataFrame:
         ).round(3)
 
         print(f"    ✓ Top 25 metrics: {len(metrics)} teams, "
-              f"{int(metrics['games_vs_top25'].sum())} games")
+              f"{int(metrics['games_vs_top25'].sum())} games (season {season})")
         return metrics
 
-    except (pd.errors.ParserError, KeyError, ValueError) as e:
-        print(f"    ⚠ Error reading {schedule_path.name}: {e}")
-        return empty
+    except (KeyError, ValueError) as e:
+        print(f"    ⚠ Error computing metrics for season {season}: {e}")
+        return _SCHEDULE_METRICS_EMPTY.copy()
 
 
 # ── Data Loading ───────────────────────────────────────────────────────────────
@@ -511,13 +680,8 @@ def main():
     schedule_metrics_frames = []
 
     for season in sorted(analytics_df['season'].unique()):
-        if season == 2026:
-            sched_path = SCHEDULE_2026_FILE
-        else:
-            sched_path = SCHEDULE_DIR / f"schedule_filtered_{season}.csv"
-
-        print(f"  Season {season}: {sched_path.name}")
-        m = load_schedule_metrics(sched_path)
+        print(f"  Season {season}:")
+        m = compute_schedule_metrics(int(season), polls_df=df)
         if not m.empty:
             m['season'] = season
             schedule_metrics_frames.append(m)
@@ -527,10 +691,10 @@ def main():
         analytics_df = analytics_df.merge(all_sched, on=['season', 'team'], how='left')
         for col in ['games_vs_top25', 'wins_vs_top25', 'losses_vs_top25', 'win_pct_vs_top25']:
             analytics_df[col] = analytics_df[col].fillna(0)
-        print(f"\n  ✓ Schedule metrics merged for {len(schedule_metrics_frames)} season(s)")
+        seasons_loaded = all_sched['season'].nunique()
+        print(f"\n  ✓ Schedule metrics merged for {seasons_loaded} season(s)")
     else:
-        print("  ⚠ No schedule files found — Top 25 opponent metrics not included")
-        print("    To add historical schedules, see the module docstring for file naming.")
+        print("  ⚠ No schedule data loaded — Top 25 opponent metrics not included")
 
     # ── Finalize analytics column order ───────────────────────────────────────
     base_cols = [
@@ -645,10 +809,8 @@ def main():
     if RECRUITING_CSV.exists():
         print(f"  {OUT_RECRUITING_CORR}")
     print()
-    print("NOTE: Historical schedule data needed for Top 25 opponent metrics.")
-    print("  Download per-season schedule files from sportsdataverse/wehoop GitHub")
-    print("  releases and place at:")
-    print("  data/wbb_schedule/schedule_filtered_{season}.csv  (e.g. _2025.csv)")
+    print("NOTE: Schedule parquets are auto-downloaded from sportsdataverse/wehoop-wbb-raw")
+    print("  and cached at data/wbb_schedule/wbb_schedule_{season}.parquet.")
     print()
     print("NOTE: To enable recruiting correlation analysis, create:")
     print(f"  {RECRUITING_CSV}")
