@@ -213,17 +213,29 @@ def clean_recruiting(df: pd.DataFrame) -> pd.DataFrame:
     return out
 
 
+RECRUITING_DIR = Path(__file__).resolve().parent.parent.parent / "data" / "recruiting"
+
+
+def _resolve(path_str: str) -> Path:
+    """Resolve a bare filename to RECRUITING_DIR; leave explicit paths as-is."""
+    p = Path(path_str)
+    return RECRUITING_DIR / p if p.parent == Path(".") else p
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", required=True, help="Path to raw recruiting CSV")
     parser.add_argument("--output", required=True, help="Path to cleaned recruiting CSV")
     args = parser.parse_args()
 
-    df = pd.read_csv(args.input)
+    input_path  = _resolve(args.input)
+    output_path = _resolve(args.output)
+
+    df = pd.read_csv(input_path)
     cleaned = clean_recruiting(df)
-    Path(args.output).parent.mkdir(parents=True, exist_ok=True)
-    cleaned.to_csv(args.output, index=False)
-    print(f"Saved cleaned recruiting data to {args.output} ({len(cleaned):,} rows)")
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    cleaned.to_csv(output_path, index=False)
+    print(f"Saved cleaned recruiting data to {output_path} ({len(cleaned):,} rows)")
 
 
 if __name__ == "__main__":

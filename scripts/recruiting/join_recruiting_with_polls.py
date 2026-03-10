@@ -142,6 +142,22 @@ def create_cross_reference(recruiting: pd.DataFrame, polls_summary: pd.DataFrame
     return merged.sort_values(["season", "Recruiting_Rank", "team_canonical"]).reset_index(drop=True)
 
 
+RECRUITING_DIR = Path(__file__).resolve().parent.parent.parent / "data" / "recruiting"
+POLLS_DIR      = Path(__file__).resolve().parent.parent.parent / "data"
+
+
+def _resolve_recruiting(path_str: str) -> Path:
+    """Resolve a bare filename to RECRUITING_DIR; leave explicit paths as-is."""
+    p = Path(path_str)
+    return RECRUITING_DIR / p if p.parent == Path(".") else p
+
+
+def _resolve_polls(path_str: str) -> Path:
+    """Resolve a bare filename to POLLS_DIR; leave explicit paths as-is."""
+    p = Path(path_str)
+    return POLLS_DIR / p if p.parent == Path(".") else p
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--recruiting", required=True)
@@ -150,16 +166,17 @@ def main() -> None:
     parser.add_argument("--output", required=True)
     args = parser.parse_args()
 
-    recruiting = pd.read_csv(args.recruiting)
-    polls_weekly = pd.read_csv(args.polls_weekly)
-    polls_summary = pd.read_csv(args.polls_summary)
+    recruiting    = pd.read_csv(_resolve_recruiting(args.recruiting))
+    polls_weekly  = pd.read_csv(_resolve_polls(args.polls_weekly))
+    polls_summary = pd.read_csv(_resolve_polls(args.polls_summary))
+    output_path   = _resolve_recruiting(args.output)
 
     poll_summary = build_poll_summary(polls_weekly, polls_summary)
     merged = create_cross_reference(recruiting, poll_summary)
 
-    Path(args.output).parent.mkdir(parents=True, exist_ok=True)
-    merged.to_csv(args.output, index=False)
-    print(f"Saved cross-reference dataset to {args.output} ({len(merged):,} rows)")
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    merged.to_csv(output_path, index=False)
+    print(f"Saved cross-reference dataset to {output_path} ({len(merged):,} rows)")
 
 
 if __name__ == "__main__":
