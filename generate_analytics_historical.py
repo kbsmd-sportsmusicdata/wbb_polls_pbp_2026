@@ -61,6 +61,13 @@ POLL_TO_SCHEDULE_NAME: dict[str, str] = {
     "Miami (FL)":       "Miami",
 }
 
+# Conference name normalization applied to all output files
+CONFERENCE_NAME_MAP: dict[str, str] = {
+    "Pac-12": "Pac 12",
+    "A-10":   "A10",
+    "A-Sun":  "ASUN",
+}
+
 # ── Week Ordering ──────────────────────────────────────────────────────────────
 
 def build_week_order(poll_weeks: list[str], season_year: int) -> dict[str, int]:
@@ -682,6 +689,10 @@ def main():
         raise RuntimeError("No data loaded. Check input file paths.")
 
     df = pd.concat(frames, ignore_index=True)
+
+    # Normalize conference names
+    df['conference'] = df['conference'].replace(CONFERENCE_NAME_MAP)
+
     print(f"\n  Total rows combined: {len(df):,}")
     print(f"  Seasons present   : {sorted(df['season'].unique())}")
     print(f"  Teams (all-time)  : {df['team'].nunique()}")

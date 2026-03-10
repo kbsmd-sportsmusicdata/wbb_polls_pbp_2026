@@ -1,21 +1,21 @@
 season,team,conference,poll_week,week_number,rank,rank_numeric,prev_rank_numeric,rank_change,movement_category,weeks_in_top25,ranked_streak,team_identity,games_vs_top25,wins_vs_top25,losses_vs_top25,win_pct_vs_top25,table_id
-2021,Arizona,Pac-12,Pre,0,7.0,7,,,Unknown,1,1,Steady,13,9,4,0.692,1
-2021,Arizona,Pac-12,11/30,1,7.0,7,7.0,0.0,Stable,2,2,Steady,13,9,4,0.692,1
-2021,Arizona,Pac-12,12/7,2,6.0,6,7.0,1.0,Rising,3,3,Steady,13,9,4,0.692,1
-2021,Arizona,Pac-12,12/14,3,6.0,6,6.0,0.0,Stable,4,4,Steady,13,9,4,0.692,1
-2021,Arizona,Pac-12,12/21,4,6.0,6,6.0,0.0,Stable,5,5,Steady,13,9,4,0.692,1
-2021,Arizona,Pac-12,12/28,5,6.0,6,6.0,0.0,Stable,6,6,Steady,13,9,4,0.692,1
-2021,Arizona,Pac-12,1/4,6,7.0,7,6.0,-1.0,Falling,7,7,Steady,13,9,4,0.692,1
-2021,Arizona,Pac-12,1/11,7,11.0,11,7.0,-4.0,Falling,8,8,Steady,13,9,4,0.692,1
-2021,Arizona,Pac-12,1/18,8,10.0,10,11.0,1.0,Rising,9,9,Steady,13,9,4,0.692,1
-2021,Arizona,Pac-12,1/25,9,10.0,10,10.0,0.0,Stable,10,10,Steady,13,9,4,0.692,1
-2021,Arizona,Pac-12,2/1,10,9.0,9,10.0,1.0,Rising,11,11,Steady,13,9,4,0.692,1
-2021,Arizona,Pac-12,2/8,11,10.0,10,9.0,-1.0,Falling,12,12,Steady,13,9,4,0.692,1
-2021,Arizona,Pac-12,2/15,12,10.0,10,10.0,0.0,Stable,13,13,Steady,13,9,4,0.692,1
-2021,Arizona,Pac-12,2/22,13,9.0,9,10.0,1.0,Rising,14,14,Steady,13,9,4,0.692,1
-2021,Arizona,Pac-12,3/1,14,11.0,11,9.0,-2.0,Falling,15,15,Steady,13,9,4,0.692,1
-2021,Arizona,Pac-12,3/8,15,11.0,11,11.0,0.0,Stable,16,16,Steady,13,9,4,0.692,1
-2021,Arizona,Pac-12,Final,16,11.0,11,11.0,0.0,Stable,17,17,Steady,13,9,4,0.692,1
+2021,Arizona,Pac 12,Pre,0,7.0,7,,,Unknown,1,1,Steady,13,9,4,0.692,1
+2021,Arizona,Pac 12,11/30,1,7.0,7,7.0,0.0,Stable,2,2,Steady,13,9,4,0.692,1
+2021,Arizona,Pac 12,12/7,2,6.0,6,7.0,1.0,Rising,3,3,Steady,13,9,4,0.692,1
+2021,Arizona,Pac 12,12/14,3,6.0,6,6.0,0.0,Stable,4,4,Steady,13,9,4,0.692,1
+2021,Arizona,Pac 12,12/21,4,6.0,6,6.0,0.0,Stable,5,5,Steady,13,9,4,0.692,1
+2021,Arizona,Pac 12,12/28,5,6.0,6,6.0,0.0,Stable,6,6,Steady,13,9,4,0.692,1
+2021,Arizona,Pac 12,1/4,6,7.0,7,6.0,-1.0,Falling,7,7,Steady,13,9,4,0.692,1
+2021,Arizona,Pac 12,1/11,7,11.0,11,7.0,-4.0,Falling,8,8,Steady,13,9,4,0.692,1
+2021,Arizona,Pac 12,1/18,8,10.0,10,11.0,1.0,Rising,9,9,Steady,13,9,4,0.692,1
+2021,Arizona,Pac 12,1/25,9,10.0,10,10.0,0.0,Stable,10,10,Steady,13,9,4,0.692,1
+2021,Arizona,Pac 12,2/1,10,9.0,9,10.0,1.0,Rising,11,11,Steady,13,9,4,0.692,1
+2021,Arizona,Pac 12,2/8,11,10.0,10,9.0,-1.0,Falling,12,12,Steady,13,9,4,0.692,1
+2021,Arizona,Pac 12,2/15,12,10.0,10,10.0,0.0,Stable,13,13,Steady,13,9,4,0.692,1
+2021,Arizona,Pac 12,2/22,13,9.0,9,10.0,1.0,Rising,14,14,Steady,13,9,4,0.692,1
+2021,Arizona,Pac 12,3/1,14,11.0,11,9.0,-2.0,Falling,15,15,Steady,13,9,4,0.692,1
+2021,Arizona,Pac 12,3/8,15,11.0,11,11.0,0.0,Stable,16,16,Steady,13,9,4,0.692,1
+2021,Arizona,Pac 12,Final,16,11.0,11,11.0,0.0,Stable,17,17,Steady,13,9,4,0.692,1
 2021,Arkansas,SEC,Pre,0,14.0,14,,,Unknown,1,1,Steady,9,3,6,0.333,1
 2021,Arkansas,SEC,11/30,1,16.0,16,14.0,-2.0,Falling,2,2,Steady,9,3,6,0.333,1
 2021,Arkansas,SEC,12/7,2,13.0,13,16.0,3.0,Rising,3,3,Steady,9,3,6,0.333,1
@@ -65,8 +65,8 @@ season,team,conference,poll_week,week_number,rank,rank_numeric,prev_rank_numeric
 2021,DePaul,Big East,2/15,12,19.0,19,22.0,3.0,Rising,13,13,Falling,5,1,4,0.2,1
 2021,DePaul,Big East,2/22,13,24.0,24,19.0,-5.0,Falling,14,14,Falling,5,1,4,0.2,1
 2021,DePaul,Big East,3/1,14,25.0,25,24.0,-1.0,Falling,15,15,Falling,5,1,4,0.2,1
-2021,Florida Gulf Coast,A-Sun,3/8,15,24.0,24,,,Unknown,1,1,Newcomer,3,0,3,0.0,1
-2021,Florida Gulf Coast,A-Sun,Final,16,24.0,24,24.0,0.0,Stable,2,2,Newcomer,3,0,3,0.0,1
+2021,Florida Gulf Coast,ASUN,3/8,15,24.0,24,,,Unknown,1,1,Newcomer,3,0,3,0.0,1
+2021,Florida Gulf Coast,ASUN,Final,16,24.0,24,24.0,0.0,Stable,2,2,Newcomer,3,0,3,0.0,1
 2021,Georgia,SEC,1/18,8,22.0,22,,,Unknown,1,1,Surging,11,5,6,0.455,1
 2021,Georgia,SEC,1/25,9,22.0,22,22.0,0.0,Stable,2,2,Surging,11,5,6,0.455,1
 2021,Georgia,SEC,2/1,10,25.0,25,22.0,-3.0,Falling,3,3,Surging,11,5,6,0.455,1
@@ -256,27 +256,27 @@ season,team,conference,poll_week,week_number,rank,rank_numeric,prev_rank_numeric
 2021,Ohio State,Big Ten,3/1,14,22.0,22,15.0,-7.0,Falling,15,15,Falling,7,3,4,0.429,1
 2021,Ohio State,Big Ten,3/8,15,22.0,22,22.0,0.0,Stable,16,16,Falling,7,3,4,0.429,1
 2021,Ohio State,Big Ten,Final,16,22.0,22,22.0,0.0,Stable,17,17,Falling,7,3,4,0.429,1
-2021,Oregon,Pac-12,Pre,0,10.0,10,,,Unknown,1,1,Falling,12,3,9,0.25,1
-2021,Oregon,Pac-12,11/30,1,10.0,10,10.0,0.0,Stable,2,2,Falling,12,3,9,0.25,1
-2021,Oregon,Pac-12,12/7,2,8.0,8,10.0,2.0,Rising,3,3,Falling,12,3,9,0.25,1
-2021,Oregon,Pac-12,12/14,3,8.0,8,8.0,0.0,Stable,4,4,Falling,12,3,9,0.25,1
-2021,Oregon,Pac-12,12/21,4,8.0,8,8.0,0.0,Stable,5,5,Falling,12,3,9,0.25,1
-2021,Oregon,Pac-12,12/28,5,8.0,8,8.0,0.0,Stable,6,6,Falling,12,3,9,0.25,1
-2021,Oregon,Pac-12,1/4,6,11.0,11,8.0,-3.0,Falling,7,7,Falling,12,3,9,0.25,1
-2021,Oregon,Pac-12,1/11,7,10.0,10,11.0,1.0,Rising,8,8,Falling,12,3,9,0.25,1
-2021,Oregon,Pac-12,1/18,8,13.0,13,10.0,-3.0,Falling,9,9,Falling,12,3,9,0.25,1
-2021,Oregon,Pac-12,1/25,9,11.0,11,13.0,2.0,Rising,10,10,Falling,12,3,9,0.25,1
-2021,Oregon,Pac-12,2/1,10,12.0,12,11.0,-1.0,Falling,11,11,Falling,12,3,9,0.25,1
-2021,Oregon,Pac-12,2/8,11,11.0,11,12.0,1.0,Rising,12,12,Falling,12,3,9,0.25,1
-2021,Oregon,Pac-12,2/15,12,13.0,13,11.0,-2.0,Falling,13,13,Falling,12,3,9,0.25,1
-2021,Oregon,Pac-12,2/22,13,14.0,14,13.0,-1.0,Falling,14,14,Falling,12,3,9,0.25,1
-2021,Oregon,Pac-12,3/1,14,19.0,19,14.0,-5.0,Falling,15,15,Falling,12,3,9,0.25,1
-2021,Oregon,Pac-12,3/8,15,23.0,23,19.0,-4.0,Falling,16,16,Falling,12,3,9,0.25,1
-2021,Oregon,Pac-12,Final,16,23.0,23,23.0,0.0,Stable,17,17,Falling,12,3,9,0.25,1
-2021,Oregon State,Pac-12,Pre,0,18.0,18,,,Unknown,1,1,Newcomer,9,3,6,0.333,1
-2021,Oregon State,Pac-12,11/30,1,17.0,17,18.0,1.0,Rising,2,2,Newcomer,9,3,6,0.333,1
-2021,Oregon State,Pac-12,12/7,2,15.0,15,17.0,2.0,Rising,3,3,Newcomer,9,3,6,0.333,1
-2021,Oregon State,Pac-12,12/14,3,21.0,21,15.0,-6.0,Falling,4,4,Newcomer,9,3,6,0.333,1
+2021,Oregon,Pac 12,Pre,0,10.0,10,,,Unknown,1,1,Falling,12,3,9,0.25,1
+2021,Oregon,Pac 12,11/30,1,10.0,10,10.0,0.0,Stable,2,2,Falling,12,3,9,0.25,1
+2021,Oregon,Pac 12,12/7,2,8.0,8,10.0,2.0,Rising,3,3,Falling,12,3,9,0.25,1
+2021,Oregon,Pac 12,12/14,3,8.0,8,8.0,0.0,Stable,4,4,Falling,12,3,9,0.25,1
+2021,Oregon,Pac 12,12/21,4,8.0,8,8.0,0.0,Stable,5,5,Falling,12,3,9,0.25,1
+2021,Oregon,Pac 12,12/28,5,8.0,8,8.0,0.0,Stable,6,6,Falling,12,3,9,0.25,1
+2021,Oregon,Pac 12,1/4,6,11.0,11,8.0,-3.0,Falling,7,7,Falling,12,3,9,0.25,1
+2021,Oregon,Pac 12,1/11,7,10.0,10,11.0,1.0,Rising,8,8,Falling,12,3,9,0.25,1
+2021,Oregon,Pac 12,1/18,8,13.0,13,10.0,-3.0,Falling,9,9,Falling,12,3,9,0.25,1
+2021,Oregon,Pac 12,1/25,9,11.0,11,13.0,2.0,Rising,10,10,Falling,12,3,9,0.25,1
+2021,Oregon,Pac 12,2/1,10,12.0,12,11.0,-1.0,Falling,11,11,Falling,12,3,9,0.25,1
+2021,Oregon,Pac 12,2/8,11,11.0,11,12.0,1.0,Rising,12,12,Falling,12,3,9,0.25,1
+2021,Oregon,Pac 12,2/15,12,13.0,13,11.0,-2.0,Falling,13,13,Falling,12,3,9,0.25,1
+2021,Oregon,Pac 12,2/22,13,14.0,14,13.0,-1.0,Falling,14,14,Falling,12,3,9,0.25,1
+2021,Oregon,Pac 12,3/1,14,19.0,19,14.0,-5.0,Falling,15,15,Falling,12,3,9,0.25,1
+2021,Oregon,Pac 12,3/8,15,23.0,23,19.0,-4.0,Falling,16,16,Falling,12,3,9,0.25,1
+2021,Oregon,Pac 12,Final,16,23.0,23,23.0,0.0,Stable,17,17,Falling,12,3,9,0.25,1
+2021,Oregon State,Pac 12,Pre,0,18.0,18,,,Unknown,1,1,Newcomer,9,3,6,0.333,1
+2021,Oregon State,Pac 12,11/30,1,17.0,17,18.0,1.0,Rising,2,2,Newcomer,9,3,6,0.333,1
+2021,Oregon State,Pac 12,12/7,2,15.0,15,17.0,2.0,Rising,3,3,Newcomer,9,3,6,0.333,1
+2021,Oregon State,Pac 12,12/14,3,21.0,21,15.0,-6.0,Falling,4,4,Newcomer,9,3,6,0.333,1
 2021,Rutgers,Big Ten,2/22,13,25.0,25,,,Unknown,1,1,Steady,4,3,1,0.75,1
 2021,Rutgers,Big Ten,3/1,14,24.0,24,25.0,1.0,Rising,2,2,Steady,4,3,1,0.75,1
 2021,Rutgers,Big Ten,3/8,15,19.0,19,24.0,5.0,Rising,3,3,Steady,4,3,1,0.75,1
@@ -321,23 +321,23 @@ season,team,conference,poll_week,week_number,rank,rank_numeric,prev_rank_numeric
 2021,South Florida,AAC,3/1,14,15.0,15,13.0,-2.0,Falling,12,12,Steady,4,2,2,0.5,1
 2021,South Florida,AAC,3/8,15,20.0,20,15.0,-5.0,Falling,13,13,Steady,4,2,2,0.5,1
 2021,South Florida,AAC,Final,16,19.0,19,20.0,1.0,Rising,14,14,Steady,4,2,2,0.5,1
-2021,Stanford,Pac-12,Pre,0,2.0,2,,,Unknown,1,1,Elite Lock,15,14,1,0.933,1
-2021,Stanford,Pac-12,11/30,1,2.0,2,2.0,0.0,Stable,2,2,Elite Lock,15,14,1,0.933,1
-2021,Stanford,Pac-12,12/7,2,1.0,1,2.0,1.0,Rising,3,3,Elite Lock,15,14,1,0.933,1
-2021,Stanford,Pac-12,12/14,3,1.0,1,1.0,0.0,Stable,4,4,Elite Lock,15,14,1,0.933,1
-2021,Stanford,Pac-12,12/21,4,1.0,1,1.0,0.0,Stable,5,5,Elite Lock,15,14,1,0.933,1
-2021,Stanford,Pac-12,12/28,5,1.0,1,1.0,0.0,Stable,6,6,Elite Lock,15,14,1,0.933,1
-2021,Stanford,Pac-12,1/4,6,1.0,1,1.0,0.0,Stable,7,7,Elite Lock,15,14,1,0.933,1
-2021,Stanford,Pac-12,1/11,7,1.0,1,1.0,0.0,Stable,8,8,Elite Lock,15,14,1,0.933,1
-2021,Stanford,Pac-12,1/18,8,5.0,5,1.0,-4.0,Falling,9,9,Elite Lock,15,14,1,0.933,1
-2021,Stanford,Pac-12,1/25,9,6.0,6,5.0,-1.0,Falling,10,10,Elite Lock,15,14,1,0.933,1
-2021,Stanford,Pac-12,2/1,10,6.0,6,6.0,0.0,Stable,11,11,Elite Lock,15,14,1,0.933,1
-2021,Stanford,Pac-12,2/8,11,5.0,5,6.0,1.0,Rising,12,12,Elite Lock,15,14,1,0.933,1
-2021,Stanford,Pac-12,2/15,12,6.0,6,5.0,-1.0,Falling,13,13,Elite Lock,15,14,1,0.933,1
-2021,Stanford,Pac-12,2/22,13,4.0,4,6.0,2.0,Rising,14,14,Elite Lock,15,14,1,0.933,1
-2021,Stanford,Pac-12,3/1,14,4.0,4,4.0,0.0,Stable,15,15,Elite Lock,15,14,1,0.933,1
-2021,Stanford,Pac-12,3/8,15,2.0,2,4.0,2.0,Rising,16,16,Elite Lock,15,14,1,0.933,1
-2021,Stanford,Pac-12,Final,16,2.0,2,2.0,0.0,Stable,17,17,Elite Lock,15,14,1,0.933,1
+2021,Stanford,Pac 12,Pre,0,2.0,2,,,Unknown,1,1,Elite Lock,15,14,1,0.933,1
+2021,Stanford,Pac 12,11/30,1,2.0,2,2.0,0.0,Stable,2,2,Elite Lock,15,14,1,0.933,1
+2021,Stanford,Pac 12,12/7,2,1.0,1,2.0,1.0,Rising,3,3,Elite Lock,15,14,1,0.933,1
+2021,Stanford,Pac 12,12/14,3,1.0,1,1.0,0.0,Stable,4,4,Elite Lock,15,14,1,0.933,1
+2021,Stanford,Pac 12,12/21,4,1.0,1,1.0,0.0,Stable,5,5,Elite Lock,15,14,1,0.933,1
+2021,Stanford,Pac 12,12/28,5,1.0,1,1.0,0.0,Stable,6,6,Elite Lock,15,14,1,0.933,1
+2021,Stanford,Pac 12,1/4,6,1.0,1,1.0,0.0,Stable,7,7,Elite Lock,15,14,1,0.933,1
+2021,Stanford,Pac 12,1/11,7,1.0,1,1.0,0.0,Stable,8,8,Elite Lock,15,14,1,0.933,1
+2021,Stanford,Pac 12,1/18,8,5.0,5,1.0,-4.0,Falling,9,9,Elite Lock,15,14,1,0.933,1
+2021,Stanford,Pac 12,1/25,9,6.0,6,5.0,-1.0,Falling,10,10,Elite Lock,15,14,1,0.933,1
+2021,Stanford,Pac 12,2/1,10,6.0,6,6.0,0.0,Stable,11,11,Elite Lock,15,14,1,0.933,1
+2021,Stanford,Pac 12,2/8,11,5.0,5,6.0,1.0,Rising,12,12,Elite Lock,15,14,1,0.933,1
+2021,Stanford,Pac 12,2/15,12,6.0,6,5.0,-1.0,Falling,13,13,Elite Lock,15,14,1,0.933,1
+2021,Stanford,Pac 12,2/22,13,4.0,4,6.0,2.0,Rising,14,14,Elite Lock,15,14,1,0.933,1
+2021,Stanford,Pac 12,3/1,14,4.0,4,4.0,0.0,Stable,15,15,Elite Lock,15,14,1,0.933,1
+2021,Stanford,Pac 12,3/8,15,2.0,2,4.0,2.0,Rising,16,16,Elite Lock,15,14,1,0.933,1
+2021,Stanford,Pac 12,Final,16,2.0,2,2.0,0.0,Stable,17,17,Elite Lock,15,14,1,0.933,1
 2021,Syracuse,ACC,Pre,0,23.0,23,,,Unknown,1,1,Newcomer,6,2,4,0.333,1
 2021,Syracuse,ACC,11/30,1,22.0,22,23.0,1.0,Rising,2,2,Newcomer,6,2,4,0.333,1
 2021,Syracuse,ACC,12/7,2,20.0,20,22.0,2.0,Rising,3,3,Newcomer,6,2,4,0.333,1
@@ -381,23 +381,23 @@ season,team,conference,poll_week,week_number,rank,rank_numeric,prev_rank_numeric
 2021,Texas A&M,SEC,3/1,14,2.0,2,3.0,1.0,Rising,15,15,Elite Lock,12,10,2,0.833,1
 2021,Texas A&M,SEC,3/8,15,4.0,4,2.0,-2.0,Falling,16,16,Elite Lock,12,10,2,0.833,1
 2021,Texas A&M,SEC,Final,16,4.0,4,4.0,0.0,Stable,17,17,Elite Lock,12,10,2,0.833,1
-2021,UCLA,Pac-12,Pre,0,9.0,9,,,Unknown,1,1,Steady,11,5,6,0.455,1
-2021,UCLA,Pac-12,11/30,1,9.0,9,9.0,0.0,Stable,2,2,Steady,11,5,6,0.455,1
-2021,UCLA,Pac-12,12/7,2,11.0,11,9.0,-2.0,Falling,3,3,Steady,11,5,6,0.455,1
-2021,UCLA,Pac-12,12/14,3,11.0,11,11.0,0.0,Stable,4,4,Steady,11,5,6,0.455,1
-2021,UCLA,Pac-12,12/21,4,10.0,10,11.0,1.0,Rising,5,5,Steady,11,5,6,0.455,1
-2021,UCLA,Pac-12,12/28,5,11.0,11,10.0,-1.0,Falling,6,6,Steady,11,5,6,0.455,1
-2021,UCLA,Pac-12,1/4,6,9.0,9,11.0,2.0,Rising,7,7,Steady,11,5,6,0.455,1
-2021,UCLA,Pac-12,1/11,7,8.0,8,9.0,1.0,Rising,8,8,Steady,11,5,6,0.455,1
-2021,UCLA,Pac-12,1/18,8,6.0,6,8.0,2.0,Rising,9,9,Steady,11,5,6,0.455,1
-2021,UCLA,Pac-12,1/25,9,5.0,5,6.0,1.0,Rising,10,10,Steady,11,5,6,0.455,1
-2021,UCLA,Pac-12,2/1,10,5.0,5,5.0,0.0,Stable,11,11,Steady,11,5,6,0.455,1
-2021,UCLA,Pac-12,2/8,11,8.0,8,5.0,-3.0,Falling,12,12,Steady,11,5,6,0.455,1
-2021,UCLA,Pac-12,2/15,12,8.0,8,8.0,0.0,Stable,13,13,Steady,11,5,6,0.455,1
-2021,UCLA,Pac-12,2/22,13,10.0,10,8.0,-2.0,Falling,14,14,Steady,11,5,6,0.455,1
-2021,UCLA,Pac-12,3/1,14,9.0,9,10.0,1.0,Rising,15,15,Steady,11,5,6,0.455,1
-2021,UCLA,Pac-12,3/8,15,10.0,10,9.0,-1.0,Falling,16,16,Steady,11,5,6,0.455,1
-2021,UCLA,Pac-12,Final,16,9.0,9,10.0,1.0,Rising,17,17,Steady,11,5,6,0.455,1
+2021,UCLA,Pac 12,Pre,0,9.0,9,,,Unknown,1,1,Steady,11,5,6,0.455,1
+2021,UCLA,Pac 12,11/30,1,9.0,9,9.0,0.0,Stable,2,2,Steady,11,5,6,0.455,1
+2021,UCLA,Pac 12,12/7,2,11.0,11,9.0,-2.0,Falling,3,3,Steady,11,5,6,0.455,1
+2021,UCLA,Pac 12,12/14,3,11.0,11,11.0,0.0,Stable,4,4,Steady,11,5,6,0.455,1
+2021,UCLA,Pac 12,12/21,4,10.0,10,11.0,1.0,Rising,5,5,Steady,11,5,6,0.455,1
+2021,UCLA,Pac 12,12/28,5,11.0,11,10.0,-1.0,Falling,6,6,Steady,11,5,6,0.455,1
+2021,UCLA,Pac 12,1/4,6,9.0,9,11.0,2.0,Rising,7,7,Steady,11,5,6,0.455,1
+2021,UCLA,Pac 12,1/11,7,8.0,8,9.0,1.0,Rising,8,8,Steady,11,5,6,0.455,1
+2021,UCLA,Pac 12,1/18,8,6.0,6,8.0,2.0,Rising,9,9,Steady,11,5,6,0.455,1
+2021,UCLA,Pac 12,1/25,9,5.0,5,6.0,1.0,Rising,10,10,Steady,11,5,6,0.455,1
+2021,UCLA,Pac 12,2/1,10,5.0,5,5.0,0.0,Stable,11,11,Steady,11,5,6,0.455,1
+2021,UCLA,Pac 12,2/8,11,8.0,8,5.0,-3.0,Falling,12,12,Steady,11,5,6,0.455,1
+2021,UCLA,Pac 12,2/15,12,8.0,8,8.0,0.0,Stable,13,13,Steady,11,5,6,0.455,1
+2021,UCLA,Pac 12,2/22,13,10.0,10,8.0,-2.0,Falling,14,14,Steady,11,5,6,0.455,1
+2021,UCLA,Pac 12,3/1,14,9.0,9,10.0,1.0,Rising,15,15,Steady,11,5,6,0.455,1
+2021,UCLA,Pac 12,3/8,15,10.0,10,9.0,-1.0,Falling,16,16,Steady,11,5,6,0.455,1
+2021,UCLA,Pac 12,Final,16,9.0,9,10.0,1.0,Rising,17,17,Steady,11,5,6,0.455,1
 2021,UConn,Big East,Pre,0,3.0,3,,,Unknown,1,1,Elite Lock,8,6,2,0.75,1
 2021,UConn,Big East,11/30,1,3.0,3,3.0,0.0,Stable,2,2,Elite Lock,8,6,2,0.75,1
 2021,UConn,Big East,12/7,2,3.0,3,3.0,0.0,Stable,3,3,Elite Lock,8,6,2,0.75,1
@@ -415,7 +415,7 @@ season,team,conference,poll_week,week_number,rank,rank_numeric,prev_rank_numeric
 2021,UConn,Big East,3/1,14,1.0,1,1.0,0.0,Stable,15,15,Elite Lock,8,6,2,0.75,1
 2021,UConn,Big East,3/8,15,1.0,1,1.0,0.0,Stable,16,16,Elite Lock,8,6,2,0.75,1
 2021,UConn,Big East,Final,16,1.0,1,1.0,0.0,Stable,17,17,Elite Lock,8,6,2,0.75,1
-2021,Washington State,Pac-12,1/11,7,25.0,25,,,Unknown,1,1,Newcomer,12,4,8,0.333,1
+2021,Washington State,Pac 12,1/11,7,25.0,25,,,Unknown,1,1,Newcomer,12,4,8,0.333,1
 2021,West Virginia,Big 12,1/25,9,24.0,24,,,Unknown,1,1,Surging,7,3,4,0.429,1
 2021,West Virginia,Big 12,2/1,10,21.0,21,24.0,3.0,Rising,2,2,Surging,7,3,4,0.429,1
 2021,West Virginia,Big 12,2/8,11,19.0,19,21.0,2.0,Rising,3,3,Surging,7,3,4,0.429,1
@@ -424,25 +424,25 @@ season,team,conference,poll_week,week_number,rank,rank_numeric,prev_rank_numeric
 2021,West Virginia,Big 12,3/1,14,20.0,20,18.0,-2.0,Falling,6,6,Surging,7,3,4,0.429,1
 2021,West Virginia,Big 12,3/8,15,17.0,17,20.0,3.0,Rising,7,7,Surging,7,3,4,0.429,1
 2021,West Virginia,Big 12,Final,16,17.0,17,17.0,0.0,Stable,8,8,Surging,7,3,4,0.429,1
-2022,Arizona,Pac-12,Pre,0,22.0,22,,,Unknown,1,1,Falling,11,6,5,0.545,1
-2022,Arizona,Pac-12,11/15,1,11.0,11,22.0,11.0,Rising,2,2,Falling,11,6,5,0.545,1
-2022,Arizona,Pac-12,11/23,2,9.0,9,11.0,2.0,Rising,3,3,Falling,11,6,5,0.545,1
-2022,Arizona,Pac-12,11/29,3,7.0,7,9.0,2.0,Rising,4,4,Falling,11,6,5,0.545,1
-2022,Arizona,Pac-12,12/6,4,6.0,6,7.0,1.0,Rising,5,5,Falling,11,6,5,0.545,1
-2022,Arizona,Pac-12,12/13,5,4.0,4,6.0,2.0,Rising,6,6,Falling,11,6,5,0.545,1
-2022,Arizona,Pac-12,12/20,6,4.0,4,4.0,0.0,Stable,7,7,Falling,11,6,5,0.545,1
-2022,Arizona,Pac-12,12/27,7,4.0,4,4.0,0.0,Stable,8,8,Falling,11,6,5,0.545,1
-2022,Arizona,Pac-12,1/3,8,4.0,4,4.0,0.0,Stable,9,9,Falling,11,6,5,0.545,1
-2022,Arizona,Pac-12,1/10,9,7.0,7,4.0,-3.0,Falling,10,10,Falling,11,6,5,0.545,1
-2022,Arizona,Pac-12,1/17,10,10.0,10,7.0,-3.0,Falling,11,11,Falling,11,6,5,0.545,1
-2022,Arizona,Pac-12,1/24,11,8.0,8,10.0,2.0,Rising,12,12,Falling,11,6,5,0.545,1
-2022,Arizona,Pac-12,1/31,12,8.0,8,8.0,0.0,Stable,13,13,Falling,11,6,5,0.545,1
-2022,Arizona,Pac-12,2/7,13,6.0,6,8.0,2.0,Rising,14,14,Falling,11,6,5,0.545,1
-2022,Arizona,Pac-12,2/14,14,8.0,8,6.0,-2.0,Falling,15,15,Falling,11,6,5,0.545,1
-2022,Arizona,Pac-12,2/21,15,12.0,12,8.0,-4.0,Falling,16,16,Falling,11,6,5,0.545,1
-2022,Arizona,Pac-12,2/28,16,14.0,14,12.0,-2.0,Falling,17,17,Falling,11,6,5,0.545,1
-2022,Arizona,Pac-12,3/7,17,20.0,20,14.0,-6.0,Falling,18,18,Falling,11,6,5,0.545,1
-2022,Arizona,Pac-12,Final,18,19.0,19,20.0,1.0,Rising,19,19,Falling,11,6,5,0.545,1
+2022,Arizona,Pac 12,Pre,0,22.0,22,,,Unknown,1,1,Falling,11,6,5,0.545,1
+2022,Arizona,Pac 12,11/15,1,11.0,11,22.0,11.0,Rising,2,2,Falling,11,6,5,0.545,1
+2022,Arizona,Pac 12,11/23,2,9.0,9,11.0,2.0,Rising,3,3,Falling,11,6,5,0.545,1
+2022,Arizona,Pac 12,11/29,3,7.0,7,9.0,2.0,Rising,4,4,Falling,11,6,5,0.545,1
+2022,Arizona,Pac 12,12/6,4,6.0,6,7.0,1.0,Rising,5,5,Falling,11,6,5,0.545,1
+2022,Arizona,Pac 12,12/13,5,4.0,4,6.0,2.0,Rising,6,6,Falling,11,6,5,0.545,1
+2022,Arizona,Pac 12,12/20,6,4.0,4,4.0,0.0,Stable,7,7,Falling,11,6,5,0.545,1
+2022,Arizona,Pac 12,12/27,7,4.0,4,4.0,0.0,Stable,8,8,Falling,11,6,5,0.545,1
+2022,Arizona,Pac 12,1/3,8,4.0,4,4.0,0.0,Stable,9,9,Falling,11,6,5,0.545,1
+2022,Arizona,Pac 12,1/10,9,7.0,7,4.0,-3.0,Falling,10,10,Falling,11,6,5,0.545,1
+2022,Arizona,Pac 12,1/17,10,10.0,10,7.0,-3.0,Falling,11,11,Falling,11,6,5,0.545,1
+2022,Arizona,Pac 12,1/24,11,8.0,8,10.0,2.0,Rising,12,12,Falling,11,6,5,0.545,1
+2022,Arizona,Pac 12,1/31,12,8.0,8,8.0,0.0,Stable,13,13,Falling,11,6,5,0.545,1
+2022,Arizona,Pac 12,2/7,13,6.0,6,8.0,2.0,Rising,14,14,Falling,11,6,5,0.545,1
+2022,Arizona,Pac 12,2/14,14,8.0,8,6.0,-2.0,Falling,15,15,Falling,11,6,5,0.545,1
+2022,Arizona,Pac 12,2/21,15,12.0,12,8.0,-4.0,Falling,16,16,Falling,11,6,5,0.545,1
+2022,Arizona,Pac 12,2/28,16,14.0,14,12.0,-2.0,Falling,17,17,Falling,11,6,5,0.545,1
+2022,Arizona,Pac 12,3/7,17,20.0,20,14.0,-6.0,Falling,18,18,Falling,11,6,5,0.545,1
+2022,Arizona,Pac 12,Final,18,19.0,19,20.0,1.0,Rising,19,19,Falling,11,6,5,0.545,1
 2022,BYU,WCC,11/29,3,21.0,21,,,Unknown,1,1,Steady,2,2,0,1.0,1
 2022,BYU,WCC,12/6,4,16.0,16,21.0,5.0,Rising,2,2,Steady,2,2,0,1.0,1
 2022,BYU,WCC,12/13,5,20.0,20,16.0,-4.0,Falling,3,3,Steady,2,2,0,1.0,1
@@ -478,9 +478,9 @@ season,team,conference,poll_week,week_number,rank,rank_numeric,prev_rank_numeric
 2022,Baylor,Big 12,2/28,16,5.0,5,5.0,0.0,Stable,17,17,Surging,13,8,5,0.615,1
 2022,Baylor,Big 12,3/7,17,4.0,4,5.0,1.0,Rising,18,18,Surging,13,8,5,0.615,1
 2022,Baylor,Big 12,Final,18,7.0,7,4.0,-3.0,Falling,19,19,Surging,13,8,5,0.615,1
-2022,Colorado,Pac-12,12/6,4,25.0,25,,,Unknown,1,1,Newcomer,10,5,5,0.5,1
-2022,Colorado,Pac-12,1/10,9,22.0,22,25.0,3.0,Rising,2,2,Newcomer,10,5,5,0.5,1
-2022,Colorado,Pac-12,1/17,10,22.0,22,22.0,0.0,Stable,3,3,Newcomer,10,5,5,0.5,1
+2022,Colorado,Pac 12,12/6,4,25.0,25,,,Unknown,1,1,Newcomer,10,5,5,0.5,1
+2022,Colorado,Pac 12,1/10,9,22.0,22,25.0,3.0,Rising,2,2,Newcomer,10,5,5,0.5,1
+2022,Colorado,Pac 12,1/17,10,22.0,22,22.0,0.0,Stable,3,3,Newcomer,10,5,5,0.5,1
 2022,Duke,ACC,12/6,4,19.0,19,,,Unknown,1,1,Newcomer,12,2,10,0.167,1
 2022,Duke,ACC,12/13,5,15.0,15,19.0,4.0,Rising,2,2,Newcomer,12,2,10,0.167,1
 2022,Duke,ACC,12/20,6,16.0,16,15.0,-1.0,Falling,3,3,Newcomer,12,2,10,0.167,1
@@ -493,16 +493,16 @@ season,team,conference,poll_week,week_number,rank,rank_numeric,prev_rank_numeric
 2022,Florida,SEC,2/14,14,17.0,17,19.0,2.0,Rising,2,2,Steady,12,6,6,0.5,1
 2022,Florida,SEC,2/21,15,15.0,15,17.0,2.0,Rising,3,3,Steady,12,6,6,0.5,1
 2022,Florida,SEC,2/28,16,23.0,23,15.0,-8.0,Falling,4,4,Steady,12,6,6,0.5,1
-2022,Florida Gulf Coast,A-Sun,11/23,2,25.0,25,,,Unknown,1,1,Steady,2,1,1,0.5,1
-2022,Florida Gulf Coast,A-Sun,11/29,3,22.0,22,25.0,3.0,Rising,2,2,Steady,2,1,1,0.5,1
-2022,Florida Gulf Coast,A-Sun,1/17,10,24.0,24,22.0,-2.0,Falling,3,3,Steady,2,1,1,0.5,1
-2022,Florida Gulf Coast,A-Sun,1/31,12,22.0,22,24.0,2.0,Rising,4,4,Steady,2,1,1,0.5,1
-2022,Florida Gulf Coast,A-Sun,2/7,13,22.0,22,22.0,0.0,Stable,5,5,Steady,2,1,1,0.5,1
-2022,Florida Gulf Coast,A-Sun,2/14,14,25.0,25,22.0,-3.0,Falling,6,6,Steady,2,1,1,0.5,1
-2022,Florida Gulf Coast,A-Sun,2/21,15,24.0,24,25.0,1.0,Rising,7,7,Steady,2,1,1,0.5,1
-2022,Florida Gulf Coast,A-Sun,2/28,16,22.0,22,24.0,2.0,Rising,8,8,Steady,2,1,1,0.5,1
-2022,Florida Gulf Coast,A-Sun,3/7,17,23.0,23,22.0,-1.0,Falling,9,9,Steady,2,1,1,0.5,1
-2022,Florida Gulf Coast,A-Sun,Final,18,23.0,23,23.0,0.0,Stable,10,10,Steady,2,1,1,0.5,1
+2022,Florida Gulf Coast,ASUN,11/23,2,25.0,25,,,Unknown,1,1,Steady,2,1,1,0.5,1
+2022,Florida Gulf Coast,ASUN,11/29,3,22.0,22,25.0,3.0,Rising,2,2,Steady,2,1,1,0.5,1
+2022,Florida Gulf Coast,ASUN,1/17,10,24.0,24,22.0,-2.0,Falling,3,3,Steady,2,1,1,0.5,1
+2022,Florida Gulf Coast,ASUN,1/31,12,22.0,22,24.0,2.0,Rising,4,4,Steady,2,1,1,0.5,1
+2022,Florida Gulf Coast,ASUN,2/7,13,22.0,22,22.0,0.0,Stable,5,5,Steady,2,1,1,0.5,1
+2022,Florida Gulf Coast,ASUN,2/14,14,25.0,25,22.0,-3.0,Falling,6,6,Steady,2,1,1,0.5,1
+2022,Florida Gulf Coast,ASUN,2/21,15,24.0,24,25.0,1.0,Rising,7,7,Steady,2,1,1,0.5,1
+2022,Florida Gulf Coast,ASUN,2/28,16,22.0,22,24.0,2.0,Rising,8,8,Steady,2,1,1,0.5,1
+2022,Florida Gulf Coast,ASUN,3/7,17,23.0,23,22.0,-1.0,Falling,9,9,Steady,2,1,1,0.5,1
+2022,Florida Gulf Coast,ASUN,Final,18,23.0,23,23.0,0.0,Stable,10,10,Steady,2,1,1,0.5,1
 2022,Florida State,ACC,Pre,0,16.0,16,,,Unknown,1,1,Newcomer,9,3,6,0.333,1
 2022,Florida State,ACC,11/15,1,17.0,17,16.0,-1.0,Falling,2,2,Newcomer,9,3,6,0.333,1
 2022,Florida State,ACC,11/23,2,17.0,17,17.0,0.0,Stable,3,3,Newcomer,9,3,6,0.333,1
@@ -742,19 +742,19 @@ season,team,conference,poll_week,week_number,rank,rank_numeric,prev_rank_numeric
 2022,Oklahoma,Big 12,3/7,17,21.0,21,19.0,-2.0,Falling,10,10,Steady,14,7,7,0.5,1
 2022,Oklahoma,Big 12,Final,18,22.0,22,21.0,-1.0,Falling,11,11,Steady,14,7,7,0.5,1
 2022,Ole Miss,SEC,1/24,11,24.0,24,,,Unknown,1,1,Newcomer,11,5,6,0.455,1
-2022,Oregon,Pac-12,Pre,0,10.0,10,,,Unknown,1,1,Newcomer,12,5,7,0.417,1
-2022,Oregon,Pac-12,11/15,1,9.0,9,10.0,1.0,Rising,2,2,Newcomer,12,5,7,0.417,1
-2022,Oregon,Pac-12,11/23,2,15.0,15,9.0,-6.0,Falling,3,3,Newcomer,12,5,7,0.417,1
-2022,Oregon,Pac-12,11/29,3,18.0,18,15.0,-3.0,Falling,4,4,Newcomer,12,5,7,0.417,1
-2022,Oregon,Pac-12,1/24,11,19.0,19,18.0,-1.0,Falling,5,5,Newcomer,12,5,7,0.417,1
-2022,Oregon,Pac-12,1/31,12,19.0,19,19.0,0.0,Stable,6,6,Newcomer,12,5,7,0.417,1
-2022,Oregon,Pac-12,2/7,13,24.0,24,19.0,-5.0,Falling,7,7,Newcomer,12,5,7,0.417,1
-2022,Oregon,Pac-12,2/21,15,25.0,25,24.0,-1.0,Falling,8,8,Newcomer,12,5,7,0.417,1
-2022,Oregon State,Pac-12,Pre,0,14.0,14,,,Unknown,1,1,Newcomer,12,3,9,0.25,1
-2022,Oregon State,Pac-12,11/15,1,15.0,15,14.0,-1.0,Falling,2,2,Newcomer,12,3,9,0.25,1
-2022,Oregon State,Pac-12,11/23,2,16.0,16,15.0,-1.0,Falling,3,3,Newcomer,12,3,9,0.25,1
-2022,Oregon State,Pac-12,11/29,3,23.0,23,16.0,-7.0,Falling,4,4,Newcomer,12,3,9,0.25,1
-2022,Oregon State,Pac-12,12/6,4,23.0,23,23.0,0.0,Stable,5,5,Newcomer,12,3,9,0.25,1
+2022,Oregon,Pac 12,Pre,0,10.0,10,,,Unknown,1,1,Newcomer,12,5,7,0.417,1
+2022,Oregon,Pac 12,11/15,1,9.0,9,10.0,1.0,Rising,2,2,Newcomer,12,5,7,0.417,1
+2022,Oregon,Pac 12,11/23,2,15.0,15,9.0,-6.0,Falling,3,3,Newcomer,12,5,7,0.417,1
+2022,Oregon,Pac 12,11/29,3,18.0,18,15.0,-3.0,Falling,4,4,Newcomer,12,5,7,0.417,1
+2022,Oregon,Pac 12,1/24,11,19.0,19,18.0,-1.0,Falling,5,5,Newcomer,12,5,7,0.417,1
+2022,Oregon,Pac 12,1/31,12,19.0,19,19.0,0.0,Stable,6,6,Newcomer,12,5,7,0.417,1
+2022,Oregon,Pac 12,2/7,13,24.0,24,19.0,-5.0,Falling,7,7,Newcomer,12,5,7,0.417,1
+2022,Oregon,Pac 12,2/21,15,25.0,25,24.0,-1.0,Falling,8,8,Newcomer,12,5,7,0.417,1
+2022,Oregon State,Pac 12,Pre,0,14.0,14,,,Unknown,1,1,Newcomer,12,3,9,0.25,1
+2022,Oregon State,Pac 12,11/15,1,15.0,15,14.0,-1.0,Falling,2,2,Newcomer,12,3,9,0.25,1
+2022,Oregon State,Pac 12,11/23,2,16.0,16,15.0,-1.0,Falling,3,3,Newcomer,12,3,9,0.25,1
+2022,Oregon State,Pac 12,11/29,3,23.0,23,16.0,-7.0,Falling,4,4,Newcomer,12,3,9,0.25,1
+2022,Oregon State,Pac 12,12/6,4,23.0,23,23.0,0.0,Stable,5,5,Newcomer,12,3,9,0.25,1
 2022,Princeton,Ivy,3/7,17,24.0,24,,,Unknown,1,1,Newcomer,4,2,2,0.5,1
 2022,Princeton,Ivy,Final,18,25.0,25,24.0,-1.0,Falling,2,2,Newcomer,4,2,2,0.5,1
 2022,South Carolina,SEC,Pre,0,1.0,1,,,Unknown,1,1,Elite Lock,20,19,1,0.95,1
@@ -786,25 +786,25 @@ season,team,conference,poll_week,week_number,rank,rank_numeric,prev_rank_numeric
 2022,South Florida,AAC,12/27,7,22.0,22,18.0,-4.0,Falling,8,8,Newcomer,6,3,3,0.5,1
 2022,South Florida,AAC,1/3,8,24.0,24,22.0,-2.0,Falling,9,9,Newcomer,6,3,3,0.5,1
 2022,South Florida,AAC,1/10,9,24.0,24,24.0,0.0,Stable,10,10,Newcomer,6,3,3,0.5,1
-2022,Stanford,Pac-12,Pre,0,3.0,3,,,Unknown,1,1,Elite Lock,19,15,4,0.789,1
-2022,Stanford,Pac-12,11/15,1,7.0,7,3.0,-4.0,Falling,2,2,Elite Lock,19,15,4,0.789,1
-2022,Stanford,Pac-12,11/23,2,7.0,7,7.0,0.0,Stable,3,3,Elite Lock,19,15,4,0.789,1
-2022,Stanford,Pac-12,11/29,3,4.0,4,7.0,3.0,Rising,4,4,Elite Lock,19,15,4,0.789,1
-2022,Stanford,Pac-12,12/6,4,4.0,4,4.0,0.0,Stable,5,5,Elite Lock,19,15,4,0.789,1
-2022,Stanford,Pac-12,12/13,5,3.0,3,4.0,1.0,Rising,6,6,Elite Lock,19,15,4,0.789,1
-2022,Stanford,Pac-12,12/20,6,2.0,2,3.0,1.0,Rising,7,7,Elite Lock,19,15,4,0.789,1
-2022,Stanford,Pac-12,12/27,7,2.0,2,2.0,0.0,Stable,8,8,Elite Lock,19,15,4,0.789,1
-2022,Stanford,Pac-12,1/3,8,2.0,2,2.0,0.0,Stable,9,9,Elite Lock,19,15,4,0.789,1
-2022,Stanford,Pac-12,1/10,9,2.0,2,2.0,0.0,Stable,10,10,Elite Lock,19,15,4,0.789,1
-2022,Stanford,Pac-12,1/17,10,2.0,2,2.0,0.0,Stable,11,11,Elite Lock,19,15,4,0.789,1
-2022,Stanford,Pac-12,1/24,11,2.0,2,2.0,0.0,Stable,12,12,Elite Lock,19,15,4,0.789,1
-2022,Stanford,Pac-12,1/31,12,2.0,2,2.0,0.0,Stable,13,13,Elite Lock,19,15,4,0.789,1
-2022,Stanford,Pac-12,2/7,13,2.0,2,2.0,0.0,Stable,14,14,Elite Lock,19,15,4,0.789,1
-2022,Stanford,Pac-12,2/14,14,2.0,2,2.0,0.0,Stable,15,15,Elite Lock,19,15,4,0.789,1
-2022,Stanford,Pac-12,2/21,15,2.0,2,2.0,0.0,Stable,16,16,Elite Lock,19,15,4,0.789,1
-2022,Stanford,Pac-12,2/28,16,2.0,2,2.0,0.0,Stable,17,17,Elite Lock,19,15,4,0.789,1
-2022,Stanford,Pac-12,3/7,17,2.0,2,2.0,0.0,Stable,18,18,Elite Lock,19,15,4,0.789,1
-2022,Stanford,Pac-12,Final,18,2.0,2,2.0,0.0,Stable,19,19,Elite Lock,19,15,4,0.789,1
+2022,Stanford,Pac 12,Pre,0,3.0,3,,,Unknown,1,1,Elite Lock,19,15,4,0.789,1
+2022,Stanford,Pac 12,11/15,1,7.0,7,3.0,-4.0,Falling,2,2,Elite Lock,19,15,4,0.789,1
+2022,Stanford,Pac 12,11/23,2,7.0,7,7.0,0.0,Stable,3,3,Elite Lock,19,15,4,0.789,1
+2022,Stanford,Pac 12,11/29,3,4.0,4,7.0,3.0,Rising,4,4,Elite Lock,19,15,4,0.789,1
+2022,Stanford,Pac 12,12/6,4,4.0,4,4.0,0.0,Stable,5,5,Elite Lock,19,15,4,0.789,1
+2022,Stanford,Pac 12,12/13,5,3.0,3,4.0,1.0,Rising,6,6,Elite Lock,19,15,4,0.789,1
+2022,Stanford,Pac 12,12/20,6,2.0,2,3.0,1.0,Rising,7,7,Elite Lock,19,15,4,0.789,1
+2022,Stanford,Pac 12,12/27,7,2.0,2,2.0,0.0,Stable,8,8,Elite Lock,19,15,4,0.789,1
+2022,Stanford,Pac 12,1/3,8,2.0,2,2.0,0.0,Stable,9,9,Elite Lock,19,15,4,0.789,1
+2022,Stanford,Pac 12,1/10,9,2.0,2,2.0,0.0,Stable,10,10,Elite Lock,19,15,4,0.789,1
+2022,Stanford,Pac 12,1/17,10,2.0,2,2.0,0.0,Stable,11,11,Elite Lock,19,15,4,0.789,1
+2022,Stanford,Pac 12,1/24,11,2.0,2,2.0,0.0,Stable,12,12,Elite Lock,19,15,4,0.789,1
+2022,Stanford,Pac 12,1/31,12,2.0,2,2.0,0.0,Stable,13,13,Elite Lock,19,15,4,0.789,1
+2022,Stanford,Pac 12,2/7,13,2.0,2,2.0,0.0,Stable,14,14,Elite Lock,19,15,4,0.789,1
+2022,Stanford,Pac 12,2/14,14,2.0,2,2.0,0.0,Stable,15,15,Elite Lock,19,15,4,0.789,1
+2022,Stanford,Pac 12,2/21,15,2.0,2,2.0,0.0,Stable,16,16,Elite Lock,19,15,4,0.789,1
+2022,Stanford,Pac 12,2/28,16,2.0,2,2.0,0.0,Stable,17,17,Elite Lock,19,15,4,0.789,1
+2022,Stanford,Pac 12,3/7,17,2.0,2,2.0,0.0,Stable,18,18,Elite Lock,19,15,4,0.789,1
+2022,Stanford,Pac 12,Final,18,2.0,2,2.0,0.0,Stable,19,19,Elite Lock,19,15,4,0.789,1
 2022,Tennessee,SEC,Pre,0,15.0,15,,,Unknown,1,1,Falling,12,6,6,0.5,1
 2022,Tennessee,SEC,11/15,1,16.0,16,15.0,-1.0,Falling,2,2,Falling,12,6,6,0.5,1
 2022,Tennessee,SEC,11/23,2,11.0,11,16.0,5.0,Rising,3,3,Falling,12,6,6,0.5,1
@@ -854,9 +854,9 @@ season,team,conference,poll_week,week_number,rank,rank_numeric,prev_rank_numeric
 2022,Texas A&M,SEC,1/3,8,25.0,25,23.0,-2.0,Falling,9,9,Newcomer,9,1,8,0.111,1
 2022,UCF,AAC,3/7,17,25.0,25,,,Unknown,1,1,Newcomer,7,4,3,0.571,1
 2022,UCF,AAC,Final,18,24.0,24,25.0,1.0,Rising,2,2,Newcomer,7,4,3,0.571,1
-2022,UCLA,Pac-12,Pre,0,20.0,20,,,Unknown,1,1,Newcomer,10,2,8,0.2,1
-2022,UCLA,Pac-12,11/15,1,20.0,20,20.0,0.0,Stable,2,2,Newcomer,10,2,8,0.2,1
-2022,UCLA,Pac-12,11/23,2,19.0,19,20.0,1.0,Rising,3,3,Newcomer,10,2,8,0.2,1
+2022,UCLA,Pac 12,Pre,0,20.0,20,,,Unknown,1,1,Newcomer,10,2,8,0.2,1
+2022,UCLA,Pac 12,11/15,1,20.0,20,20.0,0.0,Stable,2,2,Newcomer,10,2,8,0.2,1
+2022,UCLA,Pac 12,11/23,2,19.0,19,20.0,1.0,Rising,3,3,Newcomer,10,2,8,0.2,1
 2022,UConn,Big East,Pre,0,2.0,2,,,Unknown,1,1,Steady,13,8,5,0.615,1
 2022,UConn,Big East,11/15,1,2.0,2,2.0,0.0,Stable,2,2,Steady,13,8,5,0.615,1
 2022,UConn,Big East,11/23,2,3.0,3,2.0,-1.0,Falling,3,3,Steady,13,8,5,0.615,1
@@ -900,24 +900,24 @@ season,team,conference,poll_week,week_number,rank,rank_numeric,prev_rank_numeric
 2022,West Virginia,Big 12,Pre,0,19.0,19,,,Unknown,1,1,Newcomer,12,1,11,0.083,1
 2022,West Virginia,Big 12,11/15,1,22.0,22,19.0,-3.0,Falling,2,2,Newcomer,12,1,11,0.083,1
 2022,West Virginia,Big 12,11/23,2,22.0,22,22.0,0.0,Stable,3,3,Newcomer,12,1,11,0.083,1
-2023,Arizona,Pac-12,Pre,0,19.0,19,,,Unknown,1,1,Steady,11,5,6,0.455,1
-2023,Arizona,Pac-12,11/14,1,18.0,18,19.0,1.0,Rising,2,2,Steady,11,5,6,0.455,1
-2023,Arizona,Pac-12,11/21,2,15.0,15,18.0,3.0,Rising,3,3,Steady,11,5,6,0.455,1
-2023,Arizona,Pac-12,11/28,3,14.0,14,15.0,1.0,Rising,4,4,Steady,11,5,6,0.455,1
-2023,Arizona,Pac-12,12/5,4,12.0,12,14.0,2.0,Rising,5,5,Steady,11,5,6,0.455,1
-2023,Arizona,Pac-12,12/13,5,20.0,20,12.0,-8.0,Falling,6,6,Steady,11,5,6,0.455,1
-2023,Arizona,Pac-12,12/19,6,18.0,18,20.0,2.0,Rising,7,7,Steady,11,5,6,0.455,1
-2023,Arizona,Pac-12,12/26,7,18.0,18,18.0,0.0,Stable,8,8,Steady,11,5,6,0.455,1
-2023,Arizona,Pac-12,1/2,8,15.0,15,18.0,3.0,Rising,9,9,Steady,11,5,6,0.455,1
-2023,Arizona,Pac-12,1/9,9,14.0,14,15.0,1.0,Rising,10,10,Steady,11,5,6,0.455,1
-2023,Arizona,Pac-12,1/16,10,19.0,19,14.0,-5.0,Falling,11,11,Steady,11,5,6,0.455,1
-2023,Arizona,Pac-12,1/23,11,19.0,19,19.0,0.0,Stable,12,12,Steady,11,5,6,0.455,1
-2023,Arizona,Pac-12,1/30,12,22.0,22,19.0,-3.0,Falling,13,13,Steady,11,5,6,0.455,1
-2023,Arizona,Pac-12,2/6,13,17.0,17,22.0,5.0,Rising,14,14,Steady,11,5,6,0.455,1
-2023,Arizona,Pac-12,2/13,14,18.0,18,17.0,-1.0,Falling,15,15,Steady,11,5,6,0.455,1
-2023,Arizona,Pac-12,2/20,15,14.0,14,18.0,4.0,Rising,16,16,Steady,11,5,6,0.455,1
-2023,Arizona,Pac-12,2/28,16,21.0,21,14.0,-7.0,Falling,17,17,Steady,11,5,6,0.455,1
-2023,Arizona,Pac-12,Final,17,24.0,24,21.0,-3.0,Falling,18,18,Steady,11,5,6,0.455,1
+2023,Arizona,Pac 12,Pre,0,19.0,19,,,Unknown,1,1,Steady,11,5,6,0.455,1
+2023,Arizona,Pac 12,11/14,1,18.0,18,19.0,1.0,Rising,2,2,Steady,11,5,6,0.455,1
+2023,Arizona,Pac 12,11/21,2,15.0,15,18.0,3.0,Rising,3,3,Steady,11,5,6,0.455,1
+2023,Arizona,Pac 12,11/28,3,14.0,14,15.0,1.0,Rising,4,4,Steady,11,5,6,0.455,1
+2023,Arizona,Pac 12,12/5,4,12.0,12,14.0,2.0,Rising,5,5,Steady,11,5,6,0.455,1
+2023,Arizona,Pac 12,12/13,5,20.0,20,12.0,-8.0,Falling,6,6,Steady,11,5,6,0.455,1
+2023,Arizona,Pac 12,12/19,6,18.0,18,20.0,2.0,Rising,7,7,Steady,11,5,6,0.455,1
+2023,Arizona,Pac 12,12/26,7,18.0,18,18.0,0.0,Stable,8,8,Steady,11,5,6,0.455,1
+2023,Arizona,Pac 12,1/2,8,15.0,15,18.0,3.0,Rising,9,9,Steady,11,5,6,0.455,1
+2023,Arizona,Pac 12,1/9,9,14.0,14,15.0,1.0,Rising,10,10,Steady,11,5,6,0.455,1
+2023,Arizona,Pac 12,1/16,10,19.0,19,14.0,-5.0,Falling,11,11,Steady,11,5,6,0.455,1
+2023,Arizona,Pac 12,1/23,11,19.0,19,19.0,0.0,Stable,12,12,Steady,11,5,6,0.455,1
+2023,Arizona,Pac 12,1/30,12,22.0,22,19.0,-3.0,Falling,13,13,Steady,11,5,6,0.455,1
+2023,Arizona,Pac 12,2/6,13,17.0,17,22.0,5.0,Rising,14,14,Steady,11,5,6,0.455,1
+2023,Arizona,Pac 12,2/13,14,18.0,18,17.0,-1.0,Falling,15,15,Steady,11,5,6,0.455,1
+2023,Arizona,Pac 12,2/20,15,14.0,14,18.0,4.0,Rising,16,16,Steady,11,5,6,0.455,1
+2023,Arizona,Pac 12,2/28,16,21.0,21,14.0,-7.0,Falling,17,17,Steady,11,5,6,0.455,1
+2023,Arizona,Pac 12,Final,17,24.0,24,21.0,-3.0,Falling,18,18,Steady,11,5,6,0.455,1
 2023,Arkansas,SEC,12/5,4,21.0,21,,,Unknown,1,1,Newcomer,9,2,7,0.222,1
 2023,Arkansas,SEC,12/13,5,21.0,21,21.0,0.0,Stable,2,2,Newcomer,9,2,7,0.222,1
 2023,Arkansas,SEC,12/19,6,17.0,17,21.0,4.0,Rising,3,3,Newcomer,9,2,7,0.222,1
@@ -932,13 +932,13 @@ season,team,conference,poll_week,week_number,rank,rank_numeric,prev_rank_numeric
 2023,Baylor,Big 12,12/26,7,23.0,23,24.0,1.0,Rising,8,8,Newcomer,16,7,9,0.438,1
 2023,Baylor,Big 12,1/2,8,23.0,23,23.0,0.0,Stable,9,9,Newcomer,16,7,9,0.438,1
 2023,Baylor,Big 12,1/9,9,18.0,18,23.0,5.0,Rising,10,10,Newcomer,16,7,9,0.438,1
-2023,Colorado,Pac-12,1/16,10,24.0,24,,,Unknown,1,1,Surging,13,7,6,0.538,1
-2023,Colorado,Pac-12,1/23,11,25.0,25,24.0,-1.0,Falling,2,2,Surging,13,7,6,0.538,1
-2023,Colorado,Pac-12,2/6,13,25.0,25,25.0,0.0,Stable,3,3,Surging,13,7,6,0.538,1
-2023,Colorado,Pac-12,2/13,14,21.0,21,25.0,4.0,Rising,4,4,Surging,13,7,6,0.538,1
-2023,Colorado,Pac-12,2/20,15,21.0,21,21.0,0.0,Stable,5,5,Surging,13,7,6,0.538,1
-2023,Colorado,Pac-12,2/28,16,20.0,20,21.0,1.0,Rising,6,6,Surging,13,7,6,0.538,1
-2023,Colorado,Pac-12,Final,17,20.0,20,20.0,0.0,Stable,7,7,Surging,13,7,6,0.538,1
+2023,Colorado,Pac 12,1/16,10,24.0,24,,,Unknown,1,1,Surging,13,7,6,0.538,1
+2023,Colorado,Pac 12,1/23,11,25.0,25,24.0,-1.0,Falling,2,2,Surging,13,7,6,0.538,1
+2023,Colorado,Pac 12,2/6,13,25.0,25,25.0,0.0,Stable,3,3,Surging,13,7,6,0.538,1
+2023,Colorado,Pac 12,2/13,14,21.0,21,25.0,4.0,Rising,4,4,Surging,13,7,6,0.538,1
+2023,Colorado,Pac 12,2/20,15,21.0,21,21.0,0.0,Stable,5,5,Surging,13,7,6,0.538,1
+2023,Colorado,Pac 12,2/28,16,20.0,20,21.0,1.0,Rising,6,6,Surging,13,7,6,0.538,1
+2023,Colorado,Pac 12,Final,17,20.0,20,20.0,0.0,Stable,7,7,Surging,13,7,6,0.538,1
 2023,Creighton,Big East,Pre,0,21.0,21,,,Unknown,1,1,Newcomer,12,6,6,0.5,1
 2023,Creighton,Big East,11/14,1,20.0,20,21.0,1.0,Rising,2,2,Newcomer,12,6,6,0.5,1
 2023,Creighton,Big East,11/21,2,16.0,16,20.0,4.0,Rising,3,3,Newcomer,12,6,6,0.5,1
@@ -1174,17 +1174,17 @@ season,team,conference,poll_week,week_number,rank,rank_numeric,prev_rank_numeric
 2023,Oklahoma,Big 12,2/20,15,13.0,13,15.0,2.0,Rising,14,14,Steady,13,6,7,0.462,1
 2023,Oklahoma,Big 12,2/28,16,16.0,16,13.0,-3.0,Falling,15,15,Steady,13,6,7,0.462,1
 2023,Oklahoma,Big 12,Final,17,14.0,14,16.0,2.0,Rising,16,16,Steady,13,6,7,0.462,1
-2023,Oregon,Pac-12,Pre,0,20.0,20,,,Unknown,1,1,Newcomer,11,2,9,0.182,1
-2023,Oregon,Pac-12,11/14,1,21.0,21,20.0,-1.0,Falling,2,2,Newcomer,11,2,9,0.182,1
-2023,Oregon,Pac-12,11/21,2,18.0,18,21.0,3.0,Rising,3,3,Newcomer,11,2,9,0.182,1
-2023,Oregon,Pac-12,11/28,3,19.0,19,18.0,-1.0,Falling,4,4,Newcomer,11,2,9,0.182,1
-2023,Oregon,Pac-12,12/5,4,17.0,17,19.0,2.0,Rising,5,5,Newcomer,11,2,9,0.182,1
-2023,Oregon,Pac-12,12/13,5,17.0,17,17.0,0.0,Stable,6,6,Newcomer,11,2,9,0.182,1
-2023,Oregon,Pac-12,12/19,6,16.0,16,17.0,1.0,Rising,7,7,Newcomer,11,2,9,0.182,1
-2023,Oregon,Pac-12,12/26,7,17.0,17,16.0,-1.0,Falling,8,8,Newcomer,11,2,9,0.182,1
-2023,Oregon,Pac-12,1/2,8,18.0,18,17.0,-1.0,Falling,9,9,Newcomer,11,2,9,0.182,1
-2023,Oregon,Pac-12,1/9,9,21.0,21,18.0,-3.0,Falling,10,10,Newcomer,11,2,9,0.182,1
-2023,Oregon,Pac-12,1/16,10,23.0,23,21.0,-2.0,Falling,11,11,Newcomer,11,2,9,0.182,1
+2023,Oregon,Pac 12,Pre,0,20.0,20,,,Unknown,1,1,Newcomer,11,2,9,0.182,1
+2023,Oregon,Pac 12,11/14,1,21.0,21,20.0,-1.0,Falling,2,2,Newcomer,11,2,9,0.182,1
+2023,Oregon,Pac 12,11/21,2,18.0,18,21.0,3.0,Rising,3,3,Newcomer,11,2,9,0.182,1
+2023,Oregon,Pac 12,11/28,3,19.0,19,18.0,-1.0,Falling,4,4,Newcomer,11,2,9,0.182,1
+2023,Oregon,Pac 12,12/5,4,17.0,17,19.0,2.0,Rising,5,5,Newcomer,11,2,9,0.182,1
+2023,Oregon,Pac 12,12/13,5,17.0,17,17.0,0.0,Stable,6,6,Newcomer,11,2,9,0.182,1
+2023,Oregon,Pac 12,12/19,6,16.0,16,17.0,1.0,Rising,7,7,Newcomer,11,2,9,0.182,1
+2023,Oregon,Pac 12,12/26,7,17.0,17,16.0,-1.0,Falling,8,8,Newcomer,11,2,9,0.182,1
+2023,Oregon,Pac 12,1/2,8,18.0,18,17.0,-1.0,Falling,9,9,Newcomer,11,2,9,0.182,1
+2023,Oregon,Pac 12,1/9,9,21.0,21,18.0,-3.0,Falling,10,10,Newcomer,11,2,9,0.182,1
+2023,Oregon,Pac 12,1/16,10,23.0,23,21.0,-2.0,Falling,11,11,Newcomer,11,2,9,0.182,1
 2023,Princeton,Ivy,Pre,0,24.0,24,,,Unknown,1,1,Newcomer,4,1,3,0.25,1
 2023,South Carolina,SEC,Pre,0,1.0,1,,,Unknown,1,1,Elite Lock,14,13,1,0.929,1
 2023,South Carolina,SEC,11/14,1,1.0,1,1.0,0.0,Stable,2,2,Elite Lock,14,13,1,0.929,1
@@ -1211,24 +1211,24 @@ season,team,conference,poll_week,week_number,rank,rank_numeric,prev_rank_numeric
 2023,St. John's (NY),Big East,12/19,6,25.0,25,,,Unknown,1,1,Newcomer,10,3,7,0.3,1
 2023,St. John's (NY),Big East,12/26,7,25.0,25,25.0,0.0,Stable,2,2,Newcomer,10,3,7,0.3,1
 2023,St. John's (NY),Big East,1/2,8,24.0,24,25.0,1.0,Rising,3,3,Newcomer,10,3,7,0.3,1
-2023,Stanford,Pac-12,Pre,0,2.0,2,,,Unknown,1,1,Elite Lock,16,13,3,0.812,1
-2023,Stanford,Pac-12,11/14,1,2.0,2,2.0,0.0,Stable,2,2,Elite Lock,16,13,3,0.812,1
-2023,Stanford,Pac-12,11/21,2,2.0,2,2.0,0.0,Stable,3,3,Elite Lock,16,13,3,0.812,1
-2023,Stanford,Pac-12,11/28,3,2.0,2,2.0,0.0,Stable,4,4,Elite Lock,16,13,3,0.812,1
-2023,Stanford,Pac-12,12/5,4,2.0,2,2.0,0.0,Stable,5,5,Elite Lock,16,13,3,0.812,1
-2023,Stanford,Pac-12,12/13,5,2.0,2,2.0,0.0,Stable,6,6,Elite Lock,16,13,3,0.812,1
-2023,Stanford,Pac-12,12/19,6,2.0,2,2.0,0.0,Stable,7,7,Elite Lock,16,13,3,0.812,1
-2023,Stanford,Pac-12,12/26,7,2.0,2,2.0,0.0,Stable,8,8,Elite Lock,16,13,3,0.812,1
-2023,Stanford,Pac-12,1/2,8,2.0,2,2.0,0.0,Stable,9,9,Elite Lock,16,13,3,0.812,1
-2023,Stanford,Pac-12,1/9,9,2.0,2,2.0,0.0,Stable,10,10,Elite Lock,16,13,3,0.812,1
-2023,Stanford,Pac-12,1/16,10,4.0,4,2.0,-2.0,Falling,11,11,Elite Lock,16,13,3,0.812,1
-2023,Stanford,Pac-12,1/23,11,3.0,3,4.0,1.0,Rising,12,12,Elite Lock,16,13,3,0.812,1
-2023,Stanford,Pac-12,1/30,12,2.0,2,3.0,1.0,Rising,13,13,Elite Lock,16,13,3,0.812,1
-2023,Stanford,Pac-12,2/6,13,6.0,6,2.0,-4.0,Falling,14,14,Elite Lock,16,13,3,0.812,1
-2023,Stanford,Pac-12,2/13,14,3.0,3,6.0,3.0,Rising,15,15,Elite Lock,16,13,3,0.812,1
-2023,Stanford,Pac-12,2/20,15,3.0,3,3.0,0.0,Stable,16,16,Elite Lock,16,13,3,0.812,1
-2023,Stanford,Pac-12,2/28,16,6.0,6,3.0,-3.0,Falling,17,17,Elite Lock,16,13,3,0.812,1
-2023,Stanford,Pac-12,Final,17,5.0,5,6.0,1.0,Rising,18,18,Elite Lock,16,13,3,0.812,1
+2023,Stanford,Pac 12,Pre,0,2.0,2,,,Unknown,1,1,Elite Lock,16,13,3,0.812,1
+2023,Stanford,Pac 12,11/14,1,2.0,2,2.0,0.0,Stable,2,2,Elite Lock,16,13,3,0.812,1
+2023,Stanford,Pac 12,11/21,2,2.0,2,2.0,0.0,Stable,3,3,Elite Lock,16,13,3,0.812,1
+2023,Stanford,Pac 12,11/28,3,2.0,2,2.0,0.0,Stable,4,4,Elite Lock,16,13,3,0.812,1
+2023,Stanford,Pac 12,12/5,4,2.0,2,2.0,0.0,Stable,5,5,Elite Lock,16,13,3,0.812,1
+2023,Stanford,Pac 12,12/13,5,2.0,2,2.0,0.0,Stable,6,6,Elite Lock,16,13,3,0.812,1
+2023,Stanford,Pac 12,12/19,6,2.0,2,2.0,0.0,Stable,7,7,Elite Lock,16,13,3,0.812,1
+2023,Stanford,Pac 12,12/26,7,2.0,2,2.0,0.0,Stable,8,8,Elite Lock,16,13,3,0.812,1
+2023,Stanford,Pac 12,1/2,8,2.0,2,2.0,0.0,Stable,9,9,Elite Lock,16,13,3,0.812,1
+2023,Stanford,Pac 12,1/9,9,2.0,2,2.0,0.0,Stable,10,10,Elite Lock,16,13,3,0.812,1
+2023,Stanford,Pac 12,1/16,10,4.0,4,2.0,-2.0,Falling,11,11,Elite Lock,16,13,3,0.812,1
+2023,Stanford,Pac 12,1/23,11,3.0,3,4.0,1.0,Rising,12,12,Elite Lock,16,13,3,0.812,1
+2023,Stanford,Pac 12,1/30,12,2.0,2,3.0,1.0,Rising,13,13,Elite Lock,16,13,3,0.812,1
+2023,Stanford,Pac 12,2/6,13,6.0,6,2.0,-4.0,Falling,14,14,Elite Lock,16,13,3,0.812,1
+2023,Stanford,Pac 12,2/13,14,3.0,3,6.0,3.0,Rising,15,15,Elite Lock,16,13,3,0.812,1
+2023,Stanford,Pac 12,2/20,15,3.0,3,3.0,0.0,Stable,16,16,Elite Lock,16,13,3,0.812,1
+2023,Stanford,Pac 12,2/28,16,6.0,6,3.0,-3.0,Falling,17,17,Elite Lock,16,13,3,0.812,1
+2023,Stanford,Pac 12,Final,17,5.0,5,6.0,1.0,Rising,18,18,Elite Lock,16,13,3,0.812,1
 2023,Tennessee,SEC,Pre,0,5.0,5,,,Unknown,1,1,Newcomer,11,2,9,0.182,1
 2023,Tennessee,SEC,11/14,1,11.0,11,5.0,-6.0,Falling,2,2,Newcomer,11,2,9,0.182,1
 2023,Tennessee,SEC,11/21,2,23.0,23,11.0,-12.0,Falling,3,3,Newcomer,11,2,9,0.182,1
@@ -1244,22 +1244,22 @@ season,team,conference,poll_week,week_number,rank,rank_numeric,prev_rank_numeric
 2023,Texas,Big 12,2/20,15,19.0,19,17.0,-2.0,Falling,9,9,Surging,16,10,6,0.625,1
 2023,Texas,Big 12,2/28,16,12.0,12,19.0,7.0,Rising,10,10,Surging,16,10,6,0.625,1
 2023,Texas,Big 12,Final,17,15.0,15,12.0,-3.0,Falling,11,11,Surging,16,10,6,0.625,1
-2023,UCLA,Pac-12,11/21,2,20.0,20,,,Unknown,1,1,Falling,14,7,7,0.5,1
-2023,UCLA,Pac-12,11/28,3,15.0,15,20.0,5.0,Rising,2,2,Falling,14,7,7,0.5,1
-2023,UCLA,Pac-12,12/5,4,13.0,13,15.0,2.0,Rising,3,3,Falling,14,7,7,0.5,1
-2023,UCLA,Pac-12,12/13,5,10.0,10,13.0,3.0,Rising,4,4,Falling,14,7,7,0.5,1
-2023,UCLA,Pac-12,12/19,6,11.0,11,10.0,-1.0,Falling,5,5,Falling,14,7,7,0.5,1
-2023,UCLA,Pac-12,12/26,7,10.0,10,11.0,1.0,Rising,6,6,Falling,14,7,7,0.5,1
-2023,UCLA,Pac-12,1/2,8,12.0,12,10.0,-2.0,Falling,7,7,Falling,14,7,7,0.5,1
-2023,UCLA,Pac-12,1/9,9,8.0,8,12.0,4.0,Rising,8,8,Falling,14,7,7,0.5,1
-2023,UCLA,Pac-12,1/16,10,9.0,9,8.0,-1.0,Falling,9,9,Falling,14,7,7,0.5,1
-2023,UCLA,Pac-12,1/23,11,8.0,8,9.0,1.0,Rising,10,10,Falling,14,7,7,0.5,1
-2023,UCLA,Pac-12,1/30,12,14.0,14,8.0,-6.0,Falling,11,11,Falling,14,7,7,0.5,1
-2023,UCLA,Pac-12,2/6,13,18.0,18,14.0,-4.0,Falling,12,12,Falling,14,7,7,0.5,1
-2023,UCLA,Pac-12,2/13,14,16.0,16,18.0,2.0,Rising,13,13,Falling,14,7,7,0.5,1
-2023,UCLA,Pac-12,2/20,15,17.0,17,16.0,-1.0,Falling,14,14,Falling,14,7,7,0.5,1
-2023,UCLA,Pac-12,2/28,16,19.0,19,17.0,-2.0,Falling,15,15,Falling,14,7,7,0.5,1
-2023,UCLA,Pac-12,Final,17,17.0,17,19.0,2.0,Rising,16,16,Falling,14,7,7,0.5,1
+2023,UCLA,Pac 12,11/21,2,20.0,20,,,Unknown,1,1,Falling,14,7,7,0.5,1
+2023,UCLA,Pac 12,11/28,3,15.0,15,20.0,5.0,Rising,2,2,Falling,14,7,7,0.5,1
+2023,UCLA,Pac 12,12/5,4,13.0,13,15.0,2.0,Rising,3,3,Falling,14,7,7,0.5,1
+2023,UCLA,Pac 12,12/13,5,10.0,10,13.0,3.0,Rising,4,4,Falling,14,7,7,0.5,1
+2023,UCLA,Pac 12,12/19,6,11.0,11,10.0,-1.0,Falling,5,5,Falling,14,7,7,0.5,1
+2023,UCLA,Pac 12,12/26,7,10.0,10,11.0,1.0,Rising,6,6,Falling,14,7,7,0.5,1
+2023,UCLA,Pac 12,1/2,8,12.0,12,10.0,-2.0,Falling,7,7,Falling,14,7,7,0.5,1
+2023,UCLA,Pac 12,1/9,9,8.0,8,12.0,4.0,Rising,8,8,Falling,14,7,7,0.5,1
+2023,UCLA,Pac 12,1/16,10,9.0,9,8.0,-1.0,Falling,9,9,Falling,14,7,7,0.5,1
+2023,UCLA,Pac 12,1/23,11,8.0,8,9.0,1.0,Rising,10,10,Falling,14,7,7,0.5,1
+2023,UCLA,Pac 12,1/30,12,14.0,14,8.0,-6.0,Falling,11,11,Falling,14,7,7,0.5,1
+2023,UCLA,Pac 12,2/6,13,18.0,18,14.0,-4.0,Falling,12,12,Falling,14,7,7,0.5,1
+2023,UCLA,Pac 12,2/13,14,16.0,16,18.0,2.0,Rising,13,13,Falling,14,7,7,0.5,1
+2023,UCLA,Pac 12,2/20,15,17.0,17,16.0,-1.0,Falling,14,14,Falling,14,7,7,0.5,1
+2023,UCLA,Pac 12,2/28,16,19.0,19,17.0,-2.0,Falling,15,15,Falling,14,7,7,0.5,1
+2023,UCLA,Pac 12,Final,17,17.0,17,19.0,2.0,Rising,16,16,Falling,14,7,7,0.5,1
 2023,UConn,Big East,Pre,0,6.0,6,,,Unknown,1,1,Steady,20,14,6,0.7,1
 2023,UConn,Big East,11/14,1,5.0,5,6.0,1.0,Rising,2,2,Steady,20,14,6,0.7,1
 2023,UConn,Big East,11/21,2,3.0,3,5.0,2.0,Rising,3,3,Steady,20,14,6,0.7,1
@@ -1300,24 +1300,24 @@ season,team,conference,poll_week,week_number,rank,rank_numeric,prev_rank_numeric
 2023,UNLV,MWC,2/20,15,24.0,24,23.0,-1.0,Falling,2,2,Steady,1,0,1,0.0,1
 2023,UNLV,MWC,2/28,16,22.0,22,24.0,2.0,Rising,3,3,Steady,1,0,1,0.0,1
 2023,UNLV,MWC,Final,17,21.0,21,22.0,1.0,Rising,4,4,Steady,1,0,1,0.0,1
-2023,USC,Pac-12,2/13,14,25.0,25,,,Unknown,1,1,Newcomer,11,3,8,0.273,1
-2023,Utah,Pac-12,11/14,1,25.0,25,,,Unknown,1,1,Steady,9,6,3,0.667,1
-2023,Utah,Pac-12,11/21,2,17.0,17,25.0,8.0,Rising,2,2,Steady,9,6,3,0.667,1
-2023,Utah,Pac-12,11/28,3,16.0,16,17.0,1.0,Rising,3,3,Steady,9,6,3,0.667,1
-2023,Utah,Pac-12,12/5,4,15.0,15,16.0,1.0,Rising,4,4,Steady,9,6,3,0.667,1
-2023,Utah,Pac-12,12/13,5,13.0,13,15.0,2.0,Rising,5,5,Steady,9,6,3,0.667,1
-2023,Utah,Pac-12,12/19,6,12.0,12,13.0,1.0,Rising,6,6,Steady,9,6,3,0.667,1
-2023,Utah,Pac-12,12/26,7,11.0,11,12.0,1.0,Rising,7,7,Steady,9,6,3,0.667,1
-2023,Utah,Pac-12,1/2,8,8.0,8,11.0,3.0,Rising,8,8,Steady,9,6,3,0.667,1
-2023,Utah,Pac-12,1/9,9,10.0,10,8.0,-2.0,Falling,9,9,Steady,9,6,3,0.667,1
-2023,Utah,Pac-12,1/16,10,8.0,8,10.0,2.0,Rising,10,10,Steady,9,6,3,0.667,1
-2023,Utah,Pac-12,1/23,11,9.0,9,8.0,-1.0,Falling,11,11,Steady,9,6,3,0.667,1
-2023,Utah,Pac-12,1/30,12,7.0,7,9.0,2.0,Rising,12,12,Steady,9,6,3,0.667,1
-2023,Utah,Pac-12,2/6,13,7.0,7,7.0,0.0,Stable,13,13,Steady,9,6,3,0.667,1
-2023,Utah,Pac-12,2/13,14,4.0,4,7.0,3.0,Rising,14,14,Steady,9,6,3,0.667,1
-2023,Utah,Pac-12,2/20,15,8.0,8,4.0,-4.0,Falling,15,15,Steady,9,6,3,0.667,1
-2023,Utah,Pac-12,2/28,16,3.0,3,8.0,5.0,Rising,16,16,Steady,9,6,3,0.667,1
-2023,Utah,Pac-12,Final,17,8.0,8,3.0,-5.0,Falling,17,17,Steady,9,6,3,0.667,1
+2023,USC,Pac 12,2/13,14,25.0,25,,,Unknown,1,1,Newcomer,11,3,8,0.273,1
+2023,Utah,Pac 12,11/14,1,25.0,25,,,Unknown,1,1,Steady,9,6,3,0.667,1
+2023,Utah,Pac 12,11/21,2,17.0,17,25.0,8.0,Rising,2,2,Steady,9,6,3,0.667,1
+2023,Utah,Pac 12,11/28,3,16.0,16,17.0,1.0,Rising,3,3,Steady,9,6,3,0.667,1
+2023,Utah,Pac 12,12/5,4,15.0,15,16.0,1.0,Rising,4,4,Steady,9,6,3,0.667,1
+2023,Utah,Pac 12,12/13,5,13.0,13,15.0,2.0,Rising,5,5,Steady,9,6,3,0.667,1
+2023,Utah,Pac 12,12/19,6,12.0,12,13.0,1.0,Rising,6,6,Steady,9,6,3,0.667,1
+2023,Utah,Pac 12,12/26,7,11.0,11,12.0,1.0,Rising,7,7,Steady,9,6,3,0.667,1
+2023,Utah,Pac 12,1/2,8,8.0,8,11.0,3.0,Rising,8,8,Steady,9,6,3,0.667,1
+2023,Utah,Pac 12,1/9,9,10.0,10,8.0,-2.0,Falling,9,9,Steady,9,6,3,0.667,1
+2023,Utah,Pac 12,1/16,10,8.0,8,10.0,2.0,Rising,10,10,Steady,9,6,3,0.667,1
+2023,Utah,Pac 12,1/23,11,9.0,9,8.0,-1.0,Falling,11,11,Steady,9,6,3,0.667,1
+2023,Utah,Pac 12,1/30,12,7.0,7,9.0,2.0,Rising,12,12,Steady,9,6,3,0.667,1
+2023,Utah,Pac 12,2/6,13,7.0,7,7.0,0.0,Stable,13,13,Steady,9,6,3,0.667,1
+2023,Utah,Pac 12,2/13,14,4.0,4,7.0,3.0,Rising,14,14,Steady,9,6,3,0.667,1
+2023,Utah,Pac 12,2/20,15,8.0,8,4.0,-4.0,Falling,15,15,Steady,9,6,3,0.667,1
+2023,Utah,Pac 12,2/28,16,3.0,3,8.0,5.0,Rising,16,16,Steady,9,6,3,0.667,1
+2023,Utah,Pac 12,Final,17,8.0,8,3.0,-5.0,Falling,17,17,Steady,9,6,3,0.667,1
 2023,Villanova,Big East,11/14,1,24.0,24,,,Unknown,1,1,Surging,13,7,6,0.538,1
 2023,Villanova,Big East,11/21,2,23.0,23,24.0,1.0,Rising,2,2,Surging,13,7,6,0.538,1
 2023,Villanova,Big East,11/28,3,25.0,25,23.0,-2.0,Falling,3,3,Surging,13,7,6,0.538,1
@@ -1350,7 +1350,7 @@ season,team,conference,poll_week,week_number,rank,rank_numeric,prev_rank_numeric
 2023,Virginia Tech,ACC,2/20,15,9.0,9,11.0,2.0,Rising,16,16,Surging,17,14,3,0.824,1
 2023,Virginia Tech,ACC,2/28,16,8.0,8,9.0,1.0,Rising,17,17,Surging,17,14,3,0.824,1
 2023,Virginia Tech,ACC,Final,17,4.0,4,8.0,4.0,Rising,18,18,Surging,17,14,3,0.824,1
-2023,Washington State,Pac-12,Final,17,22.0,22,,,Unknown,1,1,Newcomer,14,8,6,0.571,1
+2023,Washington State,Pac 12,Final,17,22.0,22,,,Unknown,1,1,Newcomer,14,8,6,0.571,1
 2024,Baylor,Big 12,Pre,0,19.0,19,,,Unknown,1,1,Steady,12,8,4,0.667,1
 2024,Baylor,Big 12,11/13,1,21.0,21,19.0,-2.0,Falling,2,2,Steady,12,8,4,0.667,1
 2024,Baylor,Big 12,11/20,2,14.0,14,21.0,7.0,Rising,3,3,Steady,12,8,4,0.667,1
@@ -1372,27 +1372,27 @@ season,team,conference,poll_week,week_number,rank,rank_numeric,prev_rank_numeric
 2024,Baylor,Big 12,3/11,18,19.0,19,17.0,-2.0,Falling,19,19,Steady,12,8,4,0.667,1
 2024,Baylor,Big 12,3/18,19,19.0,19,19.0,0.0,Stable,20,20,Steady,12,8,4,0.667,1
 2024,Baylor,Big 12,Post,20,13.0,13,19.0,6.0,Rising,21,21,Steady,12,8,4,0.667,1
-2024,Colorado,Pac-12,Pre,0,20.0,20,,,Unknown,1,1,Falling,15,6,9,0.4,1
-2024,Colorado,Pac-12,11/13,1,5.0,5,20.0,15.0,Rising,2,2,Falling,15,6,9,0.4,1
-2024,Colorado,Pac-12,11/20,2,3.0,3,5.0,2.0,Rising,3,3,Falling,15,6,9,0.4,1
-2024,Colorado,Pac-12,11/27,3,8.0,8,3.0,-5.0,Falling,4,4,Falling,15,6,9,0.4,1
-2024,Colorado,Pac-12,12/4,4,8.0,8,8.0,0.0,Stable,5,5,Falling,15,6,9,0.4,1
-2024,Colorado,Pac-12,12/11,5,8.0,8,8.0,0.0,Stable,6,6,Falling,15,6,9,0.4,1
-2024,Colorado,Pac-12,12/18,6,8.0,8,8.0,0.0,Stable,7,7,Falling,15,6,9,0.4,1
-2024,Colorado,Pac-12,12/25,7,8.0,8,8.0,0.0,Stable,8,8,Falling,15,6,9,0.4,1
-2024,Colorado,Pac-12,1/1,8,5.0,5,8.0,3.0,Rising,9,9,Falling,15,6,9,0.4,1
-2024,Colorado,Pac-12,1/8,9,5.0,5,5.0,0.0,Stable,10,10,Falling,15,6,9,0.4,1
-2024,Colorado,Pac-12,1/15,10,3.0,3,5.0,2.0,Rising,11,11,Falling,15,6,9,0.4,1
-2024,Colorado,Pac-12,1/22,11,3.0,3,3.0,0.0,Stable,12,12,Falling,15,6,9,0.4,1
-2024,Colorado,Pac-12,1/29,12,6.0,6,3.0,-3.0,Falling,13,13,Falling,15,6,9,0.4,1
-2024,Colorado,Pac-12,2/5,13,4.0,4,6.0,2.0,Rising,14,14,Falling,15,6,9,0.4,1
-2024,Colorado,Pac-12,2/12,14,8.0,8,4.0,-4.0,Falling,15,15,Falling,15,6,9,0.4,1
-2024,Colorado,Pac-12,2/19,15,11.0,11,8.0,-3.0,Falling,16,16,Falling,15,6,9,0.4,1
-2024,Colorado,Pac-12,2/26,16,13.0,13,11.0,-2.0,Falling,17,17,Falling,15,6,9,0.4,1
-2024,Colorado,Pac-12,3/4,17,18.0,18,13.0,-5.0,Falling,18,18,Falling,15,6,9,0.4,1
-2024,Colorado,Pac-12,3/11,18,18.0,18,18.0,0.0,Stable,19,19,Falling,15,6,9,0.4,1
-2024,Colorado,Pac-12,3/18,19,17.0,17,18.0,1.0,Rising,20,20,Falling,15,6,9,0.4,1
-2024,Colorado,Pac-12,Post,20,15.0,15,17.0,2.0,Rising,21,21,Falling,15,6,9,0.4,1
+2024,Colorado,Pac 12,Pre,0,20.0,20,,,Unknown,1,1,Falling,15,6,9,0.4,1
+2024,Colorado,Pac 12,11/13,1,5.0,5,20.0,15.0,Rising,2,2,Falling,15,6,9,0.4,1
+2024,Colorado,Pac 12,11/20,2,3.0,3,5.0,2.0,Rising,3,3,Falling,15,6,9,0.4,1
+2024,Colorado,Pac 12,11/27,3,8.0,8,3.0,-5.0,Falling,4,4,Falling,15,6,9,0.4,1
+2024,Colorado,Pac 12,12/4,4,8.0,8,8.0,0.0,Stable,5,5,Falling,15,6,9,0.4,1
+2024,Colorado,Pac 12,12/11,5,8.0,8,8.0,0.0,Stable,6,6,Falling,15,6,9,0.4,1
+2024,Colorado,Pac 12,12/18,6,8.0,8,8.0,0.0,Stable,7,7,Falling,15,6,9,0.4,1
+2024,Colorado,Pac 12,12/25,7,8.0,8,8.0,0.0,Stable,8,8,Falling,15,6,9,0.4,1
+2024,Colorado,Pac 12,1/1,8,5.0,5,8.0,3.0,Rising,9,9,Falling,15,6,9,0.4,1
+2024,Colorado,Pac 12,1/8,9,5.0,5,5.0,0.0,Stable,10,10,Falling,15,6,9,0.4,1
+2024,Colorado,Pac 12,1/15,10,3.0,3,5.0,2.0,Rising,11,11,Falling,15,6,9,0.4,1
+2024,Colorado,Pac 12,1/22,11,3.0,3,3.0,0.0,Stable,12,12,Falling,15,6,9,0.4,1
+2024,Colorado,Pac 12,1/29,12,6.0,6,3.0,-3.0,Falling,13,13,Falling,15,6,9,0.4,1
+2024,Colorado,Pac 12,2/5,13,4.0,4,6.0,2.0,Rising,14,14,Falling,15,6,9,0.4,1
+2024,Colorado,Pac 12,2/12,14,8.0,8,4.0,-4.0,Falling,15,15,Falling,15,6,9,0.4,1
+2024,Colorado,Pac 12,2/19,15,11.0,11,8.0,-3.0,Falling,16,16,Falling,15,6,9,0.4,1
+2024,Colorado,Pac 12,2/26,16,13.0,13,11.0,-2.0,Falling,17,17,Falling,15,6,9,0.4,1
+2024,Colorado,Pac 12,3/4,17,18.0,18,13.0,-5.0,Falling,18,18,Falling,15,6,9,0.4,1
+2024,Colorado,Pac 12,3/11,18,18.0,18,18.0,0.0,Stable,19,19,Falling,15,6,9,0.4,1
+2024,Colorado,Pac 12,3/18,19,17.0,17,18.0,1.0,Rising,20,20,Falling,15,6,9,0.4,1
+2024,Colorado,Pac 12,Post,20,15.0,15,17.0,2.0,Rising,21,21,Falling,15,6,9,0.4,1
 2024,Creighton,Big East,Pre,0,22.0,22,,,Unknown,1,1,Steady,5,1,4,0.2,1
 2024,Creighton,Big East,11/13,1,22.0,22,22.0,0.0,Stable,2,2,Steady,5,1,4,0.2,1
 2024,Creighton,Big East,12/4,4,22.0,22,22.0,0.0,Stable,3,3,Steady,5,1,4,0.2,1
@@ -1640,16 +1640,16 @@ season,team,conference,poll_week,week_number,rank,rank_numeric,prev_rank_numeric
 2024,Ole Miss,SEC,11/13,1,23.0,23,12.0,-11.0,Falling,2,2,Newcomer,6,1,5,0.167,1
 2024,Ole Miss,SEC,11/20,2,24.0,24,23.0,-1.0,Falling,3,3,Newcomer,6,1,5,0.167,1
 2024,Ole Miss,SEC,11/27,3,19.0,19,24.0,5.0,Rising,4,4,Newcomer,6,1,5,0.167,1
-2024,Oregon State,Pac-12,1/22,11,25.0,25,,,Unknown,1,1,Surging,16,9,7,0.562,1
-2024,Oregon State,Pac-12,1/29,12,18.0,18,25.0,7.0,Rising,2,2,Surging,16,9,7,0.562,1
-2024,Oregon State,Pac-12,2/5,13,17.0,17,18.0,1.0,Rising,3,3,Surging,16,9,7,0.562,1
-2024,Oregon State,Pac-12,2/12,14,11.0,11,17.0,6.0,Rising,4,4,Surging,16,9,7,0.562,1
-2024,Oregon State,Pac-12,2/19,15,9.0,9,11.0,2.0,Rising,5,5,Surging,16,9,7,0.562,1
-2024,Oregon State,Pac-12,2/26,16,11.0,11,9.0,-2.0,Falling,6,6,Surging,16,9,7,0.562,1
-2024,Oregon State,Pac-12,3/4,17,13.0,13,11.0,-2.0,Falling,7,7,Surging,16,9,7,0.562,1
-2024,Oregon State,Pac-12,3/11,18,12.0,12,13.0,1.0,Rising,8,8,Surging,16,9,7,0.562,1
-2024,Oregon State,Pac-12,3/18,19,12.0,12,12.0,0.0,Stable,9,9,Surging,16,9,7,0.562,1
-2024,Oregon State,Pac-12,Post,20,8.0,8,12.0,4.0,Rising,10,10,Surging,16,9,7,0.562,1
+2024,Oregon State,Pac 12,1/22,11,25.0,25,,,Unknown,1,1,Surging,16,9,7,0.562,1
+2024,Oregon State,Pac 12,1/29,12,18.0,18,25.0,7.0,Rising,2,2,Surging,16,9,7,0.562,1
+2024,Oregon State,Pac 12,2/5,13,17.0,17,18.0,1.0,Rising,3,3,Surging,16,9,7,0.562,1
+2024,Oregon State,Pac 12,2/12,14,11.0,11,17.0,6.0,Rising,4,4,Surging,16,9,7,0.562,1
+2024,Oregon State,Pac 12,2/19,15,9.0,9,11.0,2.0,Rising,5,5,Surging,16,9,7,0.562,1
+2024,Oregon State,Pac 12,2/26,16,11.0,11,9.0,-2.0,Falling,6,6,Surging,16,9,7,0.562,1
+2024,Oregon State,Pac 12,3/4,17,13.0,13,11.0,-2.0,Falling,7,7,Surging,16,9,7,0.562,1
+2024,Oregon State,Pac 12,3/11,18,12.0,12,13.0,1.0,Rising,8,8,Surging,16,9,7,0.562,1
+2024,Oregon State,Pac 12,3/18,19,12.0,12,12.0,0.0,Stable,9,9,Surging,16,9,7,0.562,1
+2024,Oregon State,Pac 12,Post,20,8.0,8,12.0,4.0,Rising,10,10,Surging,16,9,7,0.562,1
 2024,Penn State,Big Ten,12/4,4,25.0,25,,,Unknown,1,1,Newcomer,6,0,6,0.0,1
 2024,Princeton,Ivy,11/27,3,25.0,25,,,Unknown,1,1,Newcomer,4,1,3,0.25,1
 2024,Princeton,Ivy,1/29,12,25.0,25,25.0,0.0,Stable,2,2,Newcomer,4,1,3,0.25,1
@@ -1677,27 +1677,27 @@ season,team,conference,poll_week,week_number,rank,rank_numeric,prev_rank_numeric
 2024,South Carolina,SEC,3/11,18,1.0,1,1.0,0.0,Stable,19,19,Elite Lock,13,13,0,1.0,1
 2024,South Carolina,SEC,3/18,19,1.0,1,1.0,0.0,Stable,20,20,Elite Lock,13,13,0,1.0,1
 2024,South Carolina,SEC,Post,20,1.0,1,1.0,0.0,Stable,21,21,Elite Lock,13,13,0,1.0,1
-2024,Stanford,Pac-12,Pre,0,15.0,15,,,Unknown,1,1,Steady,12,8,4,0.667,1
-2024,Stanford,Pac-12,11/13,1,6.0,6,15.0,9.0,Rising,2,2,Steady,12,8,4,0.667,1
-2024,Stanford,Pac-12,11/20,2,4.0,4,6.0,2.0,Rising,3,3,Steady,12,8,4,0.667,1
-2024,Stanford,Pac-12,11/27,3,3.0,3,4.0,1.0,Rising,4,4,Steady,12,8,4,0.667,1
-2024,Stanford,Pac-12,12/4,4,9.0,9,3.0,-6.0,Falling,5,5,Steady,12,8,4,0.667,1
-2024,Stanford,Pac-12,12/11,5,9.0,9,9.0,0.0,Stable,6,6,Steady,12,8,4,0.667,1
-2024,Stanford,Pac-12,12/18,6,9.0,9,9.0,0.0,Stable,7,7,Steady,12,8,4,0.667,1
-2024,Stanford,Pac-12,12/25,7,9.0,9,9.0,0.0,Stable,8,8,Steady,12,8,4,0.667,1
-2024,Stanford,Pac-12,1/1,8,8.0,8,9.0,1.0,Rising,9,9,Steady,12,8,4,0.667,1
-2024,Stanford,Pac-12,1/8,9,8.0,8,8.0,0.0,Stable,10,10,Steady,12,8,4,0.667,1
-2024,Stanford,Pac-12,1/15,10,8.0,8,8.0,0.0,Stable,11,11,Steady,12,8,4,0.667,1
-2024,Stanford,Pac-12,1/22,11,6.0,6,8.0,2.0,Rising,12,12,Steady,12,8,4,0.667,1
-2024,Stanford,Pac-12,1/29,12,4.0,4,6.0,2.0,Rising,13,13,Steady,12,8,4,0.667,1
-2024,Stanford,Pac-12,2/5,13,6.0,6,4.0,-2.0,Falling,14,14,Steady,12,8,4,0.667,1
-2024,Stanford,Pac-12,2/12,14,3.0,3,6.0,3.0,Rising,15,15,Steady,12,8,4,0.667,1
-2024,Stanford,Pac-12,2/19,15,3.0,3,3.0,0.0,Stable,16,16,Steady,12,8,4,0.667,1
-2024,Stanford,Pac-12,2/26,16,4.0,4,3.0,-1.0,Falling,17,17,Steady,12,8,4,0.667,1
-2024,Stanford,Pac-12,3/4,17,2.0,2,4.0,2.0,Rising,18,18,Steady,12,8,4,0.667,1
-2024,Stanford,Pac-12,3/11,18,4.0,4,2.0,-2.0,Falling,19,19,Steady,12,8,4,0.667,1
-2024,Stanford,Pac-12,3/18,19,5.0,5,4.0,-1.0,Falling,20,20,Steady,12,8,4,0.667,1
-2024,Stanford,Pac-12,Post,20,9.0,9,5.0,-4.0,Falling,21,21,Steady,12,8,4,0.667,1
+2024,Stanford,Pac 12,Pre,0,15.0,15,,,Unknown,1,1,Steady,12,8,4,0.667,1
+2024,Stanford,Pac 12,11/13,1,6.0,6,15.0,9.0,Rising,2,2,Steady,12,8,4,0.667,1
+2024,Stanford,Pac 12,11/20,2,4.0,4,6.0,2.0,Rising,3,3,Steady,12,8,4,0.667,1
+2024,Stanford,Pac 12,11/27,3,3.0,3,4.0,1.0,Rising,4,4,Steady,12,8,4,0.667,1
+2024,Stanford,Pac 12,12/4,4,9.0,9,3.0,-6.0,Falling,5,5,Steady,12,8,4,0.667,1
+2024,Stanford,Pac 12,12/11,5,9.0,9,9.0,0.0,Stable,6,6,Steady,12,8,4,0.667,1
+2024,Stanford,Pac 12,12/18,6,9.0,9,9.0,0.0,Stable,7,7,Steady,12,8,4,0.667,1
+2024,Stanford,Pac 12,12/25,7,9.0,9,9.0,0.0,Stable,8,8,Steady,12,8,4,0.667,1
+2024,Stanford,Pac 12,1/1,8,8.0,8,9.0,1.0,Rising,9,9,Steady,12,8,4,0.667,1
+2024,Stanford,Pac 12,1/8,9,8.0,8,8.0,0.0,Stable,10,10,Steady,12,8,4,0.667,1
+2024,Stanford,Pac 12,1/15,10,8.0,8,8.0,0.0,Stable,11,11,Steady,12,8,4,0.667,1
+2024,Stanford,Pac 12,1/22,11,6.0,6,8.0,2.0,Rising,12,12,Steady,12,8,4,0.667,1
+2024,Stanford,Pac 12,1/29,12,4.0,4,6.0,2.0,Rising,13,13,Steady,12,8,4,0.667,1
+2024,Stanford,Pac 12,2/5,13,6.0,6,4.0,-2.0,Falling,14,14,Steady,12,8,4,0.667,1
+2024,Stanford,Pac 12,2/12,14,3.0,3,6.0,3.0,Rising,15,15,Steady,12,8,4,0.667,1
+2024,Stanford,Pac 12,2/19,15,3.0,3,3.0,0.0,Stable,16,16,Steady,12,8,4,0.667,1
+2024,Stanford,Pac 12,2/26,16,4.0,4,3.0,-1.0,Falling,17,17,Steady,12,8,4,0.667,1
+2024,Stanford,Pac 12,3/4,17,2.0,2,4.0,2.0,Rising,18,18,Steady,12,8,4,0.667,1
+2024,Stanford,Pac 12,3/11,18,4.0,4,2.0,-2.0,Falling,19,19,Steady,12,8,4,0.667,1
+2024,Stanford,Pac 12,3/18,19,5.0,5,4.0,-1.0,Falling,20,20,Steady,12,8,4,0.667,1
+2024,Stanford,Pac 12,Post,20,9.0,9,5.0,-4.0,Falling,21,21,Steady,12,8,4,0.667,1
 2024,Syracuse,ACC,1/1,8,25.0,25,,,Unknown,1,1,Steady,10,5,5,0.5,1
 2024,Syracuse,ACC,1/22,11,22.0,22,25.0,3.0,Rising,2,2,Steady,10,5,5,0.5,1
 2024,Syracuse,ACC,1/29,12,21.0,21,22.0,1.0,Rising,3,3,Steady,10,5,5,0.5,1
@@ -1737,27 +1737,27 @@ season,team,conference,poll_week,week_number,rank,rank_numeric,prev_rank_numeric
 2024,Texas,Big 12,3/11,18,5.0,5,6.0,1.0,Rising,19,19,Elite Lock,12,8,4,0.667,1
 2024,Texas,Big 12,3/18,19,4.0,4,5.0,1.0,Rising,20,20,Elite Lock,12,8,4,0.667,1
 2024,Texas,Big 12,Post,20,7.0,7,4.0,-3.0,Falling,21,21,Elite Lock,12,8,4,0.667,1
-2024,UCLA,Pac-12,Pre,0,4.0,4,,,Unknown,1,1,Steady,16,10,6,0.625,1
-2024,UCLA,Pac-12,11/13,1,3.0,3,4.0,1.0,Rising,2,2,Steady,16,10,6,0.625,1
-2024,UCLA,Pac-12,11/20,2,2.0,2,3.0,1.0,Rising,3,3,Steady,16,10,6,0.625,1
-2024,UCLA,Pac-12,11/27,3,2.0,2,2.0,0.0,Stable,4,4,Steady,16,10,6,0.625,1
-2024,UCLA,Pac-12,12/4,4,2.0,2,2.0,0.0,Stable,5,5,Steady,16,10,6,0.625,1
-2024,UCLA,Pac-12,12/11,5,2.0,2,2.0,0.0,Stable,6,6,Steady,16,10,6,0.625,1
-2024,UCLA,Pac-12,12/18,6,2.0,2,2.0,0.0,Stable,7,7,Steady,16,10,6,0.625,1
-2024,UCLA,Pac-12,12/25,7,2.0,2,2.0,0.0,Stable,8,8,Steady,16,10,6,0.625,1
-2024,UCLA,Pac-12,1/1,8,2.0,2,2.0,0.0,Stable,9,9,Steady,16,10,6,0.625,1
-2024,UCLA,Pac-12,1/8,9,2.0,2,2.0,0.0,Stable,10,10,Steady,16,10,6,0.625,1
-2024,UCLA,Pac-12,1/15,10,5.0,5,2.0,-3.0,Falling,11,11,Steady,16,10,6,0.625,1
-2024,UCLA,Pac-12,1/22,11,2.0,2,5.0,3.0,Rising,12,12,Steady,16,10,6,0.625,1
-2024,UCLA,Pac-12,1/29,12,7.0,7,2.0,-5.0,Falling,13,13,Steady,16,10,6,0.625,1
-2024,UCLA,Pac-12,2/5,13,9.0,9,7.0,-2.0,Falling,14,14,Steady,16,10,6,0.625,1
-2024,UCLA,Pac-12,2/12,14,9.0,9,9.0,0.0,Stable,15,15,Steady,16,10,6,0.625,1
-2024,UCLA,Pac-12,2/19,15,12.0,12,9.0,-3.0,Falling,16,16,Steady,16,10,6,0.625,1
-2024,UCLA,Pac-12,2/26,16,8.0,8,12.0,4.0,Rising,17,17,Steady,16,10,6,0.625,1
-2024,UCLA,Pac-12,3/4,17,7.0,7,8.0,1.0,Rising,18,18,Steady,16,10,6,0.625,1
-2024,UCLA,Pac-12,3/11,18,6.0,6,7.0,1.0,Rising,19,19,Steady,16,10,6,0.625,1
-2024,UCLA,Pac-12,3/18,19,6.0,6,6.0,0.0,Stable,20,20,Steady,16,10,6,0.625,1
-2024,UCLA,Pac-12,Post,20,10.0,10,6.0,-4.0,Falling,21,21,Steady,16,10,6,0.625,1
+2024,UCLA,Pac 12,Pre,0,4.0,4,,,Unknown,1,1,Steady,16,10,6,0.625,1
+2024,UCLA,Pac 12,11/13,1,3.0,3,4.0,1.0,Rising,2,2,Steady,16,10,6,0.625,1
+2024,UCLA,Pac 12,11/20,2,2.0,2,3.0,1.0,Rising,3,3,Steady,16,10,6,0.625,1
+2024,UCLA,Pac 12,11/27,3,2.0,2,2.0,0.0,Stable,4,4,Steady,16,10,6,0.625,1
+2024,UCLA,Pac 12,12/4,4,2.0,2,2.0,0.0,Stable,5,5,Steady,16,10,6,0.625,1
+2024,UCLA,Pac 12,12/11,5,2.0,2,2.0,0.0,Stable,6,6,Steady,16,10,6,0.625,1
+2024,UCLA,Pac 12,12/18,6,2.0,2,2.0,0.0,Stable,7,7,Steady,16,10,6,0.625,1
+2024,UCLA,Pac 12,12/25,7,2.0,2,2.0,0.0,Stable,8,8,Steady,16,10,6,0.625,1
+2024,UCLA,Pac 12,1/1,8,2.0,2,2.0,0.0,Stable,9,9,Steady,16,10,6,0.625,1
+2024,UCLA,Pac 12,1/8,9,2.0,2,2.0,0.0,Stable,10,10,Steady,16,10,6,0.625,1
+2024,UCLA,Pac 12,1/15,10,5.0,5,2.0,-3.0,Falling,11,11,Steady,16,10,6,0.625,1
+2024,UCLA,Pac 12,1/22,11,2.0,2,5.0,3.0,Rising,12,12,Steady,16,10,6,0.625,1
+2024,UCLA,Pac 12,1/29,12,7.0,7,2.0,-5.0,Falling,13,13,Steady,16,10,6,0.625,1
+2024,UCLA,Pac 12,2/5,13,9.0,9,7.0,-2.0,Falling,14,14,Steady,16,10,6,0.625,1
+2024,UCLA,Pac 12,2/12,14,9.0,9,9.0,0.0,Stable,15,15,Steady,16,10,6,0.625,1
+2024,UCLA,Pac 12,2/19,15,12.0,12,9.0,-3.0,Falling,16,16,Steady,16,10,6,0.625,1
+2024,UCLA,Pac 12,2/26,16,8.0,8,12.0,4.0,Rising,17,17,Steady,16,10,6,0.625,1
+2024,UCLA,Pac 12,3/4,17,7.0,7,8.0,1.0,Rising,18,18,Steady,16,10,6,0.625,1
+2024,UCLA,Pac 12,3/11,18,6.0,6,7.0,1.0,Rising,19,19,Steady,16,10,6,0.625,1
+2024,UCLA,Pac 12,3/18,19,6.0,6,6.0,0.0,Stable,20,20,Steady,16,10,6,0.625,1
+2024,UCLA,Pac 12,Post,20,10.0,10,6.0,-4.0,Falling,21,21,Steady,16,10,6,0.625,1
 2024,UConn,Big East,Pre,0,2.0,2,,,Unknown,1,1,Surging,15,10,5,0.667,1
 2024,UConn,Big East,11/13,1,8.0,8,2.0,-6.0,Falling,2,2,Surging,15,10,5,0.667,1
 2024,UConn,Big East,11/20,2,6.0,6,8.0,2.0,Rising,3,3,Surging,15,10,5,0.667,1
@@ -1798,48 +1798,48 @@ season,team,conference,poll_week,week_number,rank,rank_numeric,prev_rank_numeric
 2024,UNLV,MWC,3/4,17,23.0,23,24.0,1.0,Rising,5,5,Steady,1,0,1,0.0,1
 2024,UNLV,MWC,3/11,18,21.0,21,23.0,2.0,Rising,6,6,Steady,1,0,1,0.0,1
 2024,UNLV,MWC,3/18,19,20.0,20,21.0,1.0,Rising,7,7,Steady,1,0,1,0.0,1
-2024,USC,Pac-12,Pre,0,21.0,21,,,Unknown,1,1,Elite Lock,15,10,5,0.667,1
-2024,USC,Pac-12,11/13,1,10.0,10,21.0,11.0,Rising,2,2,Elite Lock,15,10,5,0.667,1
-2024,USC,Pac-12,11/20,2,8.0,8,10.0,2.0,Rising,3,3,Elite Lock,15,10,5,0.667,1
-2024,USC,Pac-12,11/27,3,6.0,6,8.0,2.0,Rising,4,4,Elite Lock,15,10,5,0.667,1
-2024,USC,Pac-12,12/4,4,6.0,6,6.0,0.0,Stable,5,5,Elite Lock,15,10,5,0.667,1
-2024,USC,Pac-12,12/11,5,6.0,6,6.0,0.0,Stable,6,6,Elite Lock,15,10,5,0.667,1
-2024,USC,Pac-12,12/18,6,6.0,6,6.0,0.0,Stable,7,7,Elite Lock,15,10,5,0.667,1
-2024,USC,Pac-12,12/25,7,6.0,6,6.0,0.0,Stable,8,8,Elite Lock,15,10,5,0.667,1
-2024,USC,Pac-12,1/1,8,9.0,9,6.0,-3.0,Falling,9,9,Elite Lock,15,10,5,0.667,1
-2024,USC,Pac-12,1/8,9,9.0,9,9.0,0.0,Stable,10,10,Elite Lock,15,10,5,0.667,1
-2024,USC,Pac-12,1/15,10,6.0,6,9.0,3.0,Rising,11,11,Elite Lock,15,10,5,0.667,1
-2024,USC,Pac-12,1/22,11,11.0,11,6.0,-5.0,Falling,12,12,Elite Lock,15,10,5,0.667,1
-2024,USC,Pac-12,1/29,12,15.0,15,11.0,-4.0,Falling,13,13,Elite Lock,15,10,5,0.667,1
-2024,USC,Pac-12,2/5,13,10.0,10,15.0,5.0,Rising,14,14,Elite Lock,15,10,5,0.667,1
-2024,USC,Pac-12,2/12,14,10.0,10,10.0,0.0,Stable,15,15,Elite Lock,15,10,5,0.667,1
-2024,USC,Pac-12,2/19,15,7.0,7,10.0,3.0,Rising,16,16,Elite Lock,15,10,5,0.667,1
-2024,USC,Pac-12,2/26,16,7.0,7,7.0,0.0,Stable,17,17,Elite Lock,15,10,5,0.667,1
-2024,USC,Pac-12,3/4,17,5.0,5,7.0,2.0,Rising,18,18,Elite Lock,15,10,5,0.667,1
-2024,USC,Pac-12,3/11,18,3.0,3,5.0,2.0,Rising,19,19,Elite Lock,15,10,5,0.667,1
-2024,USC,Pac-12,3/18,19,3.0,3,3.0,0.0,Stable,20,20,Elite Lock,15,10,5,0.667,1
-2024,USC,Pac-12,Post,20,5.0,5,3.0,-2.0,Falling,21,21,Elite Lock,15,10,5,0.667,1
-2024,Utah,Pac-12,Pre,0,5.0,5,,,Unknown,1,1,Steady,14,5,9,0.357,1
-2024,Utah,Pac-12,11/13,1,4.0,4,5.0,1.0,Rising,2,2,Steady,14,5,9,0.357,1
-2024,Utah,Pac-12,11/20,2,10.0,10,4.0,-6.0,Falling,3,3,Steady,14,5,9,0.357,1
-2024,Utah,Pac-12,11/27,3,12.0,12,10.0,-2.0,Falling,4,4,Steady,14,5,9,0.357,1
-2024,Utah,Pac-12,12/4,4,11.0,11,12.0,1.0,Rising,5,5,Steady,14,5,9,0.357,1
-2024,Utah,Pac-12,12/11,5,11.0,11,11.0,0.0,Stable,6,6,Steady,14,5,9,0.357,1
-2024,Utah,Pac-12,12/18,6,11.0,11,11.0,0.0,Stable,7,7,Steady,14,5,9,0.357,1
-2024,Utah,Pac-12,12/25,7,12.0,12,11.0,-1.0,Falling,8,8,Steady,14,5,9,0.357,1
-2024,Utah,Pac-12,1/1,8,15.0,15,12.0,-3.0,Falling,9,9,Steady,14,5,9,0.357,1
-2024,Utah,Pac-12,1/8,9,19.0,19,15.0,-4.0,Falling,10,10,Steady,14,5,9,0.357,1
-2024,Utah,Pac-12,1/15,10,20.0,20,19.0,-1.0,Falling,11,11,Steady,14,5,9,0.357,1
-2024,Utah,Pac-12,1/22,11,16.0,16,20.0,4.0,Rising,12,12,Steady,14,5,9,0.357,1
-2024,Utah,Pac-12,1/29,12,20.0,20,16.0,-4.0,Falling,13,13,Steady,14,5,9,0.357,1
-2024,Utah,Pac-12,2/5,13,20.0,20,20.0,0.0,Stable,14,14,Steady,14,5,9,0.357,1
-2024,Utah,Pac-12,2/12,14,22.0,22,20.0,-2.0,Falling,15,15,Steady,14,5,9,0.357,1
-2024,Utah,Pac-12,2/19,15,18.0,18,22.0,4.0,Rising,16,16,Steady,14,5,9,0.357,1
-2024,Utah,Pac-12,2/26,16,18.0,18,18.0,0.0,Stable,17,17,Steady,14,5,9,0.357,1
-2024,Utah,Pac-12,3/4,17,22.0,22,18.0,-4.0,Falling,18,18,Steady,14,5,9,0.357,1
-2024,Utah,Pac-12,3/11,18,20.0,20,22.0,2.0,Rising,19,19,Steady,14,5,9,0.357,1
-2024,Utah,Pac-12,3/18,19,21.0,21,20.0,-1.0,Falling,20,20,Steady,14,5,9,0.357,1
-2024,Utah,Pac-12,Post,20,22.0,22,21.0,-1.0,Falling,21,21,Steady,14,5,9,0.357,1
+2024,USC,Pac 12,Pre,0,21.0,21,,,Unknown,1,1,Elite Lock,15,10,5,0.667,1
+2024,USC,Pac 12,11/13,1,10.0,10,21.0,11.0,Rising,2,2,Elite Lock,15,10,5,0.667,1
+2024,USC,Pac 12,11/20,2,8.0,8,10.0,2.0,Rising,3,3,Elite Lock,15,10,5,0.667,1
+2024,USC,Pac 12,11/27,3,6.0,6,8.0,2.0,Rising,4,4,Elite Lock,15,10,5,0.667,1
+2024,USC,Pac 12,12/4,4,6.0,6,6.0,0.0,Stable,5,5,Elite Lock,15,10,5,0.667,1
+2024,USC,Pac 12,12/11,5,6.0,6,6.0,0.0,Stable,6,6,Elite Lock,15,10,5,0.667,1
+2024,USC,Pac 12,12/18,6,6.0,6,6.0,0.0,Stable,7,7,Elite Lock,15,10,5,0.667,1
+2024,USC,Pac 12,12/25,7,6.0,6,6.0,0.0,Stable,8,8,Elite Lock,15,10,5,0.667,1
+2024,USC,Pac 12,1/1,8,9.0,9,6.0,-3.0,Falling,9,9,Elite Lock,15,10,5,0.667,1
+2024,USC,Pac 12,1/8,9,9.0,9,9.0,0.0,Stable,10,10,Elite Lock,15,10,5,0.667,1
+2024,USC,Pac 12,1/15,10,6.0,6,9.0,3.0,Rising,11,11,Elite Lock,15,10,5,0.667,1
+2024,USC,Pac 12,1/22,11,11.0,11,6.0,-5.0,Falling,12,12,Elite Lock,15,10,5,0.667,1
+2024,USC,Pac 12,1/29,12,15.0,15,11.0,-4.0,Falling,13,13,Elite Lock,15,10,5,0.667,1
+2024,USC,Pac 12,2/5,13,10.0,10,15.0,5.0,Rising,14,14,Elite Lock,15,10,5,0.667,1
+2024,USC,Pac 12,2/12,14,10.0,10,10.0,0.0,Stable,15,15,Elite Lock,15,10,5,0.667,1
+2024,USC,Pac 12,2/19,15,7.0,7,10.0,3.0,Rising,16,16,Elite Lock,15,10,5,0.667,1
+2024,USC,Pac 12,2/26,16,7.0,7,7.0,0.0,Stable,17,17,Elite Lock,15,10,5,0.667,1
+2024,USC,Pac 12,3/4,17,5.0,5,7.0,2.0,Rising,18,18,Elite Lock,15,10,5,0.667,1
+2024,USC,Pac 12,3/11,18,3.0,3,5.0,2.0,Rising,19,19,Elite Lock,15,10,5,0.667,1
+2024,USC,Pac 12,3/18,19,3.0,3,3.0,0.0,Stable,20,20,Elite Lock,15,10,5,0.667,1
+2024,USC,Pac 12,Post,20,5.0,5,3.0,-2.0,Falling,21,21,Elite Lock,15,10,5,0.667,1
+2024,Utah,Pac 12,Pre,0,5.0,5,,,Unknown,1,1,Steady,14,5,9,0.357,1
+2024,Utah,Pac 12,11/13,1,4.0,4,5.0,1.0,Rising,2,2,Steady,14,5,9,0.357,1
+2024,Utah,Pac 12,11/20,2,10.0,10,4.0,-6.0,Falling,3,3,Steady,14,5,9,0.357,1
+2024,Utah,Pac 12,11/27,3,12.0,12,10.0,-2.0,Falling,4,4,Steady,14,5,9,0.357,1
+2024,Utah,Pac 12,12/4,4,11.0,11,12.0,1.0,Rising,5,5,Steady,14,5,9,0.357,1
+2024,Utah,Pac 12,12/11,5,11.0,11,11.0,0.0,Stable,6,6,Steady,14,5,9,0.357,1
+2024,Utah,Pac 12,12/18,6,11.0,11,11.0,0.0,Stable,7,7,Steady,14,5,9,0.357,1
+2024,Utah,Pac 12,12/25,7,12.0,12,11.0,-1.0,Falling,8,8,Steady,14,5,9,0.357,1
+2024,Utah,Pac 12,1/1,8,15.0,15,12.0,-3.0,Falling,9,9,Steady,14,5,9,0.357,1
+2024,Utah,Pac 12,1/8,9,19.0,19,15.0,-4.0,Falling,10,10,Steady,14,5,9,0.357,1
+2024,Utah,Pac 12,1/15,10,20.0,20,19.0,-1.0,Falling,11,11,Steady,14,5,9,0.357,1
+2024,Utah,Pac 12,1/22,11,16.0,16,20.0,4.0,Rising,12,12,Steady,14,5,9,0.357,1
+2024,Utah,Pac 12,1/29,12,20.0,20,16.0,-4.0,Falling,13,13,Steady,14,5,9,0.357,1
+2024,Utah,Pac 12,2/5,13,20.0,20,20.0,0.0,Stable,14,14,Steady,14,5,9,0.357,1
+2024,Utah,Pac 12,2/12,14,22.0,22,20.0,-2.0,Falling,15,15,Steady,14,5,9,0.357,1
+2024,Utah,Pac 12,2/19,15,18.0,18,22.0,4.0,Rising,16,16,Steady,14,5,9,0.357,1
+2024,Utah,Pac 12,2/26,16,18.0,18,18.0,0.0,Stable,17,17,Steady,14,5,9,0.357,1
+2024,Utah,Pac 12,3/4,17,22.0,22,18.0,-4.0,Falling,18,18,Steady,14,5,9,0.357,1
+2024,Utah,Pac 12,3/11,18,20.0,20,22.0,2.0,Rising,19,19,Steady,14,5,9,0.357,1
+2024,Utah,Pac 12,3/18,19,21.0,21,20.0,-1.0,Falling,20,20,Steady,14,5,9,0.357,1
+2024,Utah,Pac 12,Post,20,22.0,22,21.0,-1.0,Falling,21,21,Steady,14,5,9,0.357,1
 2024,Virginia Tech,ACC,Pre,0,8.0,8,,,Unknown,1,1,Steady,12,6,6,0.5,1
 2024,Virginia Tech,ACC,11/13,1,9.0,9,8.0,-1.0,Falling,2,2,Steady,12,6,6,0.5,1
 2024,Virginia Tech,ACC,11/20,2,9.0,9,9.0,0.0,Stable,3,3,Steady,12,6,6,0.5,1
@@ -1861,11 +1861,11 @@ season,team,conference,poll_week,week_number,rank,rank_numeric,prev_rank_numeric
 2024,Virginia Tech,ACC,3/11,18,13.0,13,11.0,-2.0,Falling,19,19,Steady,12,6,6,0.5,1
 2024,Virginia Tech,ACC,3/18,19,13.0,13,13.0,0.0,Stable,20,20,Steady,12,6,6,0.5,1
 2024,Virginia Tech,ACC,Post,20,18.0,18,13.0,-5.0,Falling,21,21,Steady,12,6,6,0.5,1
-2024,Washington,Pac-12,12/18,6,23.0,23,,,Unknown,1,1,Newcomer,11,4,7,0.364,1
-2024,Washington State,Pac-12,Pre,0,24.0,24,,,Unknown,1,1,Newcomer,9,2,7,0.222,1
-2024,Washington State,Pac-12,11/13,1,24.0,24,24.0,0.0,Stable,2,2,Newcomer,9,2,7,0.222,1
-2024,Washington State,Pac-12,11/20,2,23.0,23,24.0,1.0,Rising,3,3,Newcomer,9,2,7,0.222,1
-2024,Washington State,Pac-12,12/4,4,21.0,21,23.0,2.0,Rising,4,4,Newcomer,9,2,7,0.222,1
+2024,Washington,Pac 12,12/18,6,23.0,23,,,Unknown,1,1,Newcomer,11,4,7,0.364,1
+2024,Washington State,Pac 12,Pre,0,24.0,24,,,Unknown,1,1,Newcomer,9,2,7,0.222,1
+2024,Washington State,Pac 12,11/13,1,24.0,24,24.0,0.0,Stable,2,2,Newcomer,9,2,7,0.222,1
+2024,Washington State,Pac 12,11/20,2,23.0,23,24.0,1.0,Rising,3,3,Newcomer,9,2,7,0.222,1
+2024,Washington State,Pac 12,12/4,4,21.0,21,23.0,2.0,Rising,4,4,Newcomer,9,2,7,0.222,1
 2024,West Virginia,Big 12,12/25,7,25.0,25,,,Unknown,1,1,Newcomer,9,3,6,0.333,1
 2024,West Virginia,Big 12,1/1,8,24.0,24,25.0,1.0,Rising,2,2,Newcomer,9,3,6,0.333,1
 2024,West Virginia,Big 12,1/8,9,24.0,24,24.0,0.0,Stable,3,3,Newcomer,9,3,6,0.333,1
@@ -2792,23 +2792,23 @@ season,team,conference,poll_week,week_number,rank,rank_numeric,prev_rank_numeric
 2026,Princeton,Ivy,2/16,14,,26,24.0,-2.0,Dropped,8,0,Steady,1,0,1,0.0,2
 2026,Princeton,Ivy,2/23,15,25.0,25,26.0,1.0,New,9,1,Steady,1,0,1,0.0,2
 2026,Princeton,Ivy,3/2,16,23.0,23,25.0,2.0,Rising,10,2,Steady,1,0,1,0.0,2
-2026,Richmond,A-10,Pre,0,24.0,24,,,Unknown,1,1,Unranked,2,0,2,0.0,2
-2026,Richmond,A-10,11/10,1,,26,24.0,-2.0,Dropped,1,0,Unranked,2,0,2,0.0,2
-2026,Richmond,A-10,11/17,2,,26,26.0,0.0,Unranked,1,0,Unranked,2,0,2,0.0,2
-2026,Richmond,A-10,11/24,3,,26,26.0,0.0,Unranked,1,0,Unranked,2,0,2,0.0,2
-2026,Richmond,A-10,12/1,4,,26,26.0,0.0,Unranked,1,0,Unranked,2,0,2,0.0,2
-2026,Richmond,A-10,12/8,5,,26,26.0,0.0,Unranked,1,0,Unranked,2,0,2,0.0,2
-2026,Richmond,A-10,12/15,6,,26,26.0,0.0,Unranked,1,0,Unranked,2,0,2,0.0,2
-2026,Richmond,A-10,12/22,7,,26,26.0,0.0,Unranked,1,0,Unranked,2,0,2,0.0,2
-2026,Richmond,A-10,1/5,8,,26,26.0,0.0,Unranked,1,0,Unranked,2,0,2,0.0,2
-2026,Richmond,A-10,1/12,9,,26,26.0,0.0,Unranked,1,0,Unranked,2,0,2,0.0,2
-2026,Richmond,A-10,1/19,10,,26,26.0,0.0,Unranked,1,0,Unranked,2,0,2,0.0,2
-2026,Richmond,A-10,1/26,11,,26,26.0,0.0,Unranked,1,0,Unranked,2,0,2,0.0,2
-2026,Richmond,A-10,2/2,12,,26,26.0,0.0,Unranked,1,0,Unranked,2,0,2,0.0,2
-2026,Richmond,A-10,2/9,13,,26,26.0,0.0,Unranked,1,0,Unranked,2,0,2,0.0,2
-2026,Richmond,A-10,2/16,14,,26,26.0,0.0,Unranked,1,0,Unranked,2,0,2,0.0,2
-2026,Richmond,A-10,2/23,15,,26,26.0,0.0,Unranked,1,0,Unranked,2,0,2,0.0,2
-2026,Richmond,A-10,3/2,16,,26,26.0,0.0,Unranked,1,0,Unranked,2,0,2,0.0,2
+2026,Richmond,A10,Pre,0,24.0,24,,,Unknown,1,1,Unranked,2,0,2,0.0,2
+2026,Richmond,A10,11/10,1,,26,24.0,-2.0,Dropped,1,0,Unranked,2,0,2,0.0,2
+2026,Richmond,A10,11/17,2,,26,26.0,0.0,Unranked,1,0,Unranked,2,0,2,0.0,2
+2026,Richmond,A10,11/24,3,,26,26.0,0.0,Unranked,1,0,Unranked,2,0,2,0.0,2
+2026,Richmond,A10,12/1,4,,26,26.0,0.0,Unranked,1,0,Unranked,2,0,2,0.0,2
+2026,Richmond,A10,12/8,5,,26,26.0,0.0,Unranked,1,0,Unranked,2,0,2,0.0,2
+2026,Richmond,A10,12/15,6,,26,26.0,0.0,Unranked,1,0,Unranked,2,0,2,0.0,2
+2026,Richmond,A10,12/22,7,,26,26.0,0.0,Unranked,1,0,Unranked,2,0,2,0.0,2
+2026,Richmond,A10,1/5,8,,26,26.0,0.0,Unranked,1,0,Unranked,2,0,2,0.0,2
+2026,Richmond,A10,1/12,9,,26,26.0,0.0,Unranked,1,0,Unranked,2,0,2,0.0,2
+2026,Richmond,A10,1/19,10,,26,26.0,0.0,Unranked,1,0,Unranked,2,0,2,0.0,2
+2026,Richmond,A10,1/26,11,,26,26.0,0.0,Unranked,1,0,Unranked,2,0,2,0.0,2
+2026,Richmond,A10,2/2,12,,26,26.0,0.0,Unranked,1,0,Unranked,2,0,2,0.0,2
+2026,Richmond,A10,2/9,13,,26,26.0,0.0,Unranked,1,0,Unranked,2,0,2,0.0,2
+2026,Richmond,A10,2/16,14,,26,26.0,0.0,Unranked,1,0,Unranked,2,0,2,0.0,2
+2026,Richmond,A10,2/23,15,,26,26.0,0.0,Unranked,1,0,Unranked,2,0,2,0.0,2
+2026,Richmond,A10,3/2,16,,26,26.0,0.0,Unranked,1,0,Unranked,2,0,2,0.0,2
 2026,South Carolina,SEC,Pre,0,2.0,2,,,Unknown,1,1,Elite Lock,12,10,2,0.833,2
 2026,South Carolina,SEC,11/10,1,2.0,2,2.0,0.0,Stable,2,2,Elite Lock,12,10,2,0.833,2
 2026,South Carolina,SEC,11/17,2,2.0,2,2.0,0.0,Stable,3,3,Elite Lock,12,10,2,0.833,2
