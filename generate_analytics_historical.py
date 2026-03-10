@@ -52,6 +52,22 @@ SCHEDULE_PARQUET_URL = (
     "/wbb/schedules/parquet/wbb_schedule_{season}.parquet"
 )
 
+# Poll team name → schedule parquet location name where they differ
+# Keys are names as they appear in polls_historical_long.csv / polls_long.csv
+# Values are names as they appear in the wehoop parquet home_location/away_location columns
+POLL_TO_SCHEDULE_NAME: dict[str, str] = {
+    "UNC":              "North Carolina",
+    "St. John's (NY)":  "St. John's",
+    "Miami (FL)":       "Miami",
+}
+
+# Conference name normalization applied to all output files
+CONFERENCE_NAME_MAP: dict[str, str] = {
+    "Pac-12": "Pac 12",
+    "A-10":   "A10",
+    "A-Sun":  "ASUN",
+}
+
 # ── Week Ordering ──────────────────────────────────────────────────────────────
 
 def build_week_order(poll_weeks: list[str], season_year: int) -> dict[str, int]:
@@ -345,12 +361,14 @@ def compute_schedule_metrics(
                 completed['start_date'], utc=True, errors='coerce'
             ).dt.date
 
+            # Translate schedule names → poll names for rank lookup
+            sched_to_poll = {v: k for k, v in POLL_TO_SCHEDULE_NAME.items()}
             completed['home_rank'] = [
-                _rank_at_date(rank_calendar, str(home), gd)
+                _rank_at_date(rank_calendar, sched_to_poll.get(str(home), str(home)), gd)
                 for home, gd in zip(completed['home_location'], game_dates)
             ]
             completed['away_rank'] = [
-                _rank_at_date(rank_calendar, str(away), gd)
+                _rank_at_date(rank_calendar, sched_to_poll.get(str(away), str(away)), gd)
                 for away, gd in zip(completed['away_location'], game_dates)
             ]
 
@@ -383,6 +401,10 @@ def compute_schedule_metrics(
         metrics['win_pct_vs_top25'] = (
             metrics['wins_vs_top25'] / metrics['games_vs_top25']
         ).round(3)
+
+        # Translate schedule team names → poll names so the join to analytics works
+        sched_to_poll = {v: k for k, v in POLL_TO_SCHEDULE_NAME.items()}
+        metrics['team'] = metrics['team'].replace(sched_to_poll)
 
         print(f"    ✓ Top 25 metrics: {len(metrics)} teams, "
               f"{int(metrics['games_vs_top25'].sum())} games (season {season})")
@@ -667,6 +689,10 @@ def main():
         raise RuntimeError("No data loaded. Check input file paths.")
 
     df = pd.concat(frames, ignore_index=True)
+
+    # Normalize conference names
+    df['conference'] = df['conference'].replace(CONFERENCE_NAME_MAP)
+
     print(f"\n  Total rows combined: {len(df):,}")
     print(f"  Seasons present   : {sorted(df['season'].unique())}")
     print(f"  Teams (all-time)  : {df['team'].nunique()}")
