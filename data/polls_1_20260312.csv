@@ -1,0 +1,26 @@
+Rk,School,Prev,Chng,Conf
+1,Connecticut,1.0,-,Big East
+2,UCLA,2.0,-,Big Ten
+3,Texas,4.0,1,SEC
+4,South Carolina,3.0,1,SEC
+5,Louisiana State,6.0,1,SEC
+6,Vanderbilt,5.0,1,SEC
+7,Iowa,9.0,2,Big Ten
+8,Duke,13.0,5,ACC
+9,Michigan,8.0,1,Big Ten
+10,Oklahoma,7.0,3,SEC
+11,Ohio State,11.0,-,Big Ten
+12,West Virginia,15.0,3,Big 12
+13,Louisville,12.0,1,ACC
+14,TCU,10.0,4,Big 12
+15,North Carolina,16.0,1,ACC
+16,Kentucky,17.0,1,SEC
+17,Maryland,14.0,3,Big Ten
+18,Minnesota,19.0,1,Big Ten
+19,Mississippi,24.0,5,SEC
+20,Michigan State,18.0,2,Big Ten
+21,Baylor,20.0,1,Big 12
+22,Notre Dame,,,ACC
+23,Princeton,23.0,-,Ivy
+24,Georgia,22.0,2,SEC
+25,Texas Tech,21.0,4,Big 12
