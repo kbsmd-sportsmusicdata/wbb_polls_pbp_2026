@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import argparse
 from pathlib import Path
+import warnings
 
 import numpy as np
 import pandas as pd
@@ -55,7 +56,6 @@ def aggregate_player_recruits(df: pd.DataFrame) -> pd.DataFrame:
     # any program and would create a spurious NaN group in the output.
     missing = df["TEAM"].isna()
     if missing.any():
-        import warnings
         warnings.warn(
             f"{missing.sum()} row(s) have no TEAM value and will be excluded. "
             "Inspect player_recruit_rankings_20212026.csv to verify these recruits "
