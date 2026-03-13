@@ -1,0 +1,40 @@
+roster_archetype,season,n_teams,pct_finished_ranked,pct_top10_finish,avg_weeks_in_top25,avg_wins,avg_ap_peak
+Balanced Recruit + Results,2022,2,1.0,1.0,19.0,31.0,2.5
+Balanced Recruit + Results,2023,5,0.6,0.2,9.4,26.0,11.4
+Balanced Recruit + Results,2024,3,0.667,0.667,14.667,30.0,8.0
+Balanced Recruit + Results,2025,2,0.5,0.5,13.5,28.5,9.5
+Balanced Recruit + Results,2026,3,0.0,0.0,14.0,23.333,12.333
+Elite Recruiting Class,2022,2,1.0,1.0,19.0,32.5,1.5
+Elite Recruiting Class,2023,3,0.667,0.333,17.0,21.667,5.0
+Elite Recruiting Class,2024,3,1.0,0.667,14.333,27.333,5.0
+Elite Recruiting Class,2025,3,1.0,0.667,21.0,32.667,3.667
+Elite Recruiting Class,2026,3,0.0,0.0,14.333,24.0,5.0
+Elite Recruiting Class,2027,3,0.0,0.0,,,
+High Expectations / Underperformed,2023,1,0.0,0.0,,19.0,
+High Expectations / Underperformed,2024,2,0.0,0.0,,17.0,
+High Expectations / Underperformed,2025,1,0.0,0.0,,18.0,
+High Expectations / Underperformed,2026,3,0.0,0.0,,16.0,
+High Expectations / Underperformed,2027,5,0.0,0.0,,,
+Top Recruit Anchor,2022,4,0.75,0.25,16.0,24.25,12.333
+Top Recruit Anchor,2023,4,0.25,0.0,10.0,19.0,17.667
+Top Recruit Anchor,2024,4,0.75,0.75,20.667,28.0,3.667
+Top Recruit Anchor,2025,4,0.75,0.75,16.25,29.5,8.25
+Top Recruit Anchor,2026,4,0.0,0.0,16.333,23.25,6.333
+Top Recruit Anchor,2027,4,0.0,0.0,,,
+Top-5 Recruit-Built,2023,1,1.0,1.0,18.0,31.0,3.0
+Top-5 Recruit-Built,2024,2,0.5,0.0,16.5,24.0,13.0
+Top-5 Recruit-Built,2025,2,1.0,0.5,14.5,25.5,10.5
+Top-5 Recruit-Built,2026,2,0.0,0.0,13.0,27.5,5.5
+Top-5 Recruit-Built,2027,2,0.0,0.0,,,
+Unranked / Low Recruit Visibility,2022,34,0.0,0.0,,16.0,
+Unranked / Low Recruit Visibility,2023,30,0.0,0.0,,15.433,
+Unranked / Low Recruit Visibility,2024,17,0.0,0.0,,16.765,
+Unranked / Low Recruit Visibility,2025,22,0.0,0.0,,15.5,
+Unranked / Low Recruit Visibility,2026,21,0.0,0.0,,18.0,
+Unranked / Low Recruit Visibility,2027,42,0.0,0.0,,,
+Veteran / Development Success,2021,35,0.714,0.286,12.143,19.429,11.824
+Veteran / Development Success,2022,32,0.562,0.156,11.0,22.688,13.219
+Veteran / Development Success,2023,32,0.562,0.219,10.062,25.625,12.345
+Veteran / Development Success,2024,31,0.516,0.097,11.065,24.452,14.7
+Veteran / Development Success,2025,29,0.552,0.103,11.759,24.103,14.821
+Veteran / Development Success,2026,25,0.0,0.0,10.6,24.36,13.292
