@@ -48,31 +48,35 @@ def _resolve_recruiting(path_str: str) -> Path:
     return RECRUITING_DIR / p if p.parent == Path(".") else p
 
 
-def assign_archetype(row: pd.Series) -> str:
-    rank  = row.get("top_recruit_rank", np.nan)
-    preap = row.get("ap_rank_preseason", np.nan)
-    peakap = row.get("ap_rank_peak", np.nan)
-    w25   = row.get("weeks_in_top25", 0) or 0
+def _assign_archetypes_vectorised(master: pd.DataFrame) -> pd.Series:
+    """Vectorised archetype assignment using np.select (NaN-safe)."""
+    rank  = master.get("top_recruit_rank")
+    peakap = master.get("ap_rank_peak")
+    w25   = master.get("weeks_in_top25", pd.Series(0, index=master.index)).fillna(0)
 
-    # Portal stubs — will power separate logic once data arrives
-    portal_in = row.get("portal_in_count", np.nan)
+    rank_known      = rank.notna()
+    ranked_in_polls = peakap.notna() | (w25 > 0)
 
-    rank_known = pd.notna(rank)
-    ranked_in_polls = pd.notna(peakap) or w25 > 0
-
-    if rank_known and rank <= 3:
-        return "Elite Recruiting Class"
-    if rank_known and rank <= 5:
-        return "Top-5 Recruit-Built"
-    if rank_known and rank <= 10:
-        return "Top Recruit Anchor"
-    if ranked_in_polls and rank_known and rank <= 20:
-        return "Balanced Recruit + Results"
-    if ranked_in_polls and (not rank_known or rank > 20):
-        return "Veteran / Development Success"
-    if rank_known and rank <= 20 and not ranked_in_polls:
-        return "High Expectations / Underperformed"
-    return "Unranked / Low Recruit Visibility"
+    conditions = [
+        rank_known & (rank <= 3),
+        rank_known & (rank <= 5),
+        rank_known & (rank <= 10),
+        ranked_in_polls & rank_known & (rank <= 20),
+        ranked_in_polls & (~rank_known | (rank > 20)),
+        rank_known & (rank <= 20) & ~ranked_in_polls,
+    ]
+    choices = [
+        "Elite Recruiting Class",
+        "Top-5 Recruit-Built",
+        "Top Recruit Anchor",
+        "Balanced Recruit + Results",
+        "Veteran / Development Success",
+        "High Expectations / Underperformed",
+    ]
+    return pd.Series(
+        np.select(conditions, choices, default="Unranked / Low Recruit Visibility"),
+        index=master.index,
+    )
 
 
 def compute_recruiting_analysis(master: pd.DataFrame) -> pd.DataFrame:
@@ -172,8 +176,8 @@ def main() -> None:
 
     master = pd.read_csv(master_path)
 
-    # Assign archetypes
-    master["roster_archetype"] = master.apply(assign_archetype, axis=1)
+    # Assign archetypes (vectorised — avoids row-by-row iteration and NaN edge cases)
+    master["roster_archetype"] = _assign_archetypes_vectorised(master)
 
     # Save archetype-enriched master slice
     archetypes_path.parent.mkdir(parents=True, exist_ok=True)

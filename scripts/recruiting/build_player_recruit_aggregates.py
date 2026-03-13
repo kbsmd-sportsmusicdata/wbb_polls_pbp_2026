@@ -47,27 +47,34 @@ def position_group(pos: str) -> str:
     return POSITION_GROUP_MAP.get(str(pos).strip().upper(), "Unknown")
 
 
-def height_inches_total(feet, inches) -> float | None:
-    try:
-        f = float(feet)
-        i = float(inches)
-        return f * 12 + i
-    except (TypeError, ValueError):
-        return np.nan
-
 
 def aggregate_player_recruits(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
 
+    # Warn and drop rows where TEAM is missing — these cannot be attributed to
+    # any program and would create a spurious NaN group in the output.
+    missing = df["TEAM"].isna()
+    if missing.any():
+        import warnings
+        warnings.warn(
+            f"{missing.sum()} row(s) have no TEAM value and will be excluded. "
+            "Inspect player_recruit_rankings_20212026.csv to verify these recruits "
+            "are truly unaffiliated or assign them to a team before re-running.",
+            UserWarning,
+            stacklevel=2,
+        )
+        df = df[~missing]
+
     # Team name normalisation: schedule-style → poll-style
-    df["team_poll_name"] = df["TEAM"].map(lambda t: SCHEDULE_TO_POLL_NAME.get(str(t), str(t)) if pd.notna(t) else np.nan)
+    df["team_poll_name"] = df["TEAM"].replace(SCHEDULE_TO_POLL_NAME)
 
     # Position group
     df["position_group"] = df["POS"].apply(position_group)
 
-    # Total height in inches
-    df["height_inches_total"] = df.apply(
-        lambda r: height_inches_total(r["HEIGHT_FEET"], r["HEIGHT_INCHES"]), axis=1
+    # Total height in inches (vectorised)
+    df["height_inches_total"] = (
+        pd.to_numeric(df["HEIGHT_FEET"], errors="coerce") * 12
+        + pd.to_numeric(df["HEIGHT_INCHES"], errors="coerce")
     )
 
     # Rank tier flags
