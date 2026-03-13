@@ -1,0 +1,428 @@
+team,season,conference,portal_in_count,portal_out_count,top_recruit_rank,avg_espn_grade,n_top10_recruits,n_top25_recruits,n_top50_recruits,n_recruits,recruit_star_index,n_guards,n_wings_forwards,n_bigs,avg_height_inches,ap_rank_preseason,ap_rank_peak,ap_rank_final,weeks_in_top25,peak_streak,wins,losses,win_pct,net_rating,roster_archetype
+Arizona,2021,Pac 12,,,,,,,,,,,,,,7.0,6.0,11.0,17.0,17.0,21.0,6.0,0.778,,Veteran / Development Success
+Arkansas,2021,SEC,,,,,,,,,,,,,,14.0,10.0,15.0,17.0,17.0,19.0,9.0,0.679,,Veteran / Development Success
+Baylor,2021,Big 12,,,,,,,,,,,,,,4.0,4.0,5.0,17.0,17.0,28.0,3.0,0.903,,Veteran / Development Success
+DePaul,2021,Big East,,,,,,,,,,,,,,19.0,17.0,,15.0,15.0,14.0,10.0,0.583,,Veteran / Development Success
+Florida Gulf Coast,2021,ASUN,,,,,,,,,,,,,,,24.0,24.0,2.0,2.0,26.0,3.0,0.897,,Veteran / Development Success
+Georgia,2021,SEC,,,,,,,,,,,,,,,12.0,10.0,9.0,9.0,21.0,7.0,0.75,,Veteran / Development Success
+Gonzaga,2021,WCC,,,,,,,,,,,,,,21.0,16.0,14.0,17.0,17.0,23.0,4.0,0.852,,Veteran / Development Success
+Indiana,2021,Big Ten,,,,,,,,,,,,,,16.0,9.0,12.0,17.0,17.0,21.0,6.0,0.778,,Veteran / Development Success
+Iowa State,2021,Big 12,,,,,,,,,,,,,,15.0,23.0,,3.0,3.0,17.0,11.0,0.607,,Veteran / Development Success
+Kentucky,2021,SEC,,,,,,,,,,,,,,11.0,9.0,18.0,17.0,17.0,18.0,9.0,0.667,,Veteran / Development Success
+Louisville,2021,ACC,,,,,,,,,,,,,,5.0,1.0,8.0,17.0,17.0,26.0,4.0,0.867,,Veteran / Development Success
+Maryland,2021,Big Ten,,,,,,,,,,,,,,12.0,7.0,7.0,17.0,17.0,26.0,3.0,0.897,,Veteran / Development Success
+Michigan,2021,Big Ten,,,,,,,,,,,,,,25.0,11.0,16.0,17.0,17.0,16.0,6.0,0.727,,Veteran / Development Success
+Michigan State,2021,Big Ten,,,,,,,,,,,,,,,23.0,,3.0,3.0,15.0,9.0,0.625,,Veteran / Development Success
+Mississippi State,2021,SEC,,,,,,,,,,,,,,6.0,6.0,,11.0,11.0,10.0,9.0,0.526,,Veteran / Development Success
+Missouri State,2021,MVC,,,,,,,,,,,,,,24.0,20.0,20.0,13.0,13.0,23.0,3.0,0.885,,Veteran / Development Success
+NC State,2021,ACC,,,,,,,,,,,,,,8.0,2.0,3.0,17.0,17.0,22.0,3.0,0.88,,Veteran / Development Success
+Northwestern,2021,Big Ten,,,,,,,,,,,,,,17.0,15.0,,13.0,13.0,16.0,9.0,0.64,,Veteran / Development Success
+Notre Dame,2021,ACC,,,,,,,,,,,,,,22.0,,,1.0,1.0,10.0,10.0,0.5,,Veteran / Development Success
+Ohio State,2021,Big Ten,,,,,,,,,,,,,,20.0,11.0,22.0,17.0,17.0,13.0,7.0,0.65,,Veteran / Development Success
+Oregon,2021,Pac 12,,,,,,,,,,,,,,10.0,8.0,23.0,17.0,17.0,15.0,9.0,0.625,,Veteran / Development Success
+Oregon State,2021,Pac 12,,,,,,,,,,,,,,18.0,15.0,,4.0,4.0,12.0,8.0,0.6,,Veteran / Development Success
+Rutgers,2021,Big Ten,,,,,,,,,,,,,,,19.0,21.0,4.0,4.0,14.0,5.0,0.737,,Veteran / Development Success
+South Carolina,2021,SEC,,,,,,,,,,,,,,1.0,1.0,6.0,17.0,17.0,26.0,5.0,0.839,,Veteran / Development Success
+South Dakota State,2021,Summit,,,,,,,,,,,,,,,21.0,25.0,9.0,9.0,21.0,4.0,0.84,,Veteran / Development Success
+South Florida,2021,AAC,,,,,,,,,,,,,,,12.0,19.0,14.0,14.0,19.0,4.0,0.826,,Veteran / Development Success
+Stanford,2021,Pac 12,,,,,,,,,,,,,,2.0,1.0,2.0,17.0,17.0,31.0,2.0,0.939,,Veteran / Development Success
+Syracuse,2021,ACC,,,,,,,,,,,,,,23.0,18.0,,9.0,9.0,15.0,9.0,0.625,,Veteran / Development Success
+Tennessee,2021,SEC,,,,,,,,,,,,,,,14.0,13.0,10.0,10.0,17.0,8.0,0.68,,Veteran / Development Success
+Texas,2021,Big 12,,,,,,,,,,,,,,,17.0,,7.0,7.0,21.0,10.0,0.677,,Veteran / Development Success
+Texas A&M,2021,SEC,,,,,,,,,,,,,,13.0,2.0,4.0,17.0,17.0,25.0,3.0,0.893,,Veteran / Development Success
+UCLA,2021,Pac 12,,,,,,,,,,,,,,9.0,5.0,9.0,17.0,17.0,17.0,6.0,0.739,,Veteran / Development Success
+UConn,2021,Big East,,,,,,,,,,,,,,3.0,1.0,1.0,17.0,17.0,28.0,2.0,0.933,,Veteran / Development Success
+Washington State,2021,Pac 12,,,,,,,,,,,,,,,25.0,,1.0,1.0,12.0,12.0,0.5,,Veteran / Development Success
+West Virginia,2021,Big 12,,,,,,,,,,,,,,,17.0,17.0,8.0,8.0,22.0,7.0,0.759,,Veteran / Development Success
+Alabama,2022,,,,75.0,91.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,73.0,,,,,,20.0,14.0,0.588,,Unranked / Low Recruit Visibility
+Arizona,2022,Pac 12,,,71.0,91.0,0.0,0.0,0.0,2.0,0.0,1.0,0.0,1.0,73.0,22.0,4.0,19.0,19.0,19.0,21.0,8.0,0.724,,Veteran / Development Success
+Arizona State,2022,,,,33.0,94.0,0.0,0.0,1.0,1.0,1.0,0.0,1.0,0.0,75.0,,,,,,12.0,15.0,0.444,,Unranked / Low Recruit Visibility
+Arkansas,2022,,,,7.0,96.5,1.0,2.0,2.0,2.0,9.0,0.0,1.0,1.0,76.5,,,,,,18.0,14.0,0.562,,Top Recruit Anchor
+BYU,2022,WCC,,,74.0,91.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,76.0,,15.0,20.0,16.0,16.0,26.0,4.0,0.867,,Veteran / Development Success
+Baylor,2022,Big 12,,,,,,,,,,,,,,7.0,4.0,7.0,19.0,19.0,28.0,7.0,0.8,,Veteran / Development Success
+Boston College,2022,,,,95.0,91.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,74.0,,,,,,21.0,12.0,0.636,,Unranked / Low Recruit Visibility
+Clemson,2022,,,,52.0,93.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,71.0,,,,,,10.0,21.0,0.323,,Unranked / Low Recruit Visibility
+Colorado,2022,Pac 12,,,82.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,69.0,,22.0,,3.0,3.0,22.0,9.0,0.71,,Veteran / Development Success
+Davidson,2022,,,,96.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,70.0,,,,,,18.0,15.0,0.545,,Unranked / Low Recruit Visibility
+Duke,2022,ACC,,,41.0,93.0,0.0,0.0,1.0,1.0,1.0,1.0,0.0,0.0,65.0,,15.0,,8.0,8.0,17.0,13.0,0.567,,Veteran / Development Success
+Duquesne,2022,,,,90.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,70.0,,,,,,11.0,18.0,0.379,,Unranked / Low Recruit Visibility
+Florida,2022,SEC,,,,,,,,,,,,,,,15.0,,4.0,4.0,21.0,11.0,0.656,,Veteran / Development Success
+Florida Gulf Coast,2022,ASUN,,,,,,,,,,,,,,,22.0,23.0,10.0,10.0,30.0,3.0,0.909,,Veteran / Development Success
+Florida State,2022,ACC,,,31.0,93.5,0.0,0.0,2.0,2.0,2.0,1.0,1.0,0.0,69.0,16.0,17.0,,4.0,4.0,17.0,14.0,0.548,,Veteran / Development Success
+Georgia,2022,SEC,,,34.0,93.5,0.0,0.0,2.0,2.0,2.0,1.0,1.0,0.0,73.5,,13.0,,14.0,14.0,21.0,10.0,0.677,,Veteran / Development Success
+Georgia Tech,2022,ACC,,,,,,,,,,,,,,17.0,11.0,,14.0,14.0,21.0,11.0,0.656,,Veteran / Development Success
+Gonzaga,2022,,,,44.0,93.0,0.0,0.0,1.0,1.0,1.0,0.0,1.0,0.0,75.0,,,,,,27.0,7.0,0.794,,Unranked / Low Recruit Visibility
+Green Bay,2022,,,,73.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,72.0,,,,,,20.0,8.0,0.714,,Unranked / Low Recruit Visibility
+Illinois,2022,,,,53.0,92.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,70.0,,,,,,7.0,20.0,0.259,,Unranked / Low Recruit Visibility
+Indiana,2022,Big Ten,,,,,,,,,,,,,,8.0,4.0,11.0,19.0,19.0,24.0,9.0,0.727,,Veteran / Development Success
+Iowa,2022,Big Ten,,,39.0,92.0,0.0,0.0,1.0,2.0,1.0,0.0,0.0,2.0,75.0,9.0,8.0,8.0,18.0,18.0,24.0,8.0,0.75,,Veteran / Development Success
+Iowa State,2022,Big 12,,,,,,,,,,,,,,12.0,6.0,10.0,19.0,19.0,28.0,7.0,0.8,,Veteran / Development Success
+Jackson State,2022,,,,70.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,67.0,,,,,,23.0,7.0,0.767,,Unranked / Low Recruit Visibility
+Kansas State,2022,Big 12,,,54.0,92.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,73.0,,25.0,,3.0,3.0,20.0,13.0,0.606,,Veteran / Development Success
+Kentucky,2022,SEC,,,87.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,66.0,13.0,14.0,15.0,13.0,13.0,19.0,12.0,0.613,,Veteran / Development Success
+LSU,2022,SEC,,,51.0,92.0,0.0,0.0,0.0,2.0,0.0,0.0,2.0,0.0,74.5,,6.0,9.0,15.0,15.0,26.0,6.0,0.812,,Veteran / Development Success
+Louisville,2022,ACC,,,12.0,97.0,0.0,1.0,1.0,1.0,3.0,1.0,0.0,0.0,73.0,6.0,3.0,4.0,19.0,19.0,30.0,5.0,0.857,,Balanced Recruit + Results
+Marquette,2022,,,,58.0,91.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,74.0,,,,,,23.0,11.0,0.676,,Unranked / Low Recruit Visibility
+Maryland,2022,Big Ten,,,22.0,95.0,0.0,1.0,1.0,1.0,3.0,1.0,0.0,0.0,72.0,4.0,2.0,13.0,19.0,19.0,23.0,9.0,0.719,,Veteran / Development Success
+Miami (FL),2022,,,,79.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,68.0,,,,,,21.0,13.0,0.618,,Unranked / Low Recruit Visibility
+Michigan,2022,Big Ten,,,28.0,92.5,0.0,0.0,1.0,2.0,1.0,2.0,0.0,0.0,69.5,11.0,4.0,12.0,19.0,19.0,25.0,7.0,0.781,,Veteran / Development Success
+Michigan State,2022,,,,23.0,95.0,0.0,1.0,1.0,1.0,3.0,1.0,0.0,0.0,67.0,,,,,,15.0,15.0,0.5,,Unranked / Low Recruit Visibility
+Middle Tennessee,2022,,,,89.0,91.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,71.0,,,,,,27.0,8.0,0.771,,Unranked / Low Recruit Visibility
+Minnesota,2022,,,,98.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,66.0,,,,,,15.0,18.0,0.455,,Unranked / Low Recruit Visibility
+Mississippi State,2022,,,,40.0,92.5,0.0,0.0,1.0,2.0,1.0,2.0,0.0,0.0,69.5,,,,,,15.0,14.0,0.517,,Unranked / Low Recruit Visibility
+Missouri,2022,,,,47.0,93.0,0.0,0.0,1.0,1.0,1.0,0.0,1.0,0.0,72.0,,,,,,18.0,13.0,0.581,,Unranked / Low Recruit Visibility
+NC State,2022,ACC,,,36.0,92.0,0.0,0.0,1.0,2.0,1.0,1.0,0.0,1.0,73.0,5.0,2.0,3.0,19.0,19.0,32.0,4.0,0.889,,Veteran / Development Success
+Nebraska,2022,,,,49.0,92.0,0.0,0.0,1.0,2.0,1.0,1.0,1.0,0.0,71.5,,,,,,24.0,9.0,0.727,,Unranked / Low Recruit Visibility
+Northwestern,2022,,,,35.0,93.0,0.0,0.0,2.0,3.0,2.0,2.0,0.0,1.0,72.0,,,,,,17.0,12.0,0.586,,Unranked / Low Recruit Visibility
+Notre Dame,2022,ACC,,,8.0,96.0,1.0,2.0,2.0,2.0,9.0,2.0,0.0,0.0,71.5,,14.0,21.0,16.0,16.0,25.0,9.0,0.735,,Top Recruit Anchor
+Ohio State,2022,Big Ten,,,,,,,,,,,,,,17.0,13.0,14.0,16.0,16.0,25.0,7.0,0.781,,Veteran / Development Success
+Oklahoma,2022,Big 12,,,66.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,66.0,,12.0,22.0,11.0,11.0,25.0,9.0,0.735,,Veteran / Development Success
+Oklahoma State,2022,,,,88.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,70.0,,,,,,9.0,20.0,0.31,,Unranked / Low Recruit Visibility
+Ole Miss,2022,SEC,,,,,,,,,,,,,,,24.0,,1.0,1.0,23.0,9.0,0.719,,Veteran / Development Success
+Oregon,2022,Pac 12,,,29.0,94.0,0.0,0.0,1.0,1.0,1.0,1.0,0.0,0.0,73.0,10.0,9.0,,8.0,8.0,21.0,12.0,0.636,,Veteran / Development Success
+Oregon State,2022,Pac 12,,,25.0,93.33,0.0,1.0,2.0,3.0,4.0,2.0,1.0,0.0,71.7,14.0,15.0,,5.0,5.0,17.0,14.0,0.548,,Veteran / Development Success
+Princeton,2022,Ivy,,,,,,,,,,,,,,,24.0,25.0,2.0,2.0,25.0,5.0,0.833,,Veteran / Development Success
+Purdue,2022,,,,93.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,70.0,,,,,,17.0,15.0,0.531,,Unranked / Low Recruit Visibility
+Rutgers,2022,,,,77.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,68.0,,,,,,11.0,20.0,0.355,,Unranked / Low Recruit Visibility
+San Diego State,2022,,,,83.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,71.0,,,,,,15.0,16.0,0.484,,Unranked / Low Recruit Visibility
+South Carolina,2022,SEC,,,2.0,97.5,3.0,4.0,4.0,4.0,21.0,3.0,1.0,0.0,71.5,1.0,1.0,1.0,19.0,19.0,35.0,2.0,0.946,,Elite Recruiting Class
+South Florida,2022,AAC,,,,,,,,,,,,,,21.0,13.0,,10.0,10.0,24.0,9.0,0.727,,Veteran / Development Success
+Stanford,2022,Pac 12,,,11.0,94.33,0.0,2.0,2.0,3.0,6.0,1.0,2.0,0.0,72.7,3.0,2.0,2.0,19.0,19.0,32.0,4.0,0.889,,Balanced Recruit + Results
+Syracuse,2022,,,,99.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,68.0,,,,,,11.0,18.0,0.379,,Unranked / Low Recruit Visibility
+TCU,2022,,,,72.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,70.0,,,,,,6.0,22.0,0.214,,Unranked / Low Recruit Visibility
+Temple,2022,,,,65.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,70.0,,,,,,13.0,15.0,0.464,,Unranked / Low Recruit Visibility
+Tennessee,2022,SEC,,,43.0,92.33,0.0,0.0,2.0,3.0,2.0,1.0,2.0,0.0,72.7,15.0,4.0,18.0,19.0,19.0,25.0,9.0,0.735,,Veteran / Development Success
+Texas,2022,Big 12,,,6.0,95.5,2.0,3.0,4.0,4.0,16.0,2.0,2.0,0.0,70.8,25.0,7.0,6.0,19.0,19.0,29.0,7.0,0.806,,Top Recruit Anchor
+Texas A&M,2022,SEC,,,91.0,91.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,75.0,23.0,17.0,,9.0,9.0,14.0,15.0,0.483,,Veteran / Development Success
+Texas Tech,2022,,,,67.0,91.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,71.0,,,,,,11.0,19.0,0.367,,Unranked / Low Recruit Visibility
+UCF,2022,AAC,,,84.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,70.0,,25.0,24.0,2.0,2.0,26.0,4.0,0.867,,Veteran / Development Success
+UCLA,2022,Pac 12,,,26.0,94.0,0.0,0.0,1.0,1.0,1.0,1.0,0.0,0.0,69.0,20.0,19.0,,3.0,3.0,18.0,14.0,0.562,,Veteran / Development Success
+UConn,2022,Big East,,,1.0,96.5,2.0,3.0,4.0,4.0,16.0,3.0,1.0,0.0,73.8,2.0,2.0,5.0,19.0,19.0,30.0,6.0,0.833,,Elite Recruiting Class
+UMass,2022,,,,97.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,71.0,,,,,,26.0,7.0,0.788,,Unranked / Low Recruit Visibility
+UNC,2022,ACC,,,9.0,95.5,1.0,4.0,4.0,4.0,15.0,2.0,2.0,0.0,72.2,,16.0,17.0,13.0,13.0,25.0,7.0,0.781,,Top Recruit Anchor
+USC,2022,,,,21.0,94.5,0.0,1.0,2.0,2.0,4.0,1.0,0.0,1.0,76.0,,,,,,12.0,16.0,0.429,,Unranked / Low Recruit Visibility
+Utah,2022,,,,42.0,93.0,0.0,0.0,1.0,1.0,1.0,0.0,1.0,0.0,74.0,,,,,,21.0,12.0,0.636,,Unranked / Low Recruit Visibility
+Vanderbilt,2022,,,,57.0,91.0,0.0,0.0,0.0,2.0,0.0,1.0,1.0,0.0,70.0,,,,,,16.0,19.0,0.457,,Unranked / Low Recruit Visibility
+Virginia Tech,2022,ACC,,,61.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,73.0,24.0,17.0,16.0,8.0,8.0,23.0,10.0,0.697,,Veteran / Development Success
+Wake Forest,2022,,,,60.0,91.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,72.0,,,,,,16.0,17.0,0.485,,Unranked / Low Recruit Visibility
+Washington,2022,,,,76.0,91.0,0.0,0.0,0.0,3.0,0.0,2.0,1.0,0.0,71.0,,,,,,7.0,16.0,0.304,,Unranked / Low Recruit Visibility
+West Virginia,2022,Big 12,,,59.0,91.0,0.0,0.0,0.0,2.0,0.0,2.0,0.0,0.0,73.0,19.0,22.0,,3.0,3.0,15.0,15.0,0.5,,Veteran / Development Success
+Xavier,2022,,,,46.0,93.0,0.0,0.0,1.0,1.0,1.0,0.0,1.0,0.0,75.0,,,,,,9.0,21.0,0.3,,Unranked / Low Recruit Visibility
+Arizona,2023,Pac 12,,,9.0,94.75,1.0,2.0,3.0,4.0,10.0,3.0,1.0,0.0,70.8,19.0,12.0,24.0,18.0,18.0,22.0,10.0,0.688,,Top Recruit Anchor
+Arizona State,2023,,,,73.0,92.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,68.0,,,,,,8.0,22.0,0.267,,Unranked / Low Recruit Visibility
+Arkansas,2023,SEC,,,,,,,,,,,,,,,17.0,,4.0,4.0,24.0,13.0,0.649,,Veteran / Development Success
+Auburn,2023,,,,50.0,94.0,0.0,0.0,1.0,1.0,1.0,1.0,0.0,0.0,66.0,,,,,,16.0,15.0,0.516,,Unranked / Low Recruit Visibility
+Baylor,2023,Big 12,,,17.0,94.67,0.0,1.0,2.0,3.0,4.0,0.0,2.0,1.0,74.0,18.0,17.0,,10.0,10.0,20.0,13.0,0.606,,Balanced Recruit + Results
+Boston College,2023,,,,88.0,91.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,77.0,,,,,,16.0,17.0,0.485,,Unranked / Low Recruit Visibility
+California,2023,,,,51.0,94.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,72.0,,,,,,13.0,17.0,0.433,,Unranked / Low Recruit Visibility
+Clemson,2023,,,,15.0,97.0,0.0,1.0,1.0,1.0,3.0,1.0,0.0,0.0,72.0,,,,,,19.0,16.0,0.543,,High Expectations / Underperformed
+Colorado,2023,Pac 12,,,,,,,,,,,,,,,20.0,20.0,7.0,7.0,26.0,9.0,0.743,,Veteran / Development Success
+Creighton,2023,Big East,,,,,,,,,,,,,,21.0,13.0,,9.0,9.0,22.0,9.0,0.71,,Veteran / Development Success
+DePaul,2023,,,,95.0,91.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,74.0,,,,,,16.0,17.0,0.485,,Unranked / Low Recruit Visibility
+Duke,2023,ACC,,,16.0,95.5,0.0,1.0,2.0,2.0,4.0,1.0,1.0,0.0,72.5,,9.0,13.0,10.0,10.0,26.0,7.0,0.788,,Balanced Recruit + Results
+East Carolina,2023,,,,70.0,93.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,74.0,,,,,,23.0,10.0,0.697,,Unranked / Low Recruit Visibility
+Florida State,2023,ACC,,,14.0,97.0,0.0,1.0,1.0,1.0,3.0,1.0,0.0,0.0,68.0,,19.0,,5.0,5.0,23.0,10.0,0.697,,Balanced Recruit + Results
+Georgetown,2023,,,,75.0,92.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,68.0,,,,,,14.0,17.0,0.452,,Unranked / Low Recruit Visibility
+Georgia,2023,,,,47.0,94.0,0.0,0.0,1.0,1.0,1.0,0.0,1.0,0.0,73.0,,,,,,22.0,12.0,0.647,,Unranked / Low Recruit Visibility
+Georgia Tech,2023,,,,24.0,94.5,0.0,1.0,1.0,2.0,3.0,2.0,0.0,0.0,70.5,,,,,,13.0,17.0,0.433,,Unranked / Low Recruit Visibility
+Gonzaga,2023,WCC,,,,,,,,,,,,,,,15.0,16.0,15.0,15.0,28.0,5.0,0.848,,Veteran / Development Success
+Harvard,2023,,,,86.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,71.0,,,,,,20.0,12.0,0.625,,Unranked / Low Recruit Visibility
+Illinois,2023,Big Ten,,,65.0,93.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,71.0,,21.0,,4.0,4.0,22.0,10.0,0.688,,Veteran / Development Success
+Indiana,2023,Big Ten,,,68.0,93.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,68.0,11.0,2.0,3.0,18.0,18.0,28.0,4.0,0.875,,Veteran / Development Success
+Iowa,2023,Big Ten,,,45.0,92.33,0.0,0.0,1.0,3.0,1.0,1.0,2.0,0.0,72.0,4.0,4.0,2.0,18.0,18.0,31.0,7.0,0.816,,Veteran / Development Success
+Iowa State,2023,Big 12,,,,,,,,,,,,,,8.0,5.0,,17.0,17.0,22.0,10.0,0.688,,Veteran / Development Success
+Kansas,2023,Big 12,,,,,,,,,,,,,,,20.0,,5.0,5.0,25.0,11.0,0.694,,Veteran / Development Success
+Kansas State,2023,Big 12,,,,,,,,,,,,,,,24.0,,2.0,2.0,19.0,17.0,0.528,,Veteran / Development Success
+Kentucky,2023,,,,69.0,92.0,0.0,0.0,0.0,2.0,0.0,1.0,0.0,1.0,73.0,,,,,,12.0,19.0,0.387,,Unranked / Low Recruit Visibility
+LSU,2023,SEC,,,26.0,94.5,0.0,0.0,1.0,2.0,1.0,1.0,1.0,0.0,72.0,16.0,3.0,9.0,18.0,18.0,34.0,2.0,0.944,,Veteran / Development Success
+Louisville,2023,ACC,,,35.0,94.0,0.0,0.0,2.0,4.0,2.0,1.0,2.0,1.0,73.2,7.0,6.0,,4.0,4.0,26.0,12.0,0.684,,Veteran / Development Success
+Marquette,2023,Big East,,,77.0,92.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,70.0,,24.0,,1.0,1.0,21.0,11.0,0.656,,Veteran / Development Success
+Maryland,2023,Big Ten,,,42.0,94.0,0.0,0.0,1.0,3.0,1.0,3.0,0.0,0.0,70.7,17.0,5.0,6.0,18.0,18.0,28.0,7.0,0.8,,Veteran / Development Success
+Miami (FL),2023,,,,25.0,95.0,0.0,1.0,2.0,2.0,4.0,0.0,1.0,1.0,76.0,,,,,,22.0,13.0,0.629,,Unranked / Low Recruit Visibility
+Michigan,2023,Big Ten,,,48.0,92.5,0.0,0.0,1.0,2.0,1.0,1.0,1.0,0.0,72.5,25.0,12.0,18.0,18.0,18.0,23.0,10.0,0.697,,Veteran / Development Success
+Michigan State,2023,,,,80.0,92.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,69.0,,,,,,16.0,14.0,0.533,,Unranked / Low Recruit Visibility
+Middle Tennessee,2023,CUSA,,,,,,,,,,,,,,,21.0,25.0,5.0,5.0,28.0,5.0,0.848,,Veteran / Development Success
+Minnesota,2023,,,,28.0,94.67,0.0,0.0,2.0,3.0,2.0,2.0,1.0,0.0,71.7,,,,,,11.0,19.0,0.367,,Unranked / Low Recruit Visibility
+Mississippi State,2023,,,,84.0,91.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,73.0,,,,,,22.0,11.0,0.667,,Unranked / Low Recruit Visibility
+Missouri,2023,,,,74.0,92.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,70.0,,,,,,18.0,14.0,0.562,,Unranked / Low Recruit Visibility
+Montana,2023,,,,100.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,69.0,,,,,,14.0,16.0,0.467,,Unranked / Low Recruit Visibility
+NC State,2023,ACC,,,,,,,,,,,,,,10.0,6.0,,14.0,14.0,20.0,12.0,0.625,,Veteran / Development Success
+Nebraska,2023,Big Ten,,,32.0,95.0,0.0,0.0,1.0,1.0,1.0,0.0,0.0,1.0,78.0,22.0,22.0,,2.0,2.0,18.0,15.0,0.545,,Veteran / Development Success
+Northwestern,2023,,,,91.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,69.0,,,,,,9.0,21.0,0.3,,Unranked / Low Recruit Visibility
+Notre Dame,2023,ACC,,,29.0,95.0,0.0,0.0,1.0,1.0,1.0,1.0,0.0,0.0,70.0,9.0,4.0,11.0,18.0,18.0,27.0,6.0,0.818,,Veteran / Development Success
+Ohio State,2023,Big Ten,,,23.0,95.0,0.0,1.0,1.0,1.0,3.0,0.0,1.0,0.0,71.0,14.0,2.0,12.0,18.0,18.0,28.0,8.0,0.778,,Veteran / Development Success
+Oklahoma,2023,Big 12,,,96.0,91.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,75.0,15.0,13.0,14.0,16.0,16.0,26.0,7.0,0.788,,Veteran / Development Success
+Oregon,2023,Pac 12,,,7.0,95.75,1.0,2.0,3.0,4.0,10.0,1.0,2.0,1.0,73.5,20.0,16.0,,11.0,11.0,20.0,15.0,0.571,,Top Recruit Anchor
+Oregon State,2023,,,,6.0,97.5,2.0,2.0,2.0,2.0,12.0,0.0,1.0,1.0,74.5,,,,,,13.0,18.0,0.419,,Top Recruit Anchor
+Penn State,2023,,,,56.0,94.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,67.0,,,,,,14.0,17.0,0.452,,Unranked / Low Recruit Visibility
+Pittsburgh,2023,,,,98.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,70.0,,,,,,10.0,20.0,0.333,,Unranked / Low Recruit Visibility
+Princeton,2023,Ivy,,,43.0,94.0,0.0,0.0,2.0,2.0,2.0,1.0,1.0,0.0,73.0,24.0,,,1.0,1.0,24.0,6.0,0.8,,Veteran / Development Success
+Purdue,2023,,,,87.0,91.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,76.0,,,,,,19.0,11.0,0.633,,Unranked / Low Recruit Visibility
+Rutgers,2023,,,,64.0,93.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,71.0,,,,,,12.0,20.0,0.375,,Unranked / Low Recruit Visibility
+South Carolina,2023,SEC,,,12.0,96.5,0.0,2.0,2.0,2.0,6.0,1.0,0.0,1.0,73.5,1.0,1.0,1.0,18.0,18.0,36.0,1.0,0.973,,Balanced Recruit + Results
+South Dakota State,2023,Summit,,,,,,,,,,,,,,23.0,,,1.0,1.0,29.0,6.0,0.829,,Veteran / Development Success
+South Florida,2023,AAC,,,,,,,,,,,,,,,24.0,,3.0,3.0,27.0,7.0,0.794,,Veteran / Development Success
+St. John's (NY),2023,Big East,,,,,,,,,,,,,,,24.0,,3.0,3.0,23.0,9.0,0.719,,Veteran / Development Success
+Stanford,2023,Pac 12,,,1.0,95.67,1.0,2.0,2.0,3.0,9.0,2.0,0.0,1.0,71.7,2.0,2.0,5.0,18.0,18.0,29.0,6.0,0.829,,Elite Recruiting Class
+Tennessee,2023,SEC,,,11.0,97.0,0.0,1.0,1.0,1.0,3.0,0.0,1.0,0.0,74.0,5.0,11.0,23.0,4.0,4.0,25.0,12.0,0.676,,Balanced Recruit + Results
+Texas,2023,Big 12,,,34.0,93.67,0.0,0.0,1.0,3.0,1.0,1.0,2.0,0.0,73.7,3.0,3.0,15.0,11.0,11.0,26.0,10.0,0.722,,Veteran / Development Success
+Texas A&M,2023,,,,3.0,95.0,1.0,1.0,2.0,3.0,7.0,1.0,2.0,0.0,72.0,,,,,,9.0,20.0,0.31,,Elite Recruiting Class
+Texas Tech,2023,,,,54.0,94.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,71.0,,,,,,20.0,15.0,0.571,,Unranked / Low Recruit Visibility
+UCF,2023,,,,66.0,93.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,73.0,,,,,,14.0,15.0,0.483,,Unranked / Low Recruit Visibility
+UCLA,2023,Pac 12,,,2.0,95.75,1.0,3.0,4.0,4.0,13.0,2.0,1.0,1.0,70.8,,8.0,17.0,16.0,16.0,27.0,10.0,0.73,,Elite Recruiting Class
+UConn,2023,Big East,,,4.0,98.0,2.0,2.0,2.0,2.0,12.0,0.0,1.0,1.0,74.5,6.0,3.0,7.0,18.0,18.0,31.0,6.0,0.838,,Top-5 Recruit-Built
+UNC,2023,ACC,,,27.0,95.0,0.0,0.0,1.0,1.0,1.0,1.0,0.0,0.0,67.0,12.0,6.0,19.0,18.0,18.0,22.0,11.0,0.667,,Veteran / Development Success
+UNLV,2023,MWC,,,,,,,,,,,,,,,22.0,21.0,4.0,4.0,31.0,3.0,0.912,,Veteran / Development Success
+USC,2023,Pac 12,,,8.0,97.0,1.0,1.0,1.0,1.0,6.0,1.0,0.0,0.0,69.0,,25.0,,1.0,1.0,21.0,10.0,0.677,,Top Recruit Anchor
+Utah,2023,Pac 12,,,,,,,,,,,,,,,3.0,8.0,17.0,17.0,28.0,5.0,0.848,,Veteran / Development Success
+Vanderbilt,2023,,,,82.0,91.0,0.0,0.0,0.0,2.0,0.0,1.0,0.0,1.0,74.0,,,,,,12.0,19.0,0.387,,Unranked / Low Recruit Visibility
+Villanova,2023,Big East,,,,,,,,,,,,,,,11.0,10.0,14.0,14.0,30.0,7.0,0.811,,Veteran / Development Success
+Virginia,2023,,,,72.0,92.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,67.0,,,,,,15.0,15.0,0.5,,Unranked / Low Recruit Visibility
+Virginia Tech,2023,ACC,,,44.0,94.0,0.0,0.0,1.0,1.0,1.0,1.0,0.0,0.0,71.0,13.0,6.0,4.0,18.0,18.0,31.0,5.0,0.861,,Veteran / Development Success
+Washington,2023,,,,40.0,93.67,0.0,0.0,1.0,3.0,1.0,3.0,0.0,0.0,70.3,,,,,,19.0,15.0,0.559,,Unranked / Low Recruit Visibility
+Washington State,2023,Pac 12,,,,,,,,,,,,,,,,22.0,1.0,1.0,23.0,11.0,0.676,,Veteran / Development Success
+West Virginia,2023,,,,83.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,72.0,,,,,,19.0,12.0,0.613,,Unranked / Low Recruit Visibility
+Wisconsin,2023,,,,90.0,91.0,0.0,0.0,0.0,2.0,0.0,1.0,1.0,0.0,71.5,,,,,,11.0,20.0,0.355,,Unranked / Low Recruit Visibility
+Yale,2023,,,,92.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,72.0,,,,,,13.0,14.0,0.481,,Unranked / Low Recruit Visibility
+Alabama,2024,,,,22.0,94.33,0.0,1.0,2.0,3.0,4.0,1.0,0.0,2.0,74.0,,,,,,24.0,10.0,0.706,,Unranked / Low Recruit Visibility
+Arizona,2024,,,,8.0,95.0,1.0,3.0,3.0,4.0,12.0,1.0,2.0,1.0,72.0,,,,,,18.0,16.0,0.529,,Top Recruit Anchor
+Arkansas,2024,,,,11.0,95.0,0.0,1.0,1.0,2.0,3.0,1.0,1.0,0.0,72.0,,,,,,18.0,15.0,0.545,,High Expectations / Underperformed
+BYU,2024,,,,33.0,95.0,0.0,0.0,1.0,1.0,1.0,1.0,0.0,0.0,70.0,,,,,,16.0,17.0,0.485,,Unranked / Low Recruit Visibility
+Baylor,2024,Big 12,,,36.0,95.0,0.0,0.0,1.0,1.0,1.0,0.0,0.0,1.0,79.0,19.0,4.0,13.0,21.0,21.0,26.0,8.0,0.765,,Veteran / Development Success
+Colorado,2024,Pac 12,,,75.0,93.0,0.0,0.0,0.0,2.0,0.0,1.0,1.0,0.0,71.5,20.0,3.0,15.0,21.0,21.0,24.0,10.0,0.706,,Veteran / Development Success
+Creighton,2024,Big East,,,,,,,,,,,,,,22.0,20.0,23.0,19.0,19.0,26.0,6.0,0.812,,Veteran / Development Success
+DePaul,2024,,,,60.0,93.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,67.0,,,,,,12.0,20.0,0.375,,Unranked / Low Recruit Visibility
+Duke,2024,ACC,,,3.0,95.0,1.0,1.0,3.0,4.0,8.0,2.0,2.0,0.0,72.2,,,17.0,1.0,1.0,22.0,12.0,0.647,,Elite Recruiting Class
+East Carolina,2024,,,,94.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,70.0,,,,,,19.0,14.0,0.576,,Unranked / Low Recruit Visibility
+Fairfield,2024,MAAC,,,,,,,,,,,,,,,25.0,,3.0,3.0,31.0,2.0,0.939,,Veteran / Development Success
+Florida,2024,,,,19.0,96.0,0.0,1.0,1.0,1.0,3.0,1.0,0.0,0.0,72.0,,,,,,16.0,16.0,0.5,,High Expectations / Underperformed
+Florida State,2024,ACC,,,,,,,,,,,,,,18.0,12.0,,12.0,12.0,23.0,11.0,0.676,,Veteran / Development Success
+Georgia,2024,,,,100.0,91.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,73.0,,,,,,12.0,18.0,0.4,,Unranked / Low Recruit Visibility
+Gonzaga,2024,WCC,,,,,,,,,,,,,,,14.0,14.0,17.0,17.0,32.0,4.0,0.889,,Veteran / Development Success
+Illinois,2024,Big Ten,,,,,,,,,,,,,,23.0,,,1.0,1.0,19.0,15.0,0.559,,Veteran / Development Success
+Indiana,2024,Big Ten,,,52.0,93.5,0.0,0.0,0.0,2.0,0.0,2.0,0.0,0.0,72.5,9.0,10.0,12.0,21.0,21.0,26.0,6.0,0.812,,Veteran / Development Success
+Iowa,2024,Big Ten,,,84.0,93.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,74.0,3.0,2.0,2.0,21.0,21.0,34.0,5.0,0.872,,Veteran / Development Success
+Iowa State,2024,Big 12,,,31.0,94.0,0.0,0.0,2.0,3.0,2.0,0.0,2.0,1.0,74.3,,24.0,25.0,2.0,2.0,22.0,12.0,0.647,,Veteran / Development Success
+Kansas,2024,,,,34.0,95.0,0.0,0.0,1.0,1.0,1.0,0.0,1.0,0.0,72.0,,,,,,20.0,13.0,0.606,,Unranked / Low Recruit Visibility
+Kansas State,2024,Big 12,,,,,,,,,,,,,,,2.0,19.0,19.0,19.0,27.0,8.0,0.771,,Veteran / Development Success
+LSU,2024,SEC,,,2.0,95.5,2.0,2.0,3.0,4.0,13.0,2.0,1.0,1.0,72.2,1.0,7.0,6.0,21.0,21.0,31.0,6.0,0.838,,Elite Recruiting Class
+Louisville,2024,ACC,,,,,,,,,,,,,,17.0,13.0,,20.0,20.0,24.0,10.0,0.706,,Veteran / Development Success
+Marquette,2024,Big East,,,,,,,,,,,,,,,18.0,,8.0,8.0,23.0,9.0,0.719,,Veteran / Development Success
+Maryland,2024,Big Ten,,,18.0,94.5,0.0,1.0,1.0,2.0,3.0,0.0,2.0,0.0,72.5,14.0,20.0,,2.0,2.0,19.0,14.0,0.576,,Balanced Recruit + Results
+Miami (FL),2024,ACC,,,,,,,,,,,,,,,24.0,,1.0,1.0,19.0,12.0,0.613,,Veteran / Development Success
+Michigan,2024,,,,59.0,93.0,0.0,0.0,0.0,3.0,0.0,3.0,0.0,0.0,71.7,,,,,,20.0,14.0,0.588,,Unranked / Low Recruit Visibility
+Minnesota,2024,,,,98.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,70.0,,,,,,20.0,16.0,0.556,,Unranked / Low Recruit Visibility
+Mississippi State,2024,SEC,,,48.0,93.33,0.0,0.0,1.0,3.0,1.0,2.0,0.0,1.0,72.3,25.0,21.0,,3.0,3.0,23.0,12.0,0.657,,Veteran / Development Success
+Missouri,2024,,,,53.0,94.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,73.0,,,,,,11.0,19.0,0.367,,Unranked / Low Recruit Visibility
+NC State,2024,ACC,,,9.0,94.0,1.0,1.0,1.0,4.0,6.0,2.0,1.0,1.0,72.5,,3.0,4.0,20.0,20.0,31.0,7.0,0.816,,Top Recruit Anchor
+Nebraska,2024,,,,91.0,92.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,70.0,,,,,,23.0,12.0,0.657,,Unranked / Low Recruit Visibility
+Notre Dame,2024,ACC,,,5.0,96.33,1.0,3.0,3.0,3.0,12.0,2.0,1.0,0.0,71.0,10.0,9.0,11.0,21.0,21.0,28.0,7.0,0.8,,Top-5 Recruit-Built
+Ohio State,2024,Big Ten,,,70.0,93.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,66.0,7.0,2.0,16.0,21.0,21.0,26.0,6.0,0.812,,Veteran / Development Success
+Oklahoma,2024,Big 12,,,23.0,96.0,0.0,1.0,1.0,1.0,3.0,0.0,1.0,0.0,70.0,,17.0,21.0,10.0,10.0,23.0,10.0,0.697,,Veteran / Development Success
+Ole Miss,2024,SEC,,,88.0,92.0,0.0,0.0,0.0,2.0,0.0,1.0,1.0,0.0,70.5,12.0,19.0,,4.0,4.0,24.0,9.0,0.727,,Veteran / Development Success
+Oregon,2024,,,,26.0,94.0,0.0,0.0,2.0,3.0,2.0,0.0,3.0,0.0,73.7,,,,,,11.0,21.0,0.344,,Unranked / Low Recruit Visibility
+Oregon State,2024,Pac 12,,,82.0,93.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,71.0,,9.0,8.0,10.0,10.0,27.0,8.0,0.771,,Veteran / Development Success
+Penn State,2024,Big Ten,,,,,,,,,,,,,,,25.0,,1.0,1.0,22.0,13.0,0.629,,Veteran / Development Success
+Princeton,2024,Ivy,,,64.0,93.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,71.0,,25.0,,5.0,5.0,25.0,5.0,0.833,,Veteran / Development Success
+Purdue,2024,,,,43.0,92.67,0.0,0.0,1.0,3.0,1.0,2.0,1.0,0.0,71.3,,,,,,15.0,19.0,0.441,,Unranked / Low Recruit Visibility
+South Carolina,2024,SEC,,,13.0,95.25,0.0,3.0,4.0,4.0,10.0,2.0,2.0,0.0,70.8,6.0,1.0,1.0,21.0,21.0,38.0,0.0,1.0,,Balanced Recruit + Results
+Stanford,2024,Pac 12,,,10.0,95.33,1.0,1.0,3.0,3.0,8.0,2.0,1.0,0.0,70.3,15.0,2.0,9.0,21.0,21.0,30.0,6.0,0.833,,Top Recruit Anchor
+Syracuse,2024,ACC,,,72.0,93.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,73.0,,17.0,20.0,11.0,11.0,24.0,8.0,0.75,,Veteran / Development Success
+TCU,2024,Big 12,,,81.0,92.5,0.0,0.0,0.0,2.0,0.0,1.0,1.0,0.0,70.0,,23.0,,3.0,3.0,21.0,14.0,0.6,,Veteran / Development Success
+Tennessee,2024,SEC,,,,,,,,,,,,,,11.0,15.0,,4.0,4.0,20.0,13.0,0.606,,Veteran / Development Success
+Texas,2024,Big 12,,,12.0,95.0,0.0,1.0,2.0,2.0,4.0,1.0,1.0,0.0,72.0,13.0,3.0,7.0,21.0,21.0,33.0,5.0,0.868,,Balanced Recruit + Results
+Texas A&M,2024,,,,35.0,94.0,0.0,0.0,1.0,3.0,1.0,3.0,0.0,0.0,68.7,,,,,,19.0,13.0,0.594,,Unranked / Low Recruit Visibility
+Texas Tech,2024,,,,89.0,92.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,68.0,,,,,,17.0,16.0,0.515,,Unranked / Low Recruit Visibility
+UCLA,2024,Pac 12,,,32.0,95.0,0.0,0.0,1.0,1.0,1.0,0.0,0.0,1.0,76.0,4.0,2.0,10.0,21.0,21.0,27.0,7.0,0.794,,Veteran / Development Success
+UConn,2024,Big East,,,6.0,95.67,1.0,2.0,3.0,3.0,10.0,2.0,1.0,0.0,70.7,2.0,6.0,3.0,21.0,21.0,33.0,6.0,0.846,,Top Recruit Anchor
+UNC,2024,ACC,,,4.0,94.67,1.0,1.0,2.0,3.0,7.0,1.0,0.0,2.0,71.7,16.0,17.0,,12.0,12.0,20.0,13.0,0.606,,Top-5 Recruit-Built
+UNLV,2024,MWC,,,,,,,,,,,,,,,20.0,,7.0,7.0,30.0,3.0,0.909,,Veteran / Development Success
+USC,2024,Pac 12,,,1.0,96.0,1.0,1.0,2.0,2.0,7.0,2.0,0.0,0.0,69.0,21.0,3.0,5.0,21.0,21.0,29.0,6.0,0.829,,Elite Recruiting Class
+Utah,2024,Pac 12,,,,,,,,,,,,,,5.0,4.0,22.0,21.0,21.0,23.0,11.0,0.676,,Veteran / Development Success
+Vanderbilt,2024,,,,63.0,93.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,74.0,,,,,,23.0,10.0,0.697,,Unranked / Low Recruit Visibility
+Virginia,2024,,,,24.0,95.0,0.0,1.0,2.0,2.0,4.0,2.0,0.0,0.0,70.5,,,,,,16.0,16.0,0.5,,Unranked / Low Recruit Visibility
+Virginia Tech,2024,ACC,,,58.0,92.5,0.0,0.0,0.0,4.0,0.0,2.0,1.0,1.0,71.2,8.0,5.0,18.0,21.0,21.0,25.0,8.0,0.758,,Veteran / Development Success
+Wake Forest,2024,,,,67.0,93.0,0.0,0.0,0.0,2.0,0.0,1.0,1.0,0.0,71.0,,,,,,7.0,25.0,0.219,,Unranked / Low Recruit Visibility
+Washington,2024,Pac 12,,,28.0,93.67,0.0,0.0,2.0,3.0,2.0,3.0,0.0,0.0,69.7,,23.0,,1.0,1.0,16.0,15.0,0.516,,Veteran / Development Success
+Washington State,2024,Pac 12,,,68.0,93.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,73.0,24.0,21.0,,4.0,4.0,21.0,15.0,0.583,,Veteran / Development Success
+West Virginia,2024,Big 12,,,,,,,,,,,,,,,22.0,24.0,10.0,10.0,25.0,8.0,0.758,,Veteran / Development Success
+Alabama,2025,SEC,,,36.0,95.0,0.0,0.0,1.0,1.0,1.0,1.0,0.0,0.0,71.0,24.0,18.0,20.0,19.0,19.0,24.0,9.0,0.727,,Veteran / Development Success
+Arizona,2025,,,,81.0,92.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,67.0,,,,,,18.0,12.0,0.6,,Unranked / Low Recruit Visibility
+BYU,2025,,,,77.0,92.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,70.0,,,,,,11.0,16.0,0.407,,Unranked / Low Recruit Visibility
+Baylor,2025,Big 12,,,51.0,93.5,0.0,0.0,0.0,2.0,0.0,1.0,1.0,0.0,70.5,12.0,14.0,18.0,11.0,11.0,28.0,8.0,0.778,,Veteran / Development Success
+Boston College,2025,,,,66.0,93.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,65.0,,,,,,15.0,18.0,0.455,,Unranked / Low Recruit Visibility
+California,2025,ACC,,,56.0,93.0,0.0,0.0,0.0,2.0,0.0,1.0,1.0,0.0,72.0,,18.0,,8.0,8.0,24.0,9.0,0.727,,Veteran / Development Success
+Colorado,2025,,,,48.0,93.0,0.0,0.0,1.0,2.0,1.0,0.0,2.0,0.0,73.5,,,,,,21.0,13.0,0.618,,Unranked / Low Recruit Visibility
+Creighton,2025,Big East,,,,,,,,,,,,,,21.0,22.0,,7.0,7.0,25.0,7.0,0.781,,Veteran / Development Success
+Duke,2025,ACC,,,10.0,95.33,1.0,2.0,2.0,3.0,9.0,0.0,3.0,0.0,74.7,11.0,7.0,7.0,21.0,21.0,29.0,8.0,0.784,,Top Recruit Anchor
+Florida,2025,,,,15.0,96.0,0.0,1.0,2.0,2.0,4.0,1.0,0.0,1.0,72.0,,,,,,18.0,18.0,0.5,,High Expectations / Underperformed
+Florida State,2025,ACC,,,,,,,,,,,,,,19.0,22.0,22.0,9.0,9.0,23.0,9.0,0.719,,Veteran / Development Success
+Georgia,2025,,,,67.0,92.5,0.0,0.0,0.0,4.0,0.0,3.0,1.0,0.0,69.8,,,,,,13.0,19.0,0.406,,Unranked / Low Recruit Visibility
+Georgia Tech,2025,ACC,,,29.0,93.67,0.0,0.0,2.0,3.0,2.0,3.0,0.0,0.0,67.3,,13.0,,11.0,11.0,22.0,11.0,0.667,,Veteran / Development Success
+Harvard,2025,,,,98.0,91.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,72.0,,,,,,21.0,3.0,0.875,,Unranked / Low Recruit Visibility
+Illinois,2025,Big Ten,,,22.0,96.0,0.0,1.0,1.0,1.0,3.0,0.0,1.0,0.0,73.0,,19.0,,5.0,5.0,22.0,9.0,0.71,,Veteran / Development Success
+Indiana,2025,Big Ten,,,61.0,93.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,75.0,25.0,,,1.0,1.0,20.0,13.0,0.606,,Veteran / Development Success
+Iowa,2025,Big Ten,,,42.0,93.25,0.0,0.0,1.0,4.0,1.0,3.0,0.0,1.0,71.0,,17.0,,7.0,7.0,21.0,11.0,0.656,,Veteran / Development Success
+Iowa State,2025,Big 12,,,,,,,,,,,,,,8.0,8.0,,6.0,6.0,22.0,12.0,0.647,,Veteran / Development Success
+Kansas State,2025,Big 12,,,,,,,,,,,,,,13.0,9.0,13.0,21.0,21.0,28.0,8.0,0.778,,Veteran / Development Success
+Kentucky,2025,SEC,,,40.0,95.0,0.0,0.0,1.0,1.0,1.0,0.0,1.0,0.0,74.0,22.0,8.0,16.0,21.0,21.0,23.0,8.0,0.742,,Veteran / Development Success
+LSU,2025,SEC,,,90.0,92.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,66.0,7.0,4.0,8.0,21.0,21.0,31.0,6.0,0.838,,Veteran / Development Success
+Louisville,2025,ACC,,,19.0,95.0,0.0,3.0,3.0,4.0,9.0,3.0,1.0,0.0,70.2,17.0,18.0,,6.0,6.0,22.0,11.0,0.667,,Balanced Recruit + Results
+Loyola Chicago,2025,,,,75.0,92.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,75.0,,,,,,13.0,17.0,0.433,,Unranked / Low Recruit Visibility
+Maryland,2025,Big Ten,,,35.0,94.5,0.0,0.0,2.0,2.0,2.0,1.0,1.0,0.0,71.5,18.0,7.0,12.0,21.0,21.0,25.0,8.0,0.758,,Veteran / Development Success
+Memphis,2025,,,,86.0,92.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,68.0,,,,,,7.0,21.0,0.25,,Unranked / Low Recruit Visibility
+Miami (FL),2025,,,,33.0,95.0,0.0,0.0,2.0,2.0,2.0,2.0,0.0,0.0,66.0,,,,,,13.0,15.0,0.464,,Unranked / Low Recruit Visibility
+Michigan,2025,Big Ten,,,4.0,97.0,1.0,2.0,2.0,2.0,9.0,2.0,0.0,0.0,72.5,,20.0,25.0,8.0,8.0,23.0,11.0,0.676,,Top-5 Recruit-Built
+Michigan State,2025,Big Ten,,,62.0,92.0,0.0,0.0,0.0,2.0,0.0,1.0,1.0,0.0,68.5,,15.0,,14.0,14.0,21.0,10.0,0.677,,Veteran / Development Success
+Minnesota,2025,Big Ten,,,63.0,93.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,69.0,,23.0,,2.0,2.0,22.0,11.0,0.667,,Veteran / Development Success
+Mississippi State,2025,,,,43.0,94.0,0.0,0.0,1.0,1.0,1.0,0.0,1.0,0.0,75.0,,,,,,22.0,12.0,0.647,,Unranked / Low Recruit Visibility
+NC State,2025,ACC,,,21.0,95.0,0.0,1.0,2.0,2.0,4.0,1.0,1.0,0.0,69.0,9.0,7.0,9.0,20.0,20.0,28.0,7.0,0.8,,Veteran / Development Success
+Nebraska,2025,Big Ten,,,25.0,96.0,0.0,1.0,1.0,1.0,3.0,1.0,0.0,0.0,71.0,23.0,21.0,,7.0,7.0,21.0,12.0,0.636,,Veteran / Development Success
+Northwestern,2025,,,,55.0,94.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,65.0,,,,,,9.0,17.0,0.346,,Unranked / Low Recruit Visibility
+Notre Dame,2025,ACC,,,5.0,98.0,1.0,1.0,1.0,1.0,6.0,0.0,0.0,1.0,76.0,6.0,1.0,10.0,21.0,21.0,28.0,6.0,0.824,,Top-5 Recruit-Built
+Ohio State,2025,Big Ten,,,2.0,94.33,1.0,1.0,1.0,3.0,6.0,2.0,1.0,0.0,70.0,14.0,8.0,19.0,21.0,21.0,26.0,7.0,0.788,,Elite Recruiting Class
+Oklahoma,2025,SEC,,,46.0,93.5,0.0,0.0,1.0,2.0,1.0,1.0,1.0,0.0,70.0,10.0,8.0,11.0,21.0,21.0,27.0,8.0,0.771,,Veteran / Development Success
+Oklahoma State,2025,Big 12,,,91.0,92.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,65.0,,17.0,24.0,10.0,10.0,24.0,7.0,0.774,,Veteran / Development Success
+Ole Miss,2025,SEC,,,,,,,,,,,,,,20.0,17.0,17.0,12.0,12.0,22.0,11.0,0.667,,Veteran / Development Success
+Oregon,2025,Big Ten,,,34.0,95.0,0.0,0.0,1.0,1.0,1.0,1.0,0.0,0.0,71.0,,21.0,,3.0,3.0,18.0,12.0,0.6,,Veteran / Development Success
+Purdue,2025,,,,57.0,94.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,67.0,,,,,,9.0,19.0,0.321,,Unranked / Low Recruit Visibility
+Rutgers,2025,,,,27.0,96.0,0.0,0.0,1.0,1.0,1.0,1.0,0.0,0.0,69.0,,,,,,12.0,20.0,0.375,,Unranked / Low Recruit Visibility
+South Carolina,2025,SEC,,,3.0,97.0,1.0,2.0,3.0,3.0,10.0,1.0,1.0,1.0,73.7,1.0,1.0,2.0,21.0,21.0,35.0,4.0,0.897,,Elite Recruiting Class
+South Dakota State,2025,Summit,,,83.0,92.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,74.0,,24.0,23.0,4.0,4.0,30.0,4.0,0.882,,Veteran / Development Success
+St. John's (NY),2025,,,,100.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,64.0,,,,,,16.0,15.0,0.516,,Unranked / Low Recruit Visibility
+Stanford,2025,ACC,,,44.0,93.33,0.0,0.0,1.0,3.0,1.0,1.0,2.0,0.0,72.0,,24.0,,1.0,1.0,16.0,14.0,0.533,,Veteran / Development Success
+Syracuse,2025,,,,85.0,92.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,74.0,,,,,,12.0,18.0,0.4,,Unranked / Low Recruit Visibility
+TCU,2025,Big 12,,,,,,,,,,,,,,,6.0,6.0,19.0,19.0,34.0,4.0,0.895,,Veteran / Development Success
+Tennessee,2025,SEC,,,37.0,95.0,0.0,0.0,1.0,1.0,1.0,1.0,0.0,0.0,69.0,,11.0,15.0,16.0,16.0,24.0,10.0,0.706,,Veteran / Development Success
+Texas,2025,SEC,,,9.0,96.33,1.0,2.0,3.0,3.0,10.0,2.0,1.0,0.0,71.7,4.0,1.0,4.0,21.0,21.0,35.0,4.0,0.897,,Top Recruit Anchor
+Texas A&M,2025,,,,60.0,94.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,73.0,,,,,,10.0,19.0,0.345,,Unranked / Low Recruit Visibility
+Texas Tech,2025,,,,64.0,93.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,73.0,,,,,,19.0,16.0,0.543,,Unranked / Low Recruit Visibility
+UCLA,2025,Big Ten,,,18.0,95.67,0.0,1.0,3.0,3.0,5.0,1.0,2.0,0.0,74.0,5.0,1.0,3.0,21.0,21.0,35.0,3.0,0.921,,Balanced Recruit + Results
+UConn,2025,Big East,,,1.0,97.67,2.0,3.0,3.0,3.0,15.0,2.0,1.0,0.0,72.7,2.0,2.0,1.0,21.0,21.0,37.0,3.0,0.925,,Elite Recruiting Class
+UNC,2025,ACC,,,32.0,94.0,0.0,0.0,1.0,3.0,1.0,2.0,0.0,1.0,72.3,15.0,8.0,14.0,21.0,21.0,29.0,8.0,0.784,,Veteran / Development Success
+UNLV,2025,,,,89.0,92.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,67.0,,,,,,26.0,7.0,0.788,,Unranked / Low Recruit Visibility
+USC,2025,Big Ten,,,6.0,95.17,1.0,3.0,4.0,6.0,13.0,3.0,3.0,0.0,72.0,3.0,2.0,5.0,21.0,21.0,32.0,4.0,0.889,,Top Recruit Anchor
+Utah,2025,Big 12,,,70.0,93.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,68.0,,22.0,,2.0,2.0,20.0,9.0,0.69,,Veteran / Development Success
+Vanderbilt,2025,SEC,,,8.0,98.0,1.0,1.0,1.0,1.0,6.0,1.0,0.0,0.0,72.0,,23.0,,2.0,2.0,22.0,11.0,0.667,,Top Recruit Anchor
+Villanova,2025,,,,97.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,67.0,,,,,,20.0,15.0,0.571,,Unranked / Low Recruit Visibility
+Virginia,2025,,,,99.0,91.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,73.0,,,,,,17.0,15.0,0.531,,Unranked / Low Recruit Visibility
+Virginia Tech,2025,,,,68.0,93.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,72.0,,,,,,19.0,13.0,0.594,,Unranked / Low Recruit Visibility
+Washington,2025,,,,39.0,95.0,0.0,0.0,1.0,1.0,1.0,1.0,0.0,0.0,70.0,,,,,,18.0,14.0,0.562,,Unranked / Low Recruit Visibility
+West Virginia,2025,Big 12,,,78.0,92.0,0.0,0.0,0.0,2.0,0.0,0.0,1.0,1.0,73.5,16.0,12.0,21.0,21.0,21.0,25.0,8.0,0.758,,Veteran / Development Success
+Alabama,2026,SEC,,,51.0,92.67,0.0,0.0,0.0,3.0,0.0,2.0,1.0,0.0,71.0,26.0,21.0,,7.0,7.0,23.0,10.0,0.697,,Veteran / Development Success
+Auburn,2026,,,,95.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,70.0,,,,,,15.0,17.0,0.469,,Unranked / Low Recruit Visibility
+BYU,2026,,,,86.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,68.0,,,,,,22.0,11.0,0.667,,Unranked / Low Recruit Visibility
+Baylor,2026,Big 12,,,41.0,94.0,0.0,0.0,1.0,1.0,1.0,1.0,0.0,0.0,72.0,16.0,7.0,,17.0,17.0,24.0,8.0,0.75,,Veteran / Development Success
+Boston College,2026,,,,76.0,92.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,70.0,,,,,,5.0,26.0,0.161,,Unranked / Low Recruit Visibility
+California,2026,,,,22.0,94.0,0.0,1.0,1.0,2.0,3.0,2.0,0.0,0.0,68.5,,,,,,19.0,14.0,0.576,,Unranked / Low Recruit Visibility
+Cincinnati,2026,,,,11.0,95.0,0.0,1.0,1.0,2.0,3.0,2.0,0.0,0.0,70.0,,,,,,11.0,20.0,0.355,,High Expectations / Underperformed
+Clemson,2026,,,,64.0,92.0,0.0,0.0,0.0,2.0,0.0,1.0,1.0,0.0,70.5,,,,,,21.0,11.0,0.656,,Unranked / Low Recruit Visibility
+Colorado,2026,,,,81.0,92.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,75.0,,,,,,22.0,11.0,0.667,,Unranked / Low Recruit Visibility
+Creighton,2026,,,,70.0,91.67,0.0,0.0,0.0,3.0,0.0,1.0,2.0,0.0,71.3,,,,,,16.0,15.0,0.516,,Unranked / Low Recruit Visibility
+Duke,2026,ACC,,,4.0,97.0,1.0,1.0,1.0,1.0,6.0,1.0,0.0,0.0,72.0,7.0,9.0,,9.0,7.0,24.0,8.0,0.75,,Top-5 Recruit-Built
+Fairfield,2026,MAAC,,,,,,,,,,,,,,26.0,25.0,,1.0,1.0,28.0,4.0,0.875,,Veteran / Development Success
+Florida,2026,,,,59.0,93.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,73.0,,,,,,18.0,15.0,0.545,,Unranked / Low Recruit Visibility
+Georgia,2026,SEC,,,46.0,93.0,0.0,0.0,2.0,3.0,2.0,2.0,1.0,0.0,72.7,26.0,22.0,,4.0,3.0,22.0,9.0,0.71,,Veteran / Development Success
+Harvard,2026,,,,61.0,93.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,73.0,,,,,,17.0,10.0,0.63,,Unranked / Low Recruit Visibility
+Illinois,2026,Big Ten,,,29.0,93.75,0.0,0.0,3.0,4.0,3.0,1.0,3.0,0.0,72.2,26.0,25.0,,1.0,1.0,21.0,11.0,0.656,,Veteran / Development Success
+Indiana,2026,,,,35.0,94.5,0.0,0.0,2.0,2.0,2.0,1.0,1.0,0.0,72.5,,,,,,18.0,14.0,0.562,,Unranked / Low Recruit Visibility
+Iowa,2026,Big Ten,,,23.0,94.0,0.0,1.0,1.0,2.0,3.0,1.0,0.0,1.0,74.0,21.0,8.0,,17.0,17.0,26.0,6.0,0.812,,Veteran / Development Success
+Iowa State,2026,Big 12,,,,,,,,,,,,,,14.0,10.0,,10.0,10.0,22.0,9.0,0.71,,Veteran / Development Success
+Kansas,2026,,,,19.0,95.33,0.0,1.0,3.0,3.0,5.0,2.0,1.0,0.0,72.3,,,,,,19.0,13.0,0.594,,High Expectations / Underperformed
+Kansas State,2026,,,,16.0,94.33,0.0,1.0,2.0,3.0,4.0,3.0,0.0,0.0,72.0,,,,,,18.0,17.0,0.514,,High Expectations / Underperformed
+Kentucky,2026,SEC,,,18.0,96.0,0.0,1.0,1.0,1.0,3.0,0.0,1.0,0.0,74.0,24.0,6.0,,17.0,17.0,23.0,10.0,0.697,,Balanced Recruit + Results
+LSU,2026,SEC,,,7.0,96.25,2.0,3.0,4.0,4.0,16.0,3.0,1.0,0.0,71.2,5.0,5.0,,17.0,17.0,27.0,5.0,0.844,,Top Recruit Anchor
+Louisville,2026,ACC,,,78.0,92.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,76.0,20.0,6.0,,17.0,17.0,27.0,7.0,0.794,,Veteran / Development Success
+Maryland,2026,Big Ten,,,34.0,95.0,0.0,0.0,1.0,1.0,1.0,1.0,0.0,0.0,69.0,10.0,7.0,,17.0,17.0,23.0,8.0,0.742,,Veteran / Development Success
+Miami (FL),2026,,,,36.0,93.0,0.0,0.0,1.0,4.0,1.0,3.0,1.0,0.0,72.0,,,,,,17.0,14.0,0.548,,Unranked / Low Recruit Visibility
+Michigan,2026,Big Ten,,,39.0,92.67,0.0,0.0,1.0,3.0,1.0,1.0,2.0,0.0,72.3,13.0,6.0,,17.0,17.0,25.0,6.0,0.806,,Veteran / Development Success
+Michigan State,2026,Big Ten,,,33.0,93.0,0.0,0.0,1.0,2.0,1.0,2.0,0.0,0.0,69.5,23.0,12.0,,17.0,17.0,22.0,8.0,0.733,,Veteran / Development Success
+Minnesota,2026,Big Ten,,,52.0,94.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,71.0,26.0,19.0,,3.0,3.0,22.0,8.0,0.733,,Veteran / Development Success
+Mississippi State,2026,,,,37.0,93.33,0.0,0.0,2.0,3.0,2.0,1.0,2.0,0.0,73.7,,,,,,18.0,13.0,0.581,,Unranked / Low Recruit Visibility
+NC State,2026,ACC,,,65.0,92.5,0.0,0.0,0.0,2.0,0.0,2.0,0.0,0.0,69.5,9.0,10.0,,4.0,4.0,20.0,10.0,0.667,,Veteran / Development Success
+Nebraska,2026,Big Ten,,,,,,,,,,,,,,26.0,20.0,,6.0,6.0,18.0,12.0,0.6,,Veteran / Development Success
+Notre Dame,2026,ACC,,,26.0,96.0,0.0,0.0,1.0,1.0,1.0,0.0,1.0,0.0,74.0,15.0,18.0,,9.0,8.0,22.0,10.0,0.688,,Veteran / Development Success
+Ohio State,2026,Big Ten,,,83.0,92.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,73.0,26.0,8.0,,13.0,13.0,26.0,7.0,0.788,,Veteran / Development Success
+Oklahoma,2026,SEC,,,3.0,95.0,1.0,1.0,2.0,3.0,7.0,2.0,1.0,0.0,72.0,6.0,5.0,,17.0,17.0,24.0,7.0,0.774,,Elite Recruiting Class
+Oklahoma State,2026,Big 12,,,56.0,93.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,72.0,22.0,18.0,,6.0,6.0,23.0,9.0,0.719,,Veteran / Development Success
+Ole Miss,2026,SEC,,,90.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,69.0,12.0,13.0,,17.0,17.0,23.0,11.0,0.676,,Veteran / Development Success
+Oregon,2026,,,,53.0,94.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,70.0,,,,,,22.0,12.0,0.647,,Unranked / Low Recruit Visibility
+Pittsburgh,2026,,,,30.0,93.5,0.0,0.0,1.0,2.0,1.0,2.0,0.0,0.0,69.0,,,,,,8.0,23.0,0.258,,Unranked / Low Recruit Visibility
+Princeton,2026,Ivy,,,,,,,,,,,,,,26.0,19.0,,10.0,8.0,24.0,3.0,0.889,,Veteran / Development Success
+Purdue,2026,,,,63.0,93.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,77.0,,,,,,13.0,17.0,0.433,,Unranked / Low Recruit Visibility
+Richmond,2026,A10,,,,,,,,,,,,,,24.0,,,1.0,1.0,26.0,7.0,0.788,,Veteran / Development Success
+South Carolina,2026,SEC,,,6.0,96.5,1.0,2.0,2.0,2.0,9.0,0.0,2.0,0.0,73.5,2.0,2.0,,17.0,17.0,31.0,3.0,0.912,,Top Recruit Anchor
+Stanford,2026,,,,8.0,95.25,1.0,3.0,3.0,4.0,12.0,1.0,3.0,0.0,74.2,,,,,,19.0,13.0,0.594,,Top Recruit Anchor
+Syracuse,2026,,,,60.0,93.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,73.0,,,,,,23.0,8.0,0.742,,Unranked / Low Recruit Visibility
+TCU,2026,Big 12,,,,,,,,,,,,,,17.0,8.0,,17.0,17.0,29.0,5.0,0.853,,Veteran / Development Success
+Tennessee,2026,SEC,,,9.0,95.2,1.0,3.0,4.0,5.0,13.0,3.0,2.0,0.0,69.8,8.0,12.0,,15.0,15.0,16.0,13.0,0.552,,Top Recruit Anchor
+Texas,2026,SEC,,,5.0,97.0,1.0,1.0,1.0,1.0,6.0,1.0,0.0,0.0,73.0,4.0,2.0,,17.0,17.0,31.0,3.0,0.912,,Top-5 Recruit-Built
+Texas Tech,2026,Big 12,,,,,,,,,,,,,,26.0,16.0,,10.0,10.0,25.0,7.0,0.781,,Veteran / Development Success
+UCLA,2026,Big Ten,,,2.0,98.0,1.0,1.0,1.0,1.0,6.0,0.0,1.0,0.0,76.0,3.0,2.0,,17.0,17.0,31.0,1.0,0.969,,Elite Recruiting Class
+UConn,2026,Big East,,,25.0,94.0,0.0,1.0,1.0,2.0,3.0,1.0,0.0,1.0,73.0,1.0,1.0,,17.0,17.0,34.0,0.0,1.0,,Veteran / Development Success
+UNC,2026,ACC,,,13.0,95.0,0.0,1.0,2.0,3.0,4.0,1.0,2.0,0.0,72.7,11.0,11.0,,14.0,9.0,26.0,7.0,0.788,,Balanced Recruit + Results
+USC,2026,Big Ten,,,1.0,98.0,1.0,1.0,1.0,1.0,6.0,1.0,0.0,0.0,73.0,18.0,8.0,,9.0,9.0,17.0,13.0,0.567,,Elite Recruiting Class
+Utah,2026,,,,28.0,95.0,0.0,0.0,2.0,2.0,2.0,2.0,0.0,0.0,69.0,,,,,,19.0,12.0,0.613,,Unranked / Low Recruit Visibility
+Vanderbilt,2026,SEC,,,,,,,,,,,,,,19.0,5.0,,17.0,17.0,27.0,4.0,0.871,,Veteran / Development Success
+Villanova,2026,,,,79.0,92.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,72.0,,,,,,25.0,7.0,0.781,,Unranked / Low Recruit Visibility
+Virginia,2026,,,,94.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,70.0,,,,,,19.0,11.0,0.633,,Unranked / Low Recruit Visibility
+Virginia Tech,2026,,,,74.0,92.0,0.0,0.0,0.0,2.0,0.0,1.0,1.0,0.0,71.5,,,,,,23.0,9.0,0.719,,Unranked / Low Recruit Visibility
+Washington,2026,Big Ten,,,14.0,94.5,0.0,1.0,1.0,2.0,3.0,0.0,2.0,0.0,73.5,26.0,20.0,,11.0,6.0,21.0,10.0,0.677,,Balanced Recruit + Results
+West Virginia,2026,Big 12,,,88.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,71.0,26.0,15.0,,10.0,7.0,27.0,6.0,0.818,,Veteran / Development Success
+,2026,,,,69.0,92.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,72.0,,,,,,,,,,Unranked / Low Recruit Visibility
+Arizona,2027,,,,60.0,93.0,0.0,0.0,0.0,2.0,0.0,2.0,0.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+Arizona State,2027,,,,54.0,94.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+Arkansas,2027,,,,49.0,94.0,0.0,0.0,1.0,1.0,1.0,1.0,0.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+Auburn,2027,,,,72.0,92.0,0.0,0.0,0.0,2.0,0.0,1.0,1.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+Clemson,2027,,,,11.0,94.75,0.0,1.0,4.0,4.0,6.0,2.0,2.0,0.0,,,,,,,,,,,High Expectations / Underperformed
+Columbia,2027,,,,84.0,91.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+Duke,2027,,,,12.0,95.25,0.0,3.0,4.0,4.0,10.0,3.0,0.0,1.0,,,,,,,,,,,High Expectations / Underperformed
+East Carolina,2027,,,,96.0,91.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+FSU,2027,,,,21.0,94.33,0.0,1.0,2.0,3.0,4.0,1.0,2.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+Florida,2027,,,,48.0,94.0,0.0,0.0,1.0,2.0,1.0,2.0,0.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+Florida Atlantic,2027,,,,89.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+Grand Canyon,2027,,,,76.0,92.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+Illinois State,2027,,,,66.0,93.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+Indiana,2027,,,,28.0,94.33,0.0,0.0,2.0,3.0,2.0,2.0,1.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+Iowa,2027,,,,6.0,97.0,1.0,1.0,1.0,1.0,6.0,0.0,1.0,0.0,,,,,,,,,,,Top Recruit Anchor
+Kansas,2027,,,,33.0,93.5,0.0,0.0,1.0,2.0,1.0,0.0,1.0,1.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+Kentucky,2027,,,,13.0,95.33,0.0,3.0,3.0,3.0,9.0,2.0,1.0,0.0,,,,,,,,,,,High Expectations / Underperformed
+LSU,2027,,,,29.0,95.0,0.0,0.0,1.0,1.0,1.0,0.0,1.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+Louisville,2027,,,,34.0,94.0,0.0,0.0,1.0,2.0,1.0,2.0,0.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+Maryland,2027,,,,7.0,95.5,1.0,1.0,2.0,2.0,7.0,1.0,1.0,0.0,,,,,,,,,,,Top Recruit Anchor
+Michigan,2027,,,,45.0,93.5,0.0,0.0,1.0,2.0,1.0,1.0,0.0,1.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+Michigan State,2027,,,,15.0,96.0,0.0,1.0,1.0,1.0,3.0,0.0,0.0,1.0,,,,,,,,,,,High Expectations / Underperformed
+Middle Tennessee,2027,,,,73.0,92.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+Minnesota,2027,,,,40.0,93.5,0.0,0.0,1.0,2.0,1.0,2.0,0.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+Mississippi State,2027,,,,75.0,92.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+Missouri,2027,,,,79.0,91.5,0.0,0.0,0.0,2.0,0.0,1.0,1.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+NC State,2027,,,,38.0,92.5,0.0,0.0,1.0,2.0,1.0,0.0,2.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+Nebraska,2027,,,,22.0,92.67,0.0,1.0,1.0,3.0,3.0,3.0,0.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+Northwestern,2027,,,,97.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+Notre Dame,2027,,,,9.0,94.4,1.0,2.0,4.0,5.0,11.0,1.0,4.0,0.0,,,,,,,,,,,Top Recruit Anchor
+Ohio State,2027,,,,74.0,92.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+Oklahoma,2027,,,,36.0,93.0,0.0,0.0,1.0,2.0,1.0,1.0,1.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+Oregon,2027,,,,26.0,94.5,0.0,0.0,2.0,2.0,2.0,1.0,0.0,1.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+Oregon State,2027,,,,83.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+Penn State,2027,,,,51.0,94.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+Richmond,2027,,,,80.0,92.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+SMU,2027,,,,78.0,91.5,0.0,0.0,0.0,2.0,0.0,1.0,1.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+Seton Hall,2027,,,,87.0,91.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+South Carolina,2027,,,,5.0,96.0,1.0,3.0,3.0,3.0,12.0,1.0,2.0,0.0,,,,,,,,,,,Top-5 Recruit-Built
+St. John's (NY),2027,,,,99.0,91.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+Stanford,2027,,,,86.0,91.0,0.0,0.0,0.0,2.0,0.0,2.0,0.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+Tennessee,2027,,,,2.0,95.5,1.0,1.0,1.0,2.0,6.0,0.0,2.0,0.0,,,,,,,,,,,Elite Recruiting Class
+Texas,2027,,,,8.0,95.5,2.0,3.0,3.0,4.0,15.0,2.0,2.0,0.0,,,,,,,,,,,Top Recruit Anchor
+Texas A&M,2027,,,,44.0,93.5,0.0,0.0,1.0,2.0,1.0,1.0,1.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+Texas Tech,2027,,,,67.0,92.0,0.0,0.0,0.0,2.0,0.0,2.0,0.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+UC Santa Barbara,2027,,,,55.0,93.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+UConn,2027,,,,3.0,98.0,1.0,1.0,1.0,1.0,6.0,0.0,0.0,1.0,,,,,,,,,,,Elite Recruiting Class
+UNC,2027,,,,4.0,96.0,1.0,1.0,1.0,2.0,6.0,1.0,1.0,0.0,,,,,,,,,,,Top-5 Recruit-Built
+UNLV,2027,,,,85.0,91.0,0.0,0.0,0.0,2.0,0.0,2.0,0.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+USC,2027,,,,1.0,98.0,1.0,1.0,1.0,1.0,6.0,1.0,0.0,0.0,,,,,,,,,,,Elite Recruiting Class
+Utah,2027,,,,65.0,92.0,0.0,0.0,0.0,2.0,0.0,1.0,1.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+Vanderbilt,2027,,,,14.0,95.5,0.0,1.0,2.0,2.0,4.0,1.0,1.0,0.0,,,,,,,,,,,High Expectations / Underperformed
+Virginia Tech,2027,,,,70.0,92.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+Washington,2027,,,,46.0,94.0,0.0,0.0,1.0,1.0,1.0,1.0,0.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+Wisconsin,2027,,,,47.0,94.0,0.0,0.0,1.0,1.0,1.0,0.0,1.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
+,2027,,,,90.0,91.0,0.0,0.0,0.0,2.0,0.0,0.0,1.0,0.0,,,,,,,,,,,Unranked / Low Recruit Visibility
