@@ -119,7 +119,7 @@ def compute_wins_by_season(seasons: list[int]) -> pd.DataFrame:
 
         # Map schedule names → poll names where they differ
         sched_to_poll = {v: k for k, v in POLL_TO_SCHEDULE_NAME.items()}
-        agg["team"] = agg["team_sched"].map(lambda t: sched_to_poll.get(str(t), str(t)))
+        agg["team"] = agg["team_sched"].replace(sched_to_poll)
         records.append(agg[["season", "team", "wins", "losses", "win_pct"]])
 
     if not records:
