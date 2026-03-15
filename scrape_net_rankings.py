@@ -286,6 +286,36 @@ PHASE_2_WL_FIELDS = {
 }
 
 
+def parse_aq_fields(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Parses the automatic-qualifier suffix from team names.
+
+    Some teams have '(AQ)' appended when they won their conference tournament
+    and earned an automatic bid to the national tournament (March Madness).
+
+    Adds two columns (appended to the end of the DataFrame):
+        automatic_qualifier  str   'AQ' if team has (AQ) suffix, otherwise 'Non'
+        conference_winner    int   1 if automatic qualifier, 0 otherwise
+
+    Also strips the '(AQ)' suffix from the 'team' column so downstream
+    team-name matching works correctly.
+
+    Only applied on the current run; past snapshots/master rows are left as-is.
+    """
+    if 'team' not in df.columns:
+        return df
+
+    # Extract any parenthetical qualifier — generalised to catch future codes too
+    extracted = df['team'].str.extract(r'\(([^)]+)\)', expand=False)
+    df['automatic_qualifier'] = extracted.fillna('Non')
+    df['conference_winner']   = (extracted == 'AQ').astype(int)
+
+    # Clean team name: remove the parenthetical suffix and surrounding whitespace
+    df['team'] = df['team'].str.replace(r'\s*\([^)]*\)', '', regex=True).str.strip()
+
+    return df
+
+
 def preprocess_wl_fields(df: pd.DataFrame, wl_fields: dict) -> pd.DataFrame:
     """
     Parses W-L string columns (e.g. '21-0') into numeric wins, losses, and win_pct columns.
@@ -411,6 +441,9 @@ def main(manual_file: Optional[str] = None, use_latest_manual: bool = False):
         return False
 
     logger.info(f"Successfully obtained {len(df)} teams")
+
+    # Parse AQ (automatic-qualifier) suffix before any name standardisation
+    df = parse_aq_fields(df)
 
     # Standardize team names using centralized function
     df = apply_team_name_standardization(df, ['team'])
