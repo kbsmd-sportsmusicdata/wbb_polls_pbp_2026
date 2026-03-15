@@ -305,13 +305,13 @@ def parse_aq_fields(df: pd.DataFrame) -> pd.DataFrame:
     if 'team' not in df.columns:
         return df
 
-    # Extract any parenthetical qualifier — generalised to catch future codes too
-    extracted = df['team'].str.extract(r'\(([^)]+)\)', expand=False)
+    # Extract any parenthetical qualifier from the suffix of the team name.
+    extracted = df['team'].str.extract(r'\s*\(([^)]+)\)$', expand=False)
     df['automatic_qualifier'] = extracted.fillna('Non')
     df['conference_winner']   = (extracted == 'AQ').astype(int)
 
-    # Clean team name: remove the parenthetical suffix and surrounding whitespace
-    df['team'] = df['team'].str.replace(r'\s*\([^)]*\)', '', regex=True).str.strip()
+    # Clean team name: remove the parenthetical suffix and surrounding whitespace.
+    df['team'] = df['team'].str.replace(r'\s*\([^)]+\)$', '', regex=True).str.strip()
 
     return df
 
