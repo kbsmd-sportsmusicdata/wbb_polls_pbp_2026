@@ -43,6 +43,8 @@ This makes it trivial to build dashboards showing rank volatility, team trajecto
 
 `poll_week` and `week_number` follow a fixed chronological order for the 2025-26 season, sourced from `config/poll_week_windows.json`: `generate_analytics_table.py`'s `WEEK_ORDER` is derived from that file's `"windows"` keys (in listed order) at import time, and the same file's date windows are what `polls_games_joined.csv`'s build step uses to attribute games to a week. It's the single place to update at the start of a new season — see that file's own `_instructions`.
 
+The table below is generated from that same file by `scripts/sync_poll_week_config.py` (`python scripts/sync_poll_week_config.py` after editing the JSON, then commit normally) — don't hand-edit it, it'll just get overwritten the next time that script runs.
+<!-- BEGIN GENERATED: poll_week_reference -->
 | `poll_week` | `week_number` | Represents | Game date window |
 |-------------|----------------|------------|-------------------|
 | `Pre` | 0 | Preseason poll | 2025-11-03 – 2025-11-09 |
@@ -62,9 +64,10 @@ This makes it trivial to build dashboards showing rank volatility, team trajecto
 | `2/16` | 14 | Weekly poll | 2026-02-16 – 2026-02-22 |
 | `2/23` | 15 | Weekly poll | 2026-02-23 – 2026-03-01 |
 | `3/2` | 16 | Weekly poll | 2026-03-02 – 2026-03-08 |
-| `3/9` | 17 | Conference tournaments begin | 2026-03-09 – 2026-03-15 |
-| `3/16` | 18 | NCAA Tournament Round 1/2 | 2026-03-16 – 2026-03-22 |
-| `Final` | 19 | Season-end poll (Round of 32 through Championship) | 2026-03-23 – 2026-04-06 |
+| `3/9` | 17 | Weekly poll | 2026-03-09 – 2026-03-15 |
+| `3/16` | 18 | Weekly poll | 2026-03-16 – 2026-03-22 |
+| `Final` | 19 | Season-end poll | 2026-03-23 – 2026-04-06 |
+<!-- END GENERATED: poll_week_reference -->
 
 **About `Final` (week 19):** this is the AP's last poll of the season, released after the championship game, not a regular weekly release. On the source page (sports-reference.com), this column is literally labeled `Final` rather than a date — the same way `Pre` is a label rather than a date for the preseason poll. A team's `rank_change` into `Final` reflects everything since `3/16` at once (Round of 32 through the championship, not a single week), and `best_rank`/`worst_rank`/`rank_range` in `polls_games_joined.csv` are season-wide aggregates, so they update retroactively for every earlier row once a team's `Final` rank sets a new season-best or season-worst. `Post` is accepted as an alias for this same slot (`WEEK_ORDER_ALIASES` in `generate_analytics_table.py`) in case a future season's source table uses that label instead of `Final`.
 

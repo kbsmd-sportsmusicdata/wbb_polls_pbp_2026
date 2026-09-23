@@ -23,6 +23,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Check poll week config is in sync
+        run: |
+          python scripts/sync_poll_week_config.py --check || {
+            echo "::error::config/poll_week_windows.json was edited (e.g. season rollover) without" \
+                 "running 'python scripts/sync_poll_week_config.py' and committing the result." \
+                 "Run it locally and push a normal commit -- this workflow only auto-commits data/," \
+                 "never code or docs, so it can't fix this for you.";
+            exit 1;
+          }
+
       - name: Run SportsRef polls/standings scraper
         run: python sportsref_scraper.py
 
