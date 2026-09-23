@@ -1,12 +1,12 @@
 {
   "_comment": "AP Poll Week Windows Configuration for WBB 2025-2026 Season",
   "_description": "Games played within these date windows are attributed to the corresponding poll week. Update these dates annually to match the AP Poll release schedule.",
-  "_format": "Each entry: 'poll_week_label': ['start_date', 'end_date'] in YYYY-MM-DD format",
+  "_format": "Each entry: 'poll_week_label': ['start_date', 'end_date'] in YYYY-MM-DD format, or ['start_date', 'end_date', 'note'] with an optional third element -- a short human-readable description shown in ANALYTICS_TABLE_README.md's generated Poll Week Reference table (e.g. 'Conference tournaments begin'). Omit it for an ordinary week; it defaults to 'Weekly poll' there. The note is decorative only -- nothing reads it for date-window matching.",
 
   "season": 2026,
 
   "windows": {
-    "Pre": ["2025-11-03", "2025-11-09"],
+    "Pre": ["2025-11-03", "2025-11-09", "Preseason poll"],
     "11/10": ["2025-11-03", "2025-11-16"],
     "11/17": ["2025-11-17", "2025-11-23"],
     "11/24": ["2025-11-24", "2025-11-30"],
@@ -23,10 +23,10 @@
     "2/16": ["2026-02-16", "2026-02-22"],
     "2/23": ["2026-02-23", "2026-03-01"],
     "3/2": ["2026-03-02", "2026-03-08"],
-    "3/9": ["2026-03-09", "2026-03-15"],
-    "3/16": ["2026-03-16", "2026-03-22"],
-    "Final": ["2026-03-23", "2026-04-06"]
+    "3/9": ["2026-03-09", "2026-03-15", "Conference tournaments begin"],
+    "3/16": ["2026-03-16", "2026-03-22", "NCAA Tournament Round 1/2"],
+    "Final": ["2026-03-23", "2026-04-06", "Season-end poll (Round of 32 through Championship)"]
   },
 
-  "_instructions": "To add new poll weeks as the season progresses, add entries below following the same format. Example: '3/23': ['2026-03-23', '2026-03-29']. At the start of a new season: (1) bump 'season' above to the new year -- season_config.py and every scraper's source URL read from it, so nothing else needs to change for that. (2) The 'windows' below usually can't be filled in until the season's actual AP poll release dates are known (typically not before the first poll of the new season) -- replace them once you have the real dates. generate_analytics_table.py's WEEK_ORDER is derived automatically from these 'windows' keys, in the order they're listed here, so this file is the only place the week list needs to be maintained."
+  "_instructions": "To add new poll weeks as the season progresses, add entries below following the same format. Example: '3/23': ['2026-03-23', '2026-03-29'], or with a note: '3/23': ['2026-03-23', '2026-03-29', 'Conference tournaments begin']. At the start of a new season: (1) bump 'season' above to the new year -- season_config.py and every scraper's source URL read from it, so nothing else needs to change for that. (2) The 'windows' below usually can't be filled in until the season's actual AP poll release dates are known (typically not before the first poll of the new season) -- replace them once you have the real dates. generate_analytics_table.py's WEEK_ORDER is derived automatically from these 'windows' keys, in the order they're listed here, so this file is the only place the week list needs to be maintained. After editing 'windows', run 'python scripts/sync_poll_week_config.py' and commit the result -- CI fails loudly if you forget."
 }

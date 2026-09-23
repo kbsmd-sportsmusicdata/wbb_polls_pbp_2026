@@ -117,8 +117,11 @@ def load_poll_week_windows():
             with open(config_path, 'r') as f:
                 config = json.load(f)
                 windows = config.get('windows', {})
-                # Convert list format to tuple format
-                return {k: tuple(v) for k, v in windows.items()}
+                # Convert to (start, end) tuples. A window may carry an
+                # optional 3rd element (a display-only note for
+                # ANALYTICS_TABLE_README.md's generated table) -- ignore it
+                # here, date-window matching only ever needs start/end.
+                return {k: (v[0], v[1]) for k, v in windows.items()}
         except (json.JSONDecodeError, KeyError, TypeError) as e:
             print(f"  WARNING: Could not parse {config_path}: {e}")
             print(f"  → Falling back to hardcoded default windows")

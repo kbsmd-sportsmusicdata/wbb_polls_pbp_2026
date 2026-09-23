@@ -18,12 +18,12 @@ Each target file marks its generated block with a matching pair of
 "BEGIN GENERATED: <name>" / "END GENERATED: <name>" comments; only the text
 between them is touched.
 
-Note: config/poll_week_windows.json has no field for the short narrative
-description some weeks had before this script existed (e.g. '3/9' was
-"Conference tournaments begin", '3/16' was "NCAA Tournament Round 1/2").
-Those aren't derivable from the JSON, so the generated "Represents" column
-is deliberately simpler: the first window is "Preseason poll", the last is
-"Season-end poll", everything else is "Weekly poll".
+Each window in poll_week_windows.json's "windows" is ['start', 'end'] or,
+optionally, ['start', 'end', 'note'] -- the note is a short human-readable
+description shown in the README table's "Represents" column (e.g. '3/9':
+"Conference tournaments begin"). Windows without a note get "Weekly poll".
+The note is decorative only; nothing else (date-window game matching,
+WEEK_ORDER) reads it.
 """
 import argparse
 import json
@@ -55,7 +55,7 @@ def render_default_windows_dict(windows: dict) -> str:
 
     lines = ["_DEFAULT_POLL_WEEK_WINDOWS = {"]
     for label in labels:
-        start, end = windows[label]
+        start, end = windows[label][0], windows[label][1]  # ignore optional note
         field = f"'{label}':".ljust(field_width)
         lines.append(f"    {field}('{start}', '{end}'),")
     lines.append("}")
@@ -63,21 +63,14 @@ def render_default_windows_dict(windows: dict) -> str:
 
 
 def render_readme_table(windows: dict) -> str:
-    labels = list(windows.keys())
-    last_idx = len(labels) - 1
-
     lines = [
         "| `poll_week` | `week_number` | Represents | Game date window |",
         "|-------------|----------------|------------|-------------------|",
     ]
-    for i, label in enumerate(labels):
-        start, end = windows[label]
-        if i == 0:
-            represents = "Preseason poll"
-        elif i == last_idx:
-            represents = "Season-end poll"
-        else:
-            represents = "Weekly poll"
+    for i, label in enumerate(windows.keys()):
+        entry = windows[label]
+        start, end = entry[0], entry[1]
+        represents = entry[2] if len(entry) > 2 else "Weekly poll"
         lines.append(f"| `{label}` | {i} | {represents} | {start} – {end} |")
     return "\n".join(lines)
 
