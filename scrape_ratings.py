@@ -10,6 +10,7 @@ from bs4 import BeautifulSoup
 
 # Import centralized team name standardization
 from team_name_utils import standardize_team_names as apply_team_name_standardization
+from season_config import get_current_season
 
 # Paths / constants
 DATA_DIR = Path("data")
@@ -18,7 +19,8 @@ SOS_DIR = DATA_DIR / "sos"
 # Ensure directory exists
 SOS_DIR.mkdir(parents=True, exist_ok=True)
 
-URL_RATINGS = "https://www.sports-reference.com/cbb/seasons/women/2026-ratings.html"
+SEASON = get_current_season()
+URL_RATINGS = f"https://www.sports-reference.com/cbb/seasons/women/{SEASON}-ratings.html"
 MASTER_RATINGS = SOS_DIR / "ratings_master.csv"
 
 def strip_strings(df: pd.DataFrame) -> pd.DataFrame:

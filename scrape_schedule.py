@@ -22,6 +22,7 @@ import tempfile
 
 # Import centralized team name standardization
 from team_name_utils import standardize_team_names
+from season_config import get_current_season
 
 # Configuration
 DATA_DIR = Path("data")
@@ -51,8 +52,9 @@ def clean_and_rename_teams(df, team_cols):
     return df
 
 def download_parquet_data():
-    """Download the 2026 WBB Schedule Parquet file."""
-    url = "https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/schedules/parquet/wbb_schedule_2026.parquet"
+    """Download the current season's WBB Schedule Parquet file."""
+    season = get_current_season()
+    url = f"https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/schedules/parquet/wbb_schedule_{season}.parquet"
     print(f"Downloading data from: {url}")
     
     response = requests.get(url, timeout=60)

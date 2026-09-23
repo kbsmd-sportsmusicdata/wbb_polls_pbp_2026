@@ -13,6 +13,8 @@ This script transforms the polls_long.csv data into a Tableau-ready analytics ta
 
 Output: data/polls_analytics.csv
 """
+import json
+
 import pandas as pd
 from pathlib import Path
 from datetime import date, datetime
@@ -22,32 +24,40 @@ DATA_DIR = Path("data")
 POLLS_LONG = DATA_DIR / "polls_long.csv"
 POLLS_ANALYTICS = DATA_DIR / "polls_analytics.csv"
 SCHEDULE_FILTERED = DATA_DIR / "wbb_schedule" / "schedule_filtered.csv"
+POLL_WEEK_WINDOWS_CONFIG = Path("config") / "poll_week_windows.json"
 
-# Define chronological order of poll weeks for 2025-26 season
-# This is crucial for proper rank_change calculations
-WEEK_ORDER = {
-    'Pre': 0,      # Preseason
-    '11/10': 1,
-    '11/17': 2,
-    '11/24': 3,
-    '12/1': 4,
-    '12/8': 5,
-    '12/15': 6,
-    '12/22': 7,
-    '1/5': 8,
-    '1/12': 9,
-    '1/19': 10,
-    '1/26': 11,
-    '2/2': 12,
-    '2/9': 13,
-    '2/16': 14,
-    '2/23': 15,
-    '3/2': 16,
-    '3/9': 17,     # Conference tournaments begin
-    '3/16': 18,    # NCAA Tournament Round 1/2
-    'Final': 19,   # Sweet 16 / Elite 8 / Final Four / Championship (sports-reference labels this column 'Final')
-    'Post': 19,    # Alias: some seasons/sources use 'Post' for the same end-of-season slot
-}
+
+def _load_season_config() -> dict:
+    """Load config/poll_week_windows.json -- the single source of truth for
+    the current season number and the chronological poll_week list.
+
+    Update that file at the start of each season; WEEK_ORDER and SEASON below
+    are derived from it automatically, so nothing here needs to change.
+    """
+    with open(POLL_WEEK_WINDOWS_CONFIG) as f:
+        config = json.load(f)
+    if "season" not in config:
+        raise KeyError(f"'season' key missing from {POLL_WEEK_WINDOWS_CONFIG}")
+    if not config.get("windows"):
+        raise KeyError(f"'windows' key missing or empty in {POLL_WEEK_WINDOWS_CONFIG}")
+    return config
+
+
+_SEASON_CONFIG = _load_season_config()
+SEASON = _SEASON_CONFIG["season"]
+
+# Chronological order of poll weeks, derived from config/poll_week_windows.json's
+# "windows" keys in the order they're listed there -- that file already has to
+# list them chronologically for assign_poll_weeks() in build_polls_games_joined.py
+# (its date-window matching relies on the same "first match wins" order), so
+# WEEK_ORDER just reuses it instead of hand-duplicating a second copy.
+WEEK_ORDER = {label: i for i, label in enumerate(_SEASON_CONFIG["windows"].keys())}
+
+# Some seasons/sources label the season-ending poll 'Post' instead of 'Final'
+# (process_polls_historical.py / generate_analytics_historical.py treat both as
+# synonyms across different historical years) -- accept either, mapped to
+# whichever one is actually present in WEEK_ORDER for the current season.
+WEEK_ORDER_ALIASES = {'Post': 'Final', 'Final': 'Post'}
 
 
 def assign_week_number(poll_week: str) -> int:
@@ -66,12 +76,16 @@ def assign_week_number(poll_week: str) -> int:
     if poll_week in WEEK_ORDER:
         return WEEK_ORDER[poll_week]
 
+    alias = WEEK_ORDER_ALIASES.get(poll_week)
+    if alias in WEEK_ORDER:
+        return WEEK_ORDER[alias]
+
     # Poll week not found - this is an error that needs to be fixed
     # The fallback logic was buggy and could assign incorrect week numbers.
     # It's safer to require all poll weeks to be explicitly defined.
     raise ValueError(
         f"Poll week '{poll_week}' not found in WEEK_ORDER. "
-        f"Please update the WEEK_ORDER dictionary in {__file__} to ensure correct chronological sorting. "
+        f"Please update the \"windows\" in {POLL_WEEK_WINDOWS_CONFIG} to ensure correct chronological sorting. "
         f"Current defined weeks: {list(WEEK_ORDER.keys())}"
     )
 
@@ -332,7 +346,7 @@ def generate_analytics_table(polls_long_path: Path) -> pd.DataFrame:
     df_sorted.loc[df_sorted['rank_numeric'] == 26, 'ranked_streak'] = 0
 
     # Add season field
-    df_sorted['season'] = 2026
+    df_sorted['season'] = SEASON
 
     # Step 5: Calculate Team Identity (Recent Momentum)
     print("\nStep 5: Calculating Team Identity (Recent Momentum)...")

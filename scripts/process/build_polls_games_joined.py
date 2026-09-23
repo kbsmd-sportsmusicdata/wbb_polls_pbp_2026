@@ -68,6 +68,12 @@ CONF_ID_MAP = {
 # Poll week date windows (fallback values if config file not found)
 # Games played within these windows are attributed to that poll week.
 # RECOMMENDED: Update via config/poll_week_windows.json instead of editing here.
+#
+# GENERATED from config/poll_week_windows.json by scripts/sync_poll_week_config.py
+# -- do not hand-edit the dict below; edit the JSON and re-run that script (its
+# --check mode runs in CI and fails loudly if this drifts out of sync). This
+# exists purely as a last-resort fallback for if the JSON config is missing.
+# BEGIN GENERATED: poll_week_windows
 _DEFAULT_POLL_WEEK_WINDOWS = {
     'Pre':   ('2025-11-03', '2025-11-09'),
     '11/10': ('2025-11-03', '2025-11-16'),
@@ -90,6 +96,7 @@ _DEFAULT_POLL_WEEK_WINDOWS = {
     '3/16':  ('2026-03-16', '2026-03-22'),
     'Final': ('2026-03-23', '2026-04-06'),
 }
+# END GENERATED: poll_week_windows
 
 
 def load_poll_week_windows():
@@ -110,8 +117,11 @@ def load_poll_week_windows():
             with open(config_path, 'r') as f:
                 config = json.load(f)
                 windows = config.get('windows', {})
-                # Convert list format to tuple format
-                return {k: tuple(v) for k, v in windows.items()}
+                # Convert to (start, end) tuples. A window may carry an
+                # optional 3rd element (a display-only note for
+                # ANALYTICS_TABLE_README.md's generated table) -- ignore it
+                # here, date-window matching only ever needs start/end.
+                return {k: (v[0], v[1]) for k, v in windows.items()}
         except (json.JSONDecodeError, KeyError, TypeError) as e:
             print(f"  WARNING: Could not parse {config_path}: {e}")
             print(f"  → Falling back to hardcoded default windows")
