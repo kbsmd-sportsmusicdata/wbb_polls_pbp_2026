@@ -8,6 +8,8 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup, Comment
 
+from season_config import get_current_season
+
 # Paths / constants
 DATA_DIR = Path("data")
 STANDINGS_SPLIT_DIR = DATA_DIR / "standings_by_conf"
@@ -16,8 +18,9 @@ STANDINGS_COMBINED_DIR = DATA_DIR / "standings_full"
 for p in (STANDINGS_SPLIT_DIR, STANDINGS_COMBINED_DIR):
     p.mkdir(parents=True, exist_ok=True)
 
-URL_POLLS = "https://www.sports-reference.com/cbb/seasons/women/2026-polls.html"
-URL_STANDINGS = "https://www.sports-reference.com/cbb/seasons/women/2026-standings.html"
+SEASON = get_current_season()
+URL_POLLS = f"https://www.sports-reference.com/cbb/seasons/women/{SEASON}-polls.html"
+URL_STANDINGS = f"https://www.sports-reference.com/cbb/seasons/women/{SEASON}-standings.html"
 
 OUTPUT_DIR = "data"
 MASTER_POLLS_LONG = DATA_DIR / "polls_long.csv"

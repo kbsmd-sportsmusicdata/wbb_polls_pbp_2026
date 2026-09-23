@@ -3,6 +3,8 @@
   "_description": "Games played within these date windows are attributed to the corresponding poll week. Update these dates annually to match the AP Poll release schedule.",
   "_format": "Each entry: 'poll_week_label': ['start_date', 'end_date'] in YYYY-MM-DD format",
 
+  "season": 2026,
+
   "windows": {
     "Pre": ["2025-11-03", "2025-11-09"],
     "11/10": ["2025-11-03", "2025-11-16"],
@@ -26,5 +28,5 @@
     "Final": ["2026-03-23", "2026-04-06"]
   },
 
-  "_instructions": "To add new poll weeks as the season progresses, add entries below following the same format. Example: '3/23': ['2026-03-23', '2026-03-29']"
+  "_instructions": "To add new poll weeks as the season progresses, add entries below following the same format. Example: '3/23': ['2026-03-23', '2026-03-29']. At the start of a new season: (1) bump 'season' above to the new year -- season_config.py and every scraper's source URL read from it, so nothing else needs to change for that. (2) The 'windows' below usually can't be filled in until the season's actual AP poll release dates are known (typically not before the first poll of the new season) -- replace them once you have the real dates. generate_analytics_table.py's WEEK_ORDER is derived automatically from these 'windows' keys, in the order they're listed here, so this file is the only place the week list needs to be maintained."
 }
