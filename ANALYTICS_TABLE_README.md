@@ -25,8 +25,8 @@ This makes it trivial to build dashboards showing rank volatility, team trajecto
 | `season` | int | Basketball season year | 2026 |
 | `team` | str | Team name (standardized) | UConn |
 | `conference` | str | Conference abbreviation | Big East |
-| `poll_week` | str | Poll release week | Pre, 11/10, 1/19 |
-| `week_number` | int | Chronological week order (0=Pre, 1+) | 0, 1, 11 |
+| `poll_week` | str | Poll release week | Pre, 11/10, 1/19, Final |
+| `week_number` | int | Chronological week order (0=Pre, 1-18=dated weeks, 19=Final) | 0, 1, 11, 19 |
 | `rank` | float | Actual AP Poll rank (1-25) | 1.0 |
 | `rank_numeric` | int | Rank with 26 for unranked | 1 |
 | `prev_rank_numeric` | int | Previous week's rank_numeric | 3 |
@@ -36,6 +36,39 @@ This makes it trivial to build dashboards showing rank volatility, team trajecto
 | `ranked_streak` | int | Consecutive weeks currently ranked | 15 |
 | `run_date` | str | Date of data collection | 2026-01-22 |
 | `table_id` | int | Poll table (1=AP, 2=Coaches) | 2 |
+
+---
+
+## Poll Week Reference
+
+`poll_week` and `week_number` follow a fixed chronological order for the 2025-26 season (defined in `WEEK_ORDER` in `generate_analytics_table.py`, and mirrored by the date windows in `config/poll_week_windows.json` used to attribute games to a week in `polls_games_joined.csv`):
+
+| `poll_week` | `week_number` | Represents | Game date window |
+|-------------|----------------|------------|-------------------|
+| `Pre` | 0 | Preseason poll | 2025-11-03 – 2025-11-09 |
+| `11/10` | 1 | Weekly poll | 2025-11-03 – 2025-11-16 |
+| `11/17` | 2 | Weekly poll | 2025-11-17 – 2025-11-23 |
+| `11/24` | 3 | Weekly poll | 2025-11-24 – 2025-11-30 |
+| `12/1` | 4 | Weekly poll | 2025-12-01 – 2025-12-07 |
+| `12/8` | 5 | Weekly poll | 2025-12-08 – 2025-12-14 |
+| `12/15` | 6 | Weekly poll | 2025-12-15 – 2025-12-21 |
+| `12/22` | 7 | Weekly poll | 2025-12-22 – 2026-01-04 |
+| `1/5` | 8 | Weekly poll | 2026-01-05 – 2026-01-11 |
+| `1/12` | 9 | Weekly poll | 2026-01-12 – 2026-01-18 |
+| `1/19` | 10 | Weekly poll | 2026-01-19 – 2026-01-25 |
+| `1/26` | 11 | Weekly poll | 2026-01-26 – 2026-02-01 |
+| `2/2` | 12 | Weekly poll | 2026-02-02 – 2026-02-08 |
+| `2/9` | 13 | Weekly poll | 2026-02-09 – 2026-02-15 |
+| `2/16` | 14 | Weekly poll | 2026-02-16 – 2026-02-22 |
+| `2/23` | 15 | Weekly poll | 2026-02-23 – 2026-03-01 |
+| `3/2` | 16 | Weekly poll | 2026-03-02 – 2026-03-08 |
+| `3/9` | 17 | Conference tournaments begin | 2026-03-09 – 2026-03-15 |
+| `3/16` | 18 | NCAA Tournament Round 1/2 | 2026-03-16 – 2026-03-22 |
+| `Final` | 19 | Season-end poll (Round of 32 through Championship) | 2026-03-23 – 2026-04-06 |
+
+**About `Final` (week 19):** this is the AP's last poll of the season, released after the championship game, not a regular weekly release. On the source page (sports-reference.com), this column is literally labeled `Final` rather than a date — the same way `Pre` is a label rather than a date for the preseason poll. A team's `rank_change` into `Final` reflects everything since `3/16` at once (Round of 32 through the championship, not a single week), and `best_rank`/`worst_rank`/`rank_range` in `polls_games_joined.csv` are season-wide aggregates, so they update retroactively for every earlier row once a team's `Final` rank sets a new season-best or season-worst. `Post` is accepted as an alias for this same slot (`WEEK_ORDER['Post'] = 19`) in case a future season's source table uses that label instead of `Final`.
+
+**Careful with `poll_week.max()` / `MAX(poll_week)`:** `poll_week` is a string, and `'Pre'` and `'Final'` both sort ahead of every dated week alphabetically (`'P'` and `'F'` > any digit). A plain string max — as used for `latest_week` in the Python examples below — returns `'Pre'`, not the actual latest week. Use `week_number` (an int) to find the latest week instead: `df.loc[df['week_number'].idxmax(), 'poll_week']`.
 
 ---
 
@@ -302,6 +335,10 @@ The first poll week for each team will have:
 - `movement_category` = 'Unknown'
 
 This is expected behavior since there's no previous week to compare against.
+
+### Final Poll Week (Last Week, Uneven Spacing)
+
+The `Final` poll week (`week_number` 19) closes out the season and, unlike every other `poll_week`, isn't spaced one week after the row before it — `3/16` covers 2026-03-16 to 2026-03-22, then `Final` covers the season-ending window through 2026-04-06. If your analysis assumes uniform weekly spacing (a rolling average, "weeks since previous poll," etc.), account for `Final` separately rather than treating it like another regular week. See **Poll Week Reference** above for the full week-by-poll_week mapping.
 
 ### Unranked Teams (Rank 26)
 
