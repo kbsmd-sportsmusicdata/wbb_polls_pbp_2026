@@ -45,7 +45,8 @@ WEEK_ORDER = {
     '3/2': 16,
     '3/9': 17,     # Conference tournaments begin
     '3/16': 18,    # NCAA Tournament Round 1/2
-    'Post': 19,    # Sweet 16 / Elite 8 / Final Four / Championship
+    'Final': 19,   # Sweet 16 / Elite 8 / Final Four / Championship (sports-reference labels this column 'Final')
+    'Post': 19,    # Alias: some seasons/sources use 'Post' for the same end-of-season slot
 }
 
 

@@ -61,7 +61,7 @@ def is_week_col(col_label) -> bool:
     s_low = s.lower()
     if s_low in {"rk", "rank", "prev", "previous", "chng", "change", "conf", "conference", "school", "team"}:
         return False
-    if s_low in {"pre", "preseason"}:
+    if s_low in {"pre", "preseason", "post", "postseason", "final"}:
         return True
     if re.match(r"^\d{1,2}[\/\-.]\d{1,2}$", s):
         return True
