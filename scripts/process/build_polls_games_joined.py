@@ -402,10 +402,18 @@ def add_entry_exit_and_trigger(df):
     # For "Exited": prefer losses with lowest margin, then latest game
     is_win = (prev_week_games['game_Game Result'] == 'W').astype(int)
     is_loss = (prev_week_games['game_Game Result'] == 'L').astype(int)
-    is_entered = (prev_week_games['entry_exit_event'] == 'Entered').astype(int)
+    # 'entry_exit_event' (unsuffixed) is games_only's own per-game copy, which is
+    # almost always 'None' -- the merged-in event type is 'entry_exit_event_event'
+    # (see suffixes=('', '_event') above). Reading the wrong column here silently
+    # made every event use the "Exited" branch below, including real "Entered" ones.
+    is_entered = (prev_week_games['entry_exit_event_event'] == 'Entered').astype(int)
 
-    # Convert date to numeric for sorting (nanoseconds since epoch)
-    date_rank = prev_week_games['_gdate'].fillna(pd.Timestamp('1900-01-01')).astype(np.int64)
+    # Convert date to numeric for sorting (nanoseconds since epoch).
+    # pandas may infer a coarser datetime64 resolution (e.g. 'us') than 'ns' for
+    # these timestamps, which would make astype(np.int64) return values 1000x too
+    # small -- collapsing the date term into the same scale as the win/margin
+    # terms below instead of dominating them as intended. Force 'ns' explicitly.
+    date_rank = prev_week_games['_gdate'].fillna(pd.Timestamp('1900-01-01')).astype('datetime64[ns]').astype(np.int64)
 
     # Priority score calculation:
     # - For "Entered": wins (1e15) + margin (1e10) + date
