@@ -929,7 +929,7 @@
   <header>
     <p class="eyebrow">WBB Poll Analytics · 2026 Season</p>
     <h1>Top 25 in Motion</h1>
-    <p class="lede">Six live reads on the women's college basketball Top 25 — the whole poll's rank flow, one team's rank trajectory, the biggest movers, which conferences own the poll, who's steady vs. chaotic, and the season's upsets. Built from the <code>polls_analytics</code> and <code>polls_games_joined</code> datasets your GitHub Actions pipeline rebuilds every Tuesday and Saturday.</p>
+    <p class="lede">Six live reads on the women's college basketball Top 25 — the whole poll's rank flow, one team's rank trajectory, the biggest movers, which conferences own the poll, who's steady vs. chaotic, and the season's upsets.</p>
     <div class="statusbar">
       <span id="statuspill" class="pill snap"><span class="dot"></span><span id="statustext">Loading…</span></span>
       <span class="asof" id="asof"></span>
@@ -1019,8 +1019,10 @@
   </section>
 
   <footer>
-    <div class="fnote" id="updatenote"></div>
-    Source: <code>polls_analytics.csv</code> + <code>polls_games_joined.csv</code> in <b>kbsmd-sportsmusicdata/wbb_polls_pbp_2026</b>. Weekly progression (<code>table_id=2</code>) unioned with final standings (<code>table_id=1</code>); upsets from the joined games table. Logos from <code>data/assets</code>; a colored monogram stands in where a logo isn't bundled yet. Rank 26 = unranked. A prototype by Claude Design.
+    <details class="tabledisc"><summary>About the data &amp; this page</summary>
+      <div class="fnote" id="updatenote"></div>
+      <div style="margin-top:8px">Source: <code>polls_analytics.csv</code> + <code>polls_games_joined.csv</code> in <b>kbsmd-sportsmusicdata/wbb_polls_pbp_2026</b>. Weekly progression (<code>table_id=2</code>) unioned with final standings (<code>table_id=1</code>); upsets from the joined games table. Logos from <code>data/assets</code>; a colored monogram stands in where a logo isn't bundled yet. Rank 26 = unranked. A prototype by Claude Design.</div>
+    </details>
   </footer>
 </div>
 <div class="tt" id="tooltip" aria-hidden="true"></div>
