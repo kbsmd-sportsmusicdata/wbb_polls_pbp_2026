@@ -938,17 +938,8 @@
   </header>
 
   <nav class="chapnav" id="chapnav" aria-label="Dashboard sections">
-    <a href="#c-line">Rank Trajectory</a><a href="#c-bump">Rank Flow</a><a href="#c-bar">Biggest Movers</a><a href="#c-scatter">Volatility</a><a href="#c-upset">Upset Tracker</a><a href="#c-donut">Conference Share</a>
+    <a href="#c-bump">Rank Flow</a><a href="#c-line">Rank Trajectory</a><a href="#c-bar">Biggest Movers</a><a href="#c-scatter">Volatility</a><a href="#c-upset">Upset Tracker</a><a href="#c-donut">Conference Share</a>
   </nav>
-
-  <section class="card" id="c-line">
-    <div class="card-head">
-      <div><h2 id="lineTitle">Team Rank Trajectory</h2><p class="sub" id="lineSub"></p></div>
-      <div class="control"><label for="teamSel">Team</label><select class="team" id="teamSel"></select></div>
-    </div>
-    <div class="plot"><svg id="lineSvg" viewBox="0 0 780 430" role="img" aria-label="Line chart of a team's rank by poll week"></svg></div>
-    <details class="tabledisc"><summary>Show data table</summary><div class="dtable" id="lineTable"></div></details>
-  </section>
 
   <section class="card" id="c-bump">
     <div class="card-head">
@@ -961,6 +952,15 @@
     </div>
     <div class="plot"><svg id="bumpSvg" viewBox="0 0 780 460" role="img" aria-label="Bump chart of poll rank over time for the top teams"></svg></div>
     <details class="tabledisc"><summary>Show data table</summary><div class="dtable" id="bumpTable"></div></details>
+  </section>
+
+  <section class="card" id="c-line">
+    <div class="card-head">
+      <div><h2 id="lineTitle">Team Rank Trajectory</h2><p class="sub" id="lineSub"></p></div>
+      <div class="control"><label for="teamSel">Team</label><select class="team" id="teamSel"></select></div>
+    </div>
+    <div class="plot"><svg id="lineSvg" viewBox="0 0 780 430" role="img" aria-label="Line chart of a team's rank by poll week"></svg></div>
+    <details class="tabledisc"><summary>Show data table</summary><div class="dtable" id="lineTable"></div></details>
   </section>
 
   <section class="card" id="c-bar">
