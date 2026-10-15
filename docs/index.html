@@ -1258,7 +1258,7 @@
       var xv=X(d.net),bx=Math.min(x0,xv),bw=Math.max(2,Math.abs(xv-x0));
       var rect=el('rect',{x:bx,y:yc-barH/2,width:bw,height:barH,rx:3,fill:divColor(d.net),stroke:'var(--surface)','stroke-width':1}); rect.classList.add('hit');
       barSvg.appendChild(rect);
-      var right=d.net>=0; barSvg.appendChild(el('text',{x:xv+(right?8:-8),y:yc+4,'text-anchor':right?'start':'end',fill:'var(--ink)','font-family':'Oswald','font-weight':700,'font-size':13},arrow(d.net)+Math.abs(d.net)+(d.fire?'  🔥':'')));
+      var right=d.net>=0; barSvg.appendChild(el('text',{x:xv+(right?8:-8),y:yc+4,'text-anchor':right?'start':'end',fill:'var(--ink)','font-family':'Oswald','font-weight':500,'font-size':13},arrow(d.net)+Math.abs(d.net)+(d.fire?'  🔥':'')));
       (function(dd){ rect.addEventListener('mousemove',function(ev){ showTT(ttHead(dd.name+(dd.fire?' 🔥':''),dd.conf)+
         '<div class="trow"><span>Preseason</span><b>'+(dd.pre>25?'Unranked':'#'+dd.pre)+'</b></div><div class="trow"><span>Latest</span><b>#'+dd.latest+'</b></div><hr><div class="trow"><span>Net change</span><b>'+arrow(dd.net)+' '+Math.abs(dd.net)+'</b></div>',ev.clientX,ev.clientY); });
         rect.addEventListener('mouseleave',hideTT); })(d); });
