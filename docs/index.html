@@ -938,7 +938,7 @@
   </header>
 
   <nav class="chapnav" id="chapnav" aria-label="Dashboard sections">
-    <a href="#c-bump">Rank Flow</a><a href="#c-line">Rank Trajectory</a><a href="#c-bar">Biggest Movers</a><a href="#c-scatter">Volatility</a><a href="#c-upset">Upset Tracker</a><a href="#c-donut">Conference Share</a>
+    <a href="#c-bump">Rank Flow</a><a href="#c-line">Rank Trajectory</a><a href="#c-bar">Biggest Movers</a><a href="#c-donut">Conference Share</a><a href="#c-scatter">Volatility</a><a href="#c-upset">Upset Tracker</a>
   </nav>
 
   <section class="card" id="c-bump">
@@ -977,6 +977,16 @@
     <details class="tabledisc"><summary>Show data table</summary><div class="dtable" id="barTable"></div></details>
   </section>
 
+  <section class="card" id="c-donut">
+    <div class="card-head">
+      <div><h2 id="donutTitle">Conference Share of the Top 25</h2>
+        <p class="sub" id="donutSub">Share of the latest Top 25 by conference. Hover to see each conference's ranked teams.</p></div>
+    </div>
+    <div class="plot"><svg id="donutSvg" viewBox="0 0 780 300" role="img" aria-label="Bar chart of Top 25 share by conference"></svg></div>
+    <div class="legend" id="donutLegend"></div>
+    <details class="tabledisc"><summary>Show data table</summary><div class="dtable" id="donutTable"></div></details>
+  </section>
+
   <section class="card" id="c-scatter">
     <div class="card-head">
       <div><h2>Steady Hands &amp; Roller Coasters</h2>
@@ -1006,16 +1016,6 @@
     </div>
     <div class="feed" id="upFeed"></div>
     <details class="tabledisc"><summary>Show data table</summary><div class="dtable" id="upTable"></div></details>
-  </section>
-
-  <section class="card" id="c-donut">
-    <div class="card-head">
-      <div><h2 id="donutTitle">Conference Share of the Top 25</h2>
-        <p class="sub" id="donutSub">Share of the latest Top 25 by conference. Hover to see each conference's ranked teams.</p></div>
-    </div>
-    <div class="plot"><svg id="donutSvg" viewBox="0 0 780 300" role="img" aria-label="Bar chart of Top 25 share by conference"></svg></div>
-    <div class="legend" id="donutLegend"></div>
-    <details class="tabledisc"><summary>Show data table</summary><div class="dtable" id="donutTable"></div></details>
   </section>
 
   <footer>
