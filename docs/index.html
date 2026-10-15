@@ -1289,9 +1289,9 @@
     var mVol=teams.reduce(function(a,t){return a+t.vol;},0)/teams.length;
     scatterSvg.appendChild(el('line',{x1:X(mAvg),x2:X(mAvg),y1:mT,y2:H-mB,stroke:'var(--baseline)','stroke-width':1,'stroke-dasharray':'4 4'}));
     scatterSvg.appendChild(el('line',{x1:mL,x2:W-mR,y1:Y(mVol),y2:Y(mVol),stroke:'var(--baseline)','stroke-width':1,'stroke-dasharray':'4 4'}));
-    function ql(txt,x,y,anchor){ scatterSvg.appendChild(el('text',{x:x,y:y,'text-anchor':anchor,fill:'var(--muted)','font-size':10.5,'font-weight':700,'font-family':'Oswald','letter-spacing':'.08em',opacity:.85},txt)); }
-    ql('STEADY UNDERDOGS',mL+8,mT+16,'start');
-    ql('ELITE & CONSISTENT',W-mR-8,mT+16,'end');
+    function ql(txt,x,y,anchor){ var t=el('text',{x:x,y:y,'text-anchor':anchor,fill:'var(--muted)','font-size':10.5,'font-weight':700,'font-family':'Oswald','letter-spacing':'.08em'},txt); scatterSvg.appendChild(t); try{ var bb=t.getBBox(),px=7,py=3.5; scatterSvg.insertBefore(el('rect',{x:bb.x-px,y:bb.y-py,width:bb.width+2*px,height:bb.height+2*py,rx:(bb.height+2*py)/2,fill:'var(--surface)','fill-opacity':.9,stroke:'var(--grid)','stroke-width':1}),t); }catch(e){} }
+    ql('STEADY UNDERDOGS',mL+8,mT+11,'start');
+    ql('ELITE & CONSISTENT',W-mR-8,mT+11,'end');
     ql('ERRATIC & STRUGGLING',mL+8,H-mB-10,'start');
     ql('DANGEROUS, YET UNSTABLE',W-mR-8,H-mB-10,'end');
     var shown=teams.filter(function(t){ return !scatterFilter || t.conf===scatterFilter; });
