@@ -63,6 +63,18 @@ def find_col(cols, candidates: set[str]):
             return c
     return None
 
+# sports-reference has used both 'Final' and 'Post' as the header for the
+# season-ending poll column across different scrapes of the same season --
+# is_week_col() below accepts either, but without collapsing them to one
+# label here, a mid-season header change creates two polls_long.csv rows
+# (one 'Final', one 'Post') for what is actually the same poll week.
+_FINAL_WEEK_ALIASES = {"post", "postseason"}
+
+
+def canonicalize_week_label(poll_week: str) -> str:
+    return "Final" if poll_week.lower() in _FINAL_WEEK_ALIASES else poll_week
+
+
 def is_week_col(col_label) -> bool:
     s = normalize_col(col_label)
     s_low = s.lower()
@@ -161,7 +173,7 @@ def build_polls_long(polls_tables: list[pd.DataFrame], run_date: date) -> pd.Dat
             var_name="poll_week",
             value_name="rank",
         )
-        melted["poll_week"] = melted["poll_week"].map(normalize_col)
+        melted["poll_week"] = melted["poll_week"].map(normalize_col).map(canonicalize_week_label)
         rename_map = {school_col: "team"}
         if conf_col is not None:
             rename_map[conf_col] = "conference"

@@ -293,6 +293,12 @@ def generate_analytics_table(polls_long_path: Path) -> pd.DataFrame:
     df = pd.read_csv(polls_long_path)
     print(f"  ✓ Loaded {len(df)} rows (may contain duplicates)")
 
+    # Collapse 'Post'/'Postseason' into the canonical 'Final' label (see
+    # sportsref_scraper.py's canonicalize_week_label) so rows written before
+    # that normalization existed don't survive dedup as a second, orphaned
+    # week-19 row alongside the correctly-labeled 'Final' row for the same team.
+    df['poll_week'] = df['poll_week'].replace({'Post': 'Final', 'Postseason': 'Final'})
+
     # Step 1: Deduplicate - keep only latest run_date per team/poll_week
     print("\nStep 1: Deduplicating data...")
     print(f"  Original rows: {len(df)}")
