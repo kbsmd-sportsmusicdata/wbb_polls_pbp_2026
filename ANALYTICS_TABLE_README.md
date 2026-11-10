@@ -47,7 +47,7 @@ The table below is generated from that same file by `scripts/sync_poll_week_conf
 <!-- BEGIN GENERATED: poll_week_reference -->
 | `poll_week` | `week_number` | Represents | Game date window |
 |-------------|----------------|------------|-------------------|
-| `Pre` | 0 | Preseason poll | 2026-11-02 – 2026-11-08 |
+| `Pre` | 0 | Preseason poll | 2026-09-01 – 2026-11-08 |
 | `11/9` | 1 | Weekly poll | 2026-11-09 – 2026-11-15 |
 | `11/16` | 2 | Weekly poll | 2026-11-16 – 2026-11-22 |
 | `11/23` | 3 | Weekly poll | 2026-11-23 – 2026-11-29 |
