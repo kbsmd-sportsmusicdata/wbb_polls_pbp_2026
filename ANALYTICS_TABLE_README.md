@@ -26,7 +26,7 @@ This makes it trivial to build dashboards showing rank volatility, team trajecto
 | `team` | str | Team name (standardized) | UConn |
 | `conference` | str | Conference abbreviation | Big East |
 | `poll_week` | str | Poll release week | Pre, 11/10, 1/19, Final |
-| `week_number` | int | Chronological week order (0=Pre, 1-18=dated weeks, 19=Final) | 0, 1, 11, 19 |
+| `week_number` | int | Chronological week order (0=Pre, dated weeks in between, highest=Final) | 0, 1, 11 |
 | `rank` | float | Actual AP Poll rank (1-25) | 1.0 |
 | `rank_numeric` | int | Rank with 26 for unranked | 1 |
 | `prev_rank_numeric` | int | Previous week's rank_numeric | 3 |
@@ -41,35 +41,33 @@ This makes it trivial to build dashboards showing rank volatility, team trajecto
 
 ## Poll Week Reference
 
-`poll_week` and `week_number` follow a fixed chronological order for the 2025-26 season, sourced from `config/poll_week_windows.json`: `generate_analytics_table.py`'s `WEEK_ORDER` is derived from that file's `"windows"` keys (in listed order) at import time, and the same file's date windows are what `polls_games_joined.csv`'s build step uses to attribute games to a week. It's the single place to update at the start of a new season — see that file's own `_instructions`.
+`poll_week` and `week_number` follow a fixed chronological order for the current season, sourced from `config/poll_week_windows.json`: `generate_analytics_table.py`'s `WEEK_ORDER` is derived from that file's `"windows"` keys (in listed order) at import time, and the same file's date windows are what `polls_games_joined.csv`'s build step uses to attribute games to a week. It's the single place to update at the start of a new season — see that file's own `_instructions`.
 
 The table below is generated from that same file by `scripts/sync_poll_week_config.py` (`python scripts/sync_poll_week_config.py` after editing the JSON, then commit normally) — don't hand-edit it, it'll just get overwritten the next time that script runs.
 <!-- BEGIN GENERATED: poll_week_reference -->
 | `poll_week` | `week_number` | Represents | Game date window |
 |-------------|----------------|------------|-------------------|
-| `Pre` | 0 | Preseason poll | 2025-11-03 – 2025-11-09 |
-| `11/10` | 1 | Weekly poll | 2025-11-03 – 2025-11-16 |
-| `11/17` | 2 | Weekly poll | 2025-11-17 – 2025-11-23 |
-| `11/24` | 3 | Weekly poll | 2025-11-24 – 2025-11-30 |
-| `12/1` | 4 | Weekly poll | 2025-12-01 – 2025-12-07 |
-| `12/8` | 5 | Weekly poll | 2025-12-08 – 2025-12-14 |
-| `12/15` | 6 | Weekly poll | 2025-12-15 – 2025-12-21 |
-| `12/22` | 7 | Weekly poll | 2025-12-22 – 2026-01-04 |
-| `1/5` | 8 | Weekly poll | 2026-01-05 – 2026-01-11 |
-| `1/12` | 9 | Weekly poll | 2026-01-12 – 2026-01-18 |
-| `1/19` | 10 | Weekly poll | 2026-01-19 – 2026-01-25 |
-| `1/26` | 11 | Weekly poll | 2026-01-26 – 2026-02-01 |
-| `2/2` | 12 | Weekly poll | 2026-02-02 – 2026-02-08 |
-| `2/9` | 13 | Weekly poll | 2026-02-09 – 2026-02-15 |
-| `2/16` | 14 | Weekly poll | 2026-02-16 – 2026-02-22 |
-| `2/23` | 15 | Weekly poll | 2026-02-23 – 2026-03-01 |
-| `3/2` | 16 | Weekly poll | 2026-03-02 – 2026-03-08 |
-| `3/9` | 17 | Conference tournaments begin | 2026-03-09 – 2026-03-15 |
-| `3/16` | 18 | NCAA Tournament Round 1/2 | 2026-03-16 – 2026-03-22 |
-| `Final` | 19 | Season-end poll (Round of 32 through Championship) | 2026-03-23 – 2026-04-06 |
+| `Pre` | 0 | Preseason poll | 2026-11-02 – 2026-11-08 |
+| `11/9` | 1 | Weekly poll | 2026-11-09 – 2026-11-15 |
+| `11/16` | 2 | Weekly poll | 2026-11-16 – 2026-11-22 |
+| `11/23` | 3 | Weekly poll | 2026-11-23 – 2026-11-29 |
+| `11/30` | 4 | Weekly poll | 2026-11-30 – 2026-12-06 |
+| `12/7` | 5 | Weekly poll | 2026-12-07 – 2026-12-13 |
+| `12/14` | 6 | Weekly poll | 2026-12-14 – 2026-12-20 |
+| `12/21` | 7 | Weekly poll | 2026-12-21 – 2026-12-27 |
+| `12/28` | 8 | Weekly poll | 2026-12-28 – 2027-01-03 |
+| `1/4` | 9 | Weekly poll | 2027-01-04 – 2027-01-10 |
+| `1/11` | 10 | Weekly poll | 2027-01-11 – 2027-01-17 |
+| `1/18` | 11 | Weekly poll | 2027-01-18 – 2027-01-24 |
+| `1/25` | 12 | Weekly poll | 2027-01-25 – 2027-01-31 |
+| `2/1` | 13 | Weekly poll | 2027-02-01 – 2027-02-07 |
+| `2/8` | 14 | Weekly poll | 2027-02-08 – 2027-02-14 |
+| `2/15` | 15 | Weekly poll | 2027-02-15 – 2027-02-21 |
+| `2/22` | 16 | Weekly poll | 2027-02-22 – 2027-02-28 |
+| `3/1` | 17 | Weekly poll | 2027-03-01 – 2027-03-07 |
 <!-- END GENERATED: poll_week_reference -->
 
-**About `Final` (week 19):** this is the AP's last poll of the season, released after the championship game, not a regular weekly release. On the source page (sports-reference.com), this column is literally labeled `Final` rather than a date — the same way `Pre` is a label rather than a date for the preseason poll. A team's `rank_change` into `Final` reflects everything since `3/16` at once (Round of 32 through the championship, not a single week), and `best_rank`/`worst_rank`/`rank_range` in `polls_games_joined.csv` are season-wide aggregates, so they update retroactively for every earlier row once a team's `Final` rank sets a new season-best or season-worst. `Post` is accepted as an alias for this same slot (`WEEK_ORDER_ALIASES` in `generate_analytics_table.py`) in case a future season's source table uses that label instead of `Final`.
+**About `Final`** (the highest `week_number` in the table above, once that week exists): this is the AP's last poll of the season, released after the championship game, not a regular weekly release. On the source page (sports-reference.com), this column is literally labeled `Final` rather than a date — the same way `Pre` is a label rather than a date for the preseason poll. A team's `rank_change` into `Final` reflects everything since `3/16` at once (Round of 32 through the championship, not a single week), and `best_rank`/`worst_rank`/`rank_range` in `polls_games_joined.csv` are season-wide aggregates, so they update retroactively for every earlier row once a team's `Final` rank sets a new season-best or season-worst. `Post` is accepted as an alias for this same slot (`WEEK_ORDER_ALIASES` in `generate_analytics_table.py`) in case a future season's source table uses that label instead of `Final`.
 
 **Careful with `poll_week.max()` / `MAX(poll_week)`:** `poll_week` is a string, and `'Pre'` and `'Final'` both sort ahead of every dated week alphabetically (`'P'` and `'F'` > any digit). A plain string max — as used for `latest_week` in the Python examples below — returns `'Pre'`, not the actual latest week. Use `week_number` (an int) to find the latest week instead: `df.loc[df['week_number'].idxmax(), 'poll_week']`.
 

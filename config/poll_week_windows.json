@@ -1,32 +1,30 @@
 {
-  "_comment": "AP Poll Week Windows Configuration for WBB 2025-2026 Season",
+  "_comment": "AP Poll Week Windows Configuration for WBB 2026-2027 Season",
   "_description": "Games played within these date windows are attributed to the corresponding poll week. Update these dates annually to match the AP Poll release schedule.",
   "_format": "Each entry: 'poll_week_label': ['start_date', 'end_date'] in YYYY-MM-DD format, or ['start_date', 'end_date', 'note'] with an optional third element -- a short human-readable description shown in ANALYTICS_TABLE_README.md's generated Poll Week Reference table (e.g. 'Conference tournaments begin'). Omit it for an ordinary week; it defaults to 'Weekly poll' there. The note is decorative only -- nothing reads it for date-window matching.",
 
-  "season": 2026,
+  "season": 2027,
 
   "windows": {
-    "Pre": ["2025-11-03", "2025-11-09", "Preseason poll"],
-    "11/10": ["2025-11-03", "2025-11-16"],
-    "11/17": ["2025-11-17", "2025-11-23"],
-    "11/24": ["2025-11-24", "2025-11-30"],
-    "12/1": ["2025-12-01", "2025-12-07"],
-    "12/8": ["2025-12-08", "2025-12-14"],
-    "12/15": ["2025-12-15", "2025-12-21"],
-    "12/22": ["2025-12-22", "2026-01-04"],
-    "1/5": ["2026-01-05", "2026-01-11"],
-    "1/12": ["2026-01-12", "2026-01-18"],
-    "1/19": ["2026-01-19", "2026-01-25"],
-    "1/26": ["2026-01-26", "2026-02-01"],
-    "2/2": ["2026-02-02", "2026-02-08"],
-    "2/9": ["2026-02-09", "2026-02-15"],
-    "2/16": ["2026-02-16", "2026-02-22"],
-    "2/23": ["2026-02-23", "2026-03-01"],
-    "3/2": ["2026-03-02", "2026-03-08"],
-    "3/9": ["2026-03-09", "2026-03-15", "Conference tournaments begin"],
-    "3/16": ["2026-03-16", "2026-03-22", "NCAA Tournament Round 1/2"],
-    "Final": ["2026-03-23", "2026-04-06", "Season-end poll (Round of 32 through Championship)"]
+    "Pre": ["2026-11-02", "2026-11-08", "Preseason poll"],
+    "11/9": ["2026-11-09", "2026-11-15"],
+    "11/16": ["2026-11-16", "2026-11-22"],
+    "11/23": ["2026-11-23", "2026-11-29"],
+    "11/30": ["2026-11-30", "2026-12-06"],
+    "12/7": ["2026-12-07", "2026-12-13"],
+    "12/14": ["2026-12-14", "2026-12-20"],
+    "12/21": ["2026-12-21", "2026-12-27"],
+    "12/28": ["2026-12-28", "2027-01-03"],
+    "1/4": ["2027-01-04", "2027-01-10"],
+    "1/11": ["2027-01-11", "2027-01-17"],
+    "1/18": ["2027-01-18", "2027-01-24"],
+    "1/25": ["2027-01-25", "2027-01-31"],
+    "2/1": ["2027-02-01", "2027-02-07"],
+    "2/8": ["2027-02-08", "2027-02-14"],
+    "2/15": ["2027-02-15", "2027-02-21"],
+    "2/22": ["2027-02-22", "2027-02-28"],
+    "3/1": ["2027-03-01", "2027-03-07"]
   },
 
-  "_instructions": "To add new poll weeks as the season progresses, add entries below following the same format. Example: '3/23': ['2026-03-23', '2026-03-29'], or with a note: '3/23': ['2026-03-23', '2026-03-29', 'Conference tournaments begin']. At the start of a new season: (1) bump 'season' above to the new year -- season_config.py and every scraper's source URL read from it, so nothing else needs to change for that. (2) The 'windows' below usually can't be filled in until the season's actual AP poll release dates are known (typically not before the first poll of the new season) -- replace them once you have the real dates. generate_analytics_table.py's WEEK_ORDER is derived automatically from these 'windows' keys, in the order they're listed here, so this file is the only place the week list needs to be maintained. After editing 'windows', run 'python scripts/sync_poll_week_config.py' and commit the result -- CI fails loudly if you forget."
+  "_instructions": "To add new poll weeks as the season progresses, add entries below following the same format. Example: '3/8': ['2027-03-08', '2027-03-14'], or with a note: '3/8': ['2027-03-08', '2027-03-14', 'Conference tournaments begin']. At the start of a new season: (1) bump 'season' above to the new year -- season_config.py and every scraper's source URL read from it, so nothing else needs to change for that. (2) The 'windows' below usually can't be filled in until the season's actual AP poll release dates are known (typically not before the first poll of the new season) -- replace them once you have the real dates. generate_analytics_table.py's WEEK_ORDER is derived automatically from these 'windows' keys, in the order they're listed here, so this file is the only place the week list needs to be maintained. After editing 'windows', run 'python scripts/sync_poll_week_config.py' and commit the result -- CI fails loudly if you forget."
 }
