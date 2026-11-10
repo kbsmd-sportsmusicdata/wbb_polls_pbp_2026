@@ -75,7 +75,7 @@ CONF_ID_MAP = {
 # exists purely as a last-resort fallback for if the JSON config is missing.
 # BEGIN GENERATED: poll_week_windows
 _DEFAULT_POLL_WEEK_WINDOWS = {
-    'Pre':   ('2026-11-02', '2026-11-08'),
+    'Pre':   ('2026-09-01', '2026-11-08'),
     '11/9':  ('2026-11-09', '2026-11-15'),
     '11/16': ('2026-11-16', '2026-11-22'),
     '11/23': ('2026-11-23', '2026-11-29'),
@@ -637,8 +637,10 @@ def run_pipeline(polls_path, games_path, output_path, append=False, dry_run=Fals
     if 'Team' in games.columns and 'team' not in games.columns:
         games = games.rename(columns={'Team': 'team'})
 
-    # Load team-to-state mapping
-    state_mapping_path = os.path.join(os.path.dirname(polls_path), 'team_state_mapping.csv')
+    # Load team-to-state mapping. Not season-scoped -- which state a school is
+    # in doesn't change season to season, and the file only ever lives at the
+    # repo-level data/ dir, not under data/seasons/<label>/ alongside --polls.
+    state_mapping_path = os.path.join(script_dir, '../../data/team_state_mapping.csv')
     try:
         state_mapping = pd.read_csv(state_mapping_path)
         polls = polls.merge(state_mapping, on='team', how='left')

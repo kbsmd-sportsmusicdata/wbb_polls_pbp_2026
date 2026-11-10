@@ -46,11 +46,11 @@ jobs:
         run: python scrape_net_rankings.py || echo "NET rankings scraper failed (may require manual export)"
         continue-on-error: true
 
-      - name: Generate analytics table
-        run: python generate_analytics_table.py
-
       - name: Filter schedule to Top 50 teams
         run: python filter_schedule.py
+
+      - name: Generate analytics table
+        run: python generate_analytics_table.py
 
       - name: Build polls + games joined dataset
         run: |
