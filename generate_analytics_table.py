@@ -19,10 +19,18 @@ import pandas as pd
 from pathlib import Path
 from datetime import date, datetime
 
+from season_config import get_season_data_dir
+
 # Paths
 DATA_DIR = Path("data")
-POLLS_LONG = DATA_DIR / "polls_long.csv"
-POLLS_ANALYTICS = DATA_DIR / "polls_analytics.csv"
+# Season-scoped: data/ for the 2025-26 season (unchanged), data/seasons/<label>/
+# for any season after it -- see season_config.py. polls_long.csv and
+# polls_analytics.csv carry no season column, so they must not share a
+# location across season boundaries.
+SEASON_DATA_DIR = get_season_data_dir()
+POLLS_LONG = SEASON_DATA_DIR / "polls_long.csv"
+POLLS_ANALYTICS = SEASON_DATA_DIR / "polls_analytics.csv"
+# Not season-scoped -- schedule_filtered.csv stays at data/'s top level.
 SCHEDULE_FILTERED = DATA_DIR / "wbb_schedule" / "schedule_filtered.csv"
 POLL_WEEK_WINDOWS_CONFIG = Path("config") / "poll_week_windows.json"
 
@@ -284,6 +292,12 @@ def generate_analytics_table(polls_long_path: Path) -> pd.DataFrame:
     # Read data
     df = pd.read_csv(polls_long_path)
     print(f"  ✓ Loaded {len(df)} rows (may contain duplicates)")
+
+    # Collapse 'Post'/'Postseason' into the canonical 'Final' label (see
+    # sportsref_scraper.py's canonicalize_week_label) so rows written before
+    # that normalization existed don't survive dedup as a second, orphaned
+    # week-19 row alongside the correctly-labeled 'Final' row for the same team.
+    df['poll_week'] = df['poll_week'].replace({'Post': 'Final', 'Postseason': 'Final'})
 
     # Step 1: Deduplicate - keep only latest run_date per team/poll_week
     print("\nStep 1: Deduplicating data...")

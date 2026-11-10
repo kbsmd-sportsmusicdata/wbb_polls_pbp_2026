@@ -8,6 +8,15 @@ by comparing against the authoritative conference ID mapping table.
 
 import pandas as pd
 import sys
+from pathlib import Path
+
+# season_config.py lives at the repo root; running this script directly
+# (python scripts/validate_conference_mapping.py) does not put the repo root
+# on sys.path, only this file's own directory -- add it explicitly.
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from season_config import get_season_data_dir
+
+POLLS_GAMES_JOINED = get_season_data_dir() / "polls_games_joined.csv"
 
 # Authoritative conference ID mapping from user-provided table
 CORRECT_CONF_ID_MAP = {
@@ -90,7 +99,7 @@ def validate_conference_mapping():
     print("2. VALIDATING polls_games_joined.csv")
     print("-" * 80)
 
-    df = pd.read_csv('data/polls_games_joined.csv')
+    df = pd.read_csv(POLLS_GAMES_JOINED)
 
     print(f"\nTotal records: {len(df):,}")
     print(f"Unique opponents: {df['game_Opponent'].nunique():,}")

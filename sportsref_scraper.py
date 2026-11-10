@@ -8,10 +8,14 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup, Comment
 
-from season_config import get_current_season
+from season_config import get_current_season, get_season_data_dir
 
-# Paths / constants
-DATA_DIR = Path("data")
+# Paths / constants.
+# DATA_DIR resolves to data/ for the 2025-26 season (unchanged) and to
+# data/seasons/<label>/ for any season after it -- see season_config.py.
+# Every path below is season-scoped (none of this file's outputs carry a
+# season column), so they all key off the same DATA_DIR.
+DATA_DIR = get_season_data_dir()
 STANDINGS_SPLIT_DIR = DATA_DIR / "standings_by_conf"
 STANDINGS_COMBINED_DIR = DATA_DIR / "standings_full"
 
@@ -22,7 +26,7 @@ SEASON = get_current_season()
 URL_POLLS = f"https://www.sports-reference.com/cbb/seasons/women/{SEASON}-polls.html"
 URL_STANDINGS = f"https://www.sports-reference.com/cbb/seasons/women/{SEASON}-standings.html"
 
-OUTPUT_DIR = "data"
+OUTPUT_DIR = DATA_DIR
 MASTER_POLLS_LONG = DATA_DIR / "polls_long.csv"
 MASTER_STANDINGS_LONG = DATA_DIR / "standings_long.csv"
 
@@ -58,6 +62,18 @@ def find_col(cols, candidates: set[str]):
         if normalize_col(c).lower() in candidates:
             return c
     return None
+
+# sports-reference has used both 'Final' and 'Post' as the header for the
+# season-ending poll column across different scrapes of the same season --
+# is_week_col() below accepts either, but without collapsing them to one
+# label here, a mid-season header change creates two polls_long.csv rows
+# (one 'Final', one 'Post') for what is actually the same poll week.
+_FINAL_WEEK_ALIASES = {"post", "postseason"}
+
+
+def canonicalize_week_label(poll_week: str) -> str:
+    return "Final" if poll_week.lower() in _FINAL_WEEK_ALIASES else poll_week
+
 
 def is_week_col(col_label) -> bool:
     s = normalize_col(col_label)
@@ -157,7 +173,7 @@ def build_polls_long(polls_tables: list[pd.DataFrame], run_date: date) -> pd.Dat
             var_name="poll_week",
             value_name="rank",
         )
-        melted["poll_week"] = melted["poll_week"].map(normalize_col)
+        melted["poll_week"] = melted["poll_week"].map(normalize_col).map(canonicalize_week_label)
         rename_map = {school_col: "team"}
         if conf_col is not None:
             rename_map[conf_col] = "conference"

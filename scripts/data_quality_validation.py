@@ -10,6 +10,15 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 import sys
+from pathlib import Path
+
+# season_config.py lives at the repo root; running this script directly
+# (python scripts/data_quality_validation.py) does not put the repo root on
+# sys.path, only this file's own directory -- add it explicitly.
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from season_config import get_season_data_dir
+
+POLLS_GAMES_JOINED = get_season_data_dir() / "polls_games_joined.csv"
 
 # Conference mapping for validation
 CONF_ID_MAP = {
@@ -30,9 +39,9 @@ def validate_dataset():
     print("=" * 80)
 
     # Load dataset
-    df = pd.read_csv('data/polls_games_joined.csv')
+    df = pd.read_csv(POLLS_GAMES_JOINED)
 
-    print(f"\nDataset: data/polls_games_joined.csv")
+    print(f"\nDataset: {POLLS_GAMES_JOINED}")
     print(f"  Rows: {len(df):,}")
     print(f"  Columns: {len(df.columns)}")
     print(f"  Size: {df.memory_usage(deep=True).sum() / 1024:.1f} KB")

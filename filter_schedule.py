@@ -24,6 +24,7 @@ import pandas as pd
 
 # Import centralized team name standardization
 from team_name_utils import standardize_team_names
+from season_config import get_season_data_dir
 
 # Configure logging
 logging.basicConfig(
@@ -34,7 +35,8 @@ logger = logging.getLogger(__name__)
 
 # Constants
 SCHEDULE_PATH = Path("data/wbb_schedule_master.parquet")
-POLLS_PATH = Path("data/polls_analytics.csv")
+# Season-scoped -- see season_config.py.
+POLLS_PATH = get_season_data_dir() / "polls_analytics.csv"
 NET_RANKINGS_PATH = Path("data/net_rankings/net_rankings_master.csv")
 OUTPUT_PATH = Path("data/wbb_schedule/schedule_filtered.csv")
 TOP_N_TEAMS = 50  # Include Top 50 teams

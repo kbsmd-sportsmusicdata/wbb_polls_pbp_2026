@@ -1030,8 +1030,20 @@
 <script>
 (function(){
   "use strict";
-  var RAW_URL="https://raw.githubusercontent.com/kbsmd-sportsmusicdata/wbb_polls_pbp_2026/main/data/polls_analytics.csv";
-  var JOINED_URL="https://raw.githubusercontent.com/kbsmd-sportsmusicdata/wbb_polls_pbp_2026/main/data/polls_games_joined.csv";
+  var BASE_RAW="https://raw.githubusercontent.com/kbsmd-sportsmusicdata/wbb_polls_pbp_2026/main/";
+  // Mirrors season_config.py's LEGACY_TOP_LEVEL_SEASON: the 2025-26 season's
+  // files live at data/'s top level; any season after it lives under
+  // data/seasons/<label>/ instead. Resolved from config/poll_week_windows.json
+  // on every live-fetch attempt, so this page never needs its own edit when
+  // the season rolls over.
+  var LEGACY_TOP_LEVEL_SEASON=2026;
+  function resolveSeasonDataUrls(signal){
+    return fetch(BASE_RAW+"config/poll_week_windows.json",{signal:signal,cache:'no-store'})
+      .then(function(r){ if(!r.ok) throw 0; return r.json(); })
+      .then(function(cfg){ var season=cfg.season,prefix="data/";
+        if(season>LEGACY_TOP_LEVEL_SEASON){ prefix="data/seasons/"+(season-1)+"-"+String(season).slice(2)+"/"; }
+        return { raw: BASE_RAW+prefix+"polls_analytics.csv", joined: BASE_RAW+prefix+"polls_games_joined.csv" }; });
+  }
   var SVGNS="http://www.w3.org/2000/svg";
   var LOGOS={}; try{ LOGOS=JSON.parse(document.getElementById('logos').textContent||'{}'); }catch(e){ LOGOS={}; }
   var UPSETS=[]; try{ UPSETS=JSON.parse(document.getElementById('upsetsnap').textContent||'[]'); UPSETS.forEach(function(u){ u.w=canon(u.w); u.l=canon(u.l); }); }catch(e){ UPSETS=[]; }
@@ -1419,12 +1431,13 @@
   function loadInitial(){ var raw=document.getElementById('snap').textContent.trim(); MODEL=buildModel(parseCSV(raw));
     populateTeams(MODEL); renderAll(); setStatus('snap',MODEL.asof,NOTE_SNAP); tryLive(false); }
   function tryLive(user){ var ctrl=new AbortController(),to=setTimeout(function(){ctrl.abort();},7000);
-    fetch(RAW_URL,{signal:ctrl.signal,cache:'no-store'}).then(function(r){ if(!r.ok) throw 0; return r.text(); })
-      .then(function(text){ clearTimeout(to); var m=buildModel(parseCSV(text)); if(!m.weeks.length) throw 0;
-        MODEL=m; populateTeams(MODEL); renderAll(); setStatus('live',MODEL.asof,NOTE_LIVE);
-        // upsets live (best-effort)
-        fetch(JOINED_URL,{cache:'no-store'}).then(function(r){ if(!r.ok) throw 0; return r.text(); })
-          .then(function(t2){ var u=extractUpsets(t2); if(u){ UPSETS=u; renderUpsets(); } }).catch(function(){}); })
+    resolveSeasonDataUrls(ctrl.signal).then(function(urls){
+      return fetch(urls.raw,{signal:ctrl.signal,cache:'no-store'}).then(function(r){ if(!r.ok) throw 0; return r.text(); })
+        .then(function(text){ clearTimeout(to); var m=buildModel(parseCSV(text)); if(!m.weeks.length) throw 0;
+          MODEL=m; populateTeams(MODEL); renderAll(); setStatus('live',MODEL.asof,NOTE_LIVE);
+          // upsets live (best-effort)
+          fetch(urls.joined,{cache:'no-store'}).then(function(r){ if(!r.ok) throw 0; return r.text(); })
+            .then(function(t2){ var u=extractUpsets(t2); if(u){ UPSETS=u; renderUpsets(); } }).catch(function(){}); }); })
       .catch(function(){ clearTimeout(to); if(user){ document.getElementById('statustext').textContent='Snapshot · live fetch blocked here'; document.getElementById('statuspill').className='pill snap'; } }); }
   document.getElementById('teamSel').addEventListener('change',function(e){ CURRENT_TEAM=e.target.value; drawLine(MODEL,CURRENT_TEAM); });
   document.getElementById('segBump').addEventListener('click',function(e){ var b=e.target.closest('button'); if(!b) return; bumpN=+b.dataset.n; bumpHover=null;
