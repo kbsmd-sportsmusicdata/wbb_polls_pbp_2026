@@ -54,10 +54,11 @@ jobs:
 
       - name: Build polls + games joined dataset
         run: |
+          SEASON_DATA_DIR=$(python3 -c "from season_config import get_season_data_dir; print(get_season_data_dir())")
           python scripts/process/build_polls_games_joined.py \
-            --polls data/polls_analytics.csv \
+            --polls "$SEASON_DATA_DIR/polls_analytics.csv" \
             --games data/wbb_schedule/schedule_filtered.csv \
-            --output data/polls_games_joined.csv
+            --output "$SEASON_DATA_DIR/polls_games_joined.csv"
 
       - name: Update Google Sheets
         env:

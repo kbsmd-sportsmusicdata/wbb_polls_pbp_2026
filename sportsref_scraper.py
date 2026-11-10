@@ -8,10 +8,14 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup, Comment
 
-from season_config import get_current_season
+from season_config import get_current_season, get_season_data_dir
 
-# Paths / constants
-DATA_DIR = Path("data")
+# Paths / constants.
+# DATA_DIR resolves to data/ for the 2025-26 season (unchanged) and to
+# data/seasons/<label>/ for any season after it -- see season_config.py.
+# Every path below is season-scoped (none of this file's outputs carry a
+# season column), so they all key off the same DATA_DIR.
+DATA_DIR = get_season_data_dir()
 STANDINGS_SPLIT_DIR = DATA_DIR / "standings_by_conf"
 STANDINGS_COMBINED_DIR = DATA_DIR / "standings_full"
 
@@ -22,7 +26,7 @@ SEASON = get_current_season()
 URL_POLLS = f"https://www.sports-reference.com/cbb/seasons/women/{SEASON}-polls.html"
 URL_STANDINGS = f"https://www.sports-reference.com/cbb/seasons/women/{SEASON}-standings.html"
 
-OUTPUT_DIR = "data"
+OUTPUT_DIR = DATA_DIR
 MASTER_POLLS_LONG = DATA_DIR / "polls_long.csv"
 MASTER_STANDINGS_LONG = DATA_DIR / "standings_long.csv"
 
