@@ -1,4 +1,340 @@
 id,date,Team,Opponent,Location,Game Result,Team Score,Opponent Score,Team Logo,Opponent Logo,Team Rank,Opponent Rank,Team Conf ID,Opponent Conf ID,Overall Record,Conf Record,is_conf_game,type_id,notes_headline,status_type_name,home_conference_id,home_winner,home_current_rank,home_records,away_conference_id,away_winner,away_current_rank,away_records,groups_id,groups_short_name,Team Abbreviation,Opponent Abbreviation,Team Color,Opponent Color,Team Alt Color,Opponent Alt Color,home_abbreviation,home_color,home_alternate_color,away_abbreviation,away_color,away_alternate_color,game_json_url,game_date,PBP,team_box,player_box
+401913056,2026-11-13T03:30Z,UCLA,Arizona,Home,W,76,44,https://a.espncdn.com/i/teamlogos/ncaa/500/26.png,https://a.espncdn.com/i/teamlogos/ncaa/500/12.png,10,99,7.0,8.0,,,False,1,,STATUS_FINAL,7.0,True,10,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",8.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,UCLA,ARIZ,2774ae,cc0033,f2a900,003366,UCLA,2774ae,f2a900,ARIZ,cc0033,003366,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401913056.json,2026-11-13T03:30Z,True,,
+401921495,2026-11-13T03:00Z,Washington,Cal State Bakersfield,Home,W,85,51,https://a.espncdn.com/i/teamlogos/ncaa/500/264.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2934.png,16,99,7.0,9.0,,,False,1,,STATUS_FINAL,7.0,True,16,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",9.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,WASH,CSUB,33006f,003BAB,e8d3a2,,WASH,33006f,e8d3a2,CSUB,003BAB,,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401921495.json,2026-11-13T03:00Z,True,,
+401919981,2026-11-13T01:30Z,Iowa,Northern Iowa,Home,W,78,40,https://a.espncdn.com/i/teamlogos/ncaa/500/2294.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2460.png,10,99,7.0,18.0,,,False,1,,STATUS_FINAL,7.0,True,10,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",18.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-2'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-2'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,IOWA,UNI,231f20,473282,fcd116,ffffff,IOWA,231f20,fcd116,UNI,473282,ffffff,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401919981.json,2026-11-13T01:30Z,True,,
+401918465,2026-11-13T01:00Z,Baylor,Prairie View A&M,Home,W,121,43,https://a.espncdn.com/i/teamlogos/ncaa/500/239.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2504.png,99,99,8.0,26.0,,,False,1,,STATUS_FINAL,8.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '4-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '4-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",26.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,BAY,PV,154734,582c83,ffb81c,eaaa00,BAY,154734,ffb81c,PV,582c83,eaaa00,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401918465.json,2026-11-13T01:00Z,True,,
+401906078,2026-11-13T01:00Z,Louisville,Ball State,Away,W,94,73,https://a.espncdn.com/i/teamlogos/ncaa/500/97.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2050.png,7,99,2.0,14.0,,,False,1,,STATUS_FINAL,14.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-2'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-2'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",2.0,True,7,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '5-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '2-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,LOU,BALL,c9001f,ba0c2f,ffffff,ffffff,BALL,ba0c2f,ffffff,LOU,c9001f,ffffff,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401906078.json,2026-11-13T01:00Z,True,,
+401917929,2026-11-13T00:30Z,Iowa State,Howard,Home,W,77,55,https://a.espncdn.com/i/teamlogos/ncaa/500/66.png,https://a.espncdn.com/i/teamlogos/ncaa/500/47.png,99,99,8.0,16.0,,,False,1,,STATUS_FINAL,8.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '4-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '4-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",16.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-3'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-3'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,ISU,HOW,ae192d,003a63,ffc72a,e51937,ISU,ae192d,ffc72a,HOW,003a63,e51937,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401917929.json,2026-11-13T00:30Z,True,,
+401917941,2026-11-13T00:30Z,TCU,SE Louisiana,Home,W,106,47,https://a.espncdn.com/i/teamlogos/ncaa/500/2628.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2545.png,15,99,8.0,25.0,,,False,1,,STATUS_FINAL,8.0,True,15,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '5-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '5-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",25.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-2'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-2'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,TCU,SELA,4d1979,215732,ffffff,ffc72c,TCU,4d1979,ffffff,SELA,215732,ffc72c,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401917941.json,2026-11-13T00:30Z,True,,
+401923470,2026-11-13T00:00Z,Villanova,Merrimack,Home,W,97,44,https://a.espncdn.com/i/teamlogos/ncaa/500/222.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2771.png,99,99,4.0,13.0,,,False,1,,STATUS_FINAL,4.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-2'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",13.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-4'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-1'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-3'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,VILL,MRMK,00205b,2f4f93,13b5ea,e8c535,VILL,00205b,13b5ea,MRMK,2f4f93,e8c535,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401923470.json,2026-11-13T00:00Z,True,,
+401919324,2026-11-13T00:00Z,Columbia,Michigan,Home,L,58,81,https://a.espncdn.com/i/teamlogos/ncaa/500/171.png,https://a.espncdn.com/i/teamlogos/ncaa/500/130.png,99,2,12.0,7.0,,,False,1,,STATUS_FINAL,12.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-1'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",7.0,True,2,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,COLU,MICH,7ba4db,00274c,183863,ffcb05,COLU,7ba4db,183863,MICH,00274c,ffcb05,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401919324.json,2026-11-13T00:00Z,True,,
+401915886,2026-11-13T00:00Z,Clemson,South Carolina,Home,L,44,65,https://a.espncdn.com/i/teamlogos/ncaa/500/228.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2579.png,99,1,2.0,23.0,,,False,1,,STATUS_FINAL,2.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-1'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",23.0,True,1,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,CLEM,SC,f56600,73000a,ffffff,000000,CLEM,f56600,ffffff,SC,73000a,000000,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401915886.json,2026-11-13T00:00Z,True,,
+401912992,2026-11-13T00:00Z,Alabama,Memphis,Away,L,70,75,https://a.espncdn.com/i/teamlogos/ncaa/500/333.png,https://a.espncdn.com/i/teamlogos/ncaa/500/235.png,99,99,23.0,62.0,,,False,1,,STATUS_FINAL,62.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '4-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '4-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",23.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '4-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,ALA,MEM,9e1b32,004991,ffffff,8e908f,MEM,004991,8e908f,ALA,9e1b32,ffffff,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401912992.json,2026-11-13T00:00Z,True,,
+401915775,2026-11-13T00:00Z,Rhode Island,Wagner,Away,W,88,38,https://a.espncdn.com/i/teamlogos/ncaa/500/227.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2681.png,99,99,3.0,19.0,,,False,1,,STATUS_FINAL,19.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-3'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-1'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-2'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",3.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-2'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,URI,WAG,091f3f,00483A,5ab3e8,ffffff,WAG,00483A,ffffff,URI,091f3f,5ab3e8,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401915775.json,2026-11-13T00:00Z,True,,
+401915886,2026-11-13T00:00Z,South Carolina,Clemson,Away,W,65,44,https://a.espncdn.com/i/teamlogos/ncaa/500/2579.png,https://a.espncdn.com/i/teamlogos/ncaa/500/228.png,1,99,23.0,2.0,,,False,1,,STATUS_FINAL,2.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-1'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",23.0,True,1,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,SC,CLEM,73000a,f56600,000000,ffffff,CLEM,f56600,ffffff,SC,73000a,000000,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401915886.json,2026-11-13T00:00Z,True,,
+401919324,2026-11-13T00:00Z,Michigan,Columbia,Away,W,81,58,https://a.espncdn.com/i/teamlogos/ncaa/500/130.png,https://a.espncdn.com/i/teamlogos/ncaa/500/171.png,2,99,7.0,12.0,,,False,1,,STATUS_FINAL,12.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-1'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",7.0,True,2,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,MICH,COLU,00274c,7ba4db,ffcb05,183863,COLU,7ba4db,183863,MICH,00274c,ffcb05,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401919324.json,2026-11-13T00:00Z,True,,
+401915908,2026-11-13T00:00Z,Duke,Norfolk State,Away,W,85,23,https://a.espncdn.com/i/teamlogos/ncaa/500/150.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2450.png,5,99,2.0,16.0,,,False,1,,STATUS_FINAL,16.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-3'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-3'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",2.0,True,5,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,DUKE,NORF,00539b,0c8968,ffffff,fdb813,NORF,0c8968,fdb813,DUKE,00539b,ffffff,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401915908.json,2026-11-13T00:00Z,True,,
+401911739,2026-11-12T23:30Z,UConn,Ohio State,Away,W,87,55,https://a.espncdn.com/i/teamlogos/ncaa/500/41.png,https://a.espncdn.com/i/teamlogos/ncaa/500/194.png,4,17,4.0,7.0,,,False,1,,STATUS_FINAL,7.0,False,17,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-1'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",4.0,True,4,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,CONN,OSU,0c2340,ba0c2f,a2aaad,a8adb4,OSU,ba0c2f,a8adb4,CONN,0c2340,a2aaad,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401911739.json,2026-11-12T23:30Z,True,,
+401912955,2026-11-12T23:30Z,Tennessee,Middle Tennessee,Home,W,110,64,https://a.espncdn.com/i/teamlogos/ncaa/500/2633_ncw.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2393.png,99,99,23.0,11.0,,,False,1,,STATUS_FINAL,23.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '4-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",11.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-2'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-2'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,TENN,MTSU,ff8200,036eb7,ffffff,ffffff,TENN,ff8200,ffffff,MTSU,036eb7,ffffff,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401912955.json,2026-11-12T23:30Z,True,,
+401911739,2026-11-12T23:30Z,Ohio State,UConn,Home,L,55,87,https://a.espncdn.com/i/teamlogos/ncaa/500/194.png,https://a.espncdn.com/i/teamlogos/ncaa/500/41.png,17,4,7.0,4.0,,,False,1,,STATUS_FINAL,7.0,False,17,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-1'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",4.0,True,4,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,OSU,CONN,ba0c2f,0c2340,a8adb4,a2aaad,OSU,ba0c2f,a8adb4,CONN,0c2340,a2aaad,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401911739.json,2026-11-12T23:30Z,True,,
+401907049,2026-11-12T23:00Z,Oklahoma State,Tulsa,Away,L,62,64,https://a.espncdn.com/i/teamlogos/ncaa/500/197.png,https://a.espncdn.com/i/teamlogos/ncaa/500/202.png,19,99,8.0,62.0,,,False,1,,STATUS_FINAL,62.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-1'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",8.0,False,19,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,OKST,TLSA,fe5c00,003595,000000,d0b787,TLSA,003595,d0b787,OKST,fe5c00,000000,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401907049.json,2026-11-12T23:00Z,True,,
+401915783,2026-11-12T23:00Z,Virginia Tech,VCU,Away,W,77,66,https://a.espncdn.com/i/teamlogos/ncaa/500/259.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2670.png,99,99,2.0,3.0,,,False,1,,STATUS_FINAL,3.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-1'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",2.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '4-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,VT,VCU,6a2c3e,ffaf00,cf4520,000000,VCU,ffaf00,000000,VT,6a2c3e,cf4520,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401915783.json,2026-11-12T23:00Z,True,,
+401913678,2026-11-12T23:00Z,Richmond,Old Dominion,Home,W,90,67,https://a.espncdn.com/i/teamlogos/ncaa/500/257.png,https://a.espncdn.com/i/teamlogos/ncaa/500/295.png,99,99,3.0,27.0,,,False,1,,STATUS_FINAL,3.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-2'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-2'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",27.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,RICH,ODU,9e0712,003768,b90b2e,a1d2f1,RICH,9e0712,b90b2e,ODU,003768,a1d2f1,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401913678.json,2026-11-12T23:00Z,True,,
+401906893,2026-11-12T23:00Z,Florida,South Florida,Home,L,70,72,https://a.espncdn.com/i/teamlogos/ncaa/500/57.png,https://a.espncdn.com/i/teamlogos/ncaa/500/58.png,99,99,23.0,62.0,,,False,1,,STATUS_FINAL,23.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-1'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",62.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '2-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,FLA,USF,0021a5,006747,fa4616,cfc493,FLA,0021a5,fa4616,USF,006747,cfc493,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401906893.json,2026-11-12T23:00Z,True,,
+401923475,2026-11-12T03:00Z,Colorado,San Diego State,Away,W,64,55,https://a.espncdn.com/i/teamlogos/ncaa/500/38.png,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,99,99,8.0,21.0,,,False,1,,STATUS_FINAL,21.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-1'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",8.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,COLO,SDSU,cfb87c,a6192e,000000,000000,SDSU,a6192e,000000,COLO,cfb87c,000000,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401923475.json,2026-11-12T03:00Z,True,,
+401918856,2026-11-12T00:30Z,Mississippi State,Troy,Home,W,79,57,https://a.espncdn.com/i/teamlogos/ncaa/500/344.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2653.png,99,99,23.0,27.0,,,False,1,,STATUS_FINAL,23.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",27.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,MSST,TROY,5d1725,862633,c1c6c8,b1b1b1,MSST,5d1725,c1c6c8,TROY,862633,b1b1b1,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401918856.json,2026-11-12T00:30Z,True,,
+401918829,2026-11-12T00:30Z,Vanderbilt,Western Kentucky,Home,W,101,59,https://a.espncdn.com/i/teamlogos/ncaa/500/238.png,https://a.espncdn.com/i/teamlogos/ncaa/500/98.png,8,99,23.0,11.0,,,False,1,,STATUS_FINAL,23.0,True,8,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '4-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '4-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",11.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,VAN,WKU,000000,e13a3e,cfae70,ffffff,VAN,000000,cfae70,WKU,e13a3e,ffffff,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401918829.json,2026-11-12T00:30Z,True,,
+401918842,2026-11-12T00:00Z,Texas,South Dakota State,Home,W,93,63,https://a.espncdn.com/i/teamlogos/ncaa/500/251.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2571.png,6,99,23.0,47.0,,,False,1,,STATUS_FINAL,23.0,True,6,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",47.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-2'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-1'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,TEX,SDST,af5c37,0033a0,ffffff,ffd100,TEX,af5c37,ffffff,SDST,0033a0,ffd100,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401918842.json,2026-11-12T00:00Z,True,,
+401913800,2026-11-12T00:00Z,Ole Miss,UAlbany,Home,W,95,41,https://a.espncdn.com/i/teamlogos/ncaa/500/145.png,https://a.espncdn.com/i/teamlogos/ncaa/500/399.png,21,99,23.0,1.0,,,False,1,,STATUS_FINAL,23.0,True,21,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",1.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '2-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,MISS,UALB,13294b,3D2777,cf142b,ffffff,MISS,13294b,cf142b,UALB,3D2777,ffffff,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401913800.json,2026-11-12T00:00Z,True,,
+401906090,2026-11-12T00:00Z,UNC,North Carolina Central,Home,W,109,40,https://a.espncdn.com/i/teamlogos/ncaa/500/153.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2428.png,23,99,2.0,16.0,,,False,1,,STATUS_FINAL,2.0,True,23,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-2'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",16.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-3'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-3'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,UNC,NCCU,7bafd4,880023,13294b,c2c3c0,UNC,7bafd4,13294b,NCCU,880023,c2c3c0,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401906090.json,2026-11-12T00:00Z,True,,
+401912506,2026-11-12T00:00Z,NC State,Liberty,Home,W,71,47,https://a.espncdn.com/i/teamlogos/ncaa/500/152.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2335.png,99,99,2.0,11.0,,,False,1,,STATUS_FINAL,2.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",11.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,NCSU,LIB,cc0000,0a254e,ffffff,b72025,NCSU,cc0000,ffffff,LIB,0a254e,b72025,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401912506.json,2026-11-12T00:00Z,True,,
+401927076,2026-11-11T23:30Z,Michigan State,Oakland,Home,W,91,50,https://a.espncdn.com/i/teamlogos/ncaa/500/127.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2473.png,99,99,7.0,45.0,,,False,1,,STATUS_FINAL,7.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",45.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-2'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-2'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,MSU,OAK,173f35,04091c,ffffff,bc955c,MSU,173f35,ffffff,OAK,04091c,bc955c,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401927076.json,2026-11-11T23:30Z,True,,
+401919680,2026-11-11T23:30Z,Kentucky,Evansville,Home,W,98,30,https://a.espncdn.com/i/teamlogos/ncaa/500/96.png,https://a.espncdn.com/i/teamlogos/ncaa/500/339.png,12,99,23.0,18.0,,,False,1,,STATUS_FINAL,23.0,True,12,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '4-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",18.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-3'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-3'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,UK,EVAN,0033a0,663399,ffffff,ef6f00,UK,0033a0,ffffff,EVAN,663399,ef6f00,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401919680.json,2026-11-11T23:30Z,True,,
+401912979,2026-11-11T23:30Z,Georgia,Kennesaw State,Home,W,84,42,https://a.espncdn.com/i/teamlogos/ncaa/500/61.png,https://a.espncdn.com/i/teamlogos/ncaa/500/338.png,99,99,23.0,11.0,,,False,1,,STATUS_FINAL,23.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '4-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '4-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",11.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-2'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-2'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,UGA,KENN,ba0c2f,fdbb30,2c2a29,0b1315,UGA,ba0c2f,2c2a29,KENN,fdbb30,0b1315,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401912979.json,2026-11-11T23:30Z,True,,
+401918677,2026-11-11T23:00Z,James Madison,Navy,Home,W,77,61,https://a.espncdn.com/i/teamlogos/ncaa/500/256.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2426.png,99,99,27.0,22.0,,,False,1,,STATUS_FINAL,27.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-2'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-2'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",22.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-2'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-2'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,JMU,NAVY,450084,00225b,cbb677,b5a67c,JMU,450084,cbb677,NAVY,00225b,b5a67c,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401918677.json,2026-11-11T23:00Z,True,,
+401918034,2026-11-11T23:00Z,Syracuse,Siena,Home,W,82,58,https://a.espncdn.com/i/teamlogos/ncaa/500/183.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2561.png,99,99,2.0,13.0,,,False,1,,STATUS_FINAL,2.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",13.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-3'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-1'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-2'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,SYR,SIE,000e54,037961,ff431b,eea60f,SYR,000e54,ff431b,SIE,037961,eea60f,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401918034.json,2026-11-11T23:00Z,True,,
+401916006,2026-11-11T23:00Z,Virginia,Drexel,Home,W,81,39,https://a.espncdn.com/i/teamlogos/ncaa/500/258.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2182.png,99,99,2.0,10.0,,,False,1,,STATUS_FINAL,2.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '4-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",10.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-2'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-1'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,UVA,DREX,232d4b,020260,f84c1e,ffd65a,UVA,232d4b,f84c1e,DREX,020260,ffd65a,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401916006.json,2026-11-11T23:00Z,True,,
+401918903,2026-11-11T21:00Z,Oregon,Vermont,Away,W,81,56,https://a.espncdn.com/i/teamlogos/ncaa/500/2483.png,https://a.espncdn.com/i/teamlogos/ncaa/500/261.png,99,99,7.0,1.0,,,False,1,,STATUS_FINAL,1.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-2'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-1'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",7.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,ORE,UVM,00934b,154734,fff41b,ffc72c,UVM,154734,ffc72c,ORE,00934b,fff41b,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401918903.json,2026-11-11T21:00Z,True,,
+401927107,2026-11-11T03:30Z,USC,Charleston,Home,W,105,44,https://a.espncdn.com/i/teamlogos/ncaa/500/30.png,https://a.espncdn.com/i/teamlogos/ncaa/500/232.png,3,99,7.0,10.0,,,False,1,,STATUS_FINAL,7.0,True,3,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",10.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,USC,COFC,9d2235,7a2531,ffc72c,9e8959,USC,9d2235,ffc72c,COFC,7a2531,9e8959,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401927107.json,2026-11-11T03:30Z,True,,
+401912966,2026-11-11T01:00Z,LSU,McNeese,Home,W,100,43,https://a.espncdn.com/i/teamlogos/ncaa/500/99.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2377.png,9,99,23.0,25.0,,,False,1,,STATUS_FINAL,23.0,True,9,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",25.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-2'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-1'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,LSU,MCN,461d76,00529C,fdd023,ffd204,LSU,461d76,fdd023,MCN,00529C,ffd204,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401912966.json,2026-11-11T01:00Z,True,,
+401921436,2026-11-11T01:00Z,Nebraska,North Carolina A&T,Home,W,76,35,https://a.espncdn.com/i/teamlogos/ncaa/500/158.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2448.png,25,99,7.0,10.0,,,False,1,,STATUS_FINAL,7.0,True,25,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",10.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-2'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-2'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,NEB,NCAT,e31937,0505aa,ffffff,004684,NEB,e31937,ffffff,NCAT,0505aa,004684,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401921436.json,2026-11-11T01:00Z,True,,
+401918910,2026-11-11T01:00Z,Minnesota,Southern,Home,W,86,47,https://a.espncdn.com/i/teamlogos/ncaa/500/135.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2582.png,18,99,7.0,26.0,,,False,1,,STATUS_FINAL,7.0,True,18,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",26.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-3'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-3'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,MINN,SOU,5e0a2f,004B97,fab41c,ffc82d,MINN,5e0a2f,fab41c,SOU,004B97,ffc82d,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401918910.json,2026-11-11T01:00Z,True,,
+401906964,2026-11-11T00:30Z,Kansas,Oral Roberts,Home,W,99,51,https://a.espncdn.com/i/teamlogos/ncaa/500/2305.png,https://a.espncdn.com/i/teamlogos/ncaa/500/198.png,99,99,8.0,47.0,,,False,1,,STATUS_FINAL,8.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",47.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-2'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-2'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,KU,ORU,0051ba,002462,e8000d,dac792,KU,0051ba,e8000d,ORU,002462,dac792,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401906964.json,2026-11-11T00:30Z,True,,
+401923182,2026-11-11T00:00Z,Notre Dame,Detroit Mercy,Home,W,108,60,https://a.espncdn.com/i/teamlogos/ncaa/500/87.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2174.png,13,99,2.0,45.0,,,False,1,,STATUS_FINAL,2.0,True,13,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",45.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-2'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-2'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,ND,DETM,062340,165b9e,c99700,d31733,ND,062340,c99700,DETM,165b9e,d31733,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401923182.json,2026-11-11T00:00Z,True,,
+401929062,2026-11-11T00:00Z,Oklahoma,San José State,Home,W,98,44,https://a.espncdn.com/i/teamlogos/ncaa/500/201.png,https://a.espncdn.com/i/teamlogos/ncaa/500/23.png,14,99,23.0,44.0,,,False,1,,STATUS_FINAL,23.0,True,14,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",44.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-2'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-2'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,OU,SJSU,990000,0038a8,ffffff,ffb81a,OU,990000,ffffff,SJSU,0038a8,ffb81a,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401929062.json,2026-11-11T00:00Z,True,,
+401915324,2026-11-11T00:00Z,Princeton,Villanova,Home,W,81,74,https://a.espncdn.com/i/teamlogos/ncaa/500/163.png,https://a.espncdn.com/i/teamlogos/ncaa/500/222.png,99,99,12.0,4.0,,,False,1,,STATUS_FINAL,12.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '4-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",4.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-2'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,PRIN,VILL,000000,00205b,ff6000,13b5ea,PRIN,000000,ff6000,VILL,00205b,13b5ea,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401915324.json,2026-11-11T00:00Z,True,,
+401915324,2026-11-11T00:00Z,Villanova,Princeton,Away,L,74,81,https://a.espncdn.com/i/teamlogos/ncaa/500/222.png,https://a.espncdn.com/i/teamlogos/ncaa/500/163.png,99,99,4.0,12.0,,,False,1,,STATUS_FINAL,12.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '4-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",4.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-2'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,VILL,PRIN,00205b,000000,13b5ea,ff6000,PRIN,000000,ff6000,VILL,00205b,13b5ea,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401915324.json,2026-11-11T00:00Z,True,,
+401906077,2026-11-11T00:00Z,Louisville,Lindenwood,Home,W,71,35,https://a.espncdn.com/i/teamlogos/ncaa/500/97.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2815.png,7,99,2.0,20.0,,,False,1,,STATUS_FINAL,2.0,True,7,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '4-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",20.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-3'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-3'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,LOU,LIN,c9001f,000000,ffffff,,LOU,c9001f,ffffff,LIN,000000,,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401906077.json,2026-11-11T00:00Z,True,,
+401912954,2026-11-10T23:30Z,Tennessee,New Haven,Home,W,83,40,https://a.espncdn.com/i/teamlogos/ncaa/500/2633_ncw.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2441.png,99,99,23.0,19.0,,,False,1,,STATUS_FINAL,23.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",19.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,TENN,NHVN,ff8200,041e42,ffffff,ffc425,TENN,ff8200,ffffff,NHVN,041e42,ffc425,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401912954.json,2026-11-10T23:30Z,True,,
+401915666,2026-11-10T22:00Z,TCU,Iona,Home,W,78,53,https://a.espncdn.com/i/teamlogos/ncaa/500/2628.png,https://a.espncdn.com/i/teamlogos/ncaa/500/314.png,15,99,8.0,13.0,,,False,1,,STATUS_FINAL,8.0,True,15,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '4-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '4-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",13.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-3'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-1'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-2'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,TCU,IONA,4d1979,6f2c3e,ffffff,f0ab00,TCU,4d1979,ffffff,IONA,6f2c3e,f0ab00,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401915666.json,2026-11-10T22:00Z,True,,
 401918902,2026-11-10T03:00Z,Oregon,Grand Canyon,Away,L,74,81,https://a.espncdn.com/i/teamlogos/ncaa/500/2483.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2253.png,99,99,7.0,44.0,,,False,1,,STATUS_FINAL,44.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
@@ -90,6 +426,27 @@ id,date,Team,Opponent,Location,Game Result,Team Score,Opponent Score,Team Logo,O
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,BAY,AMCC,154734,0067c5,ffb81c,007f3e,BAY,154734,ffb81c,AMCC,0067c5,007f3e,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401918464.json,2026-11-08T20:00Z,True,,
+401913737,2026-11-08T20:00Z,Kentucky,NC State,Neutral,W,93,78,https://a.espncdn.com/i/teamlogos/ncaa/500/96.png,https://a.espncdn.com/i/teamlogos/ncaa/500/152.png,14,25,23.0,2.0,,,False,1,Ally Tipoff,STATUS_FINAL,2.0,False,25,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",23.0,True,14,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,UK,NCSU,0033a0,cc0000,ffffff,ffffff,NCSU,cc0000,ffffff,UK,0033a0,ffffff,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401913737.json,2026-11-08T20:00Z,True,,
+401913737,2026-11-08T20:00Z,NC State,Kentucky,Neutral,L,78,93,https://a.espncdn.com/i/teamlogos/ncaa/500/152.png,https://a.espncdn.com/i/teamlogos/ncaa/500/96.png,25,14,2.0,23.0,,,False,1,Ally Tipoff,STATUS_FINAL,2.0,False,25,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",23.0,True,14,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,NCSU,UK,cc0000,0033a0,ffffff,ffffff,NCSU,cc0000,ffffff,UK,0033a0,ffffff,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401913737.json,2026-11-08T20:00Z,True,,
+401927414,2026-11-08T20:00Z,Oklahoma,Morgan State,Home,W,95,38,https://a.espncdn.com/i/teamlogos/ncaa/500/201.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2415.png,21,99,23.0,16.0,,,False,1,,STATUS_FINAL,23.0,True,21,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",16.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-3'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-3'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,OU,MORG,990000,014786,ffffff,f47937,OU,990000,ffffff,MORG,014786,f47937,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401927414.json,2026-11-08T20:00Z,True,,
 401917928,2026-11-08T20:00Z,Iowa State,Eastern Illinois,Home,W,77,61,https://a.espncdn.com/i/teamlogos/ncaa/500/66.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2197.png,99,99,8.0,20.0,,,False,1,,STATUS_FINAL,8.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
@@ -104,20 +461,6 @@ id,date,Team,Opponent,Location,Game Result,Team Score,Opponent Score,Team Logo,O
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,TCU,TAR,4d1979,000000,ffffff,,TCU,4d1979,ffffff,TAR,000000,,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401917940.json,2026-11-08T20:00Z,True,,
-401927414,2026-11-08T20:00Z,Oklahoma,Morgan State,Home,W,95,38,https://a.espncdn.com/i/teamlogos/ncaa/500/201.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2415.png,21,99,23.0,16.0,,,False,1,,STATUS_FINAL,23.0,True,21,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",16.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-3'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-3'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,OU,MORG,990000,014786,ffffff,f47937,OU,990000,ffffff,MORG,014786,f47937,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401927414.json,2026-11-08T20:00Z,True,,
-401913737,2026-11-08T20:00Z,Kentucky,NC State,Neutral,W,93,78,https://a.espncdn.com/i/teamlogos/ncaa/500/96.png,https://a.espncdn.com/i/teamlogos/ncaa/500/152.png,14,25,23.0,2.0,,,False,1,Ally Tipoff,STATUS_FINAL,2.0,False,25,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-1'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",23.0,True,14,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,UK,NCSU,0033a0,cc0000,ffffff,ffffff,NCSU,cc0000,ffffff,UK,0033a0,ffffff,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401913737.json,2026-11-08T20:00Z,True,,
 401918855,2026-11-08T20:00Z,Mississippi State,UT Martin,Away,W,114,68,https://a.espncdn.com/i/teamlogos/ncaa/500/344.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2630.png,99,99,23.0,20.0,,,False,1,,STATUS_FINAL,20.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-1'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-1'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
@@ -125,13 +468,6 @@ id,date,Team,Opponent,Location,Game Result,Team Score,Opponent Score,Team Logo,O
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,MSST,UTM,5d1725,FF6700,c1c6c8,102a5c,UTM,FF6700,102a5c,MSST,5d1725,c1c6c8,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401918855.json,2026-11-08T20:00Z,True,,
-401913737,2026-11-08T20:00Z,NC State,Kentucky,Neutral,L,78,93,https://a.espncdn.com/i/teamlogos/ncaa/500/152.png,https://a.espncdn.com/i/teamlogos/ncaa/500/96.png,25,14,2.0,23.0,,,False,1,Ally Tipoff,STATUS_FINAL,2.0,False,25,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-1'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",23.0,True,14,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,NCSU,UK,cc0000,0033a0,ffffff,ffffff,NCSU,cc0000,ffffff,UK,0033a0,ffffff,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401913737.json,2026-11-08T20:00Z,True,,
 401913677,2026-11-08T19:30Z,Richmond,Rice,Home,L,60,73,https://a.espncdn.com/i/teamlogos/ncaa/500/257.png,https://a.espncdn.com/i/teamlogos/ncaa/500/242.png,99,99,3.0,62.0,,,False,1,,STATUS_FINAL,3.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-2'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-2'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
@@ -139,6 +475,13 @@ id,date,Team,Opponent,Location,Game Result,Team Score,Opponent Score,Team Logo,O
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,RICH,RICE,9e0712,00205b,b90b2e,c1c6c8,RICH,9e0712,b90b2e,RICE,00205b,c1c6c8,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401913677.json,2026-11-08T19:30Z,True,,
+401907165,2026-11-08T19:00Z,West Virginia,Georgia Tech,Away,W,81,63,https://a.espncdn.com/i/teamlogos/ncaa/500/277.png,https://a.espncdn.com/i/teamlogos/ncaa/500/59.png,24,99,8.0,2.0,,,False,1,,STATUS_FINAL,2.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-1'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",8.0,True,24,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,WVU,GT,eaaa00,b3a369,002855,ffffff,GT,b3a369,ffffff,WVU,eaaa00,002855,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401907165.json,2026-11-08T19:00Z,True,,
 401915885,2026-11-08T19:00Z,Clemson,UNC Greensboro,Home,W,72,44,https://a.espncdn.com/i/teamlogos/ncaa/500/228.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2430.png,99,99,2.0,24.0,,,False,1,,STATUS_FINAL,2.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
@@ -146,20 +489,6 @@ id,date,Team,Opponent,Location,Game Result,Team Score,Opponent Score,Team Logo,O
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,CLEM,UNCG,f56600,003559,ffffff,ffd90a,CLEM,f56600,ffffff,UNCG,003559,ffd90a,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401915885.json,2026-11-08T19:00Z,True,,
-401927068,2026-11-08T19:00Z,Michigan,Wright State,Home,W,109,52,https://a.espncdn.com/i/teamlogos/ncaa/500/130.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2750.png,5,99,7.0,45.0,,,False,1,,STATUS_FINAL,7.0,True,5,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",45.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-2'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-2'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,MICH,WRST,00274c,cba052,ffcb05,cba052,MICH,00274c,ffcb05,WRST,cba052,cba052,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401927068.json,2026-11-08T19:00Z,True,,
-401911738,2026-11-08T19:00Z,UConn,Iowa,Home,W,91,79,https://a.espncdn.com/i/teamlogos/ncaa/500/41.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2294.png,2,10,4.0,7.0,,,False,1,,STATUS_FINAL,4.0,True,2,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-1'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",7.0,False,10,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-1'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,CONN,IOWA,0c2340,231f20,a2aaad,fcd116,CONN,0c2340,a2aaad,IOWA,231f20,fcd116,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401911738.json,2026-11-08T19:00Z,True,,
 401916005,2026-11-08T19:00Z,Virginia,William & Mary,Home,W,99,58,https://a.espncdn.com/i/teamlogos/ncaa/500/258.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2729.png,99,99,2.0,10.0,,,False,1,,STATUS_FINAL,2.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
@@ -174,13 +503,20 @@ id,date,Team,Opponent,Location,Game Result,Team Score,Opponent Score,Team Logo,O
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,FLA,UTC,0021a5,00386b,fa4616,dca71d,UTC,00386b,dca71d,FLA,0021a5,fa4616,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401906892.json,2026-11-08T19:00Z,True,,
-401907165,2026-11-08T19:00Z,West Virginia,Georgia Tech,Away,W,81,63,https://a.espncdn.com/i/teamlogos/ncaa/500/277.png,https://a.espncdn.com/i/teamlogos/ncaa/500/59.png,24,99,8.0,2.0,,,False,1,,STATUS_FINAL,2.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-1'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-1'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",8.0,True,24,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
+401911738,2026-11-08T19:00Z,UConn,Iowa,Home,W,91,79,https://a.espncdn.com/i/teamlogos/ncaa/500/41.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2294.png,2,10,4.0,7.0,,,False,1,,STATUS_FINAL,4.0,True,2,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-1'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,WVU,GT,eaaa00,b3a369,002855,ffffff,GT,b3a369,ffffff,WVU,eaaa00,002855,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401907165.json,2026-11-08T19:00Z,True,,
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",7.0,False,10,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,CONN,IOWA,0c2340,231f20,a2aaad,fcd116,CONN,0c2340,a2aaad,IOWA,231f20,fcd116,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401911738.json,2026-11-08T19:00Z,True,,
+401927068,2026-11-08T19:00Z,Michigan,Wright State,Home,W,109,52,https://a.espncdn.com/i/teamlogos/ncaa/500/130.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2750.png,5,99,7.0,45.0,,,False,1,,STATUS_FINAL,7.0,True,5,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",45.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-2'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-2'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,MICH,WRST,00274c,cba052,ffcb05,cba052,MICH,00274c,ffcb05,WRST,cba052,cba052,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401927068.json,2026-11-08T19:00Z,True,,
 401911738,2026-11-08T19:00Z,Iowa,UConn,Away,L,79,91,https://a.espncdn.com/i/teamlogos/ncaa/500/2294.png,https://a.espncdn.com/i/teamlogos/ncaa/500/41.png,10,2,7.0,4.0,,,False,1,,STATUS_FINAL,4.0,True,2,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-1'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
@@ -188,34 +524,6 @@ id,date,Team,Opponent,Location,Game Result,Team Score,Opponent Score,Team Logo,O
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,IOWA,CONN,231f20,0c2340,fcd116,a2aaad,CONN,0c2340,a2aaad,IOWA,231f20,fcd116,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401911738.json,2026-11-08T19:00Z,True,,
-401918915,2026-11-08T18:00Z,Maryland,George Mason,Home,W,81,62,https://a.espncdn.com/i/teamlogos/ncaa/500/120.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2244.png,20,99,7.0,3.0,,,False,1,,STATUS_FINAL,7.0,True,20,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-1'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",3.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-1'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,MD,GMU,ce1126,016600,ffffff,ecb010,MD,ce1126,ffffff,GMU,016600,ecb010,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401918915.json,2026-11-08T18:00Z,True,,
-401912991,2026-11-08T18:00Z,Alabama,Tulane,Away,W,68,63,https://a.espncdn.com/i/teamlogos/ncaa/500/333.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2655.png,99,99,23.0,62.0,,,False,1,,STATUS_FINAL,62.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-1'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-1'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",23.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '4-0'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,ALA,TULN,9e1b32,006747,ffffff,418fde,TULN,006747,418fde,ALA,9e1b32,ffffff,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401912991.json,2026-11-08T18:00Z,True,,
-401915907,2026-11-08T18:00Z,Duke,Florida Atlantic,Neutral,W,78,56,https://a.espncdn.com/i/teamlogos/ncaa/500/150.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2226.png,4,99,2.0,62.0,,,False,1,,STATUS_FINAL,62.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-2'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",2.0,True,4,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,DUKE,FAU,00539b,003366,ffffff,cc0000,FAU,003366,cc0000,DUKE,00539b,ffffff,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401915907.json,2026-11-08T18:00Z,True,,
-401919942,2026-11-08T18:00Z,Ohio State,Mercyhurst,Home,W,91,57,https://a.espncdn.com/i/teamlogos/ncaa/500/194.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2385.png,18,99,7.0,19.0,,,False,1,,STATUS_FINAL,7.0,True,18,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",19.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-2'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-2'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,OSU,MERC,ba0c2f,000000,a8adb4,,OSU,ba0c2f,a8adb4,MERC,000000,,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401919942.json,2026-11-08T18:00Z,True,,
 401913864,2026-11-08T18:00Z,Rhode Island,South Florida,Neutral,W,82,63,https://a.espncdn.com/i/teamlogos/ncaa/500/227.png,https://a.espncdn.com/i/teamlogos/ncaa/500/58.png,99,99,3.0,62.0,,,False,1,,STATUS_FINAL,62.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-1'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
@@ -223,6 +531,34 @@ id,date,Team,Opponent,Location,Game Result,Team Score,Opponent Score,Team Logo,O
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,URI,USF,091f3f,006747,5ab3e8,cfc493,USF,006747,cfc493,URI,091f3f,5ab3e8,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401913864.json,2026-11-08T18:00Z,True,,
+401919942,2026-11-08T18:00Z,Ohio State,Mercyhurst,Home,W,91,57,https://a.espncdn.com/i/teamlogos/ncaa/500/194.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2385.png,18,99,7.0,19.0,,,False,1,,STATUS_FINAL,7.0,True,18,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",19.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-2'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-2'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,OSU,MERC,ba0c2f,000000,a8adb4,,OSU,ba0c2f,a8adb4,MERC,000000,,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401919942.json,2026-11-08T18:00Z,True,,
+401912991,2026-11-08T18:00Z,Alabama,Tulane,Away,W,68,63,https://a.espncdn.com/i/teamlogos/ncaa/500/333.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2655.png,99,99,23.0,62.0,,,False,1,,STATUS_FINAL,62.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-1'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",23.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '4-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,ALA,TULN,9e1b32,006747,ffffff,418fde,TULN,006747,418fde,ALA,9e1b32,ffffff,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401912991.json,2026-11-08T18:00Z,True,,
+401918915,2026-11-08T18:00Z,Maryland,George Mason,Home,W,81,62,https://a.espncdn.com/i/teamlogos/ncaa/500/120.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2244.png,20,99,7.0,3.0,,,False,1,,STATUS_FINAL,7.0,True,20,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",3.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,MD,GMU,ce1126,016600,ffffff,ecb010,MD,ce1126,ffffff,GMU,016600,ecb010,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401918915.json,2026-11-08T18:00Z,True,,
+401915907,2026-11-08T18:00Z,Duke,Florida Atlantic,Neutral,W,78,56,https://a.espncdn.com/i/teamlogos/ncaa/500/150.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2226.png,4,99,2.0,62.0,,,False,1,,STATUS_FINAL,62.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-2'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",2.0,True,4,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,DUKE,FAU,00539b,003366,ffffff,cc0000,FAU,003366,cc0000,DUKE,00539b,ffffff,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401915907.json,2026-11-08T18:00Z,True,,
 401912978,2026-11-08T18:00Z,Georgia,Nicholls,Home,W,74,48,https://a.espncdn.com/i/teamlogos/ncaa/500/61.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2447.png,99,99,23.0,25.0,,,False,1,,STATUS_FINAL,23.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
@@ -258,20 +594,6 @@ id,date,Team,Opponent,Location,Game Result,Team Score,Opponent Score,Team Logo,O
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,NEB,WIU,e31937,4e1e8a,ffffff,ffc90a,NEB,e31937,ffffff,WIU,4e1e8a,ffc90a,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401921435.json,2026-11-07T20:00Z,True,,
-401927061,2026-11-07T20:00Z,Illinois,Southern,Home,W,99,28,https://a.espncdn.com/i/teamlogos/ncaa/500/356.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2582.png,23,99,7.0,26.0,,,False,1,,STATUS_FINAL,7.0,True,23,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",26.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-2'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-2'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,ILL,SOU,ff5f05,004B97,13294b,ffc82d,ILL,ff5f05,13294b,SOU,004B97,ffc82d,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401927061.json,2026-11-07T20:00Z,True,,
-401923474,2026-11-07T20:00Z,Colorado,Fresno State,Home,W,73,56,https://a.espncdn.com/i/teamlogos/ncaa/500/38.png,https://a.espncdn.com/i/teamlogos/ncaa/500/278.png,99,99,8.0,21.0,,,False,1,,STATUS_FINAL,8.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",21.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-1'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,COLO,FRES,cfb87c,b1102b,000000,13284c,COLO,cfb87c,000000,FRES,b1102b,13284c,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401923474.json,2026-11-07T20:00Z,True,,
 401918909,2026-11-07T20:00Z,Minnesota,Marquette,Away,W,87,79,https://a.espncdn.com/i/teamlogos/ncaa/500/135.png,https://a.espncdn.com/i/teamlogos/ncaa/500/269.png,17,99,7.0,4.0,,,False,1,,STATUS_FINAL,4.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-1'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-1'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
@@ -279,6 +601,20 @@ id,date,Team,Opponent,Location,Game Result,Team Score,Opponent Score,Team Logo,O
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,MINN,MARQ,5e0a2f,003366,fab41c,ffcc00,MARQ,003366,ffcc00,MINN,5e0a2f,fab41c,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401918909.json,2026-11-07T20:00Z,True,,
+401923474,2026-11-07T20:00Z,Colorado,Fresno State,Home,W,73,56,https://a.espncdn.com/i/teamlogos/ncaa/500/38.png,https://a.espncdn.com/i/teamlogos/ncaa/500/278.png,99,99,8.0,21.0,,,False,1,,STATUS_FINAL,8.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",21.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,COLO,FRES,cfb87c,b1102b,000000,13284c,COLO,cfb87c,000000,FRES,b1102b,13284c,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401923474.json,2026-11-07T20:00Z,True,,
+401927061,2026-11-07T20:00Z,Illinois,Southern,Home,W,99,28,https://a.espncdn.com/i/teamlogos/ncaa/500/356.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2582.png,23,99,7.0,26.0,,,False,1,,STATUS_FINAL,7.0,True,23,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",26.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-2'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-2'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,ILL,SOU,ff5f05,004B97,13294b,ffc82d,ILL,ff5f05,13294b,SOU,004B97,ffc82d,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401927061.json,2026-11-07T20:00Z,True,,
 401927075,2026-11-07T19:00Z,Michigan State,Toledo,Away,W,72,64,https://a.espncdn.com/i/teamlogos/ncaa/500/127.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2649.png,99,99,7.0,14.0,,,False,1,,STATUS_FINAL,14.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-2'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-2'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
@@ -307,13 +643,6 @@ id,date,Team,Opponent,Location,Game Result,Team Score,Opponent Score,Team Logo,O
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,URI,COLU,091f3f,7ba4db,5ab3e8,183863,COLU,7ba4db,183863,URI,091f3f,5ab3e8,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401915774.json,2026-11-06T23:00Z,True,,
-401913676,2026-11-06T23:00Z,Princeton,Richmond,Away,W,65,57,https://a.espncdn.com/i/teamlogos/ncaa/500/163.png,https://a.espncdn.com/i/teamlogos/ncaa/500/257.png,99,99,12.0,3.0,,,False,1,,STATUS_FINAL,3.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-1'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-1'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",12.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,PRIN,RICH,000000,9e0712,ff6000,b90b2e,RICH,9e0712,b90b2e,PRIN,000000,ff6000,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401913676.json,2026-11-06T23:00Z,True,,
 401913676,2026-11-06T23:00Z,Richmond,Princeton,Home,L,57,65,https://a.espncdn.com/i/teamlogos/ncaa/500/257.png,https://a.espncdn.com/i/teamlogos/ncaa/500/163.png,99,99,3.0,12.0,,,False,1,,STATUS_FINAL,3.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-1'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-1'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
@@ -321,13 +650,6 @@ id,date,Team,Opponent,Location,Game Result,Team Score,Opponent Score,Team Logo,O
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,RICH,PRIN,9e0712,000000,b90b2e,ff6000,RICH,9e0712,b90b2e,PRIN,000000,ff6000,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401913676.json,2026-11-06T23:00Z,True,,
-401907047,2026-11-06T23:00Z,Oklahoma State,Morgan State,Home,W,92,38,https://a.espncdn.com/i/teamlogos/ncaa/500/197.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2415.png,22,99,8.0,16.0,,,False,1,,STATUS_FINAL,8.0,True,22,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",16.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-2'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-2'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,OKST,MORG,fe5c00,014786,000000,f47937,OKST,fe5c00,000000,MORG,014786,f47937,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401907047.json,2026-11-06T23:00Z,True,,
 401915774,2026-11-06T23:00Z,Columbia,Rhode Island,Neutral,W,76,62,https://a.espncdn.com/i/teamlogos/ncaa/500/171.png,https://a.espncdn.com/i/teamlogos/ncaa/500/227.png,99,99,12.0,3.0,,,False,1,,STATUS_FINAL,12.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
@@ -335,6 +657,20 @@ id,date,Team,Opponent,Location,Game Result,Team Score,Opponent Score,Team Logo,O
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,COLU,URI,7ba4db,091f3f,183863,5ab3e8,COLU,7ba4db,183863,URI,091f3f,5ab3e8,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401915774.json,2026-11-06T23:00Z,True,,
+401907047,2026-11-06T23:00Z,Oklahoma State,Morgan State,Home,W,92,38,https://a.espncdn.com/i/teamlogos/ncaa/500/197.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2415.png,22,99,8.0,16.0,,,False,1,,STATUS_FINAL,8.0,True,22,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",16.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-2'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-2'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,OKST,MORG,fe5c00,014786,000000,f47937,OKST,fe5c00,000000,MORG,014786,f47937,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401907047.json,2026-11-06T23:00Z,True,,
+401913676,2026-11-06T23:00Z,Princeton,Richmond,Away,W,65,57,https://a.espncdn.com/i/teamlogos/ncaa/500/163.png,https://a.espncdn.com/i/teamlogos/ncaa/500/257.png,99,99,12.0,3.0,,,False,1,,STATUS_FINAL,3.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-1'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",12.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,PRIN,RICH,000000,9e0712,ff6000,b90b2e,RICH,9e0712,b90b2e,PRIN,000000,ff6000,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401913676.json,2026-11-06T23:00Z,True,,
 401919674,2026-11-06T17:00Z,Kansas,Drake,Home,W,74,49,https://a.espncdn.com/i/teamlogos/ncaa/500/2305.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2181.png,99,99,8.0,18.0,,,False,1,,STATUS_FINAL,8.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
@@ -356,20 +692,6 @@ id,date,Team,Opponent,Location,Game Result,Team Score,Opponent Score,Team Logo,O
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,WASH,PAC,33006f,F47820,e8d3a2,c2c3c0,WASH,33006f,e8d3a2,PAC,F47820,c2c3c0,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401917684.json,2026-11-06T03:00Z,True,,
-401918463,2026-11-06T01:00Z,Baylor,Central Arkansas,Home,W,72,44,https://a.espncdn.com/i/teamlogos/ncaa/500/239.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2110.png,99,99,8.0,30.0,,,False,1,,STATUS_FINAL,8.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",30.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-1'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,BAY,CARK,154734,a7a9ac,ffb81c,8e959a,BAY,154734,ffb81c,CARK,a7a9ac,8e959a,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401918463.json,2026-11-06T01:00Z,True,,
-401912965,2026-11-06T01:00Z,LSU,Texas Southern,Home,W,131,22,https://a.espncdn.com/i/teamlogos/ncaa/500/99.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2640.png,9,99,23.0,26.0,,,False,1,,STATUS_FINAL,23.0,True,9,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",26.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-2'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-2'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,LSU,TXSO,461d76,860038,fdd023,ffffff,LSU,461d76,fdd023,TXSO,860038,ffffff,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401912965.json,2026-11-06T01:00Z,True,,
 401921425,2026-11-06T01:00Z,Iowa,Eastern Illinois,Home,W,80,39,https://a.espncdn.com/i/teamlogos/ncaa/500/2294.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2197.png,10,99,7.0,20.0,,,False,1,,STATUS_FINAL,7.0,True,10,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
@@ -377,13 +699,20 @@ id,date,Team,Opponent,Location,Game Result,Team Score,Opponent Score,Team Logo,O
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-2'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,IOWA,EIU,231f20,000000,fcd116,bebab9,IOWA,231f20,fcd116,EIU,000000,bebab9,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401921425.json,2026-11-06T01:00Z,True,,
-401917927,2026-11-06T00:30Z,Iowa State,Nicholls,Home,W,68,44,https://a.espncdn.com/i/teamlogos/ncaa/500/66.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2447.png,99,99,8.0,25.0,,,False,1,,STATUS_FINAL,8.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
+401912965,2026-11-06T01:00Z,LSU,Texas Southern,Home,W,131,22,https://a.espncdn.com/i/teamlogos/ncaa/500/99.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2640.png,9,99,23.0,26.0,,,False,1,,STATUS_FINAL,23.0,True,9,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",25.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",26.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-2'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-2'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,LSU,TXSO,461d76,860038,fdd023,ffffff,LSU,461d76,fdd023,TXSO,860038,ffffff,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401912965.json,2026-11-06T01:00Z,True,,
+401918463,2026-11-06T01:00Z,Baylor,Central Arkansas,Home,W,72,44,https://a.espncdn.com/i/teamlogos/ncaa/500/239.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2110.png,99,99,8.0,30.0,,,False,1,,STATUS_FINAL,8.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",30.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-1'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,ISU,NICH,ae192d,C41230,ffc72a,f0f0f0,ISU,ae192d,ffc72a,NICH,C41230,f0f0f0,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401917927.json,2026-11-06T00:30Z,True,,
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,BAY,CARK,154734,a7a9ac,ffb81c,8e959a,BAY,154734,ffb81c,CARK,a7a9ac,8e959a,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401918463.json,2026-11-06T01:00Z,True,,
 401917939,2026-11-06T00:30Z,TCU,Le Moyne,Home,W,96,41,https://a.espncdn.com/i/teamlogos/ncaa/500/2628.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2330.png,15,99,8.0,19.0,,,False,1,,STATUS_FINAL,8.0,True,15,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
@@ -391,6 +720,13 @@ id,date,Team,Opponent,Location,Game Result,Team Score,Opponent Score,Team Logo,O
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-2'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,TCU,LEM,4d1979,000000,ffffff,,TCU,4d1979,ffffff,LEM,000000,,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401917939.json,2026-11-06T00:30Z,True,,
+401917927,2026-11-06T00:30Z,Iowa State,Nicholls,Home,W,68,44,https://a.espncdn.com/i/teamlogos/ncaa/500/66.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2447.png,99,99,8.0,25.0,,,False,1,,STATUS_FINAL,8.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",25.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,ISU,NICH,ae192d,C41230,ffc72a,f0f0f0,ISU,ae192d,ffc72a,NICH,C41230,f0f0f0,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401917927.json,2026-11-06T00:30Z,True,,
 401912953,2026-11-06T00:00Z,Tennessee,Coppin State,Away,W,98,60,https://a.espncdn.com/i/teamlogos/ncaa/500/2633_ncw.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2154.png,99,99,23.0,16.0,,,False,1,,STATUS_FINAL,16.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-1'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-1'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
@@ -398,41 +734,6 @@ id,date,Team,Opponent,Location,Game Result,Team Score,Opponent Score,Team Logo,O
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,TENN,COPP,ff8200,2e3192,ffffff,ffd204,COPP,2e3192,ffd204,TENN,ff8200,ffffff,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401912953.json,2026-11-06T00:00Z,True,,
-401915791,2026-11-06T00:00Z,Clemson,East Tennessee State,Home,W,76,57,https://a.espncdn.com/i/teamlogos/ncaa/500/228.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2193.png,99,99,2.0,24.0,,,False,1,,STATUS_FINAL,2.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",24.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-1'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,CLEM,ETSU,f56600,002d61,ffffff,ffc423,CLEM,f56600,ffffff,ETSU,002d61,ffc423,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401915791.json,2026-11-06T00:00Z,True,,
-401916004,2026-11-06T00:00Z,Virginia,Davidson,Away,W,72,57,https://a.espncdn.com/i/teamlogos/ncaa/500/258.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2166.png,99,99,2.0,3.0,,,False,1,,STATUS_FINAL,3.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-2'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-1'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",2.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,UVA,DAV,232d4b,000000,f84c1e,e51837,DAV,000000,e51837,UVA,232d4b,f84c1e,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401916004.json,2026-11-06T00:00Z,True,,
-401909670,2026-11-06T00:00Z,Georgia,Winthrop,Home,W,75,40,https://a.espncdn.com/i/teamlogos/ncaa/500/61.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2737.png,99,99,23.0,6.0,,,False,1,,STATUS_FINAL,23.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",6.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-1'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,UGA,WIN,ba0c2f,9e0b0e,2c2a29,fdb41e,UGA,ba0c2f,2c2a29,WIN,9e0b0e,fdb41e,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401909670.json,2026-11-06T00:00Z,True,,
-401927485,2026-11-06T00:00Z,Alabama,Alabama A&M,Home,W,96,43,https://a.espncdn.com/i/teamlogos/ncaa/500/333.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2010.png,99,99,23.0,26.0,,,False,1,,STATUS_FINAL,23.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",26.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-2'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-1'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,ALA,AAMU,9e1b32,790000,ffffff,ffffff,ALA,9e1b32,ffffff,AAMU,790000,ffffff,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401927485.json,2026-11-06T00:00Z,True,,
-401924631,2026-11-06T00:00Z,Ole Miss,North Alabama,Home,W,72,51,https://a.espncdn.com/i/teamlogos/ncaa/500/145.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2453.png,19,99,23.0,30.0,,,False,1,,STATUS_FINAL,23.0,True,19,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",30.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-2'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-2'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,MISS,UNA,13294b,000000,cf142b,,MISS,13294b,cf142b,UNA,000000,,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401924631.json,2026-11-06T00:00Z,True,,
 401907164,2026-11-06T00:00Z,West Virginia,George Washington,Home,W,78,66,https://a.espncdn.com/i/teamlogos/ncaa/500/277.png,https://a.espncdn.com/i/teamlogos/ncaa/500/45.png,24,99,8.0,3.0,,,False,1,,STATUS_FINAL,8.0,True,24,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
@@ -440,13 +741,41 @@ id,date,Team,Opponent,Location,Game Result,Team Score,Opponent Score,Team Logo,O
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,WVU,GW,eaaa00,002843,002855,e8d2a1,WVU,eaaa00,002855,GW,002843,e8d2a1,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401907164.json,2026-11-06T00:00Z,True,,
-401911737,2026-11-05T23:30Z,Michigan,UConn,Home,W,77,66,https://a.espncdn.com/i/teamlogos/ncaa/500/130.png,https://a.espncdn.com/i/teamlogos/ncaa/500/41.png,5,2,7.0,4.0,,,False,1,,STATUS_FINAL,7.0,True,5,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+401924631,2026-11-06T00:00Z,Ole Miss,North Alabama,Home,W,72,51,https://a.espncdn.com/i/teamlogos/ncaa/500/145.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2453.png,19,99,23.0,30.0,,,False,1,,STATUS_FINAL,23.0,True,19,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",4.0,False,2,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",30.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-2'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-2'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,MISS,UNA,13294b,000000,cf142b,,MISS,13294b,cf142b,UNA,000000,,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401924631.json,2026-11-06T00:00Z,True,,
+401927485,2026-11-06T00:00Z,Alabama,Alabama A&M,Home,W,96,43,https://a.espncdn.com/i/teamlogos/ncaa/500/333.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2010.png,99,99,23.0,26.0,,,False,1,,STATUS_FINAL,23.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '3-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '3-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",26.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-2'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-1'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,ALA,AAMU,9e1b32,790000,ffffff,ffffff,ALA,9e1b32,ffffff,AAMU,790000,ffffff,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401927485.json,2026-11-06T00:00Z,True,,
+401915791,2026-11-06T00:00Z,Clemson,East Tennessee State,Home,W,76,57,https://a.espncdn.com/i/teamlogos/ncaa/500/228.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2193.png,99,99,2.0,24.0,,,False,1,,STATUS_FINAL,2.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",24.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-1'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,MICH,CONN,00274c,0c2340,ffcb05,a2aaad,MICH,00274c,ffcb05,CONN,0c2340,a2aaad,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401911737.json,2026-11-05T23:30Z,True,,
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,CLEM,ETSU,f56600,002d61,ffffff,ffc423,CLEM,f56600,ffffff,ETSU,002d61,ffc423,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401915791.json,2026-11-06T00:00Z,True,,
+401909670,2026-11-06T00:00Z,Georgia,Winthrop,Home,W,75,40,https://a.espncdn.com/i/teamlogos/ncaa/500/61.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2737.png,99,99,23.0,6.0,,,False,1,,STATUS_FINAL,23.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",6.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,UGA,WIN,ba0c2f,9e0b0e,2c2a29,fdb41e,UGA,ba0c2f,2c2a29,WIN,9e0b0e,fdb41e,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401909670.json,2026-11-06T00:00Z,True,,
+401916004,2026-11-06T00:00Z,Virginia,Davidson,Away,W,72,57,https://a.espncdn.com/i/teamlogos/ncaa/500/258.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2166.png,99,99,2.0,3.0,,,False,1,,STATUS_FINAL,3.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-2'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-1'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",2.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,UVA,DAV,232d4b,000000,f84c1e,e51837,DAV,000000,e51837,UVA,232d4b,f84c1e,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401916004.json,2026-11-06T00:00Z,True,,
 401929059,2026-11-05T23:30Z,Kentucky,Northern Kentucky,Home,W,79,28,https://a.espncdn.com/i/teamlogos/ncaa/500/96.png,https://a.espncdn.com/i/teamlogos/ncaa/500/94.png,14,99,23.0,45.0,,,False,1,,STATUS_FINAL,23.0,True,14,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
@@ -454,13 +783,13 @@ id,date,Team,Opponent,Location,Game Result,Team Score,Opponent Score,Team Logo,O
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,UK,NKU,0033a0,ffc82e,ffffff,000000,UK,0033a0,ffffff,NKU,ffc82e,000000,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401929059.json,2026-11-05T23:30Z,True,,
-401927082,2026-11-05T23:30Z,Ohio State,Central Michigan,Home,W,103,36,https://a.espncdn.com/i/teamlogos/ncaa/500/194.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2117.png,18,99,7.0,14.0,,,False,1,,STATUS_FINAL,7.0,True,18,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+401911737,2026-11-05T23:30Z,Michigan,UConn,Home,W,77,66,https://a.espncdn.com/i/teamlogos/ncaa/500/130.png,https://a.espncdn.com/i/teamlogos/ncaa/500/41.png,5,2,7.0,4.0,,,False,1,,STATUS_FINAL,7.0,True,5,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",14.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-2'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",4.0,False,2,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,OSU,CMU,ba0c2f,4c0027,a8adb4,fbab18,OSU,ba0c2f,a8adb4,CMU,4c0027,fbab18,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401927082.json,2026-11-05T23:30Z,True,,
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,MICH,CONN,00274c,0c2340,ffcb05,a2aaad,MICH,00274c,ffcb05,CONN,0c2340,a2aaad,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401911737.json,2026-11-05T23:30Z,True,,
 401911737,2026-11-05T23:30Z,UConn,Michigan,Away,L,66,77,https://a.espncdn.com/i/teamlogos/ncaa/500/41.png,https://a.espncdn.com/i/teamlogos/ncaa/500/130.png,2,5,4.0,7.0,,,False,1,,STATUS_FINAL,7.0,True,5,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
@@ -468,6 +797,13 @@ id,date,Team,Opponent,Location,Game Result,Team Score,Opponent Score,Team Logo,O
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,CONN,MICH,0c2340,00274c,a2aaad,ffcb05,MICH,00274c,ffcb05,CONN,0c2340,a2aaad,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401911737.json,2026-11-05T23:30Z,True,,
+401927082,2026-11-05T23:30Z,Ohio State,Central Michigan,Home,W,103,36,https://a.espncdn.com/i/teamlogos/ncaa/500/194.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2117.png,18,99,7.0,14.0,,,False,1,,STATUS_FINAL,7.0,True,18,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '2-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '2-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",14.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-2'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-1'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,OSU,CMU,ba0c2f,4c0027,a8adb4,fbab18,OSU,ba0c2f,a8adb4,CMU,4c0027,fbab18,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401927082.json,2026-11-05T23:30Z,True,,
 401918940,2026-11-05T23:00Z,Texas Tech,Charlotte,Home,W,64,37,https://a.espncdn.com/i/teamlogos/ncaa/500/2641.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2429.png,99,99,8.0,62.0,,,False,1,,STATUS_FINAL,8.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
@@ -559,13 +895,6 @@ id,date,Team,Opponent,Location,Game Result,Team Score,Opponent Score,Team Logo,O
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,TCU,ORU,4d1979,002462,ffffff,dac792,TCU,4d1979,ffffff,ORU,002462,dac792,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401917938.json,2026-11-04T00:30Z,True,,
-401918854,2026-11-04T00:30Z,Mississippi State,North Alabama,Home,W,68,27,https://a.espncdn.com/i/teamlogos/ncaa/500/344.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2453.png,99,99,23.0,30.0,,,False,1,,STATUS_FINAL,23.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",30.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-1'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,MSST,UNA,5d1725,000000,c1c6c8,,MSST,5d1725,c1c6c8,UNA,000000,,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401918854.json,2026-11-04T00:30Z,True,,
 401906962,2026-11-04T00:30Z,Kansas,Omaha,Home,W,66,48,https://a.espncdn.com/i/teamlogos/ncaa/500/2305.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2437.png,99,99,8.0,47.0,,,False,1,,STATUS_FINAL,8.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
@@ -573,13 +902,13 @@ id,date,Team,Opponent,Location,Game Result,Team Score,Opponent Score,Team Logo,O
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,KU,OMA,0051ba,e3193e,e8000d,474648,KU,0051ba,e8000d,OMA,e3193e,474648,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401906962.json,2026-11-04T00:30Z,True,,
-401907163,2026-11-04T00:00Z,West Virginia,Rhode Island,Home,W,68,64,https://a.espncdn.com/i/teamlogos/ncaa/500/277.png,https://a.espncdn.com/i/teamlogos/ncaa/500/227.png,24,99,8.0,3.0,,,False,1,,STATUS_FINAL,8.0,True,24,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
+401918854,2026-11-04T00:30Z,Mississippi State,North Alabama,Home,W,68,27,https://a.espncdn.com/i/teamlogos/ncaa/500/344.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2453.png,99,99,23.0,30.0,,,False,1,,STATUS_FINAL,23.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",3.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",30.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-1'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,WVU,URI,eaaa00,091f3f,002855,5ab3e8,WVU,eaaa00,002855,URI,091f3f,5ab3e8,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401907163.json,2026-11-04T00:00Z,True,,
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,MSST,UNA,5d1725,000000,c1c6c8,,MSST,5d1725,c1c6c8,UNA,000000,,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401918854.json,2026-11-04T00:30Z,True,,
 401907163,2026-11-04T00:00Z,Rhode Island,West Virginia,Away,L,64,68,https://a.espncdn.com/i/teamlogos/ncaa/500/227.png,https://a.espncdn.com/i/teamlogos/ncaa/500/277.png,99,24,3.0,8.0,,,False,1,,STATUS_FINAL,8.0,True,24,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
@@ -587,6 +916,13 @@ id,date,Team,Opponent,Location,Game Result,Team Score,Opponent Score,Team Logo,O
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,URI,WVU,091f3f,eaaa00,5ab3e8,002855,WVU,eaaa00,002855,URI,091f3f,5ab3e8,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401907163.json,2026-11-04T00:00Z,True,,
+401907163,2026-11-04T00:00Z,West Virginia,Rhode Island,Home,W,68,64,https://a.espncdn.com/i/teamlogos/ncaa/500/277.png,https://a.espncdn.com/i/teamlogos/ncaa/500/227.png,24,99,8.0,3.0,,,False,1,,STATUS_FINAL,8.0,True,24,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",3.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,WVU,URI,eaaa00,091f3f,002855,5ab3e8,WVU,eaaa00,002855,URI,091f3f,5ab3e8,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401907163.json,2026-11-04T00:00Z,True,,
 401915906,2026-11-04T00:00Z,Duke,Green Bay,Home,W,76,60,https://a.espncdn.com/i/teamlogos/ncaa/500/150.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2739.png,4,99,2.0,45.0,,,False,1,,STATUS_FINAL,2.0,True,4,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
@@ -615,13 +951,6 @@ id,date,Team,Opponent,Location,Game Result,Team Score,Opponent Score,Team Logo,O
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,IOWA,TOW,231f20,FFC229,fcd116,,IOWA,231f20,fcd116,TOW,FFC229,,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401921404.json,2026-11-03T01:00Z,True,,
-401915322,2026-11-03T00:30Z,Princeton,Belmont,Home,W,63,52,https://a.espncdn.com/i/teamlogos/ncaa/500/163.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2057.png,99,99,12.0,18.0,,,False,1,,STATUS_FINAL,12.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",18.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-1'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,PRIN,BEL,000000,182142,ff6000,c9262d,PRIN,000000,ff6000,BEL,182142,c9262d,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401915322.json,2026-11-03T00:30Z,True,,
 401917926,2026-11-03T00:30Z,Iowa State,Grambling,Home,W,90,61,https://a.espncdn.com/i/teamlogos/ncaa/500/66.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2755.png,99,99,8.0,26.0,,,False,1,,STATUS_FINAL,8.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
@@ -629,13 +958,13 @@ id,date,Team,Opponent,Location,Game Result,Team Score,Opponent Score,Team Logo,O
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,ISU,GRAM,ae192d,ee8601,ffc72a,ffd10a,ISU,ae192d,ffc72a,GRAM,ee8601,ffd10a,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401917926.json,2026-11-03T00:30Z,True,,
-401912964,2026-11-03T00:00Z,LSU,SE Louisiana,Home,W,129,35,https://a.espncdn.com/i/teamlogos/ncaa/500/99.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2545.png,9,99,23.0,25.0,,,False,1,,STATUS_FINAL,23.0,True,9,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
+401915322,2026-11-03T00:30Z,Princeton,Belmont,Home,W,63,52,https://a.espncdn.com/i/teamlogos/ncaa/500/163.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2057.png,99,99,12.0,18.0,,,False,1,,STATUS_FINAL,12.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",25.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",18.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-1'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,LSU,SELA,461d76,215732,fdd023,ffc72c,LSU,461d76,fdd023,SELA,215732,ffc72c,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401912964.json,2026-11-03T00:00Z,True,,
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,PRIN,BEL,000000,182142,ff6000,c9262d,PRIN,000000,ff6000,BEL,182142,c9262d,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401915322.json,2026-11-03T00:30Z,True,,
 401913675,2026-11-03T00:00Z,Richmond,Charlotte,Away,W,83,71,https://a.espncdn.com/i/teamlogos/ncaa/500/257.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2429.png,99,99,3.0,62.0,,,False,1,,STATUS_FINAL,62.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-1'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-1'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
@@ -643,6 +972,20 @@ id,date,Team,Opponent,Location,Game Result,Team Score,Opponent Score,Team Logo,O
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '1-0'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,RICH,CLT,9e0712,005035,b90b2e,a49665,CLT,005035,a49665,RICH,9e0712,b90b2e,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401913675.json,2026-11-03T00:00Z,True,,
+401918675,2026-11-03T00:00Z,James Madison,Miami (OH),Away,L,52,59,https://a.espncdn.com/i/teamlogos/ncaa/500/256.png,https://a.espncdn.com/i/teamlogos/ncaa/500/193.png,99,99,27.0,14.0,,,False,1,MAC-SBC Challenge,STATUS_FINAL,14.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",27.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,JMU,M-OH,450084,c41230,cbb677,ffffff,M-OH,c41230,ffffff,JMU,450084,cbb677,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401918675.json,2026-11-03T00:00Z,True,,
+401912964,2026-11-03T00:00Z,LSU,SE Louisiana,Home,W,129,35,https://a.espncdn.com/i/teamlogos/ncaa/500/99.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2545.png,9,99,23.0,25.0,,,False,1,,STATUS_FINAL,23.0,True,9,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",25.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,LSU,SELA,461d76,215732,fdd023,ffc72c,LSU,461d76,fdd023,SELA,215732,ffc72c,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401912964.json,2026-11-03T00:00Z,True,,
 401918462,2026-11-03T00:00Z,Baylor,Fairleigh Dickinson,Home,W,87,66,https://a.espncdn.com/i/teamlogos/ncaa/500/239.png,https://a.espncdn.com/i/teamlogos/ncaa/500/161.png,99,99,8.0,19.0,,,False,1,,STATUS_FINAL,8.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
@@ -657,13 +1000,6 @@ id,date,Team,Opponent,Location,Game Result,Team Score,Opponent Score,Team Logo,O
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,ALA,QUC,9e1b32,192C66,ffffff,857040,ALA,9e1b32,ffffff,QUC,192C66,857040,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401912988.json,2026-11-03T00:00Z,True,,
-401918675,2026-11-03T00:00Z,James Madison,Miami (OH),Away,L,52,59,https://a.espncdn.com/i/teamlogos/ncaa/500/256.png,https://a.espncdn.com/i/teamlogos/ncaa/500/193.png,99,99,27.0,14.0,,,False,1,MAC-SBC Challenge,STATUS_FINAL,14.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",27.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-1'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,JMU,M-OH,450084,c41230,cbb677,ffffff,M-OH,c41230,ffffff,JMU,450084,cbb677,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401918675.json,2026-11-03T00:00Z,True,,
 401927955,2026-11-02T23:30Z,Kentucky,Morehead State,Home,W,85,42,https://a.espncdn.com/i/teamlogos/ncaa/500/96.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2413.png,14,99,23.0,20.0,,,False,1,,STATUS_FINAL,23.0,True,14,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
@@ -699,13 +1035,6 @@ id,date,Team,Opponent,Location,Game Result,Team Score,Opponent Score,Team Logo,O
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,OKST,SOU,fe5c00,004B97,000000,ffc82d,OKST,fe5c00,000000,SOU,004B97,ffc82d,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401907046.json,2026-11-02T23:00Z,True,,
-401906890,2026-11-02T23:00Z,Florida,Bucknell,Home,W,83,60,https://a.espncdn.com/i/teamlogos/ncaa/500/57.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2083.png,99,99,23.0,22.0,,,False,1,,STATUS_FINAL,23.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",22.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-1'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,FLA,BUCK,0021a5,000060,fa4616,00316e,FLA,0021a5,fa4616,BUCK,000060,00316e,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401906890.json,2026-11-02T23:00Z,True,,
 401918901,2026-11-02T23:00Z,Oregon,Hawai'i,Home,W,87,54,https://a.espncdn.com/i/teamlogos/ncaa/500/2483.png,https://a.espncdn.com/i/teamlogos/ncaa/500/62.png,99,99,7.0,44.0,,,False,1,,STATUS_FINAL,7.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
@@ -713,13 +1042,6 @@ id,date,Team,Opponent,Location,Game Result,Team Score,Opponent Score,Team Logo,O
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,ORE,HAW,00934b,005737,fff41b,000000,ORE,00934b,fff41b,HAW,005737,000000,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401918901.json,2026-11-02T23:00Z,True,,
-401916003,2026-11-02T23:00Z,Virginia,Maryland Eastern Shore,Home,W,87,45,https://a.espncdn.com/i/teamlogos/ncaa/500/258.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2379.png,99,99,2.0,16.0,,,False,1,,STATUS_FINAL,2.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",16.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-1'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,UVA,UMES,232d4b,5c2301,f84c1e,b5b7ba,UVA,232d4b,f84c1e,UMES,5c2301,b5b7ba,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401916003.json,2026-11-02T23:00Z,True,,
 401916015,2026-11-02T23:00Z,Virginia Tech,North Carolina Central,Home,W,85,39,https://a.espncdn.com/i/teamlogos/ncaa/500/259.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2428.png,99,99,2.0,16.0,,,False,1,,STATUS_FINAL,2.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
@@ -727,6 +1049,20 @@ id,date,Team,Opponent,Location,Game Result,Team Score,Opponent Score,Team Logo,O
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,VT,NCCU,6a2c3e,880023,cf4520,c2c3c0,VT,6a2c3e,cf4520,NCCU,880023,c2c3c0,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401916015.json,2026-11-02T23:00Z,True,,
+401916003,2026-11-02T23:00Z,Virginia,Maryland Eastern Shore,Home,W,87,45,https://a.espncdn.com/i/teamlogos/ncaa/500/258.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2379.png,99,99,2.0,16.0,,,False,1,,STATUS_FINAL,2.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",16.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,UVA,UMES,232d4b,5c2301,f84c1e,b5b7ba,UVA,232d4b,f84c1e,UMES,5c2301,b5b7ba,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401916003.json,2026-11-02T23:00Z,True,,
+401906890,2026-11-02T23:00Z,Florida,Bucknell,Home,W,83,60,https://a.espncdn.com/i/teamlogos/ncaa/500/57.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2083.png,99,99,23.0,22.0,,,False,1,,STATUS_FINAL,23.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",22.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,FLA,BUCK,0021a5,000060,fa4616,00316e,FLA,0021a5,fa4616,BUCK,000060,00316e,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401906890.json,2026-11-02T23:00Z,True,,
 401912977,2026-11-02T22:00Z,Georgia,West Georgia,Home,W,92,53,https://a.espncdn.com/i/teamlogos/ncaa/500/61.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2698.png,99,99,23.0,30.0,,,False,1,,STATUS_FINAL,23.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
@@ -804,6 +1140,13 @@ id,date,Team,Opponent,Location,Game Result,Team Score,Opponent Score,Team Logo,O
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,NEB,SJSU,e31937,0038a8,ffffff,ffb81a,NEB,e31937,ffffff,SJSU,0038a8,ffb81a,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401921434.json,2026-11-02T18:00Z,True,,
+401918849,2026-11-02T17:00Z,South Carolina,Maryland,Neutral,W,101,93,https://a.espncdn.com/i/teamlogos/ncaa/500/2579.png,https://a.espncdn.com/i/teamlogos/ncaa/500/120.png,1,20,23.0,7.0,,,False,1,Oui-Play,STATUS_FINAL,23.0,True,1,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",7.0,False,20,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,SC,MD,73000a,ce1126,000000,ffffff,SC,73000a,000000,MD,ce1126,ffffff,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401918849.json,2026-11-02T17:00Z,True,,
 401923434,2026-11-02T17:00Z,Ole Miss,Alcorn State,Home,W,80,38,https://a.espncdn.com/i/teamlogos/ncaa/500/145.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2016.png,19,99,23.0,26.0,,,False,1,,STATUS_FINAL,23.0,True,19,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
@@ -818,20 +1161,6 @@ id,date,Team,Opponent,Location,Game Result,Team Score,Opponent Score,Team Logo,O
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,CLEM,RAD,f56600,BC1515,ffffff,c2c3c0,CLEM,f56600,ffffff,RAD,BC1515,c2c3c0,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401911503.json,2026-11-02T17:00Z,True,,
-401918849,2026-11-02T17:00Z,South Carolina,Maryland,Neutral,W,101,93,https://a.espncdn.com/i/teamlogos/ncaa/500/2579.png,https://a.espncdn.com/i/teamlogos/ncaa/500/120.png,1,20,23.0,7.0,,,False,1,Oui-Play,STATUS_FINAL,23.0,True,1,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",7.0,False,20,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-1'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,SC,MD,73000a,ce1126,000000,ffffff,SC,73000a,000000,MD,ce1126,ffffff,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401918849.json,2026-11-02T17:00Z,True,,
-401916067,2026-11-02T17:00Z,Vanderbilt,Lipscomb,Home,W,112,53,https://a.espncdn.com/i/teamlogos/ncaa/500/238.png,https://a.espncdn.com/i/teamlogos/ncaa/500/288.png,8,99,23.0,46.0,,,False,1,,STATUS_FINAL,23.0,True,8,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",46.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-1'}
- {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
- {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
- {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,VAN,LIP,000000,20366C,cfae70,f6b734,VAN,000000,cfae70,LIP,20366C,f6b734,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401916067.json,2026-11-02T17:00Z,True,,
 401918849,2026-11-02T17:00Z,Maryland,South Carolina,Neutral,L,93,101,https://a.espncdn.com/i/teamlogos/ncaa/500/120.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2579.png,20,1,7.0,23.0,,,False,1,Oui-Play,STATUS_FINAL,23.0,True,1,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
@@ -839,6 +1168,13 @@ id,date,Team,Opponent,Location,Game Result,Team Score,Opponent Score,Team Logo,O
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
  {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,MD,SC,ce1126,73000a,ffffff,000000,SC,73000a,000000,MD,ce1126,ffffff,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401918849.json,2026-11-02T17:00Z,True,,
+401916067,2026-11-02T17:00Z,Vanderbilt,Lipscomb,Home,W,112,53,https://a.espncdn.com/i/teamlogos/ncaa/500/238.png,https://a.espncdn.com/i/teamlogos/ncaa/500/288.png,8,99,23.0,46.0,,,False,1,,STATUS_FINAL,23.0,True,8,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",46.0,False,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '0-1'}
+ {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '0-0'}
+ {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-1'}
+ {'name': 'vs. Conf.', 'abbreviation': None, 'type': 'vsconf', 'summary': '0-0'}]",,,VAN,LIP,000000,20366C,cfae70,f6b734,VAN,000000,cfae70,LIP,20366C,f6b734,https://raw.githubusercontent.com/sportsdataverse/wehoop-wbb-raw/main/wbb/json/final/401916067.json,2026-11-02T17:00Z,True,,
 401919322,2026-11-02T16:00Z,Columbia,Davidson,Home,W,71,65,https://a.espncdn.com/i/teamlogos/ncaa/500/171.png,https://a.espncdn.com/i/teamlogos/ncaa/500/2166.png,99,99,12.0,3.0,,,False,1,,STATUS_FINAL,12.0,True,99,"[{'name': 'overall', 'abbreviation': 'Game', 'type': 'total', 'summary': '1-0'}
  {'name': 'Home', 'abbreviation': None, 'type': 'home', 'summary': '1-0'}
  {'name': 'Road', 'abbreviation': None, 'type': 'road', 'summary': '0-0'}
