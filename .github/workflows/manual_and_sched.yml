@@ -60,6 +60,9 @@ jobs:
             --games data/wbb_schedule/schedule_filtered.csv \
             --output "$SEASON_DATA_DIR/polls_games_joined.csv"
 
+      - name: Build dashboard-ready dataset (Eastern-date weeks, NR recodes, carry-forward)
+        run: python scripts/process/prep_dashboard_data.py
+
       - name: Update Google Sheets
         env:
           GCP_SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT }}
