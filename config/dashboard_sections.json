@@ -88,7 +88,7 @@
       "id": "team_report_card",
       "title": "Team report card",
       "audience": "fan",
-      "published": false,
+      "published": true,
       "requires": [
         {"metric": "pct_teams_games_ge3", "op": ">=", "value": 0.9},
         {"metric": "polls_released", "op": ">=", "value": 3}
@@ -99,12 +99,9 @@
       "id": "top25_matchups",
       "title": "Top 25 matchups",
       "audience": "fan",
-      "published": false,
-      "requires": [
-        {"metric": "top25_matchups", "op": ">=", "value": 15},
-        {"metric": "pct_teams_top25_ge2", "op": ">=", "value": 0.75}
-      ],
-      "unlock_note": "Unlocks once most teams have played 2+ ranked opponents"
+      "published": true,
+      "requires": [{"metric": "top25_matchups", "op": ">=", "value": 5}],
+      "unlock_note": "Unlocks at 5 matchups between ranked teams"
     },
     {
       "id": "home_road_splits",
