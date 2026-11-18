@@ -1,0 +1,140 @@
+{
+  "_comment": "Section gates for the Top 25 dashboard. A section is LIVE only when BOTH hold: (1) its data 'requires' are all met by polls_games_dashboard.csv, and (2) 'published' is true. Data-ready but unpublished sections stay greyed out so nothing goes public without approval. Evaluate with scripts/process/evaluate_section_gates.py (writes dashboard_gates.json beside the data).",
+  "_metrics": {
+    "polls_released": "Distinct poll weeks in the file (Pre counts).",
+    "complete_weeks": "Poll weeks whose games window has closed (every poll week except the newest).",
+    "teams": "Distinct teams in the polls.",
+    "unique_games": "Distinct game_id values.",
+    "upsets": "Unique games flagged Upset or Major Upset.",
+    "top25_matchups": "Unique games where both teams were ranked.",
+    "min_games_per_team": "Fewest games played by any team.",
+    "pct_teams_games_ge2": "Share of teams with at least 2 games.",
+    "pct_teams_games_ge3": "Share of teams with at least 3 games.",
+    "pct_teams_home_ge2": "Share of teams with at least 2 home games.",
+    "pct_teams_road_ge2": "Share of teams with at least 2 road games.",
+    "pct_teams_conf_ge2": "Share of teams with at least 2 conference games.",
+    "pct_teams_top25_ge2": "Share of teams with at least 2 games against ranked opponents."
+  },
+  "coming_soon_prefix": "Coming Soon",
+  "sections": [
+    {
+      "id": "headline_tiles",
+      "title": "Season at a glance",
+      "audience": "fan",
+      "published": true,
+      "requires": [{"metric": "polls_released", "op": ">=", "value": 1}],
+      "unlock_note": "Unlocks after the first poll"
+    },
+    {
+      "id": "rank_trajectory",
+      "title": "Rank trajectories",
+      "audience": "fan",
+      "published": true,
+      "requires": [{"metric": "polls_released", "op": ">=", "value": 3}],
+      "unlock_note": "Unlocks once three polls are in"
+    },
+    {
+      "id": "biggest_movers",
+      "title": "Biggest risers and fallers",
+      "audience": "fan",
+      "published": true,
+      "requires": [{"metric": "polls_released", "op": ">=", "value": 2}],
+      "unlock_note": "Unlocks once two polls are in"
+    },
+    {
+      "id": "conference_share",
+      "title": "Conference share of the Top 25",
+      "audience": "fan",
+      "published": true,
+      "requires": [{"metric": "polls_released", "op": ">=", "value": 2}],
+      "unlock_note": "Unlocks once two polls are in"
+    },
+    {
+      "id": "game_log",
+      "title": "Game log with logos",
+      "audience": "fan",
+      "published": true,
+      "requires": [{"metric": "unique_games", "op": ">=", "value": 20}],
+      "unlock_note": "Unlocks at 20 games"
+    },
+    {
+      "id": "rank_vs_result",
+      "title": "How results moved the rankings",
+      "audience": "fan",
+      "published": true,
+      "requires": [
+        {"metric": "complete_weeks", "op": ">=", "value": 2},
+        {"metric": "pct_teams_games_ge2", "op": ">=", "value": 0.9}
+      ],
+      "unlock_note": "Unlocks once two poll weeks are complete and nearly every team has 2+ games"
+    },
+    {
+      "id": "upset_tracker",
+      "title": "Upset tracker",
+      "audience": "fan",
+      "published": true,
+      "requires": [{"metric": "upsets", "op": ">=", "value": 3}],
+      "unlock_note": "Unlocks after three upsets"
+    },
+    {
+      "id": "margin_by_opponent",
+      "title": "Margin by opponent quality",
+      "audience": "analyst",
+      "published": true,
+      "requires": [{"metric": "unique_games", "op": ">=", "value": 50}],
+      "unlock_note": "Unlocks at 50 games"
+    },
+    {
+      "id": "team_report_card",
+      "title": "Team report card",
+      "audience": "fan",
+      "published": false,
+      "requires": [
+        {"metric": "pct_teams_games_ge3", "op": ">=", "value": 0.9},
+        {"metric": "polls_released", "op": ">=", "value": 3}
+      ],
+      "unlock_note": "Unlocks once nearly every team has 3+ games and three polls are in"
+    },
+    {
+      "id": "top25_matchups",
+      "title": "Top 25 matchups",
+      "audience": "fan",
+      "published": false,
+      "requires": [
+        {"metric": "top25_matchups", "op": ">=", "value": 15},
+        {"metric": "pct_teams_top25_ge2", "op": ">=", "value": 0.75}
+      ],
+      "unlock_note": "Unlocks once most teams have played 2+ ranked opponents"
+    },
+    {
+      "id": "home_road_splits",
+      "title": "Home, road and neutral splits",
+      "audience": "analyst",
+      "published": false,
+      "requires": [
+        {"metric": "pct_teams_home_ge2", "op": ">=", "value": 0.9},
+        {"metric": "pct_teams_road_ge2", "op": ">=", "value": 0.9}
+      ],
+      "unlock_note": "Unlocks once nearly every team has 2+ home and 2+ road games"
+    },
+    {
+      "id": "conference_play",
+      "title": "Conference play",
+      "audience": "fan",
+      "published": false,
+      "requires": [{"metric": "pct_teams_conf_ge2", "op": ">=", "value": 0.9}],
+      "unlock_note": "Unlocks once nearly every team has 2+ conference games"
+    },
+    {
+      "id": "rank_gap_diagnostics",
+      "title": "Rank gap and margin diagnostics",
+      "audience": "analyst",
+      "published": false,
+      "requires": [
+        {"metric": "unique_games", "op": ">=", "value": 150},
+        {"metric": "pct_teams_top25_ge2", "op": ">=", "value": 0.75}
+      ],
+      "unlock_note": "Unlocks at 150 games with most teams facing ranked opponents"
+    }
+  ]
+}

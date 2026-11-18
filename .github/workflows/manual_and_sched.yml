@@ -63,6 +63,9 @@ jobs:
       - name: Build dashboard-ready dataset (Eastern-date weeks, NR recodes, carry-forward)
         run: python scripts/process/prep_dashboard_data.py
 
+      - name: Evaluate dashboard section gates
+        run: python scripts/process/evaluate_section_gates.py
+
       - name: Update Google Sheets
         env:
           GCP_SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT }}
