@@ -19,6 +19,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from season_config import get_season_data_dir
 
 POLLS_GAMES_JOINED = get_season_data_dir() / "polls_games_joined.csv"
+POLLS_GAMES_DASHBOARD = get_season_data_dir() / "polls_games_dashboard.csv"
+POLL_WEEK_CONFIG = Path(__file__).resolve().parent.parent / "config" / "poll_week_windows.json"
 
 # Conference mapping for validation
 CONF_ID_MAP = {
@@ -217,6 +219,109 @@ def validate_dataset():
         return False
 
 
+def check_dashboard_frame(df, joined_columns=None, windows=None):
+    """Validate a polls_games_dashboard frame; return a list of issue strings.
+
+    Kept free of file I/O so tests can feed it small frames.
+    - one unique game per game_id (is_unique_game)
+    - no 26 / 99 sentinels left in the *_clean / tip-off rank columns or labels
+    - carried running stats only on rows with no game (and never on Pre)
+    - every original joined column is still present
+    - every game's Eastern date sits inside its poll-week window
+    """
+    issues = []
+    has_game = df['game_id'].notna()
+
+    # 1. one unique game per game_id
+    flagged = df[df['is_unique_game'].astype(bool)]
+    if (flagged['game_id'].isna()).any():
+        issues.append("is_unique_game is True on rows with no game")
+    dup = flagged['game_id'].duplicated().sum()
+    if dup:
+        issues.append(f"is_unique_game flags {dup} game_id(s) more than once")
+    missing_flag = set(df.loc[has_game, 'game_id']) - set(flagged['game_id'])
+    if missing_flag:
+        issues.append(f"{len(missing_flag)} game_id(s) have no is_unique_game row")
+
+    # 2. sentinels must be gone from the clean columns
+    for col in ['rank_numeric_clean', 'team_rank_tipoff', 'opp_rank_tipoff', 'next_poll_rank_numeric']:
+        bad = df[col].notna() & ((df[col] > 25) | (df[col] < 1))
+        if bad.any():
+            issues.append(f"{col}: {int(bad.sum())} value(s) outside 1-25 (26/99 sentinel left in)")
+    for col in ['poll_rank_label', 'team_rank_tipoff_label', 'opp_rank_tipoff_label', 'next_poll_rank_label']:
+        bad = df[col].isin(['#26', '#99'])
+        if bad.any():
+            issues.append(f"{col}: {int(bad.sum())} label(s) show an unranked sentinel")
+    if (df['is_ranked'] != df['rank_numeric_clean'].notna()).any():
+        issues.append("is_ranked disagrees with rank_numeric_clean")
+
+    # 3. carry-forward only where there is no game, never on the preseason poll
+    carried = df['running_stats_carried'].astype(bool)
+    if (carried & has_game).any():
+        issues.append(f"{int((carried & has_game).sum())} row(s) have a game AND running_stats_carried")
+    if (carried & (df['week_number'] == 0)).any():
+        issues.append("running_stats_carried set on preseason (week 0) rows")
+    run_cols = [c for c in df.columns if c.startswith('running_') and c != 'running_stats_carried']
+    ordered = df.sort_values(['team', 'week_number']).copy()
+    last = ordered[ordered['game_id'].notna()].groupby('team')['running_wins'].last()
+    for team, row in ordered[carried.reindex(ordered.index)].groupby('team')['running_wins'].last().items():
+        if team in last.index and row != last[team] and ordered.loc[ordered['team'] == team, 'game_id'].notna().any():
+            issues.append(f"{team}: carried running_wins ({row}) != last game row ({last[team]})")
+
+    # 4. no original column lost
+    if joined_columns is not None:
+        lost = [c for c in joined_columns if c not in df.columns]
+        if lost:
+            issues.append(f"columns missing vs polls_games_joined.csv: {lost}")
+
+    # 5. Eastern-date windows
+    if windows is not None and has_game.any():
+        ts = pd.to_datetime(df.loc[has_game, 'game_date'], utc=True, errors='coerce')
+        et = ts.dt.tz_convert('America/New_York').dt.tz_localize(None).dt.normalize()
+        starts = df.loc[has_game, 'poll_week'].map(lambda w: pd.Timestamp(windows[w][0]) if w in windows else pd.NaT)
+        ends = df.loc[has_game, 'poll_week'].map(lambda w: pd.Timestamp(windows[w][1]) if w in windows else pd.NaT)
+        outside = (et < starts) | (et > ends) | starts.isna()
+        if outside.any():
+            issues.append(f"{int(outside.sum())} game row(s) fall outside their poll-week window by Eastern date")
+    return issues
+
+
+def validate_dashboard_dataset():
+    """Validate polls_games_dashboard.csv (written by prep_dashboard_data.py)."""
+    import json
+
+    print("\n" + "=" * 80)
+    print("DASHBOARD DATASET VALIDATION (polls_games_dashboard.csv)")
+    print("=" * 80)
+
+    if not POLLS_GAMES_DASHBOARD.exists():
+        print(f"  ❌ {POLLS_GAMES_DASHBOARD} not found -- run scripts/process/prep_dashboard_data.py")
+        return False
+
+    df = pd.read_csv(POLLS_GAMES_DASHBOARD)
+    joined_cols = list(pd.read_csv(POLLS_GAMES_JOINED, nrows=0).columns) if POLLS_GAMES_JOINED.exists() else None
+    windows = None
+    if POLL_WEEK_CONFIG.exists():
+        windows = json.loads(POLL_WEEK_CONFIG.read_text()).get('windows')
+    issues = check_dashboard_frame(df, joined_cols, windows)
+
+    if POLLS_GAMES_JOINED.exists():
+        n_joined = len(pd.read_csv(POLLS_GAMES_JOINED, usecols=['team']))
+        if n_joined != len(df):
+            issues.append(f"row count {len(df)} != polls_games_joined.csv ({n_joined})")
+
+    print(f"  Rows: {len(df):,}   unique games: {int(df['is_unique_game'].sum())}   "
+          f"carried rows: {int(df['running_stats_carried'].sum())}")
+    if issues:
+        for i, issue in enumerate(issues, 1):
+            print(f"  ❌ {i}. {issue}")
+        return False
+    print("  ✅ one unique game per game_id; no 26/99 in clean columns; carry-forward only on no-game rows; "
+          "all joined columns kept; Eastern-date windows hold")
+    return True
+
+
 if __name__ == '__main__':
     success = validate_dataset()
-    sys.exit(0 if success else 1)
+    dashboard_ok = validate_dashboard_dataset()
+    sys.exit(0 if (success and dashboard_ok) else 1)

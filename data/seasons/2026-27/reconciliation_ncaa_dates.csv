@@ -1,0 +1,104 @@
+game_id,team,opponent,score,espn_utc_date,espn_et_date,ncaa_contest_id,ncaa_date,ncaa_matchup,yahoo_date,match_method,matched,score_matches,et_matches_ncaa,utc_matches_ncaa,yahoo_matches_et
+401915906.0,Duke,Green Bay,76-60,2026-11-04,2026-11-03,6654305,2026-11-03,Green Bay @ Duke,2026-11-03,crosswalk_id,True,True,True,False,True
+401915907.0,Duke,Florida Atlantic,78-56,2026-11-08,2026-11-08,6669212,2026-11-08,Duke @ Fla. Atlantic,2026-11-08,crosswalk_id,True,True,True,True,True
+401915908.0,Duke,Norfolk State,85-23,2026-11-13,2026-11-12,6639723,2026-11-12,Duke @ Norfolk St.,2026-11-12,crosswalk_id,True,True,True,False,True
+401915909.0,Duke,Marshall,88-51,2026-11-15,2026-11-15,6624868,2026-11-15,Marshall @ Duke,2026-11-15,crosswalk_id,True,True,True,True,True
+401927060.0,Illinois,Detroit Mercy,84-50,2026-11-05,2026-11-04,6643825,2026-11-04,Detroit Mercy @ Illinois,2026-11-04,crosswalk_id,True,True,True,False,True
+401927061.0,Illinois,Southern,99-28,2026-11-07,2026-11-07,6643830,2026-11-07,Southern U. @ Illinois,2026-11-07,crosswalk_id,True,True,True,True,True
+401927062.0,Illinois,Southeast Missouri State,105-49,2026-11-15,2026-11-15,6624620,2026-11-15,Southeast Mo. St. @ Illinois,2026-11-15,crosswalk_id,True,True,True,True,True
+401921404.0,Iowa,Towson,73-45,2026-11-03,2026-11-02,6636487,2026-11-02,Towson @ Iowa,2026-11-02,crosswalk_id,True,True,True,False,True
+401921425.0,Iowa,Eastern Illinois,80-39,2026-11-06,2026-11-05,6636429,2026-11-05,Eastern Ill. @ Iowa,2026-11-05,crosswalk_id,True,True,True,False,True
+401919981.0,Iowa,Northern Iowa,78-40,2026-11-13,2026-11-12,6636489,2026-11-12,UNI @ Iowa,2026-11-12,crosswalk_id,True,True,True,False,True
+401927955.0,Kentucky,Morehead State,85-42,2026-11-02,2026-11-02,6656642,2026-11-02,Morehead St. @ Kentucky,2026-11-02,crosswalk_id,True,True,True,True,True
+401929059.0,Kentucky,Northern Kentucky,79-28,2026-11-05,2026-11-05,6648757,2026-11-05,Northern Ky. @ Kentucky,2026-11-05,crosswalk_id,True,True,True,True,True
+401913737.0,Kentucky,NC State,93-78,2026-11-08,2026-11-08,6630087,2026-11-08,Kentucky @ NC State,2026-11-08,crosswalk_id,True,True,True,True,True
+401919680.0,Kentucky,Evansville,98-30,2026-11-11,2026-11-11,6650976,2026-11-11,Evansville @ Kentucky,2026-11-11,crosswalk_id,True,True,True,True,True
+401929060.0,Kentucky,Eastern Michigan,81-47,2026-11-15,2026-11-15,6647592,2026-11-15,Eastern Mich. @ Kentucky,2026-11-15,crosswalk_id,True,True,True,True,True
+401912964.0,LSU,SE Louisiana,129-35,2026-11-03,2026-11-02,6626300,2026-11-02,Southeastern La. @ LSU,2026-11-02,crosswalk_id,True,True,True,False,True
+401912965.0,LSU,Texas Southern,131-22,2026-11-06,2026-11-05,6626301,2026-11-05,Texas Southern @ LSU,2026-11-05,crosswalk_id,True,True,True,False,True
+401912966.0,LSU,McNeese,100-43,2026-11-11,2026-11-10,6626302,2026-11-10,McNeese @ LSU,2026-11-10,crosswalk_id,True,True,True,False,True
+401912967.0,LSU,Denver,101-37,2026-11-14,2026-11-13,6626303,2026-11-13,Denver @ LSU,2026-11-13,crosswalk_id,True,True,True,False,True
+401912968.0,LSU,Troy,116-70,2026-11-17,2026-11-16,6626304,2026-11-16,Troy @ LSU,2026-11-16,crosswalk_id,True,True,True,False,True
+401906074.0,Louisville,Bellarmine,119-47,2026-11-02,2026-11-02,6660785,2026-11-02,Bellarmine @ Louisville,2026-11-02,crosswalk_id,True,True,True,True,True
+401906075.0,Louisville,Stetson,87-35,2026-11-05,2026-11-04,6644629,2026-11-04,Stetson @ Louisville,2026-11-04,crosswalk_id,True,True,True,False,True
+401906076.0,Louisville,Southern Indiana,80-57,2026-11-08,2026-11-08,6638834,2026-11-08,Louisville @ Southern Ind.,2026-11-08,crosswalk_id,True,True,True,True,True
+401906077.0,Louisville,Lindenwood,71-35,2026-11-11,2026-11-10,6607285,2026-11-10,Lindenwood @ Louisville,2026-11-10,crosswalk_id,True,True,True,False,True
+401906078.0,Louisville,Ball State,94-73,2026-11-13,2026-11-12,6647841,2026-11-12,Louisville @ Ball St.,2026-11-12,crosswalk_id,True,True,True,False,True
+401918915.0,Maryland,George Mason,81-62,2026-11-08,2026-11-08,6634447,2026-11-08,George Mason @ Maryland,2026-11-08,crosswalk_id,True,True,True,True,True
+401918916.0,Maryland,Columbia,85-58,2026-11-15,2026-11-15,6638564,2026-11-15,Columbia @ Maryland,2026-11-15,crosswalk_id,True,True,True,True,True
+401927068.0,Michigan,Wright State,109-52,2026-11-08,2026-11-08,6638793,2026-11-08,Wright St. @ Michigan,2026-11-08,crosswalk_id,True,True,True,True,True
+401919324.0,Michigan,Columbia,81-58,2026-11-13,2026-11-12,6638813,2026-11-12,Michigan @ Columbia,2026-11-12,crosswalk_id,True,True,True,False,True
+401927069.0,Michigan,Central Michigan,101-30,2026-11-17,2026-11-16,6624669,2026-11-16,Michigan @ Central Mich.,2026-11-16,crosswalk_id,True,True,True,False,True
+401913855.0,Minnesota,Harvard,82-62,2026-11-02,2026-11-02,6648090,2026-11-02,Harvard @ Minnesota,2026-11-02,crosswalk_id,True,True,True,True,True
+401918909.0,Minnesota,Marquette,87-79,2026-11-07,2026-11-07,6656969,2026-11-07,Minnesota @ Marquette,2026-11-07,crosswalk_id,True,True,True,True,True
+401918910.0,Minnesota,Southern,86-47,2026-11-11,2026-11-10,6649937,2026-11-10,Southern U. @ Minnesota,2026-11-10,crosswalk_id,True,True,True,False,True
+401906983.0,Minnesota,Kansas State,68-65,2026-11-14,2026-11-14,6635944,2026-11-14,Kansas St. @ Minnesota,2026-11-14,crosswalk_id,True,True,True,True,True
+401913735.0,NC State,Wofford,80-50,2026-11-02,2026-11-02,6630079,2026-11-02,Wofford @ NC State,2026-11-02,crosswalk_id,True,True,True,True,True
+401913736.0,NC State,Campbell,80-45,2026-11-04,2026-11-04,6630081,2026-11-04,Campbell @ NC State,2026-11-04,crosswalk_id,True,True,True,True,True
+401912506.0,NC State,Liberty,71-47,2026-11-12,2026-11-11,6619927,2026-11-11,Liberty @ NC State,2026-11-11,crosswalk_id,True,True,True,False,True
+401913027.0,NC State,Seton Hall,75-54,2026-11-15,2026-11-15,6630091,2026-11-15,NC State @ Seton Hall,2026-11-15,crosswalk_id,True,True,True,True,True
+401921434.0,Nebraska,San José State,81-54,2026-11-02,2026-11-02,6635828,2026-11-02,San Jose St. @ Nebraska,2026-11-02,crosswalk_id,True,True,True,True,True
+401921435.0,Nebraska,Western Illinois,98-35,2026-11-07,2026-11-07,6659359,2026-11-07,Western Ill. @ Nebraska,2026-11-07,crosswalk_id,True,True,True,True,True
+401921436.0,Nebraska,North Carolina A&T,76-35,2026-11-11,2026-11-10,6656412,2026-11-10,N.C. A&T @ Nebraska,2026-11-10,crosswalk_id,True,True,True,False,True
+401906965.0,Nebraska,Kansas,105-73,2026-11-14,2026-11-14,6642181,2026-11-14,Kansas @ Nebraska,2026-11-14,crosswalk_id,True,True,True,True,True
+401920983.0,Notre Dame,Villanova,99-75,2026-11-01,2026-11-01,6654583,2026-11-01,Notre Dame @ Villanova,2026-11-01,crosswalk_id,True,True,True,True,True
+401919954.0,Notre Dame,Stonehill,123-40,2026-11-07,2026-11-06,6611490,2026-11-06,Stonehill @ Notre Dame,2026-11-06,crosswalk_id,True,True,True,False,True
+401923182.0,Notre Dame,Detroit Mercy,108-60,2026-11-11,2026-11-10,6656936,2026-11-10,Detroit Mercy @ Notre Dame,2026-11-10,crosswalk_id,True,True,True,False,True
+401923183.0,Notre Dame,DePaul,108-84,2026-11-14,2026-11-14,6656944,2026-11-14,DePaul @ Notre Dame,2026-11-14,crosswalk_id,True,True,True,True,True
+401927081.0,Ohio State,UIC,81-34,2026-11-02,2026-11-02,6639968,2026-11-02,UIC @ Ohio St.,2026-11-02,crosswalk_id,True,True,True,True,True
+401927082.0,Ohio State,Central Michigan,103-36,2026-11-05,2026-11-05,6624667,2026-11-05,Central Mich. @ Ohio St.,2026-11-05,crosswalk_id,True,True,True,True,True
+401919942.0,Ohio State,Mercyhurst,91-57,2026-11-08,2026-11-08,6639973,2026-11-08,Mercyhurst @ Ohio St.,2026-11-08,crosswalk_id,True,True,True,True,True
+401919898.0,Ohio State,Fairleigh Dickinson,93-49,2026-11-15,2026-11-15,6639978,2026-11-15,FDU @ Ohio St.,2026-11-15,crosswalk_id,True,True,True,True,True
+401927414.0,Oklahoma,Morgan State,95-38,2026-11-08,2026-11-08,6646244,2026-11-08,Morgan St. @ Oklahoma,2026-11-08,crosswalk_id,True,True,True,True,True
+401929062.0,Oklahoma,San José State,98-44,2026-11-11,2026-11-10,6635829,2026-11-10,San Jose St. @ Oklahoma,2026-11-10,crosswalk_id,True,True,True,False,True
+401918773.0,Oklahoma,Oral Roberts,93-62,2026-11-13,2026-11-13,6646248,2026-11-13,Oral Roberts @ Oklahoma,2026-11-13,crosswalk_id,True,True,True,True,True
+401907046.0,Oklahoma State,Southern,81-39,2026-11-02,2026-11-02,6649935,2026-11-02,Southern U. @ Oklahoma St.,2026-11-02,crosswalk_id,True,True,True,True,True
+401907047.0,Oklahoma State,Morgan State,92-38,2026-11-06,2026-11-06,6653753,2026-11-06,Morgan St. @ Oklahoma St.,2026-11-06,crosswalk_id,True,True,True,True,True
+401907048.0,Oklahoma State,Northwestern State,94-56,2026-11-09,2026-11-09,6646768,2026-11-09,Northwestern St. @ Oklahoma St.,2026-11-09,crosswalk_id,True,True,True,True,True
+401907049.0,Oklahoma State,Tulsa,62-64,2026-11-12,2026-11-12,6653756,2026-11-12,Oklahoma St. @ Tulsa,2026-11-12,crosswalk_id,True,True,True,True,True
+401907050.0,Oklahoma State,South Dakota State,90-80,2026-11-15,2026-11-15,6653758,2026-11-15,Oklahoma St. @ South Dakota St.,2026-11-15,crosswalk_id,True,True,True,True,True
+401923434.0,Ole Miss,Alcorn State,80-38,2026-11-02,2026-11-02,6635205,2026-11-02,Alcorn @ Ole Miss,2026-11-02,crosswalk_id,True,True,True,True,True
+401924631.0,Ole Miss,North Alabama,72-51,2026-11-06,2026-11-05,6635210,2026-11-05,North Ala. @ Ole Miss,2026-11-05,crosswalk_id,True,True,True,False,True
+401913800.0,Ole Miss,UAlbany,95-41,2026-11-12,2026-11-11,6635212,2026-11-11,UAlbany @ Ole Miss,2026-11-11,crosswalk_id,True,True,True,False,True
+401924632.0,Ole Miss,Louisiana Tech,69-53,2026-11-15,2026-11-15,6635218,2026-11-15,Louisiana Tech @ Ole Miss,2026-11-15,crosswalk_id,True,True,True,True,True
+401918849.0,South Carolina,Maryland,101-93,2026-11-02,2026-11-02,6638544,2026-11-02,Maryland @ South Carolina,2026-11-02,crosswalk_id,True,True,True,True,True
+401906089.0,South Carolina,UNC,84-39,2026-11-08,2026-11-08,6629811,2026-11-08,North Carolina @ South Carolina,2026-11-08,crosswalk_id,True,True,True,True,True
+401915886.0,South Carolina,Clemson,65-44,2026-11-13,2026-11-12,6626609,2026-11-12,South Carolina @ Clemson,2026-11-12,crosswalk_id,True,True,True,False,True
+401918850.0,South Carolina,USC,89-85,2026-11-15,2026-11-15,6648393,2026-11-15,Southern California @ South Carolina,2026-11-15,crosswalk_id,True,True,True,True,True
+401917938.0,TCU,Oral Roberts,99-43,2026-11-04,2026-11-03,6646439,2026-11-03,Oral Roberts @ TCU,2026-11-03,crosswalk_id,True,True,True,False,True
+401917939.0,TCU,Le Moyne,96-41,2026-11-06,2026-11-05,6660886,2026-11-05,Le Moyne @ TCU,2026-11-05,crosswalk_id,True,True,True,False,True
+401917940.0,TCU,Tarleton State,89-42,2026-11-08,2026-11-08,6651597,2026-11-08,Tarleton St. @ TCU,2026-11-08,crosswalk_id,True,True,True,True,True
+401915666.0,TCU,Iona,78-53,2026-11-10,2026-11-10,6650040,2026-11-10,Iona @ TCU,2026-11-10,crosswalk_id,True,True,True,True,True
+401917941.0,TCU,SE Louisiana,106-47,2026-11-13,2026-11-12,6630706,2026-11-12,Southeastern La. @ TCU,2026-11-12,crosswalk_id,True,True,True,False,True
+401917942.0,TCU,Abilene Christian,88-55,2026-11-15,2026-11-15,6650329,2026-11-15,Abilene Christian @ TCU,2026-11-15,crosswalk_id,True,True,True,True,True
+401918840.0,Texas,Fairleigh Dickinson,85-65,2026-11-05,2026-11-04,6640377,2026-11-04,FDU @ Texas,2026-11-04,crosswalk_id,True,True,True,False,True
+401918841.0,Texas,Northern Colorado,91-29,2026-11-08,2026-11-07,6640476,2026-11-07,Northern Colo. @ Texas,2026-11-07,crosswalk_id,True,True,True,False,True
+401918842.0,Texas,South Dakota State,93-63,2026-11-12,2026-11-11,6640480,2026-11-11,South Dakota St. @ Texas,2026-11-11,crosswalk_id,True,True,True,False,True
+401918433.0,Texas,Tarleton State,91-35,2026-11-14,2026-11-14,6640486,2026-11-14,Tarleton St. @ Texas,2026-11-14,crosswalk_id,True,True,True,True,True
+401918896.0,UCLA,Lehigh,73-53,2026-11-02,2026-11-02,6653906,2026-11-02,Lehigh @ UCLA,2026-11-02,crosswalk_id,True,True,True,True,True
+401918897.0,UCLA,UC Irvine,78-42,2026-11-06,2026-11-05,6648168,2026-11-05,UC Irvine @ UCLA,2026-11-05,crosswalk_id,True,True,True,False,True
+401913056.0,UCLA,Arizona,76-44,2026-11-13,2026-11-12,6648114,2026-11-12,Arizona @ UCLA,2026-11-12,crosswalk_id,True,True,True,False,True
+401915326.0,UCLA,Princeton,55-34,2026-11-15,2026-11-15,6626915,2026-11-15,Princeton @ UCLA,2026-11-15,crosswalk_id,True,True,True,True,True
+401911736.0,UConn,Cornell,100-35,2026-11-02,2026-11-02,6638041,2026-11-02,Cornell @ UConn,2026-11-02,crosswalk_id,True,True,True,True,True
+401911737.0,UConn,Michigan,66-77,2026-11-05,2026-11-05,6638372,2026-11-05,UConn @ Michigan,2026-11-05,crosswalk_id,True,True,True,True,True
+401911738.0,UConn,Iowa,91-79,2026-11-08,2026-11-08,6636488,2026-11-08,Iowa @ UConn,2026-11-08,crosswalk_id,True,True,True,True,True
+401911739.0,UConn,Ohio State,87-55,2026-11-12,2026-11-12,6638379,2026-11-12,UConn @ Ohio St.,2026-11-12,crosswalk_id,True,True,True,True,True
+401906079.0,UConn,Louisville,51-69,2026-11-15,2026-11-15,6638388,2026-11-15,UConn @ Louisville,2026-11-15,crosswalk_id,True,True,True,True,True
+401906088.0,UNC,Oklahoma,79-91,2026-11-02,2026-11-02,6629808,2026-11-02,Oklahoma @ North Carolina,2026-11-02,crosswalk_id,True,True,True,True,True
+401906090.0,UNC,North Carolina Central,109-40,2026-11-12,2026-11-11,6629813,2026-11-11,N.C. Central @ North Carolina,2026-11-11,crosswalk_id,True,True,True,False,True
+401906091.0,UNC,Pennsylvania,71-60,2026-11-14,2026-11-14,6629815,2026-11-14,North Carolina @ Penn,2026-11-14,crosswalk_id,True,True,True,True,True
+401920491.0,USC,UNLV,100-68,2026-11-02,2026-11-02,6648461,2026-11-02,Southern California @ UNLV,2026-11-02,crosswalk_id,True,True,True,True,True
+401927106.0,USC,Utah State,118-40,2026-11-09,2026-11-08,6632968,2026-11-08,Utah St. @ Southern California,2026-11-08,crosswalk_id,True,True,True,False,True
+401927107.0,USC,Charleston,105-44,2026-11-11,2026-11-10,6648462,2026-11-10,Col. of Charleston @ Southern California,2026-11-10,crosswalk_id,True,True,True,False,True
+401916067.0,Vanderbilt,Lipscomb,112-53,2026-11-02,2026-11-02,6655471,2026-11-02,Lipscomb @ Vanderbilt,2026-11-02,crosswalk_id,True,True,True,True,True
+401913884.0,Vanderbilt,Queens University,100-42,2026-11-05,2026-11-04,6657474,2026-11-04,Queens (NC) @ Vanderbilt,2026-11-04,crosswalk_id,True,True,True,False,True
+401918828.0,Vanderbilt,Morehead State,102-50,2026-11-10,2026-11-09,6657475,2026-11-09,Morehead St. @ Vanderbilt,2026-11-09,crosswalk_id,True,True,True,False,True
+401918829.0,Vanderbilt,Western Kentucky,101-59,2026-11-12,2026-11-11,6647501,2026-11-11,Western Ky. @ Vanderbilt,2026-11-11,crosswalk_id,True,True,True,False,True
+401918830.0,Vanderbilt,Iowa,65-75,2026-11-15,2026-11-15,6636490,2026-11-15,Vanderbilt @ Iowa,2026-11-15,crosswalk_id,True,True,True,True,True
+401927836.0,Washington,UC San Diego,79-63,2026-11-02,2026-11-02,6644994,2026-11-02,UC San Diego @ Washington,2026-11-02,crosswalk_id,True,True,True,True,True
+401917684.0,Washington,Pacific,75-54,2026-11-06,2026-11-05,6626461,2026-11-05,Pacific @ Washington,2026-11-05,crosswalk_id,True,True,True,False,True
+401921495.0,Washington,Cal State Bakersfield,85-51,2026-11-13,2026-11-12,6644128,2026-11-12,CSU Bakersfield @ Washington,2026-11-12,crosswalk_id,True,True,True,False,True
+401907163.0,West Virginia,Rhode Island,68-64,2026-11-04,2026-11-03,6636628,2026-11-03,Rhode Island @ West Virginia,2026-11-03,crosswalk_id,True,True,True,False,True
+401907164.0,West Virginia,George Washington,78-66,2026-11-06,2026-11-05,6620887,2026-11-05,George Washington @ West Virginia,2026-11-05,crosswalk_id,True,True,True,False,True
+401907165.0,West Virginia,Georgia Tech,81-63,2026-11-08,2026-11-08,6622069,2026-11-08,West Virginia @ Georgia Tech,2026-11-08,crosswalk_id,True,True,True,True,True
+401907166.0,West Virginia,Northwestern,66-53,2026-11-13,2026-11-13,6636630,2026-11-13,Northwestern @ West Virginia,2026-11-13,crosswalk_id,True,True,True,True,True
