@@ -179,11 +179,11 @@
       "id": "team_report_card",
       "title": "Team report card",
       "audience": "fan",
-      "status": "awaiting_approval",
-      "clickable": false,
-      "published": false,
+      "status": "live",
+      "clickable": true,
+      "published": true,
       "data_ready": true,
-      "tooltip": "Coming Soon",
+      "tooltip": "",
       "checks": [
         {
           "metric": "pct_teams_games_ge3",
@@ -205,25 +205,18 @@
       "id": "top25_matchups",
       "title": "Top 25 matchups",
       "audience": "fan",
-      "status": "coming_soon",
-      "clickable": false,
-      "published": false,
-      "data_ready": false,
-      "tooltip": "Coming Soon \u2014 Unlocks once most teams have played 2+ ranked opponents (10 / 15 Top 25 matchups; 15% / 75% of teams with 2+ ranked opponents)",
+      "status": "live",
+      "clickable": true,
+      "published": true,
+      "data_ready": true,
+      "tooltip": "",
       "checks": [
         {
           "metric": "top25_matchups",
           "op": ">=",
-          "need": 15,
+          "need": 5,
           "have": 10,
-          "met": false
-        },
-        {
-          "metric": "pct_teams_top25_ge2",
-          "op": ">=",
-          "need": 0.75,
-          "have": 0.154,
-          "met": false
+          "met": true
         }
       ]
     },
