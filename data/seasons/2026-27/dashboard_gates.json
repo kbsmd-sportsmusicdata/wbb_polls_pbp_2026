@@ -14,6 +14,7 @@
     "pct_teams_road_ge2": 0.231,
     "pct_teams_conf_ge2": 0.0,
     "pct_teams_top25_ge2": 0.192,
+    "watchlist_teams": 20,
     "pyth_teams": 26,
     "pct_teams_pyth_games_ge8": 0.038,
     "min_pyth_games": 4

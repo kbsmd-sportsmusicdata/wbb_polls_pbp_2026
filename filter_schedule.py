@@ -25,6 +25,7 @@ import pandas as pd
 # Import centralized team name standardization
 from team_name_utils import standardize_team_names
 from season_config import get_season_data_dir
+from watchlist_config import load_watchlist
 
 # Configure logging
 logging.basicConfig(
@@ -101,6 +102,14 @@ def get_top_50_teams() -> Set[str]:
             logger.warning(f"Could not load polls data: {e}")
     else:
         logger.warning(f"Polls file not found at {POLLS_PATH}")
+
+    # Source 3: dashboard watchlist (config/dashboard_watchlist.json) -- schools outside the
+    # poll that could make it or upset a ranked team, so their games are in the schedule too
+    watchlist = load_watchlist()
+    if watchlist:
+        added = [t for t in watchlist if t not in top_teams]
+        top_teams.update(watchlist)
+        logger.info(f"Added {len(added)} watchlist teams not already included ({len(watchlist)} on the watchlist)")
 
     logger.info(f"Total unique teams in Top 50 list: {len(top_teams)}")
 

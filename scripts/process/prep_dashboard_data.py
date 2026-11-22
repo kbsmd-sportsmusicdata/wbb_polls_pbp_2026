@@ -29,7 +29,16 @@ What it changes vs. the joined file
    day (and on or before the dashboard's run date) is used, so the numbers describe
    the team *after* that week's games and never include games the dashboard file
    hasn't seen. Preseason rows, and teams with no ratings match, stay blank.
-6. ``has_game`` and ``is_unique_game`` flags. A game between two ranked teams
+6. Watchlist schools (config/dashboard_watchlist.json): schools outside the poll that could
+   make it or upset a ranked team are added as unranked rows (one per poll week) before
+   the join, so the build pipeline derives their game and running-record columns the same
+   way as everyone else's. New columns: ``school_type`` ('Ranked', 'Previously Ranked',
+   'Watchlist'), ``is_watchlist``, ``is_poll_team`` (ranked in any poll this season) and
+   ``is_poll_scope_game`` (the game involves a poll team; False for games between two
+   non-poll schools, which the gates and league-wide counts leave out).
+7. Ratings fields on every row, not only the Pythagorean ones: rt_rk, rt_pts, rt_opp,
+   rt_mov, rt_sos, rt_osrs, rt_dsrs, rt_srs, rt_ortg, rt_drtg, rt_nrtg (same snapshot rule).
+8. ``has_game`` and ``is_unique_game`` flags. A game between two ranked teams
    appears once per team; ``is_unique_game`` is True on exactly one of them
    (higher-ranked side at tip-off, then alphabetical) for league-level charts.
 
@@ -53,6 +62,7 @@ import pandas as pd
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO_ROOT))
+from watchlist_config import load_watchlist  # noqa: E402
 
 # Ratings (Sports-Reference) names that differ from the poll names even after
 # team_name_utils standardization. Unmatched teams are reported, never dropped.
@@ -171,6 +181,9 @@ def add_prep_columns(df):
 
 
 PYTH_COLS = ["pyth_win_pct", "pyth_wins", "wins_minus_pyth_wins"]
+# Sports-Reference ratings column -> dashboard column (same snapshot as the Pythagorean fields)
+RATING_EXTRAS = {"Rk": "rt_rk", "Pts": "rt_pts", "Opp": "rt_opp", "MOV": "rt_mov", "SOS": "rt_sos", "OSRS": "rt_osrs",
+                 "DSRS": "rt_dsrs", "SRS": "rt_srs", "ORtg": "rt_ortg", "DRtg": "rt_drtg", "NRtg": "rt_nrtg"}
 
 
 def load_ratings(sos_dir):
@@ -192,8 +205,9 @@ def load_ratings(sos_dir):
     return r.drop_duplicates(["team", "run_date"], keep="last")
 
 
-def add_pythagorean_columns(df, ratings, windows, k=None):
-    """Join Pythagorean expectation columns onto each poll row.
+def add_ratings_columns(df, ratings, windows, k=None):
+    """Join ratings columns onto each poll row: the Pythagorean fields plus the ratings
+    extras in RATING_EXTRAS (rt_pts ... rt_nrtg).
 
     New columns: pyth_win_pct, pyth_wins, wins_minus_pyth_wins (from the ratings
     snapshot), rt_wins / rt_losses / pyth_games (the record those figures use),
@@ -202,7 +216,7 @@ def add_pythagorean_columns(df, ratings, windows, k=None):
     in wins used for that row; it scales with games, see pyth_luck_band()).
     """
     df = df.copy()
-    for c in [*PYTH_COLS, "rt_wins", "rt_losses", "pyth_games", "pyth_snapshot_date", "pyth_exponent", "pyth_luck_band", "pyth_luck_label"]:
+    for c in [*PYTH_COLS, *RATING_EXTRAS.values(), "rt_wins", "rt_losses", "pyth_games", "pyth_snapshot_date", "pyth_exponent", "pyth_luck_band", "pyth_luck_label"]:
         df[c] = np.nan if c not in ("pyth_snapshot_date", "pyth_luck_label") else None
     if ratings is None or ratings.empty:
         return df
@@ -225,6 +239,9 @@ def add_pythagorean_columns(df, ratings, windows, k=None):
         for c in PYTH_COLS:
             df.loc[m, c] = row[c]
         df.loc[m, "rt_wins"], df.loc[m, "rt_losses"] = row["W"], row["L"]
+        for src_col, dst in RATING_EXTRAS.items():
+            if src_col in row.index:
+                df.loc[m, dst] = row[src_col]
         df.loc[m, "pyth_games"] = row["W"] + row["L"]
         df.loc[m, "pyth_snapshot_date"] = row["run_date"].strftime("%Y-%m-%d")
     if k is not None:
@@ -242,18 +259,98 @@ def add_pythagorean_columns(df, ratings, windows, k=None):
     return df
 
 
+add_pythagorean_columns = add_ratings_columns   # earlier name, kept so existing callers and tests keep working
+
+
+def watchlist_poll_rows(polls, watchlist, ratings, games):
+    """Unranked poll rows (one per poll week) for watchlist schools that are not in the polls.
+
+    They mirror how an unranked team looks in polls_analytics (rank blank, rank_numeric 26,
+    no weeks in the Top 25). games_vs_top25 etc. are counted from the schedule rows for the
+    school. Returns (rows, notes) where notes lists schools that could not be placed.
+    """
+    have = set(polls["team"])
+    todo = [t for t in watchlist if t not in have]
+    notes = []
+    if not todo:
+        return pd.DataFrame(columns=polls.columns), notes
+    weeks = polls.drop_duplicates("week_number").sort_values("week_number")[["poll_week", "week_number"]]
+    first = weeks["week_number"].min()
+    base = polls.iloc[0]
+    latest = {}
+    if ratings is not None and "Conf" in ratings.columns:
+        latest = ratings.sort_values("run_date").groupby("team")["Conf"].last().to_dict()
+    rows = []
+    for team in todo:
+        g = games[games["Team"] == team] if games is not None and "Team" in games.columns else pd.DataFrame()
+        if g.empty and team not in latest:
+            notes.append(team)
+            continue
+        opp = pd.to_numeric(g.get("Opponent Rank"), errors="coerce") if len(g) else pd.Series(dtype=float)
+        vs = g[(opp >= 1) & (opp <= 25)] if len(g) else g
+        n_vs, w_vs = len(vs), int((vs["Game Result"] == "W").sum()) if len(vs) else 0
+        for _, w in weeks.iterrows():
+            is_first = w["week_number"] == first
+            rows.append({
+                "season": base["season"], "team": team, "conference": latest.get(team, ""),
+                "poll_week": w["poll_week"], "week_number": w["week_number"], "rank": np.nan, "rank_numeric": UNRANKED_POLL,
+                "prev_rank_numeric": np.nan if is_first else UNRANKED_POLL, "rank_change": np.nan if is_first else 0.0,
+                "movement_category": "Unknown" if is_first else "Unranked", "weeks_in_top25": 0, "ranked_streak": 0,
+                "team_identity": "Not ranked", "games_vs_top25": float(n_vs), "wins_vs_top25": float(w_vs),
+                "losses_vs_top25": float(n_vs - w_vs), "win_pct_vs_top25": (w_vs / n_vs) if n_vs else 0.0,
+                "run_date": base["run_date"], "table_id": base["table_id"],
+            })
+    return pd.DataFrame(rows, columns=polls.columns), notes
+
+
+def add_school_columns(df, watchlist):
+    """school_type, is_watchlist, is_poll_team and is_poll_scope_game (see module docstring)."""
+    df = df.copy()
+    ranked = df["rank_numeric_clean"].notna()
+    wl = set(watchlist)
+    df["is_watchlist"] = df["team"].isin(wl)
+
+    # ever ranked in an EARLIER poll this season (by team and week)
+    tw = df.assign(_r=ranked.astype(int)).groupby(["team", "week_number"])["_r"].max().reset_index().sort_values(["team", "week_number"])
+    tw["_before"] = (tw.groupby("team")["_r"].cumsum() - tw["_r"]) > 0
+    before = df[["team", "week_number"]].merge(tw[["team", "week_number", "_before"]], on=["team", "week_number"], how="left")["_before"].fillna(False).values
+    st = np.where(ranked, "Ranked", np.where(before, "Previously Ranked", np.where(df["is_watchlist"], "Watchlist", "Unranked")))
+    df["school_type"] = st
+    df["is_poll_team"] = df["team"].isin(set(df.loc[ranked, "team"]))
+
+    # a game is "in poll scope" when a poll team played in it (or either side was ranked at tip-off)
+    has = df["has_game"]
+    flag = (has & (df["is_poll_team"] | df["team_rank_tipoff"].notna() | df["opp_rank_tipoff"].notna()))
+    scope_ids = set(df.loc[flag, "game_id"])
+    df["is_poll_scope_game"] = has & df["game_id"].isin(scope_ids)
+    return df
+
+
 def run(polls_path, games_path, output_path):
     build = _load_build_module()
     build.assign_poll_weeks = make_eastern_assigner(build)
 
+    from season_config import get_season_sos_dir
+    ratings = load_ratings(REPO_ROOT / get_season_sos_dir())
+    watchlist = load_watchlist()
+    polls = pd.read_csv(polls_path)
+    games = pd.read_csv(games_path)
+    extra, notes = watchlist_poll_rows(polls, watchlist, ratings, games)
+    if notes:
+        print(f"  WARNING: watchlist schools with no ratings or games, skipped: {notes}")
+    if len(extra):
+        print(f"  Watchlist: adding {extra['team'].nunique()} unranked schools ({len(extra)} rows)")
+
     with tempfile.TemporaryDirectory() as tmp:
+        tmp_polls = os.path.join(tmp, "polls_plus_watchlist.csv")
+        pd.concat([polls, extra], ignore_index=True).to_csv(tmp_polls, index=False)
         tmp_out = os.path.join(tmp, "joined_et.csv")
-        build.run_pipeline(polls_path, games_path, tmp_out)
+        build.run_pipeline(tmp_polls, games_path, tmp_out)
         joined = pd.read_csv(tmp_out)
 
     out = add_prep_columns(joined)
-    from season_config import get_season_sos_dir
-    out = add_pythagorean_columns(out, load_ratings(REPO_ROOT / get_season_sos_dir()), build.POLL_WEEK_WINDOWS, PYTHAGOREAN_K)
+    out = add_school_columns(out, watchlist)
+    out = add_ratings_columns(out, ratings, build.POLL_WEEK_WINDOWS, PYTHAGOREAN_K)
     out.to_csv(output_path, index=False)
     print(f"\nPrep done: {output_path}  ({out.shape[0]} rows x {out.shape[1]} cols)")
     return out
