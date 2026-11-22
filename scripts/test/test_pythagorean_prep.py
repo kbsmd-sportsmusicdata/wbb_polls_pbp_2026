@@ -89,3 +89,12 @@ def test_gate_metrics_default_to_zero_without_pythagorean_columns():
                        "game_is_conf_game": [None], "opp_rank_tipoff": [np.nan], "game_is_upset": [None], "game_quality_tier": [None], "game_id": [np.nan]})
     m = gates.compute_metrics(df)
     assert m["pyth_teams"] == 0 and m["pct_teams_pyth_games_ge8"] == 0.0
+
+
+def test_texas_christian_is_standardized_to_tcu():
+    """data/raw/team_name_standardization.csv maps the ratings name to the poll name."""
+    import sys
+    sys.path.insert(0, str(ROOT))
+    import team_name_utils as t
+    out = t.standardize_team_names(pd.DataFrame({"School": ["Texas Christian", "TCU", "Duke"]}), ["School"])
+    assert out.School.tolist() == ["TCU", "TCU", "Duke"]
