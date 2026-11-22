@@ -23,7 +23,13 @@ What it changes vs. the joined file
 4. Carry-forward. ``running_*`` columns are copied onto poll rows with no game
    (bye weeks, newest poll) from the team's most recent game row.
    ``running_stats_carried`` flags those rows. Preseason rows stay blank.
-5. ``has_game`` and ``is_unique_game`` flags. A game between two ranked teams
+5. Pythagorean columns (joined from the ratings snapshots in
+   ``<season data dir>/sos/ratings_master.csv``, written by scrape_ratings.py).
+   For each poll row the latest ratings snapshot on or before the poll week's last
+   day (and on or before the dashboard's run date) is used, so the numbers describe
+   the team *after* that week's games and never include games the dashboard file
+   hasn't seen. Preseason rows, and teams with no ratings match, stay blank.
+6. ``has_game`` and ``is_unique_game`` flags. A game between two ranked teams
    appears once per team; ``is_unique_game`` is True on exactly one of them
    (higher-ranked side at tip-off, then alphabetical) for league-level charts.
 
@@ -48,9 +54,24 @@ import pandas as pd
 REPO_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO_ROOT))
 
+# Ratings (Sports-Reference) names that differ from the poll names even after
+# team_name_utils standardization. Unmatched teams are reported, never dropped.
+RATINGS_ALIASES = {"Texas Christian": "TCU"}
+PYTH_LUCK_BAND = 1.0   # wins above/below expectation before a team is called over/under-performing
 UNRANKED_POLL = 26    # sentinel used in rank_numeric for unranked teams
 UNRANKED_GAME = 99    # sentinel used in ESPN game ranks for unranked teams
 LOCAL_TZ = "America/New_York"
+
+
+def _pythagorean_exponent():
+    """Read PYTHAGOREAN_EXPONENT from scrape_ratings.py without importing it (it pulls
+    in network libraries). Returns None if it can't be found."""
+    import re
+    m = re.search(r"^PYTHAGOREAN_EXPONENT\s*=\s*([0-9.]+)", (REPO_ROOT / "scrape_ratings.py").read_text(), re.M)
+    return float(m.group(1)) if m else None
+
+
+PYTHAGOREAN_K = _pythagorean_exponent()
 
 
 def _load_build_module():
@@ -138,6 +159,75 @@ def add_prep_columns(df):
     return df
 
 
+PYTH_COLS = ["pyth_win_pct", "pyth_wins", "wins_minus_pyth_wins"]
+
+
+def load_ratings(sos_dir):
+    """Read ratings_master.csv (School, W, L, run_date + Pythagorean columns) with
+    poll-style team names. Returns None if the file is missing or lacks the columns."""
+    path = Path(sos_dir) / "ratings_master.csv"
+    if not path.exists():
+        print(f"  NOTE: {path} not found; Pythagorean columns will be blank")
+        return None
+    r = pd.read_csv(path)
+    need = {"School", "W", "L", "run_date", *PYTH_COLS}
+    if not need <= set(r.columns):
+        print(f"  NOTE: {path} lacks {sorted(need - set(r.columns))}; Pythagorean columns will be blank")
+        return None
+    from team_name_utils import standardize_team_names
+    r = standardize_team_names(r, ["School"])
+    r["team"] = r["School"].replace(RATINGS_ALIASES)
+    r["run_date"] = pd.to_datetime(r["run_date"])
+    return r.drop_duplicates(["team", "run_date"], keep="last")
+
+
+def add_pythagorean_columns(df, ratings, windows, k=None):
+    """Join Pythagorean expectation columns onto each poll row.
+
+    New columns: pyth_win_pct, pyth_wins, wins_minus_pyth_wins (from the ratings
+    snapshot), rt_wins / rt_losses / pyth_games (the record those figures use),
+    pyth_snapshot_date, pyth_exponent (k, when given) and pyth_luck_label
+    ('Over-performing' / 'In line' / 'Under-performing', band +/-PYTH_LUCK_BAND wins).
+    """
+    df = df.copy()
+    for c in [*PYTH_COLS, "rt_wins", "rt_losses", "pyth_games", "pyth_snapshot_date", "pyth_exponent", "pyth_luck_label"]:
+        df[c] = np.nan if c != "pyth_snapshot_date" and c != "pyth_luck_label" else None
+    if ratings is None or ratings.empty:
+        return df
+
+    run_date = pd.to_datetime(df["run_date"].iloc[0]) if "run_date" in df and len(df) else pd.Timestamp.max
+    by_team = {t: g.sort_values("run_date") for t, g in ratings.groupby("team")}
+    cache = {}
+    for (team, week), idx in df.groupby(["team", "poll_week"]).groups.items():
+        end = pd.Timestamp(windows[week][1]) if week in windows else pd.Timestamp.max
+        cutoff = min(end, run_date)
+        g = by_team.get(team)
+        if g is None:
+            continue
+        g = g[g["run_date"] <= cutoff]
+        if g.empty:
+            continue
+        cache[(team, week)] = g.iloc[-1]
+    for (team, week), row in cache.items():
+        m = (df["team"] == team) & (df["poll_week"] == week)
+        for c in PYTH_COLS:
+            df.loc[m, c] = row[c]
+        df.loc[m, "rt_wins"], df.loc[m, "rt_losses"] = row["W"], row["L"]
+        df.loc[m, "pyth_games"] = row["W"] + row["L"]
+        df.loc[m, "pyth_snapshot_date"] = row["run_date"].strftime("%Y-%m-%d")
+    if k is not None:
+        df.loc[df["pyth_win_pct"].notna(), "pyth_exponent"] = k
+    gap = df["wins_minus_pyth_wins"]
+    df["pyth_luck_label"] = np.where(
+        gap.isna(), None,
+        np.where(gap > PYTH_LUCK_BAND, "Over-performing", np.where(gap < -PYTH_LUCK_BAND, "Under-performing", "In line")),
+    )
+    missing = sorted(set(df["team"]) - {t for t, _ in cache})
+    if missing:
+        print(f"  WARNING: no ratings snapshot matched for: {missing}")
+    return df
+
+
 def run(polls_path, games_path, output_path):
     build = _load_build_module()
     build.assign_poll_weeks = make_eastern_assigner(build)
@@ -148,6 +238,8 @@ def run(polls_path, games_path, output_path):
         joined = pd.read_csv(tmp_out)
 
     out = add_prep_columns(joined)
+    from season_config import get_season_sos_dir
+    out = add_pythagorean_columns(out, load_ratings(REPO_ROOT / get_season_sos_dir()), build.POLL_WEEK_WINDOWS, PYTHAGOREAN_K)
     out.to_csv(output_path, index=False)
     print(f"\nPrep done: {output_path}  ({out.shape[0]} rows x {out.shape[1]} cols)")
     return out

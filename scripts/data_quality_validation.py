@@ -274,6 +274,26 @@ def check_dashboard_frame(df, joined_columns=None, windows=None):
         if lost:
             issues.append(f"columns missing vs polls_games_joined.csv: {lost}")
 
+    # 4b. Pythagorean columns (only checked when the file has them)
+    if 'pyth_wins' in df.columns:
+        py = df[df['pyth_wins'].notna()]
+        if (py['pyth_win_pct'].lt(0) | py['pyth_win_pct'].gt(1)).any():
+            issues.append("pyth_win_pct outside 0-1")
+        if (py['pyth_wins'] < -0.01).any() or (py['pyth_wins'] > py['pyth_games'] + 0.01).any():
+            issues.append("pyth_wins outside 0..games played")
+        if ((py['wins_minus_pyth_wins'] - (py['rt_wins'] - py['pyth_wins'])).abs() > 0.02).any():
+            issues.append("wins_minus_pyth_wins != rt_wins - pyth_wins")
+        if df.loc[df['pyth_snapshot_date'].isna(), ['pyth_wins', 'pyth_win_pct', 'pyth_games']].notna().any().any():
+            issues.append("Pythagorean values present on rows with no ratings snapshot date")
+        if 'run_date' in df.columns and (pd.to_datetime(py['pyth_snapshot_date']) > pd.to_datetime(df['run_date'].iloc[0])).any():
+            issues.append("a ratings snapshot is newer than the dashboard run date")
+        if py['pyth_exponent'].nunique() > 1:
+            issues.append("more than one Pythagorean exponent in the file")
+        band = py['wins_minus_pyth_wins']
+        expect = np.where(band > 1.0, 'Over-performing', np.where(band < -1.0, 'Under-performing', 'In line'))
+        if (py['pyth_luck_label'].values != expect).any():
+            issues.append("pyth_luck_label disagrees with wins_minus_pyth_wins")
+
     # 5. Eastern-date windows
     if windows is not None and has_game.any():
         ts = pd.to_datetime(df.loc[has_game, 'game_date'], utc=True, errors='coerce')

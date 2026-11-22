@@ -52,6 +52,14 @@ def compute_metrics(df):
     top25 = (
         game_rows[game_rows["opp_rank_tipoff"].notna()].groupby("team").size().reindex(teams, fill_value=0)
     )
+    # Pythagorean ratings: latest row per team that has them (blank until ratings exist)
+    if "pyth_wins" in df.columns:
+        py = df.dropna(subset=["pyth_wins"]).sort_values("week_number").groupby("team").tail(1)
+        pyth_teams = int(len(py))
+        pyth_ge8 = round(float((py["pyth_games"] >= 8).sum() / len(teams)), 3) if len(teams) else 0.0
+        pyth_min = int(py["pyth_games"].min()) if pyth_teams else 0
+    else:
+        pyth_teams, pyth_ge8, pyth_min = 0, 0.0, 0
     unique = df[df["is_unique_game"].astype(bool)]
     weeks = df["week_number"].nunique()
     return {
@@ -68,6 +76,9 @@ def compute_metrics(df):
         "pct_teams_road_ge2": pct_ge(road, 2),
         "pct_teams_conf_ge2": pct_ge(conf, 2),
         "pct_teams_top25_ge2": pct_ge(top25, 2),
+        "pyth_teams": pyth_teams,
+        "pct_teams_pyth_games_ge8": pyth_ge8,
+        "min_pyth_games": pyth_min,
     }
 
 
@@ -79,6 +90,8 @@ LABELS = {
     "pct_teams_home_ge2": "of teams with 2+ home games", "pct_teams_road_ge2": "of teams with 2+ road games",
     "pct_teams_conf_ge2": "of teams with 2+ conference games",
     "pct_teams_top25_ge2": "of teams with 2+ ranked opponents",
+    "pyth_teams": "teams with ratings", "pct_teams_pyth_games_ge8": "of teams with 8+ rated games",
+    "min_pyth_games": "games for the team with the fewest",
 }
 
 
