@@ -1,0 +1,8 @@
+{
+  "_comment": "Schools currently outside the AP poll that could make it, or upset a ranked team. Names must match the poll/ratings names after team_name_standardization (e.g. 'Michigan State', not 'Michigan St.'). filter_schedule.py adds their games to the schedule, and prep_dashboard_data.py adds them to polls_games_dashboard.csv with school_type 'Watchlist' (becoming 'Ranked' if they enter the poll, 'Previously Ranked' if they drop out). Add or remove names here; nothing else needs editing.",
+  "schools": [
+    "Nebraska", "Baylor", "Texas Tech", "Georgia", "Richmond", "Tennessee",
+    "Michigan State", "Iowa State", "Virginia", "Princeton", "Alabama", "Fairfield",
+    "Arizona State", "Colorado", "Rice", "California", "Stanford", "Oregon", "Florida", "Clemson"
+  ]
+}

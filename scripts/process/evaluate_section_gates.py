@@ -33,7 +33,15 @@ OPS = {">=": operator.ge, ">": operator.gt, "<=": operator.le, "<": operator.lt,
 
 
 def compute_metrics(df):
-    """Compute gate metrics from a polls_games_dashboard frame."""
+    """Compute gate metrics from a polls_games_dashboard frame.
+
+    The gates describe the poll teams and the games they play. Watchlist schools (rows
+    with is_poll_team False) and games between two non-poll schools (is_poll_scope_game
+    False) are left out, so adding watchlist schools never changes a threshold's meaning.
+    """
+    all_rows = df
+    if "is_poll_team" in df.columns:
+        df = df[df["is_poll_team"].astype(bool)]
     teams = df["team"].unique()
     game_rows = df[df["has_game"].astype(bool)]
     # team-games are unique per (team, game_id); a team never repeats a game
@@ -60,8 +68,12 @@ def compute_metrics(df):
         pyth_min = int(py["pyth_games"].min()) if pyth_teams else 0
     else:
         pyth_teams, pyth_ge8, pyth_min = 0, 0.0, 0
-    unique = df[df["is_unique_game"].astype(bool)]
+    in_scope = all_rows["is_unique_game"].astype(bool)
+    if "is_poll_scope_game" in all_rows.columns:
+        in_scope &= all_rows["is_poll_scope_game"].astype(bool)
+    unique = all_rows[in_scope]
     weeks = df["week_number"].nunique()
+    n_watch = int(all_rows.loc[all_rows["is_watchlist"].astype(bool), "team"].nunique()) if "is_watchlist" in all_rows.columns else 0
     return {
         "polls_released": int(weeks),
         "complete_weeks": int(max(weeks - 1, 0)),
@@ -76,6 +88,7 @@ def compute_metrics(df):
         "pct_teams_road_ge2": pct_ge(road, 2),
         "pct_teams_conf_ge2": pct_ge(conf, 2),
         "pct_teams_top25_ge2": pct_ge(top25, 2),
+        "watchlist_teams": n_watch,
         "pyth_teams": pyth_teams,
         "pct_teams_pyth_games_ge8": pyth_ge8,
         "min_pyth_games": pyth_min,
@@ -90,7 +103,7 @@ LABELS = {
     "pct_teams_home_ge2": "of teams with 2+ home games", "pct_teams_road_ge2": "of teams with 2+ road games",
     "pct_teams_conf_ge2": "of teams with 2+ conference games",
     "pct_teams_top25_ge2": "of teams with 2+ ranked opponents",
-    "pyth_teams": "teams with ratings", "pct_teams_pyth_games_ge8": "of teams with 8+ rated games",
+    "watchlist_teams": "watchlist schools", "pyth_teams": "teams with ratings", "pct_teams_pyth_games_ge8": "of teams with 8+ rated games",
     "min_pyth_games": "games for the team with the fewest",
 }
 

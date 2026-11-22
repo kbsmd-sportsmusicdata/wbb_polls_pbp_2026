@@ -219,7 +219,7 @@ def validate_dataset():
         return False
 
 
-def check_dashboard_frame(df, joined_columns=None, windows=None):
+def check_dashboard_frame(df, joined_columns=None, windows=None, watchlist=None):
     """Validate a polls_games_dashboard frame; return a list of issue strings.
 
     Kept free of file I/O so tests can feed it small frames.
@@ -301,6 +301,49 @@ def check_dashboard_frame(df, joined_columns=None, windows=None):
         if (py['pyth_luck_label'].values != expect).any():
             issues.append("pyth_luck_label disagrees with wins_minus_pyth_wins and the band")
 
+    # 4c. School type, poll-team and scope columns (only checked when the file has them)
+    if 'school_type' in df.columns:
+        allowed = {'Ranked', 'Previously Ranked', 'Watchlist', 'Unranked'}
+        odd = set(df['school_type'].dropna()) - allowed
+        if odd:
+            issues.append(f"unexpected school_type values: {sorted(odd)}")
+        if ((df['school_type'] == 'Ranked') != df['rank_numeric_clean'].notna()).any():
+            issues.append("school_type 'Ranked' does not match rank_numeric_clean")
+        by_team = df.groupby('team')
+        if (by_team['is_poll_team'].nunique() > 1).any():
+            issues.append("is_poll_team varies within a team")
+        ever = by_team['rank_numeric_clean'].apply(lambda x: x.notna().any())
+        if (by_team['is_poll_team'].first() != ever).any():
+            issues.append("is_poll_team disagrees with whether the team was ever ranked")
+        prev = df[df['school_type'] == 'Previously Ranked']
+        if len(prev):
+            earliest = df[df['rank_numeric_clean'].notna()].groupby('team')['week_number'].min()
+            first = prev['team'].map(earliest)
+            if (first.isna() | (first >= prev['week_number'])).any():
+                issues.append("'Previously Ranked' row with no earlier ranked poll")
+        if (df[df['game_id'].notna()].groupby('game_id')['is_poll_scope_game'].nunique() > 1).any():
+            issues.append("is_poll_scope_game differs between the two sides of a game")
+        if watchlist is not None:
+            gone = sorted(set(watchlist) - set(df['team']))
+            if gone:
+                issues.append(f"watchlist schools missing from the file: {gone}")
+            if not set(df.loc[df['is_watchlist'], 'team']) <= set(watchlist):
+                issues.append("is_watchlist set on a school that is not on the watchlist")
+        # every poll week present for every team (watchlist rows are synthesized per week)
+        short = by_team['week_number'].nunique()
+        if (short != df['week_number'].nunique()).any():
+            issues.append(f"teams missing poll weeks: {sorted(short[short != df['week_number'].nunique()].index)}")
+    if 'rt_srs' in df.columns and 'pyth_snapshot_date' in df.columns:
+        has = df['pyth_snapshot_date'].notna()
+        extras = [c for c in ['rt_rk', 'rt_pts', 'rt_opp', 'rt_mov', 'rt_sos', 'rt_osrs', 'rt_dsrs', 'rt_srs', 'rt_ortg', 'rt_drtg', 'rt_nrtg'] if c in df.columns]
+        if df.loc[has, extras].isna().any().any():
+            issues.append("ratings fields blank on rows that have a ratings snapshot")
+        if df.loc[~has, extras].notna().any().any():
+            issues.append("ratings fields present on rows with no ratings snapshot")
+        gap = df.loc[has, 'rt_mov'] - (df.loc[has, 'rt_pts'] - df.loc[has, 'rt_opp'])
+        if (gap.abs() > 0.11).any():          # Pts and Opp are each rounded to 0.1
+            issues.append("rt_mov != rt_pts - rt_opp")
+
     # 5. Eastern-date windows
     if windows is not None and has_game.any():
         ts = pd.to_datetime(df.loc[has_game, 'game_date'], utc=True, errors='coerce')
@@ -330,12 +373,19 @@ def validate_dashboard_dataset():
     windows = None
     if POLL_WEEK_CONFIG.exists():
         windows = json.loads(POLL_WEEK_CONFIG.read_text()).get('windows')
-    issues = check_dashboard_frame(df, joined_cols, windows)
+    try:
+        from watchlist_config import load_watchlist
+        watchlist = load_watchlist() or None
+    except Exception:
+        watchlist = None
+    issues = check_dashboard_frame(df, joined_cols, windows, watchlist)
 
     if POLLS_GAMES_JOINED.exists():
-        n_joined = len(pd.read_csv(POLLS_GAMES_JOINED, usecols=['team']))
-        if n_joined != len(df):
-            issues.append(f"row count {len(df)} != polls_games_joined.csv ({n_joined})")
+        # polls_games_joined.csv has the poll teams only; watchlist schools are extra rows here
+        joined = pd.read_csv(POLLS_GAMES_JOINED, usecols=['team'])
+        n_dash = int(df['team'].isin(set(joined['team'])).sum())
+        if n_dash != len(joined):
+            issues.append(f"rows for the poll teams: {n_dash} != polls_games_joined.csv ({len(joined)})")
 
     print(f"  Rows: {len(df):,}   unique games: {int(df['is_unique_game'].sum())}   "
           f"carried rows: {int(df['running_stats_carried'].sum())}")

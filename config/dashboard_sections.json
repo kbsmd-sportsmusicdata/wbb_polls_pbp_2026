@@ -16,7 +16,8 @@
     "pct_teams_top25_ge2": "Share of teams with at least 2 games against ranked opponents.",
     "pyth_teams": "Teams with a Pythagorean (ratings) figure on their latest poll row.",
     "pct_teams_pyth_games_ge8": "Share of teams whose Pythagorean figures rest on at least 8 games.",
-    "min_pyth_games": "Fewest games behind any team's Pythagorean figures."
+    "min_pyth_games": "Fewest games behind any team's Pythagorean figures.",
+    "watchlist_teams": "Schools from config/dashboard_watchlist.json present in the dashboard file (informational; no section is gated on it yet)."
   },
   "coming_soon_prefix": "Coming Soon",
   "sections": [
