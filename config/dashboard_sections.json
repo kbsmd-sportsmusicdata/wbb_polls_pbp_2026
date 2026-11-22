@@ -13,7 +13,10 @@
     "pct_teams_home_ge2": "Share of teams with at least 2 home games.",
     "pct_teams_road_ge2": "Share of teams with at least 2 road games.",
     "pct_teams_conf_ge2": "Share of teams with at least 2 conference games.",
-    "pct_teams_top25_ge2": "Share of teams with at least 2 games against ranked opponents."
+    "pct_teams_top25_ge2": "Share of teams with at least 2 games against ranked opponents.",
+    "pyth_teams": "Teams with a Pythagorean (ratings) figure on their latest poll row.",
+    "pct_teams_pyth_games_ge8": "Share of teams whose Pythagorean figures rest on at least 8 games.",
+    "min_pyth_games": "Fewest games behind any team's Pythagorean figures."
   },
   "coming_soon_prefix": "Coming Soon",
   "sections": [
@@ -22,7 +25,13 @@
       "title": "Season at a glance",
       "audience": "fan",
       "published": true,
-      "requires": [{"metric": "polls_released", "op": ">=", "value": 1}],
+      "requires": [
+        {
+          "metric": "polls_released",
+          "op": ">=",
+          "value": 1
+        }
+      ],
       "unlock_note": "Unlocks after the first poll"
     },
     {
@@ -30,7 +39,13 @@
       "title": "Rank trajectories",
       "audience": "fan",
       "published": true,
-      "requires": [{"metric": "polls_released", "op": ">=", "value": 3}],
+      "requires": [
+        {
+          "metric": "polls_released",
+          "op": ">=",
+          "value": 3
+        }
+      ],
       "unlock_note": "Unlocks once three polls are in"
     },
     {
@@ -38,7 +53,13 @@
       "title": "Biggest risers and fallers",
       "audience": "fan",
       "published": true,
-      "requires": [{"metric": "polls_released", "op": ">=", "value": 2}],
+      "requires": [
+        {
+          "metric": "polls_released",
+          "op": ">=",
+          "value": 2
+        }
+      ],
       "unlock_note": "Unlocks once two polls are in"
     },
     {
@@ -46,7 +67,13 @@
       "title": "Conference share of the Top 25",
       "audience": "fan",
       "published": true,
-      "requires": [{"metric": "polls_released", "op": ">=", "value": 2}],
+      "requires": [
+        {
+          "metric": "polls_released",
+          "op": ">=",
+          "value": 2
+        }
+      ],
       "unlock_note": "Unlocks once two polls are in"
     },
     {
@@ -54,7 +81,13 @@
       "title": "Game log with logos",
       "audience": "fan",
       "published": true,
-      "requires": [{"metric": "unique_games", "op": ">=", "value": 20}],
+      "requires": [
+        {
+          "metric": "unique_games",
+          "op": ">=",
+          "value": 20
+        }
+      ],
       "unlock_note": "Unlocks at 20 games"
     },
     {
@@ -63,17 +96,46 @@
       "audience": "fan",
       "published": true,
       "requires": [
-        {"metric": "complete_weeks", "op": ">=", "value": 2},
-        {"metric": "pct_teams_games_ge2", "op": ">=", "value": 0.9}
+        {
+          "metric": "complete_weeks",
+          "op": ">=",
+          "value": 2
+        },
+        {
+          "metric": "pct_teams_games_ge2",
+          "op": ">=",
+          "value": 0.9
+        }
       ],
       "unlock_note": "Unlocks once two poll weeks are complete and nearly every team has 2+ games"
+    },
+    {
+      "id": "pythagorean_luck",
+      "title": "Wins vs expected wins",
+      "audience": "fan",
+      "published": true,
+      "requires": [
+        {
+          "metric": "pyth_teams",
+          "op": ">=",
+          "value": 20
+        }
+      ],
+      "unlock_note": "Unlocks once ratings are in for 20+ ranked teams",
+      "review_note": "Visible now. Early-season figures rest on 4-8 games, so gaps under about 1 win are noise. Suggested tighter gate, not applied: add {metric: pct_teams_pyth_games_ge8, op: >=, value: 0.9}."
     },
     {
       "id": "upset_tracker",
       "title": "Upset tracker",
       "audience": "fan",
       "published": true,
-      "requires": [{"metric": "upsets", "op": ">=", "value": 3}],
+      "requires": [
+        {
+          "metric": "upsets",
+          "op": ">=",
+          "value": 3
+        }
+      ],
       "unlock_note": "Unlocks after three upsets"
     },
     {
@@ -81,7 +143,13 @@
       "title": "Margin by opponent quality",
       "audience": "analyst",
       "published": true,
-      "requires": [{"metric": "unique_games", "op": ">=", "value": 50}],
+      "requires": [
+        {
+          "metric": "unique_games",
+          "op": ">=",
+          "value": 50
+        }
+      ],
       "unlock_note": "Unlocks at 50 games"
     },
     {
@@ -90,8 +158,16 @@
       "audience": "fan",
       "published": true,
       "requires": [
-        {"metric": "pct_teams_games_ge3", "op": ">=", "value": 0.9},
-        {"metric": "polls_released", "op": ">=", "value": 3}
+        {
+          "metric": "pct_teams_games_ge3",
+          "op": ">=",
+          "value": 0.9
+        },
+        {
+          "metric": "polls_released",
+          "op": ">=",
+          "value": 3
+        }
       ],
       "unlock_note": "Unlocks once nearly every team has 3+ games and three polls are in"
     },
@@ -100,7 +176,13 @@
       "title": "Top 25 matchups",
       "audience": "fan",
       "published": true,
-      "requires": [{"metric": "top25_matchups", "op": ">=", "value": 5}],
+      "requires": [
+        {
+          "metric": "top25_matchups",
+          "op": ">=",
+          "value": 5
+        }
+      ],
       "unlock_note": "Unlocks at 5 matchups between ranked teams"
     },
     {
@@ -109,8 +191,16 @@
       "audience": "analyst",
       "published": false,
       "requires": [
-        {"metric": "pct_teams_home_ge2", "op": ">=", "value": 0.9},
-        {"metric": "pct_teams_road_ge2", "op": ">=", "value": 0.9}
+        {
+          "metric": "pct_teams_home_ge2",
+          "op": ">=",
+          "value": 0.9
+        },
+        {
+          "metric": "pct_teams_road_ge2",
+          "op": ">=",
+          "value": 0.9
+        }
       ],
       "unlock_note": "Unlocks once nearly every team has 2+ home and 2+ road games"
     },
@@ -119,7 +209,13 @@
       "title": "Conference play",
       "audience": "fan",
       "published": false,
-      "requires": [{"metric": "pct_teams_conf_ge2", "op": ">=", "value": 0.9}],
+      "requires": [
+        {
+          "metric": "pct_teams_conf_ge2",
+          "op": ">=",
+          "value": 0.9
+        }
+      ],
       "unlock_note": "Unlocks once nearly every team has 2+ conference games"
     },
     {
@@ -128,8 +224,16 @@
       "audience": "analyst",
       "published": false,
       "requires": [
-        {"metric": "unique_games", "op": ">=", "value": 150},
-        {"metric": "pct_teams_top25_ge2", "op": ">=", "value": 0.75}
+        {
+          "metric": "unique_games",
+          "op": ">=",
+          "value": 150
+        },
+        {
+          "metric": "pct_teams_top25_ge2",
+          "op": ">=",
+          "value": 0.75
+        }
       ],
       "unlock_note": "Unlocks at 150 games with most teams facing ranked opponents"
     }
