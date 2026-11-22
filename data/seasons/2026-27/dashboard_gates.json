@@ -1,17 +1,17 @@
 {
-  "run_date": "2026-11-21",
+  "run_date": "2026-11-22",
   "metrics": {
     "polls_released": 3,
     "complete_weeks": 2,
     "teams": 26,
-    "unique_games": 131,
+    "unique_games": 136,
     "upsets": 5,
     "top25_matchups": 11,
     "min_games_per_team": 4,
     "pct_teams_games_ge2": 1.0,
     "pct_teams_games_ge3": 1.0,
     "pct_teams_home_ge2": 0.923,
-    "pct_teams_road_ge2": 0.154,
+    "pct_teams_road_ge2": 0.231,
     "pct_teams_conf_ge2": 0.0,
     "pct_teams_top25_ge2": 0.192
   },
@@ -106,7 +106,7 @@
           "metric": "unique_games",
           "op": ">=",
           "need": 20,
-          "have": 131,
+          "have": 136,
           "met": true
         }
       ]
@@ -170,7 +170,7 @@
           "metric": "unique_games",
           "op": ">=",
           "need": 50,
-          "have": 131,
+          "have": 136,
           "met": true
         }
       ]
@@ -228,7 +228,7 @@
       "clickable": false,
       "published": false,
       "data_ready": false,
-      "tooltip": "Coming Soon \u2014 Unlocks once nearly every team has 2+ home and 2+ road games (15% / 90% of teams with 2+ road games)",
+      "tooltip": "Coming Soon \u2014 Unlocks once nearly every team has 2+ home and 2+ road games (23% / 90% of teams with 2+ road games)",
       "checks": [
         {
           "metric": "pct_teams_home_ge2",
@@ -241,7 +241,7 @@
           "metric": "pct_teams_road_ge2",
           "op": ">=",
           "need": 0.9,
-          "have": 0.154,
+          "have": 0.231,
           "met": false
         }
       ]
@@ -273,13 +273,13 @@
       "clickable": false,
       "published": false,
       "data_ready": false,
-      "tooltip": "Coming Soon \u2014 Unlocks at 150 games with most teams facing ranked opponents (131 / 150 games; 19% / 75% of teams with 2+ ranked opponents)",
+      "tooltip": "Coming Soon \u2014 Unlocks at 150 games with most teams facing ranked opponents (136 / 150 games; 19% / 75% of teams with 2+ ranked opponents)",
       "checks": [
         {
           "metric": "unique_games",
           "op": ">=",
           "need": 150,
-          "have": 131,
+          "have": 136,
           "met": false
         },
         {
