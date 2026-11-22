@@ -289,10 +289,17 @@ def check_dashboard_frame(df, joined_columns=None, windows=None):
             issues.append("a ratings snapshot is newer than the dashboard run date")
         if py['pyth_exponent'].nunique() > 1:
             issues.append("more than one Pythagorean exponent in the file")
-        band = py['wins_minus_pyth_wins']
-        expect = np.where(band > 1.0, 'Over-performing', np.where(band < -1.0, 'Under-performing', 'In line'))
+        # label and band must follow the prep script's rule (imported so there is one definition)
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("prep_dashboard_data", Path(__file__).resolve().parent / "process" / "prep_dashboard_data.py")
+        prep = importlib.util.module_from_spec(spec); spec.loader.exec_module(prep)
+        want_band = prep.pyth_luck_band(py['pyth_games'].astype(float))
+        if ((py['pyth_luck_band'] - want_band).abs() > 0.011).any():
+            issues.append("pyth_luck_band does not match the games-scaled rule")
+        gap = py['wins_minus_pyth_wins']
+        expect = np.where(gap > want_band, 'Over-performing', np.where(gap < -want_band, 'Under-performing', 'In line'))
         if (py['pyth_luck_label'].values != expect).any():
-            issues.append("pyth_luck_label disagrees with wins_minus_pyth_wins")
+            issues.append("pyth_luck_label disagrees with wins_minus_pyth_wins and the band")
 
     # 5. Eastern-date windows
     if windows is not None and has_game.any():

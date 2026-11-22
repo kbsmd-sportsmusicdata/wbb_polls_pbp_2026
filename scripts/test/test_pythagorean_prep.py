@@ -98,3 +98,24 @@ def test_texas_christian_is_standardized_to_tcu():
     import team_name_utils as t
     out = t.standardize_team_names(pd.DataFrame({"School": ["Texas Christian", "TCU", "Duke"]}), ["School"])
     assert out.School.tolist() == ["TCU", "TCU", "Duke"]
+
+
+def test_band_scales_with_games():
+    f = prep.pyth_luck_band
+    assert abs(float(f(6)) - 0.98) < 0.01          # ~1 win at 6 games
+    assert abs(float(f(25)) - 2.0) < 0.01          # 2 wins at 25 games
+    assert float(f(1)) == prep.PYTH_BAND_FLOOR     # tiny samples use the floor
+    assert float(f(14)) > float(f(6))
+
+
+def test_same_gap_is_labelled_differently_early_and_late():
+    ratings = pd.DataFrame({"team": ["A", "B"], "run_date": pd.Timestamp("2026-11-14"), "W": [6, 25], "L": [0, 0],
+                            "pyth_win_pct": [0.8, 0.9], "pyth_wins": [4.8, 22.5],     # both +1.2 / +2.5 wins above expectation
+                            "wins_minus_pyth_wins": [1.2, 2.5]})
+    polls = pd.DataFrame({"team": ["A", "B"], "poll_week": "11/9", "week_number": 1, "run_date": "2026-11-17"})
+    out = prep.add_pythagorean_columns(polls, ratings, WINDOWS, 10.0).set_index("team")
+    assert out.loc["A", "pyth_luck_label"] == "Over-performing" and out.loc["A", "pyth_luck_band"] == 0.98
+    assert out.loc["B", "pyth_luck_label"] == "Over-performing" and out.loc["B", "pyth_luck_band"] == 2.0
+    ratings.loc[1, ["wins_minus_pyth_wins", "pyth_wins"]] = [1.5, 23.5]               # +1.5 at 25 games is inside the 2.0 band
+    out = prep.add_pythagorean_columns(polls, ratings, WINDOWS, 10.0).set_index("team")
+    assert out.loc["B", "pyth_luck_label"] == "In line"

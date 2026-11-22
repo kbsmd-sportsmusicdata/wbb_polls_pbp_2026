@@ -57,7 +57,18 @@ sys.path.insert(0, str(REPO_ROOT))
 # Ratings (Sports-Reference) names that differ from the poll names even after
 # team_name_utils standardization. Unmatched teams are reported, never dropped.
 RATINGS_ALIASES = {"Texas Christian": "TCU"}
-PYTH_LUCK_BAND = 1.0   # wins above/below expectation before a team is called over/under-performing
+# A team is "Over-/Under-performing" when its wins differ from Pythagorean wins by more
+# than a band that grows with games played (luck noise grows ~ sqrt(games)):
+#   band = max(PYTH_BAND_FLOOR, PYTH_BAND_SCALE * sqrt(games))
+# ~1.0 win at 6 games, ~1.5 at 14, 2.0 at 25. The floor stops a 1-3 game sample
+# from being labelled on a fraction of a win.
+PYTH_BAND_SCALE = 0.4
+PYTH_BAND_FLOOR = 0.75
+
+
+def pyth_luck_band(games):
+    """Wins-vs-expected cutoff (in wins) for a team that has played `games` games."""
+    return np.maximum(PYTH_BAND_FLOOR, PYTH_BAND_SCALE * np.sqrt(games)).round(2)
 UNRANKED_POLL = 26    # sentinel used in rank_numeric for unranked teams
 UNRANKED_GAME = 99    # sentinel used in ESPN game ranks for unranked teams
 LOCAL_TZ = "America/New_York"
@@ -187,11 +198,12 @@ def add_pythagorean_columns(df, ratings, windows, k=None):
     New columns: pyth_win_pct, pyth_wins, wins_minus_pyth_wins (from the ratings
     snapshot), rt_wins / rt_losses / pyth_games (the record those figures use),
     pyth_snapshot_date, pyth_exponent (k, when given) and pyth_luck_label
-    ('Over-performing' / 'In line' / 'Under-performing', band +/-PYTH_LUCK_BAND wins).
+    ('Over-performing' / 'In line' / 'Under-performing') and pyth_luck_band (the cutoff
+    in wins used for that row; it scales with games, see pyth_luck_band()).
     """
     df = df.copy()
-    for c in [*PYTH_COLS, "rt_wins", "rt_losses", "pyth_games", "pyth_snapshot_date", "pyth_exponent", "pyth_luck_label"]:
-        df[c] = np.nan if c != "pyth_snapshot_date" and c != "pyth_luck_label" else None
+    for c in [*PYTH_COLS, "rt_wins", "rt_losses", "pyth_games", "pyth_snapshot_date", "pyth_exponent", "pyth_luck_band", "pyth_luck_label"]:
+        df[c] = np.nan if c not in ("pyth_snapshot_date", "pyth_luck_label") else None
     if ratings is None or ratings.empty:
         return df
 
@@ -218,9 +230,11 @@ def add_pythagorean_columns(df, ratings, windows, k=None):
     if k is not None:
         df.loc[df["pyth_win_pct"].notna(), "pyth_exponent"] = k
     gap = df["wins_minus_pyth_wins"]
+    band = pyth_luck_band(df["pyth_games"].astype(float))
+    df["pyth_luck_band"] = band.where(gap.notna())
     df["pyth_luck_label"] = np.where(
         gap.isna(), None,
-        np.where(gap > PYTH_LUCK_BAND, "Over-performing", np.where(gap < -PYTH_LUCK_BAND, "Under-performing", "In line")),
+        np.where(gap > band, "Over-performing", np.where(gap < -band, "Under-performing", "In line")),
     )
     missing = sorted(set(df["team"]) - {t for t, _ in cache})
     if missing:
