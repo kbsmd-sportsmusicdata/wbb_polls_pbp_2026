@@ -11,13 +11,23 @@ def _df(rows):
     return pd.DataFrame(rows, columns=["School", "W", "L", "Pts", "Opp"])
 
 
+def test_default_exponent_is_10():
+    assert sr.PYTHAGOREAN_EXPONENT == 10.0
+
+
 def test_matches_textbook_formula():
+    k = sr.PYTHAGOREAN_EXPONENT
     out = sr.add_pythagorean_metrics(_df([["A", 5, 0, 91.0, 63.8]]))
-    k = 13.91
     expected = 91.0**k / (91.0**k + 63.8**k)
     assert math.isclose(out.pyth_win_pct[0], expected, abs_tol=5e-5)
     assert math.isclose(out.pyth_wins[0], expected * 5, abs_tol=5e-3)
     assert math.isclose(out.wins_minus_pyth_wins[0], 5 - expected * 5, abs_tol=5e-3)
+
+
+def test_exponent_can_be_overridden():
+    out = sr.add_pythagorean_metrics(_df([["A", 5, 0, 91.0, 63.8]]), k=13.91)
+    expected = 91.0**13.91 / (91.0**13.91 + 63.8**13.91)
+    assert math.isclose(out.pyth_win_pct[0], expected, abs_tol=5e-5)
 
 
 def test_even_scoring_is_a_coin_flip():

@@ -236,7 +236,7 @@ Ready for workflow testing! 🚀
 Output lives in `season_config.get_season_sos_dir()`: `data/sos/` for the 2025-26 season and earlier,
 `data/seasons/<label>/sos/` (e.g. `data/seasons/2026-27/sos/`) for every later season.
 
-Calculated fields added to each snapshot and to `ratings_master.csv` (exponent k = 13.91, `PYTHAGOREAN_EXPONENT`):
+Calculated fields added to each snapshot and to `ratings_master.csv` (exponent k = 10, `PYTHAGOREAN_EXPONENT`; it fit 2025-26 results better than 13.91 or 16.5):
 
 | Column | Formula |
 |---|---|

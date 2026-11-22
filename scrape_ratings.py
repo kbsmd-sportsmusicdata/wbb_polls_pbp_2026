@@ -17,9 +17,13 @@ from season_config import get_current_season, get_season_sos_dir
 # for every later one (created if missing). See season_config.get_season_sos_dir().
 SOS_DIR = get_season_sos_dir()
 
-# Pythagorean exponent for college basketball. Her Hoop Stats suggests 10; other
-# basketball models use ~13.91 (Morey) or 16.5. We use 13.91.
-PYTHAGOREAN_EXPONENT = 13.91
+# Pythagorean exponent. Published values for basketball range from 10 (Her Hoop
+# Stats, college) to 13.91 (Morey, NBA) and 16.5. Tested against 2025-26 results
+# (363 teams, Mar 17 snapshot), k=10 fit best of the three (avg miss 2.6 wins/team
+# vs 4.0 at 13.91 and 4.7 at 16.5); it also beat both in predicting later games.
+# Raw Pts/Opp margins are inflated by blowouts of weak opponents, so higher
+# exponents overstate how lopsided strong teams really are.
+PYTHAGOREAN_EXPONENT = 10.0
 
 SEASON = get_current_season()
 URL_RATINGS = f"https://www.sports-reference.com/cbb/seasons/women/{SEASON}-ratings.html"
@@ -63,7 +67,7 @@ def add_pythagorean_metrics(df: pd.DataFrame, k: float = PYTHAGOREAN_EXPONENT) -
     games = wins + losses
 
     # Algebraically identical to Pts^k / (Pts^k + Opp^k), but avoids raising
-    # ~100 to the 13.91th power.
+    # ~100 to the k-th power.
     valid = (pts > 0) & (opp > 0) & (games > 0)
     pct = (1.0 / (1.0 + (opp.where(valid) / pts.where(valid)) ** k))
     pyth_wins = pct * games
