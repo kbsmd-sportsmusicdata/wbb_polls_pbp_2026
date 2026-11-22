@@ -10,8 +10,9 @@ polls_games_joined.csv, and the raw dated snapshots that feed them -- none of
 them carry a season column, only team+poll_week/run_date) live under
 get_season_data_dir() instead of data/'s top level, so a new season's rows
 can never get deduped against a previous season's under the same label.
-Files that dedup by date alone (ratings, NET rankings, schedule) and files
-that are season-independent (team_state_mapping.csv, the multi-season
+The ratings/SOS pull (data/sos/ for 2025-26, <season dir>/sos/ afterwards --
+see get_season_sos_dir()) follows the same split. Files that dedup by date
+alone (NET rankings, schedule) and files that are season-independent (team_state_mapping.csv, the multi-season
 polls_historical_* archive) are untouched and stay at the top level.
 """
 import json
@@ -77,3 +78,21 @@ def get_season_data_dir() -> Path:
     season_dir = DATA_DIR / "seasons" / get_season_label()
     season_dir.mkdir(parents=True, exist_ok=True)
     return season_dir
+
+
+def get_season_sos_dir() -> Path:
+    """Return the directory for the current season's sports-reference ratings
+    (SOS) snapshots and ratings_master.csv.
+
+    For LEGACY_TOP_LEVEL_SEASON and earlier this is data/sos/ (unchanged). For
+    any later season it is <get_season_data_dir()>/sos/, e.g.
+    data/seasons/2026-27/sos/, created if missing -- so the same one-line
+    season bump that moves the polls files also moves the ratings pull.
+    """
+    season = get_current_season()
+    if season <= LEGACY_TOP_LEVEL_SEASON:
+        sos_dir = DATA_DIR / "sos"
+    else:
+        sos_dir = get_season_data_dir() / "sos"
+    sos_dir.mkdir(parents=True, exist_ok=True)
+    return sos_dir
