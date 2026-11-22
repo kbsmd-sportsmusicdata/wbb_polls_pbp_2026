@@ -170,7 +170,7 @@ When you manually run the GitHub Actions workflow:
    - filter_schedule.py ✓
 
 2. **No "SOS file not found" warning**
-   - Script finds `data/sos/ratings_master.csv`
+   - Script finds `data/seasons/2026-27/sos/ratings_master.csv` (2025-26 and earlier: `data/sos/`)
 
 3. **Filtered schedule includes NET teams**
    - Should show 25-50 teams (depending on NET rankings availability)
@@ -179,7 +179,7 @@ When you manually run the GitHub Actions workflow:
 4. **All team names standardized**
    - Check `data/polls_analytics.csv` → UConn, LSU, USC
    - Check `data/net_rankings/net_rankings_master.csv` → UConn, LSU, USC
-   - Check `data/sos/ratings_master.csv` → UConn, LSU, USC
+   - Check `data/seasons/2026-27/sos/ratings_master.csv` (2025-26 and earlier: `data/sos/`) → UConn, LSU, USC
    - Check `data/wbb_schedule/schedule_filtered.csv` → UConn, LSU, USC
 
 5. **Data committed and pushed**
@@ -227,3 +227,21 @@ When you manually run the GitHub Actions workflow:
 4. **Weekly:** Export NET rankings manually and import
 
 Ready for workflow testing! 🚀
+
+---
+
+## Ratings (SOS) data: location and calculated fields
+
+`scrape_ratings.py` pulls `https://www.sports-reference.com/cbb/seasons/women/<season>-ratings.html`.
+Output lives in `season_config.get_season_sos_dir()`: `data/sos/` for the 2025-26 season and earlier,
+`data/seasons/<label>/sos/` (e.g. `data/seasons/2026-27/sos/`) for every later season.
+
+Calculated fields added to each snapshot and to `ratings_master.csv` (exponent k = 13.91, `PYTHAGOREAN_EXPONENT`):
+
+| Column | Formula |
+|---|---|
+| `pyth_win_pct` | `Pts^k / (Pts^k + Opp^k)` |
+| `pyth_wins` | `pyth_win_pct * (W + L)` |
+| `wins_minus_pyth_wins` | `W - pyth_wins` (positive = more wins than scoring margin predicts) |
+
+`Pts`/`Opp` are per-game averages, which give the same ratio as season totals. Teams with no games played get blank values.

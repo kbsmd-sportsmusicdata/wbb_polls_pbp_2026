@@ -22,12 +22,12 @@ import tempfile
 
 # Import centralized team name standardization
 from team_name_utils import standardize_team_names
-from season_config import get_current_season
+from season_config import get_current_season, get_season_sos_dir
 
 # Configuration
 DATA_DIR = Path("data")
 RAW_DIR = DATA_DIR / "raw"
-SOS_DIR = DATA_DIR / "sos"
+SOS_DIR = get_season_sos_dir()  # season-aware: data/seasons/<label>/sos/ for 2026-27+
 SCHEDULE_DIR = DATA_DIR / "wbb_schedule"
 RAW_CSV = RAW_DIR / "wbb_schedule_raw.csv"
 FILTERED_CSV = DATA_DIR / "wbb_schedule.csv"
