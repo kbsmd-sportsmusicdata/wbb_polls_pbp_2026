@@ -1,12 +1,12 @@
 {
-  "run_date": "2026-11-22",
+  "run_date": "2026-11-24",
   "metrics": {
     "polls_released": 3,
     "complete_weeks": 2,
     "teams": 26,
-    "unique_games": 136,
+    "unique_games": 146,
     "upsets": 5,
-    "top25_matchups": 11,
+    "top25_matchups": 12,
     "min_games_per_team": 4,
     "pct_teams_games_ge2": 1.0,
     "pct_teams_games_ge3": 1.0,
@@ -110,7 +110,7 @@
           "metric": "unique_games",
           "op": ">=",
           "need": 20,
-          "have": 136,
+          "have": 146,
           "met": true
         }
       ]
@@ -193,7 +193,7 @@
           "metric": "unique_games",
           "op": ">=",
           "need": 50,
-          "have": 136,
+          "have": 146,
           "met": true
         }
       ]
@@ -238,7 +238,7 @@
           "metric": "top25_matchups",
           "op": ">=",
           "need": 5,
-          "have": 11,
+          "have": 12,
           "met": true
         }
       ]
@@ -296,13 +296,13 @@
       "clickable": false,
       "published": false,
       "data_ready": false,
-      "tooltip": "Coming Soon \u2014 Unlocks at 150 games with most teams facing ranked opponents (136 / 150 games; 19% / 75% of teams with 2+ ranked opponents)",
+      "tooltip": "Coming Soon \u2014 Unlocks at 150 games with most teams facing ranked opponents (146 / 150 games; 19% / 75% of teams with 2+ ranked opponents)",
       "checks": [
         {
           "metric": "unique_games",
           "op": ">=",
           "need": 150,
-          "have": 136,
+          "have": 146,
           "met": false
         },
         {
