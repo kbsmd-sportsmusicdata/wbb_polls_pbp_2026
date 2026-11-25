@@ -1,22 +1,22 @@
 {
   "run_date": "2026-11-25",
   "metrics": {
-    "polls_released": 3,
-    "complete_weeks": 2,
-    "teams": 26,
-    "unique_games": 146,
+    "polls_released": 4,
+    "complete_weeks": 3,
+    "teams": 27,
+    "unique_games": 166,
     "upsets": 5,
-    "top25_matchups": 12,
+    "top25_matchups": 13,
     "min_games_per_team": 4,
     "pct_teams_games_ge2": 1.0,
     "pct_teams_games_ge3": 1.0,
-    "pct_teams_home_ge2": 0.923,
-    "pct_teams_road_ge2": 0.231,
+    "pct_teams_home_ge2": 0.963,
+    "pct_teams_road_ge2": 0.222,
     "pct_teams_conf_ge2": 0.0,
-    "pct_teams_top25_ge2": 0.192,
+    "pct_teams_top25_ge2": 0.185,
     "watchlist_teams": 20,
-    "pyth_teams": 26,
-    "pct_teams_pyth_games_ge8": 0.038,
+    "pyth_teams": 27,
+    "pct_teams_pyth_games_ge8": 0.111,
     "min_pyth_games": 4
   },
   "sections": [
@@ -34,7 +34,7 @@
           "metric": "polls_released",
           "op": ">=",
           "need": 1,
-          "have": 3,
+          "have": 4,
           "met": true
         }
       ]
@@ -53,7 +53,7 @@
           "metric": "polls_released",
           "op": ">=",
           "need": 3,
-          "have": 3,
+          "have": 4,
           "met": true
         }
       ]
@@ -72,7 +72,7 @@
           "metric": "polls_released",
           "op": ">=",
           "need": 2,
-          "have": 3,
+          "have": 4,
           "met": true
         }
       ]
@@ -91,7 +91,7 @@
           "metric": "polls_released",
           "op": ">=",
           "need": 2,
-          "have": 3,
+          "have": 4,
           "met": true
         }
       ]
@@ -110,7 +110,7 @@
           "metric": "unique_games",
           "op": ">=",
           "need": 20,
-          "have": 146,
+          "have": 166,
           "met": true
         }
       ]
@@ -129,7 +129,7 @@
           "metric": "complete_weeks",
           "op": ">=",
           "need": 2,
-          "have": 2,
+          "have": 3,
           "met": true
         },
         {
@@ -155,7 +155,7 @@
           "metric": "pyth_teams",
           "op": ">=",
           "need": 20,
-          "have": 26,
+          "have": 27,
           "met": true
         }
       ]
@@ -193,7 +193,7 @@
           "metric": "unique_games",
           "op": ">=",
           "need": 50,
-          "have": 146,
+          "have": 166,
           "met": true
         }
       ]
@@ -219,7 +219,7 @@
           "metric": "polls_released",
           "op": ">=",
           "need": 3,
-          "have": 3,
+          "have": 4,
           "met": true
         }
       ]
@@ -238,7 +238,7 @@
           "metric": "top25_matchups",
           "op": ">=",
           "need": 5,
-          "have": 12,
+          "have": 13,
           "met": true
         }
       ]
@@ -251,20 +251,20 @@
       "clickable": false,
       "published": false,
       "data_ready": false,
-      "tooltip": "Coming Soon \u2014 Unlocks once nearly every team has 2+ home and 2+ road games (23% / 90% of teams with 2+ road games)",
+      "tooltip": "Coming Soon \u2014 Unlocks once nearly every team has 2+ home and 2+ road games (22% / 90% of teams with 2+ road games)",
       "checks": [
         {
           "metric": "pct_teams_home_ge2",
           "op": ">=",
           "need": 0.9,
-          "have": 0.923,
+          "have": 0.963,
           "met": true
         },
         {
           "metric": "pct_teams_road_ge2",
           "op": ">=",
           "need": 0.9,
-          "have": 0.231,
+          "have": 0.222,
           "met": false
         }
       ]
@@ -296,20 +296,20 @@
       "clickable": false,
       "published": false,
       "data_ready": false,
-      "tooltip": "Coming Soon \u2014 Unlocks at 150 games with most teams facing ranked opponents (146 / 150 games; 19% / 75% of teams with 2+ ranked opponents)",
+      "tooltip": "Coming Soon \u2014 Unlocks at 150 games with most teams facing ranked opponents (18% / 75% of teams with 2+ ranked opponents)",
       "checks": [
         {
           "metric": "unique_games",
           "op": ">=",
           "need": 150,
-          "have": 146,
-          "met": false
+          "have": 166,
+          "met": true
         },
         {
           "metric": "pct_teams_top25_ge2",
           "op": ">=",
           "need": 0.75,
-          "have": 0.192,
+          "have": 0.185,
           "met": false
         }
       ]

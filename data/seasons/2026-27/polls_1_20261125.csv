@@ -1,26 +1,26 @@
 Rk,School,Prev,Chng,Conf
-1,South Carolina,1,-,SEC
-2,Michigan,2,-,Big Ten
-3,Louisville,7,4,ACC
-4,Southern California,3,1,Big Ten
-5,Duke,5,-,ACC
-6,Texas,6,-,SEC
-7,Connecticut,4,3,Big East
-8,Iowa,10,2,Big Ten
-9,Louisiana State,9,-,SEC
-10,UCLA,10,-,Big Ten
-11,Vanderbilt,8,3,SEC
-12,Kentucky,12,-,SEC
-13,Notre Dame,13,-,ACC
-14,Oklahoma,14,-,SEC
-15,Texas Christian,15,-,Big 12
-16,Washington,16,-,Big Ten
-17,Minnesota,18,1,Big Ten
-18,Maryland,19,1,Big Ten
-19,Mississippi,21,2,SEC
-19,Ohio State,17,2,Big Ten
-21,Illinois,22,1,Big Ten
-22,West Virginia,24,2,Big 12
-23,Nebraska,25,2,Big Ten
-24,North Carolina,23,1,ACC
-25,Oklahoma State,19,6,Big 12
+1,South Carolina,1.0,-,SEC
+2,Michigan,2.0,-,Big Ten
+3,Louisville,3.0,-,ACC
+4,Southern California,4.0,-,Big Ten
+5,Duke,5.0,-,ACC
+6,Texas,6.0,-,SEC
+7,Connecticut,7.0,-,Big East
+8,Iowa,8.0,-,Big Ten
+9,Louisiana State,9.0,-,SEC
+10,UCLA,10.0,-,Big Ten
+11,Kentucky,12.0,1,SEC
+12,Vanderbilt,11.0,1,SEC
+13,Notre Dame,13.0,-,ACC
+14,Oklahoma,14.0,-,SEC
+15,Texas Christian,15.0,-,Big 12
+16,Washington,16.0,-,Big Ten
+17,Minnesota,17.0,-,Big Ten
+18,Maryland,18.0,-,Big Ten
+19,Ohio State,19.0,-,Big Ten
+20,Illinois,21.0,1,Big Ten
+21,Mississippi,19.0,2,SEC
+22,West Virginia,22.0,-,Big 12
+23,Nebraska,23.0,-,Big Ten
+24,North Carolina,24.0,-,ACC
+25,Baylor,,,Big 12

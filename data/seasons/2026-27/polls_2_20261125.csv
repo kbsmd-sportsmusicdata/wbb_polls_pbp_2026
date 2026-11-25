@@ -1,31 +1,32 @@
-Unnamed: 0_level_0,Unnamed: 1_level_0,Week Poll,Week Poll,Week Poll
-Unnamed: 0_level_1,Unnamed: 1_level_1,1,2,3
-School,Conf,Pre,11/9,11/16
-South Carolina,SEC,1,1,1
-Michigan,Big Ten,5,2,2
-Louisville,ACC,7,7,3
-USC,Big Ten,3,3,4
-Duke,ACC,4,5,5
-Texas,SEC,6,6,6
-UConn,Big East,2,4,7
-Iowa,Big Ten,10,10,8
-LSU,SEC,9,9,9
-UCLA,Big Ten,11,10,10
-Vanderbilt,SEC,8,8,11
-Kentucky,SEC,14,12,12
-Notre Dame,ACC,13,13,13
-Oklahoma,SEC,21,14,14
-TCU,Big 12,15,15,15
-Washington,Big Ten,16,16,16
-Minnesota,Big Ten,17,18,17
-Maryland,Big Ten,20,19,18
-Ohio State,Big Ten,18,17,19
-Ole Miss,SEC,19,21,19
-,,1,2,3
-School,Conf,Pre,11/9,11/16
-Illinois,Big Ten,23,22,21
-West Virginia,Big 12,24,24,22
-Nebraska,Big Ten,,25,23
-UNC,ACC,12,23,24
-Oklahoma State,Big 12,22,19,25
-NC State,ACC,25,,
+Unnamed: 0_level_0,Unnamed: 1_level_0,Week Poll,Week Poll,Week Poll,Week Poll
+Unnamed: 0_level_1,Unnamed: 1_level_1,1,2,3,4
+School,Conf,Pre,11/9,11/16,11/23
+South Carolina,SEC,1,1,1,1
+Michigan,Big Ten,5,2,2,2
+Louisville,ACC,7,7,3,3
+USC,Big Ten,3,3,4,4
+Duke,ACC,4,5,5,5
+Texas,SEC,6,6,6,6
+UConn,Big East,2,4,7,7
+Iowa,Big Ten,10,10,8,8
+LSU,SEC,9,9,9,9
+UCLA,Big Ten,11,10,10,10
+Kentucky,SEC,14,12,12,11
+Vanderbilt,SEC,8,8,11,12
+Notre Dame,ACC,13,13,13,13
+Oklahoma,SEC,21,14,14,14
+TCU,Big 12,15,15,15,15
+Washington,Big Ten,16,16,16,16
+Minnesota,Big Ten,17,18,17,17
+Maryland,Big Ten,20,19,18,18
+Ohio State,Big Ten,18,17,19,19
+Illinois,Big Ten,23,22,21,20
+,,1,2,3,4
+School,Conf,Pre,11/9,11/16,11/23
+Ole Miss,SEC,19,21,19,21
+West Virginia,Big 12,24,24,22,22
+Nebraska,Big Ten,,25,23,23
+UNC,ACC,12,23,24,24
+Baylor,Big 12,,,,25
+Oklahoma State,Big 12,22,19,25,
+NC State,ACC,25,,,
